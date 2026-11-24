@@ -1,0 +1,62 @@
+{
+  "schema_version": "stage13-spice-1.0",
+  "source_revision": "c262f362170809673e85dc213dd468a56983a6a248fac9e3bcc9d4e02fa90b0d",
+  "generator_version": "reviewed-rails-complete-analysis-2",
+  "options": {
+    "analysis": "op"
+  },
+  "nodes": {
+    "VIN": "n1",
+    "VOUT": "n2",
+    "GND": "0"
+  },
+  "components": [
+    {
+      "component_id": "R_bottom",
+      "spice_name": "D1",
+      "type": "led",
+      "pins": [
+        "A",
+        "K"
+      ],
+      "nodes": {
+        "A": "n2",
+        "K": "0"
+      },
+      "model": "CS_LED"
+    },
+    {
+      "component_id": "R_top",
+      "spice_name": "R1",
+      "type": "resistor",
+      "pins": [
+        "1",
+        "2"
+      ],
+      "nodes": {
+        "1": "n1",
+        "2": "n2"
+      },
+      "value_si": 1000.0
+    },
+    {
+      "component_id": "VCC1",
+      "spice_name": "V1",
+      "type": "source_dc",
+      "pins": [
+        "+",
+        "-"
+      ],
+      "nodes": {
+        "+": "n1",
+        "-": "0"
+      },
+      "value_si": 5.0
+    }
+  ],
+  "warnings": [
+    "Diodos e LEDs usam modelos genéricos; o resultado não representa um modelo comercial específico."
+  ],
+  "netlist": "Circuit Scanner - confirmed circuit\n.options numdgt=15 reltol=1e-6 abstol=1e-12 vntol=1e-9\nD1 n2 0 CS_LED\nR1 n1 n2 1000\nV1 n1 0 DC 5\n.model CS_LED D(IS=1e-20 N=2 RS=2)\n.save all @d1[id]\n.op\n.control\nset filetype=ascii\nrun\nwrite simulation.raw all\nquit\n.endc\n.end\n",
+  "netlist_sha256": "fc200cd9820874147bb5395a2e063c99da640fdc64d078cf74e536421eab905b"
+}

@@ -1,0 +1,84 @@
+{
+  "schema_version": "circuit-1.0",
+  "status": "confirmed",
+  "confirmed_by_user": true,
+  "components": [
+    {
+      "id": "V1",
+      "type": "source_dc",
+      "value": "5",
+      "pins": [
+        "+",
+        "-"
+      ]
+    },
+    {
+      "id": "VG",
+      "type": "source_dc",
+      "value": "3",
+      "pins": [
+        "+",
+        "-"
+      ]
+    },
+    {
+      "id": "RL",
+      "type": "resistor",
+      "value": "1k",
+      "pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "id": "M1",
+      "type": "mosfet_n",
+      "value": null,
+      "pins": [
+        "G",
+        "D",
+        "S"
+      ],
+      "metadata": {
+        "model": {
+          "text": ""
+        },
+        "electrical_parameters": {
+          "vgs_threshold": 1,
+          "mos_kp": 0.02
+        }
+      }
+    }
+  ],
+  "nets": [
+    {
+      "name": "VIN",
+      "members": [
+        "V1.+",
+        "RL.1"
+      ]
+    },
+    {
+      "name": "GATE",
+      "members": [
+        "VG.+",
+        "M1.G"
+      ]
+    },
+    {
+      "name": "OUT",
+      "members": [
+        "RL.2",
+        "M1.D"
+      ]
+    },
+    {
+      "name": "GND",
+      "members": [
+        "V1.-",
+        "VG.-",
+        "M1.S"
+      ]
+    }
+  ]
+}

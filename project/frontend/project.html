@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto - Circuit Scanner</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="container">
+        <a class="voltar" href="index.html">
+            ← Voltar para projetos
+        </a>
+
+        <section class="card">
+            <h1 id="titulo-projeto">Carregando...</h1>
+
+            <div id="erro-projeto" class="erro escondido"></div>
+
+            <div id="conteudo-projeto" class="escondido">
+                <div class="dados-projeto">
+                    <p><strong>ID:</strong> <span id="project-id"></span></p>
+                    <p><strong>Data:</strong> <span id="project-date"></span></p>
+                    <p><strong>Status:</strong> <span id="project-status"></span></p>
+                    <p><strong>Caminho:</strong> <span id="project-path"></span></p>
+                    <p>
+                        <strong>Arquivo original:</strong>
+                        <span id="original-filename"></span>
+                    </p>
+                </div>
+
+                <div class="acoes-projeto">
+                    <button id="botao-processar" type="button">
+                        Processar imagem
+                    </button>
+
+                    <button id="botao-detectar" type="button">
+                        Reconhecer componentes
+                    </button>
+
+                    <button id="botao-ocr" type="button">
+                        Ler textos
+                    </button>
+                </div>
+
+                <p id="status-processamento" class="status"></p>
+                <p id="status-deteccao" class="status"></p>
+                <p id="status-ocr" class="status"></p>
+
+                <div class="comparacao">
+                    <div>
+                        <h2>Original</h2>
+                        <img
+                            id="imagem-original"
+                            class="preview"
+                            alt="Imagem original"
+                        >
+                    </div>
+
+                    <div id="bloco-processada" class="escondido">
+                        <h2>Processada</h2>
+                        <img
+                            id="imagem-processada"
+                            class="preview"
+                            alt="Imagem processada"
+                        >
+                    </div>
+                </div>
+
+                <section id="bloco-detalhes" class="detalhes escondido">
+                    <h2>Ajustes da imagem</h2>
+
+                    <ul id="lista-operacoes"></ul>
+
+                    <p>
+                        <strong>Perspectiva corrigida:</strong>
+                        <span id="perspectiva"></span>
+                    </p>
+
+                    <p>
+                        <strong>Inclinação detectada:</strong>
+                        <span id="angulo"></span>
+                    </p>
+
+                    <p>
+                        <strong>Tamanho final:</strong>
+                        <span id="tamanho-final"></span>
+                    </p>
+                </section>
+
+                <section id="bloco-deteccoes" class="detalhes escondido">
+                    <h2>Componentes reconhecidos</h2>
+
+                    <p>
+                        <strong>Total:</strong>
+                        <span id="total-deteccoes">0</span>
+                        &nbsp;|&nbsp;
+                        <strong>Revisar:</strong>
+                        <span id="total-revisao">0</span>
+                    </p>
+
+                    <img
+                        id="imagem-deteccoes"
+                        class="preview"
+                        alt="Imagem com os componentes reconhecidos"
+                    >
+
+                    <h3 class="titulo-revisao">Corrigir reconhecimento</h3>
+                    <div class="recognition-toolbar">
+                        <label for="classe-nova-deteccao">Classe para desenhar</label>
+                        <select id="classe-nova-deteccao" class="select-campo"></select>
+                        <button id="botao-desfazer-deteccao" type="button" class="secundario">
+                            Desfazer última caixa
+                        </button>
+                        <button id="botao-salvar-deteccoes" type="button">
+                            Salvar reconhecimento corrigido
+                        </button>
+                    </div>
+
+                    <p id="status-correcao-deteccoes" class="status"></p>
+
+                    <div class="recognition-canvas-wrap">
+                        <canvas id="canvas-reconhecimento"></canvas>
+                    </div>
+
+                    <div class="tabela-wrapper">
+                        <table class="tabela-deteccoes">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Classe</th>
+                                    <th>Confiança</th>
+                                    <th>Situação</th>
+                                    <th>Bounding box</th>
+                                    <th>Ação</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabela-deteccoes-corpo"></tbody>
+                        </table>
+                    </div>
+
+                </section>
+
+                <section id="bloco-ocr" class="detalhes escondido">
+                    <h2>Componentes lógicos</h2>
+
+                    <p>
+                        <strong>Componentes:</strong>
+                        <span id="total-componentes-logicos">0</span>
+                        &nbsp;|&nbsp;
+                        <strong>Referências lidas:</strong>
+                        <span id="total-referencias-ocr">0</span>
+                        &nbsp;|&nbsp;
+                        <strong>Valores lidos:</strong>
+                        <span id="total-valores-ocr">0</span>
+                        &nbsp;|&nbsp;
+                        <strong>Conferir:</strong>
+                        <span id="total-revisao-ocr">0</span>
+                    </p>
+
+                    <img
+                        id="imagem-ocr"
+                        class="preview"
+                        alt="Imagem com componentes, referências e valores"
+                    >
+
+                    <div class="tabela-wrapper">
+                        <table class="tabela-deteccoes tabela-ocr">
+                            <thead>
+                                <tr>
+                                    <th>Detecção</th>
+                                    <th>Classe</th>
+                                    <th>Referência</th>
+                                    <th>Valor</th>
+                                    <th>Modelo e parâmetros</th>
+                                    <th>Origem</th>
+                                    <th>Situação</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabela-ocr-corpo"></tbody>
+                        </table>
+                    </div>
+
+                    <button id="botao-salvar-ocr" type="button">
+                        Salvar correções
+                    </button>
+
+                    <p id="status-salvar-ocr" class="status"></p>
+
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/model_editor.js?v=5.21.0"></script>
+    <script src="js/project.js"></script>
+</body>
+</html>

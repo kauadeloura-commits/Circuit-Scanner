@@ -1,0 +1,475 @@
+{
+  "project_id": "PRJ_0292",
+  "name": "EVAL I14_12",
+  "created_at": "2026-10-19T19:43:44-03:00",
+  "status": "reconhecido",
+  "path": "projects/PRJ_0292",
+  "original_filename": "I14_12.png",
+  "stored_filename": "original.png",
+  "processed_filename": "processed.png",
+  "detection_filename": "detections.png",
+  "ocr_filename": null,
+  "terminals_filename": null,
+  "wires_filename": null,
+  "image_url": "http://127.0.0.1:8010/projects-files/PRJ_0292/original.png",
+  "processed_url": "http://127.0.0.1:8010/projects-files/PRJ_0292/processed.png",
+  "detections_url": "http://127.0.0.1:8010/projects-files/PRJ_0292/detections.png",
+  "ocr_url": null,
+  "components_url": null,
+  "terminals_url": null,
+  "terminals_json_url": null,
+  "wires_url": null,
+  "wires_json_url": null,
+  "wires_mask_url": null,
+  "wires_skeleton_url": null,
+  "transistor_wire_refinement_url": null,
+  "junctions_url": null,
+  "junctions_json_url": null,
+  "junction_review_url": "http://127.0.0.1:8010/projects/PRJ_0292/junction-review",
+  "workflow_url": "http://127.0.0.1:8010/projects/PRJ_0292/workflow",
+  "stage8_status_url": "http://127.0.0.1:8010/projects/PRJ_0292/stage8-status",
+  "terminal_trainer_url": "http://127.0.0.1:8010/projects/PRJ_0292/terminal-trainer",
+  "stage7_readiness_url": "http://127.0.0.1:8010/projects/PRJ_0292/stage7-readiness",
+  "processing_info": {
+    "operacoes": [
+      "correcao_de_perspectiva_automatica",
+      "escala_de_cinza",
+      "correcao_de_rotacao_automatica",
+      "aumento_de_contraste_CLAHE",
+      "reducao_de_ruido_bilateral",
+      "binarizacao_adaptativa",
+      "limpeza_morfologica_leve"
+    ],
+    "perspectiva_aplicada": false,
+    "angulo_detectado_graus": 0.0,
+    "angulo_corrigido_graus": -0.0,
+    "largura_original": 217,
+    "altura_original": 148,
+    "largura_processada": 217,
+    "altura_processada": 148,
+    "arquivo_saida": "processed.png"
+  },
+  "detections_info": {
+    "elapsed_seconds": 1.231,
+    "performance": {
+      "adaptive": true,
+      "extra_views_needed": true,
+      "identical_views_reused": [],
+      "view_timings": [
+        {
+          "view": "original_color",
+          "duration_seconds": 0.0826,
+          "reused": false
+        },
+        {
+          "view": "normalized_grayscale",
+          "duration_seconds": 0.0644,
+          "reused": false
+        },
+        {
+          "view": "normalized_binary_bw",
+          "duration_seconds": 0.1704,
+          "reused": false
+        },
+        {
+          "view": "monochrome_otsu",
+          "duration_seconds": 0.1174,
+          "reused": false
+        },
+        {
+          "view": "monochrome_adaptive",
+          "duration_seconds": 0.1188,
+          "reused": false
+        },
+        {
+          "view": "component_ink_normalized",
+          "duration_seconds": 0.1156,
+          "reused": false
+        },
+        {
+          "view": "rotated_90_cw_all_classes",
+          "duration_seconds": 0.1408,
+          "reused": false
+        },
+        {
+          "view": "rotated_90_ccw_all_classes",
+          "duration_seconds": 0.1257,
+          "reused": false
+        },
+        {
+          "view": "rotated_180_half_all_classes",
+          "duration_seconds": 0.123,
+          "reused": false
+        },
+        {
+          "view": "paper_context_padding",
+          "duration_seconds": 0.0633,
+          "reused": false
+        }
+      ]
+    },
+    "created_at": "2026-10-19T19:43:45-03:00",
+    "model": "models\\circuit_scanner_yolo.pt",
+    "model_sha256": "dc4d523528894e0cfd246611ac2c45953504a5439eeeef5374030752ebf16ebd",
+    "source_image": "original.png",
+    "source_policy": "original_by_default",
+    "color_invariance": {
+      "enabled": true,
+      "method": "ai_first_component_ink_all_classes_rotations_grayscale_binary_tiles",
+      "decision": "trained_model_confidence_plus_geometry_validation"
+    },
+    "monochrome_input_detected": true,
+    "inference_strategy": "auto",
+    "inference_views": [
+      {
+        "name": "original_color",
+        "imgsz": 640,
+        "raw_detections": 1
+      },
+      {
+        "name": "normalized_grayscale",
+        "imgsz": 640,
+        "raw_detections": 1
+      },
+      {
+        "name": "normalized_binary_bw",
+        "imgsz": 960,
+        "preferred_for_monochrome": true,
+        "raw_detections": 1
+      },
+      {
+        "name": "monochrome_otsu",
+        "imgsz": 960,
+        "universal_dataset_classes": true,
+        "raw_detections": 1
+      },
+      {
+        "name": "monochrome_adaptive",
+        "imgsz": 960,
+        "universal_dataset_classes": true,
+        "raw_detections": 2
+      },
+      {
+        "name": "component_ink_normalized",
+        "imgsz": 960,
+        "raw_detections": 1,
+        "ink_profile": {
+          "schema_version": "component-ink-color-1.0",
+          "active": true,
+          "reason": "reliable_component_color_consensus",
+          "sampled_component_count": 1,
+          "minimum_component_confidence": 0.8,
+          "reliable_component_count": 1,
+          "reference_rgb": [
+            115,
+            111,
+            112
+          ],
+          "reference_hex": "#736F70",
+          "reference_hsv": [
+            173.0,
+            9.0,
+            115.0
+          ],
+          "chromatic": false,
+          "channel_tolerance": 31.98,
+          "hue_tolerance": 12.0,
+          "consensus_component_count": 1,
+          "consensus_component_ids": [
+            "DET_002"
+          ],
+          "consensus_ratio": 1.0,
+          "averaging": "equal_weight_per_component_trimmed_stroke_mean"
+        }
+      },
+      {
+        "name": "rotated_90_cw_all_classes",
+        "imgsz": 960,
+        "rotation_degrees": 90,
+        "accepted_classes": "all_trained_classes_with_geometry_validation",
+        "raw_detections": 2,
+        "discarded_other_classes": 0
+      },
+      {
+        "name": "rotated_90_ccw_all_classes",
+        "imgsz": 960,
+        "rotation_degrees": -90,
+        "accepted_classes": "all_trained_classes_with_geometry_validation",
+        "raw_detections": 1,
+        "discarded_other_classes": 0
+      },
+      {
+        "name": "rotated_180_half_all_classes",
+        "imgsz": 960,
+        "rotation_degrees": 180,
+        "accepted_classes": "all_trained_classes_with_geometry_validation",
+        "raw_detections": 1,
+        "discarded_other_classes": 0
+      },
+      {
+        "name": "resistor_zigzag_geometry",
+        "detections": 0,
+        "continuous_alternating_path_and_two_leads": true
+      },
+      {
+        "name": "resistor_iec_geometry",
+        "detections": 0,
+        "strict_closed_body_and_two_leads": true
+      },
+      {
+        "name": "geometry_validation_only",
+        "detections": 0
+      },
+      {
+        "name": "paper_context_padding",
+        "raw_detections": 1,
+        "margin_px": 108,
+        "imgsz": 640
+      },
+      {
+        "name": "continuous_coil_geometry",
+        "detections": 0
+      },
+      {
+        "name": "three_descending_bars_one_lead",
+        "detections": 0
+      },
+      {
+        "name": "separate_plates_opposed_lead_geometry",
+        "detections": 0
+      },
+      {
+        "name": "one_lead_hollow_power_geometry",
+        "detections": 0
+      }
+    ],
+    "confidence_threshold": 0.15,
+    "candidate_confidence_threshold": 0.12,
+    "yolo_nms_iou": 0.55,
+    "yolo_agnostic_nms": false,
+    "yolo_max_detections": 300,
+    "minimum_single_view_confidence": 0.12,
+    "imgsz": 640,
+    "image_width": 217,
+    "image_height": 148,
+    "raw_count": 12,
+    "raw_count_by_source": {
+      "original_color": 1,
+      "normalized_grayscale": 1,
+      "normalized_binary_bw": 1,
+      "monochrome_otsu": 1,
+      "monochrome_adaptive": 2,
+      "component_ink_normalized": 1,
+      "rotated_90_cw_all_classes": 2,
+      "rotated_90_ccw_all_classes": 1,
+      "rotated_180_half_all_classes": 1,
+      "resistor_zigzag_geometry": 0,
+      "resistor_iec_geometry": 0,
+      "geometry_validation_only": 0,
+      "paper_context_padding": 1,
+      "continuous_coil_geometry": 0,
+      "three_descending_bars_one_lead": 0,
+      "separate_plates_opposed_lead_geometry": 0,
+      "one_lead_hollow_power_geometry": 0
+    },
+    "count": 2,
+    "geometry_rejected_count": 0,
+    "geometry_rejections": [],
+    "symbol_text_guard": {
+      "policy": "aligned_glyphs_and_class_body_connected_leads_before_consensus_rescue",
+      "ocr_required": false,
+      "rejected_count": 0
+    },
+    "confidence_rejected_count": 0,
+    "confidence_rejections": [],
+    "led_arrow_correction_count": 0,
+    "oversized_enclosing_rejected_count": 0,
+    "oversized_enclosing_rejections": [],
+    "nested_box_rejected_count": 0,
+    "nested_box_rejections": [],
+    "basic_component_rescue_count": 0,
+    "universal_monochrome_rescue_count": 0,
+    "geometry_consensus_rescue_count": 0,
+    "dataset_classes_with_monochrome_runtime": [
+      "battery",
+      "capacitor",
+      "capacitor_polarized",
+      "diode",
+      "gnd",
+      "inductor",
+      "led",
+      "mosfet_n",
+      "mosfet_p",
+      "opamp",
+      "resistor",
+      "source_dc",
+      "transistor_npn",
+      "transistor_pnp",
+      "vcc"
+    ],
+    "rescue_mode": false,
+    "review_count": 2,
+    "duplicate_filter": {
+      "cross_class_conflicts": true,
+      "class_consensus": true,
+      "fully_contained_boxes_allowed": false,
+      "containment_edges_inclusive": true,
+      "iou_threshold": 0.45,
+      "coverage_threshold": 0.8
+    },
+    "detections": [
+      {
+        "detection_id": "DET_001",
+        "class_id": 14,
+        "class": "opamp",
+        "confidence": 0.156509,
+        "bbox": {
+          "x1": 90.22,
+          "y1": 0.0,
+          "x2": 206.83,
+          "y2": 148.0,
+          "width": 116.61,
+          "height": 148.0,
+          "center_x": 148.53,
+          "center_y": 74.0
+        },
+        "inference_sources": [
+          "monochrome_adaptive"
+        ],
+        "best_view_confidence": 0.156509,
+        "derived_consensus_confidence": 0.156509,
+        "consensus_score": 0.156509,
+        "consensus_votes": 1,
+        "consensus_source_count": 1,
+        "monochrome_variants": [
+          "adaptive"
+        ],
+        "monochrome_variant_count": 1,
+        "consensus_view_families": [
+          "monochrome"
+        ],
+        "alternatives": [],
+        "consensus_margin": 0.156509,
+        "review_required": true,
+        "review_reasons": [
+          "low_confidence"
+        ],
+        "geometry_validation": {
+          "valid": true,
+          "score": 1.0,
+          "evidence": {
+            "upper_diagonals": 7,
+            "lower_diagonals": 6,
+            "horizontal_connections": 4,
+            "triangle_pair": true,
+            "apex_distance": 0.0
+          }
+        }
+      },
+      {
+        "detection_id": "DET_002",
+        "class_id": 14,
+        "class": "opamp",
+        "confidence": 0.813234,
+        "bbox": {
+          "x1": 43.55,
+          "y1": 22.24,
+          "x2": 166.62,
+          "y2": 115.48,
+          "width": 123.07,
+          "height": 93.24,
+          "center_x": 105.08,
+          "center_y": 68.86
+        },
+        "inference_sources": [
+          "component_ink_normalized",
+          "monochrome_adaptive",
+          "monochrome_otsu",
+          "normalized_binary_bw",
+          "normalized_grayscale",
+          "original_color",
+          "paper_context_padding",
+          "rotated_180_half_all_classes"
+        ],
+        "best_view_confidence": 0.813234,
+        "derived_consensus_confidence": 1.0,
+        "consensus_score": 1.211881,
+        "consensus_votes": 6,
+        "consensus_source_count": 8,
+        "monochrome_variants": [
+          "adaptive",
+          "normalized_binary",
+          "otsu"
+        ],
+        "monochrome_variant_count": 3,
+        "consensus_view_families": [
+          "component_ink_normalized",
+          "grayscale",
+          "monochrome",
+          "original",
+          "paper_context_padding",
+          "rotated_180_half_all_classes"
+        ],
+        "alternatives": [
+          {
+            "class_id": 12,
+            "class": "mosfet_n",
+            "confidence": 0.376097,
+            "consensus_score": 0.438159,
+            "votes": 2
+          },
+          {
+            "class_id": 13,
+            "class": "mosfet_p",
+            "confidence": 0.127853,
+            "consensus_score": 0.127853,
+            "votes": 1
+          }
+        ],
+        "consensus_margin": 0.773722,
+        "review_required": true,
+        "review_reasons": [
+          "visually_similar_classes"
+        ],
+        "geometry_validation": {
+          "valid": true,
+          "score": 1.0,
+          "evidence": {
+            "upper_diagonals": 14,
+            "lower_diagonals": 13,
+            "horizontal_connections": 5,
+            "triangle_pair": true,
+            "apex_distance": 0.0
+          }
+        }
+      }
+    ],
+    "requested_source": "original"
+  },
+  "ocr_info": null,
+  "terminals_info": null,
+  "wires_info": null,
+  "junctions_info": null,
+  "connectivity_info": null,
+  "circuit_info": null,
+  "connectivity_url": null,
+  "connectivity_json_url": null,
+  "circuit_json_url": null,
+  "circuit_view_url": "http://127.0.0.1:8010/projects/PRJ_0292/circuit-view",
+  "simulation_view_url": "http://127.0.0.1:8010/projects/PRJ_0292/simulation-view",
+  "net_count": 0,
+  "detection_count": 2,
+  "logical_component_count": 0,
+  "terminal_count": 0,
+  "wire_segment_count": 0,
+  "wire_endpoint_candidate_count": 0,
+  "junction_connected_count": 0,
+  "junction_crossing_count": 0,
+  "junction_review_count": 0,
+  "geometry_deferred_until_ocr": true,
+  "terminals_generated_automatically": false,
+  "automatic_stage8": null,
+  "terminal_preview_url": null,
+  "mensagem": "Reconhecimento concluído: 2 componente(s) detectado(s). Fios e terminais serão calculados após a leitura do OCR.",
+  "processing_reused": false
+}

@@ -1,0 +1,38 @@
+ATUALIZAÇÃO V5.35.0 — FALSTAD LIMPO E FLUXO DIRETO
+
+PARA USAR
+Feche o servidor antigo, aplique a atualização com backup e preserve projects,
+fotos, banco de dados, venv e pesos do detector. O ZIP é cumulativo.
+Extraia fora do projeto e use APLICAR_ATUALIZACAO.ps1 ou copie manualmente
+as pastas backend/frontend e tools/circuitjs deste pacote para o projeto.
+Não é necessário alterar a política do Windows se o script for bloqueado.
+Reabra INICIAR_NA_REDE.bat e pressione Ctrl+F5 no navegador.
+Link: http://127.0.0.1:8010/workflow
+Build em /system/version: 2026-10-09-clean-falstad-direct-simulation-v5.35.0
+
+MUDANÇAS
+O fluxo segue Junções > Simulação > Arquivos. A etapa Circuito foi retirada.
+São sete etapas visíveis, com Simulação na quinta posição. Projetos que
+estavam em Circuito passam para Simulação sem repetir reconhecimento ou OCR.
+O Falstad abre diretamente. O esquemático de apoio continua na aba Esquemático,
+na mesma tela de simulação, para comparar a foto e corrigir pontos visualmente.
+Correções e confirmação são feitas na própria simulação antes de avançar.
+
+NET_1, NET_2, GND e outros nomes de redes deixam de ser etiquetas no Falstad.
+As conexões passam por fios físicos e pela referência global dos GNDs nativos.
+O texto adicional de cada componente tem somente a referência e o modelo,
+se informado. Os valores são mostrados pelo próprio componente Falstad.
+GNDs conservam conexões locais. Fios entre dois GNDs, e suas sobras, são
+retirados da apresentação do Falstad; a referência elétrica continua comum.
+Esta limpeza é aplicada também aos circuitos Falstad editados já salvos,
+mantendo seus valores, modelos, atributos nativos e posições dos componentes.
+
+As ferramentas para editar no Falstad e no desenho continuam disponíveis.
+O salvamento no projeto, os downloads e o avanço para Arquivos mantêm as
+ligações corrigidas. O ZIP e os arquivos Falstad gerados também usam a nova
+apresentação. A netlist interna permanece disponível ao programa.
+Valores e nomes de redes dos esquemáticos KiCad não foram ocultados.
+
+Abra novamente Simulação e gere os arquivos de projetos antigos para obter
+o Falstad atualizado. Não é necessário repetir reconhecimento, OCR ou as
+revisões anteriores por causa desta atualização.

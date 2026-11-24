@@ -1,0 +1,78 @@
+ATUALIZACAO V5.11.0 - ETAPA 9: JUNCOES E CRUZAMENTOS
+===================================================
+
+Esta atualizacao e cumulativa. Ela mantem as correcoes de reconhecimento da
+v5.10.3: falsos diodos, amp-op a lapis, dois NPN, resistores IEC e capacitor.
+
+O que a Etapa 9 faz
+-------------------
+
+- uma juncao em T conecta os tres ramos;
+- um cruzamento de quatro vias com ponto visivel conecta os quatro ramos;
+- um cruzamento de quatro vias sem ponto nao conecta tudo: os dois caminhos
+  opostos continuam separados;
+- geometrias ambiguas nao inventam ligacao e ficam marcadas para revisao;
+- cada decisao armazena motivo, confianca, fios envolvidos e grupos eletricos.
+
+Fluxo automatico
+----------------
+
+Ao reconhecer, corrigir terminais ou refazer as linhas, a Etapa 9 e executada
+automaticamente logo depois da Etapa 8. O projeto passa a gerar:
+
+- junctions.json: decisoes eletricas e grupos de fios;
+- junctions.png: visualizacao das juncoes e cruzamentos;
+- dados da Etapa 9 incorporados em wires.json e na tela do projeto.
+
+Revisao sem acessar /docs
+-------------------------
+
+Na tela Fluxo do projeto existem agora:
+
+- Resolver juncoes;
+- Revisar juncoes.
+
+Na tela de revisao, cada no pode ser marcado como:
+
+- Conectado;
+- Cruzamento separado;
+- Manter para revisao.
+
+As correcoes manuais ficam gravadas e prevalecem sobre a decisao automatica.
+
+Instalacao
+----------
+
+1. Feche o servidor.
+2. Extraia o ZIP na pasta principal do projeto e substitua os arquivos.
+3. Inicie novamente o servidor.
+4. Confira em http://127.0.0.1:8010/system/version:
+
+   2026-09-28-stage9-junction-resolution-v5.11.0
+
+5. Abra o Fluxo do projeto e clique em Refazer linhas. A Etapa 9 sera executada
+   automaticamente. Confira o painel Juncoes e cruzamentos.
+
+Cores da visualizacao
+---------------------
+
+- verde preenchido: juncao conectada;
+- X roxo: cruzamento sem conexao;
+- laranja: decisao pendente de revisao;
+- vermelho/azul: endpoints e vertices auxiliares.
+
+Validacao
+---------
+
+- juncao T conectada;
+- cruzamento sem ponto separado em dois caminhos opostos;
+- cruzamento com ponto conectado;
+- correcao manual persistida;
+- fluxo completo Etapa 8 -> Etapa 9 testado;
+- regressao de reconhecimento, transistores e fios preservada.
+
+Proxima etapa
+-------------
+
+Quando nao houver revisoes pendentes, o campo ready_for_stage10 fica verdadeiro.
+A proxima etapa sera consolidar os terminais e fios em redes eletricas (nets).

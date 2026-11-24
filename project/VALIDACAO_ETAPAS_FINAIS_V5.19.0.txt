@@ -1,0 +1,57 @@
+VALIDAÇÃO — V5.19.0 — 05/10/2026
+
+FUNCIONALIDADE NOVA
+19 testes específicos de geração/exportação/simulação: aprovados.
+74 testes focados (API, revisão, OCR/modelos, SPICE e etapas finais): aprovados.
+11 scripts de interface: sintaxe verificada.
+
+REGRESSÃO AMPLA
+374 testes executados; 372 aprovados e 2 falhas já existentes no ambiente:
+- test_previsoes_fracas_repetidas_nao_sao_resgatadas: classes monocromáticas
+  ausentes na cópia de testes, que não contém o dataset externo instalado.
+- test_diodo_com_duas_setas_e_corrigido_para_led: teste sintético de setas,
+  esperado 1, observado 0 neste ambiente/OpenCV.
+Os critérios desses testes não foram modificados. As três verificações
+de pinagem TO-92, exclusão de simulação antiga e inclusão da simulação atual
+no ZIP foram acrescentadas depois da execução ampla e estão incluídas nos
+74 testes focados aprovados, também executados no pacote extraído.
+
+NGSPICE REAL
+Dez circuitos fixos passaram: LED, divisor, RC, diodo, paralelo, ramos
+separados, NPN, PNP, MOSFET N e AOP. O relatório guarda valores esperados,
+tolerâncias e resultados observados. Exemplo: divisor 5 V → 2,5 V;
+RC em 5 ms → 4,96631 V; AOP seguidor → 2,499975 V.
+Teste adicional de PMOS confirmou sentido D→S e sinal negativo da corrente.
+Resistência série de indutor e prioridade manual/datasheet também foram testadas.
+
+KICAD NATIVO
+Ferramenta oficial KiCad CLI 10.0.6, obtida do fornecedor, com assinatura
+digital válida de KICAD SERVICES CORPORATION; utilizada na pasta de trabalho.
+Não foi instalada nem incluída no pacote de atualização.
+Os 10 esquemáticos abriram e foram exportados pelo próprio KiCad para netlist XML.
+Cada conjunto de pinos/nets foi comparado com o JSON: todos coincidiram.
+Mais 2 casos TO-92 CBE/EBC verificaram a numeração física sem trocar B/C/E.
+As 12 PCBs abriram no KiCad: zero violações geométricas no DRC.
+O DRC registrou conexões sem trilhas, conforme esperado para placas não roteadas.
+Isso não significa aprovação para fabricação nem validação de encapsulamento real.
+
+NAVEGADOR E QR
+Na tela isolada de demonstração, foram escolhidos footprints axiais para os
+resistores; os botões geraram esquemático, PCB, ZIP, link e QR Code.
+A etapa 18 foi executada pela interface e mostrou 10 de 10 aprovados.
+O QR gerado para uma URL de rede foi decodificado pelo OpenCV e retornou
+o mesmo endereço. Download por link, revogação, troca de token e recusa
+de artefatos alterados/desatualizados foram verificados pela API.
+O acesso em um celular físico depende da rede/porta do servidor; não foi
+medido nesta validação. Os links 127.0.0.1 são locais ao computador.
+
+INTEGRIDADE E LIMITES
+Arquivos de detecção, geometria de fios, terminais e junções são idênticos
+à versão v5.18.0. Esta atualização acrescenta as etapas finais, sem reescrever
+o reconhecimento de imagens.
+O ZIP é cumulativo e contém código, interface, ngspice e QR com licença.
+Não contém dados de projetos pessoais, bancos, modelos treinados ou amostras.
+A geração usa o circuito confirmado; o reconhecimento automático continua assistido.
+A bateria fixa mede simulação/exportação após revisão, não precisão de OCR/detector.
+Transistores, MOSFETs e AOPs são ajustes elétricos aproximados por parâmetros,
+não macromodelos comerciais completos. Os limites estão nos avisos e no guia.

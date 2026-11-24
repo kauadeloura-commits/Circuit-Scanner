@@ -1,0 +1,84 @@
+VALIDACAO V5.14.1 - 30/09/2026
+
+RESTAURACAO DOS FIOS
+wire_detection.py e identico byte a byte ao arquivo entregue na v5.13.6.
+Nas cinco fotos abaixo, o contexto interno do mascaramento foi comparado
+com o detector de geometria intacto da v5.13.6. As posicoes das referencias
+internas coincidiram. Executados os dois processamentos, coincidiram pixel
+a pixel: mascara de fios, esqueleto e mascara apagada. Os segmentos e nos
+do grafo tambem coincidiram. A mascara gravada pelo novo fluxo foi comparada
+com o resultado anterior, sem diferencas.
+
+Projeto      Segmentos da v5.13.6    Diferencas nas linhas
+PRJ_0399             14                     0
+PRJ_0398             40                     0
+PRJ_0395             41                     0
+PRJ_0393             30                     0
+PRJ_0389             48                     0
+
+FOTOS E TERMINAIS
+Cinco fotos originais diferentes, identificadas por SHA256, foram testadas
+com as caixas de componentes salvas pelo programa. Foram regenerados fios,
+terminais e juncoes em copias, sem modificar os projetos ativos.
+
+Projeto     Componentes    Terminais finais sobre tinta e dentro das caixas
+PRJ_0399        14                           23
+PRJ_0398        15                           26
+PRJ_0395        18                           34
+PRJ_0393        16                           32
+PRJ_0389         5                           11
+TOTAL          68                          126
+
+Os seis transistores dessas fotos receberam tres contatos cada, com B/C/E
+no desenho e dentro das caixas. NPN PRJ_0398 e PNP PRJ_0389, antes sem
+terminais finais na v5.14.0, passaram a receber os tres pontos. Tambem foi
+mantido o PNP PRJ_0395, recuperado o NPN PRJ_0395, e reconhecido o ramo com
+seta do NPN azul PRJ_0399. Esses exemplos foram inspecionados visualmente.
+
+Os 126 pontos foram verificados individualmente quanto ao limite da caixa
+e a existencia de tinta no pixel. Isso nao equivale a certificar todos os
+nomes eletricos de todos os componentes. Ha 34 componentes com indicacoes
+de incerteza de classe/identidade/metadados anteriores. A validacao nao e
+uma medicao de acuracia global nem uma garantia sobre qualquer desenho.
+
+TESTES AUTOMATICOS
+229 testes executados: 227 aprovados e duas falhas preexistentes, tambem
+observadas na copia intacta anterior no mesmo ambiente:
+- test_previsoes_fracas_repetidas_nao_sao_resgatadas: a previsao fraca e
+  rejeitada; a assercao de lista do dataset falha porque a copia isolada
+  nao inclui o dataset do programa (mosfet_n ausente dessa lista).
+- test_diodo_com_duas_setas_e_corrigido_para_led: count=0 em vez de 1,
+  reproduzido no backend anterior com o mesmo OpenCV.
+
+Os testes de terminais e integracao passaram, incluindo:
+- Todas as classes suportadas dentro das caixas, inclusive caixas fracionarias.
+- Polaridade de capacitor, fonte DC, bateria, opamp e MOSFET em quatro rotacoes.
+- NPN/PNP com varias rotacoes, escalas e inclinacao de foto de -15/+15 graus.
+- Fios curvos com previsoes de pinos em locais vazios, em quatro orientacoes.
+- Verificacao de tinta mesmo quando o ponto ja estava dentro da caixa.
+- Contato observado na foto recuperado quando o filtro do grafo o omitiu,
+  registrando separadamente a falta de confirmacao no esqueleto.
+- Um contato ausente nao apaga o outro contato observado.
+- Pauta preta nao vira terminal de circuito azul.
+- Recalculo de fios com pontos automaticos salvos errados mantem mascara,
+  esqueleto e segmentos inalterados.
+- Edicao manual, preservacao de correcoes e bloqueio de cliques fora da caixa.
+- Persistencia dos fios antes dos terminais e juncoes depois dos terminais.
+- Previews e marcadores recortados para permanecer na caixa.
+
+Os testes antigos que exigiam suprimir TODOS os terminais quando um contato
+faltava foram ajustados ao novo comportamento: preservar os contatos reais.
+O teste de terceiro fio ausente remove agora esse fio tambem da fotografia;
+outro teste verifica explicitamente a recuperacao de fio visivel na foto
+que foi omitido pelo mapa de linhas. Nenhuma coordenada de foto real foi
+incluida no algoritmo de producao.
+
+Os quatro scripts da interface passaram na verificacao de sintaxe JavaScript.
+Os fontes Python passaram na verificacao de sintaxe. O ZIP foi reaberto e
+verificado quanto a integridade, fontes e ausencia de caches/dados/pesos.
+Python 3.12.14, NumPy 2.3.5 e OpenCV 5.0.0, usando dependencias ja existentes.
+
+Esta atualizacao atua sobre os terminais e restaura o processamento dos
+fios. As melhorias anteriores de reconhecimento foram preservadas; a
+inferencia YOLO com pesos reais nao foi reexecutada aqui. As caixas salvas
+foram usadas nas fotos e os testes de inferencia usam previsoes controladas.

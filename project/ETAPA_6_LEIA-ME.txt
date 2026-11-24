@@ -1,0 +1,55 @@
+ETAPA 6 - OCR DE REFERÊNCIAS E VALORES
+
+Como aplicar
+
+Extraia o conteúdo deste ZIP dentro da pasta principal CS5 e permita substituir
+os arquivos de backend, frontend e testes. O ZIP não inclui o modelo .pt, o
+dataset nem os projetos já salvos, portanto esses itens permanecem na sua pasta.
+
+O que foi acrescentado
+
+1. O arquivo backend/ocr.py executa o Tesseract na imagem original.
+2. O OCR tenta reconhecer referências e valores próximos das caixas do YOLO.
+3. Os resultados são associados aos componentes e salvos em components.json.
+4. Quando não existe texto, são criadas referências provisórias, como R1 e C1.
+5. Valores ausentes permanecem vazios. O programa não inventa valores.
+6. A página do projeto permite corrigir referência, tipo e valor manualmente.
+7. Pinos, fios, conexões, ngspice e KiCad não fazem parte desta etapa.
+
+Instalação no Windows
+
+1. Instale as bibliotecas Python do projeto:
+
+   pip install -r requirements.txt
+
+2. Instale o Tesseract OCR para Windows.
+
+3. Se o comando tesseract não for reconhecido, defina antes de iniciar o backend:
+
+   set TESSERACT_CMD=C:\Program Files\Tesseract-OCR\tesseract.exe
+
+4. Inicie o backend na pasta principal do projeto:
+
+   uvicorn backend.main:app --reload
+
+5. Abra o frontend e siga a ordem:
+
+   Reconhecer componentes com YOLO
+   Ler referências e valores
+   Revisar a tabela
+   Salvar correções
+
+Arquivos gerados no projeto
+
+detections.json - caixas e classes do YOLO
+components.json  - referências, tipos, valores e situação da revisão
+
+Testes rápidos
+
+python tests/test_ocr_logic.py
+python tests/test_stage6_structure.py
+
+Observação
+
+O idioma padrão do Tesseract é eng, suficiente para referências eletrônicas.
+Para alterar, defina a variável TESSERACT_LANG antes de iniciar o backend.

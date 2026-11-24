@@ -1,0 +1,72 @@
+ATUALIZAÇÃO V5.31.0 — FALSTAD LOCAL E ESQUEMÁTICO DIGITAL CONECTADO
+
+INSTALAÇÃO
+Feche o programa. Faça backup de backend, frontend e tools.
+Extraia backend, frontend e tools deste ZIP em:
+C:\tc2\Circuit_Scanner_Etapa5_Corrigido\project
+Mescle as pastas e substitua os arquivos incluídos. Preserve projects,
+imagens, banco, modelos treinados, venv e amostras pessoais.
+Extraia também backend\vendor\circuitjs: contém o simulador local.
+Reinicie o servidor e atualize o navegador com Ctrl+F5.
+Fluxo: http://127.0.0.1:8010/workflow
+Projeto 423: http://127.0.0.1:8010/projects/PRJ_0423/workflow
+Versão: http://127.0.0.1:8010/system/version
+Build esperado: 2026-10-08-digital-twin-falstad-v5.31.0
+Este pacote foi preparado e testado em cópias isoladas; ainda não aplicado em C:\tc2.
+
+COMO USAR
+1. Abra o projeto no fluxo e confirme o circuito revisado. Escolha Falstad
+   no campo Simulador. ngspice continua disponível como outra opção.
+   Se um fluxo antigo parar num erro ngspice, use Voltar à revisão anterior,
+   escolha Falstad e continue; suas revisões não precisam ser refeitas.
+2. A área Seu circuito digital e simulação abre automaticamente quando
+   entra na simulação. Falstad ao vivo aparece dentro do mesmo fluxo.
+   Ao selecionar Falstad, o fluxo prepara a importação e segue para Arquivos
+   sem exigir sucesso do cálculo ngspice. Isso não cria um resultado
+   simulation.json fictício: a animação e medições acontecem no navegador.
+3. Clique em Iniciar animação. As cores representam tensões e os pontos,
+   corrente. Passe o cursor sobre os símbolos para conferir medições.
+   Pausar e Restaurar circuito revisado controlam a animação.
+4. Esquemático mostra a versão digital na disposição da imagem. A análise
+   ngspice continua disponível; seus resultados aparecem nesse desenho.
+5. Em Arquivos, gere novamente o esquemático e o ZIP para atualizar os
+   arquivos antigos. A geração usa as posições dos terminais e os fios,
+   mantendo nomes, valores, modelos, polaridades e redes confirmadas.
+   O ZIP inclui circuitjs.txt, circuitjs.json e schematic_layout.json.
+   Abra circuitjs.txt pelo menu Arquivo / Importar de Texto do Falstad.
+   schematic.kicad_sch abre no KiCad com os componentes conectados.
+
+O QUE MUDOU
+- CircuitJS/Falstad oficial incorporado localmente, sem GPU, conta,
+  instalação de Electron ou envio da imagem a um serviço externo.
+  A página importa o circuito pela API JavaScript do simulador.
+- O desenho usa a geometria reconhecida/revisada e as redes confirmadas;
+  componentes não ficam mais enfileirados e separados no esquemático.
+- Componentes adicionados manualmente sem posição original recebem uma
+  área adicional e um aviso. Não inventa posição na imagem.
+- Fios que tocariam terminais de outras redes recebem desvios. Cruzamentos
+  de redes distintas não são transformados em junções por proximidade.
+- Conversão nativa mantém +/-, anodo/catodo, B/C/E, G/D/S e entradas/saída
+  do AOP, incluindo orientação e espelhamento. Etiquetas não criam ciclos
+  de fios ideais que interromperiam o CircuitJS.
+- VCC com tensão explícita alimenta o circuito em relação ao GND. VCC
+  vazio continua sendo uma etiqueta; não inventa tensão. Fontes duplicadas
+  são evitadas e tensões conflitantes na mesma rede são rejeitadas.
+- ngspice só marca concluída uma análise que terminou; saída parcial e
+  interrupção de convergência não aparecem mais como sucesso.
+
+MODELOS E LIMITES
+Falstad usa seus componentes nativos. BJT recebe hFE; MOSFET recebe limiar
+e KP; AOP recebe ganho aberto, com trilhos internos ±15 V. Diodos/LEDs usam
+modelos genéricos. O nome comercial permanece visível, mas não é um
+macromodelo completo de fabricante. O painel Modelos usados no Falstad
+lista as aproximações e as redes abertas. Resistência série, capacitâncias
+parasitas e todos os detalhes do ajuste SPICE não são transferidos.
+Os resultados Falstad e ngspice podem diferir; ambos usam aproximações.
+
+No projeto 423, NET_10 contém apenas VAUTO1.-: o retorno da fonte de 5 V
+está isolado. Confira se é intencional. Falstad anima o circuito com seu
+tratamento interno de nós flutuantes; no ngspice, a cópia testada não
+convergiu após considerar os 12 V explícitos do VCC. A atualização mostra
+essa falha corretamente e não acrescenta uma ligação de terra inexistente.
+A PCB permanece uma placa inicial sem roteamento, para revisão no KiCad.

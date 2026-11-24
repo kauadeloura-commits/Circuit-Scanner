@@ -1,0 +1,93 @@
+{
+  "schema_version": "circuit-1.0",
+  "project_id": "PRJ_0063",
+  "name": "EVAL I03_03",
+  "created_at": "2026-10-19T19:32:31-03:00",
+  "components": [
+    {
+      "id": "D_AUTO1",
+      "type": "diode",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "A",
+        "K"
+      ],
+      "metadata": {
+        "source_component_id": "D_AUTO1",
+        "reference_source": "generated",
+        "value_source": "missing",
+        "review_required": true,
+        "model": {
+          "text": "1N4148",
+          "source": "suggested",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {
+          "forward_voltage": "datasheet",
+          "junction_capacitance": "datasheet"
+        },
+        "parameter_pending": [
+          {
+            "parameter": "forward_voltage",
+            "reason": "only_limit",
+            "message": "O datasheet só informa um limite; informe um valor ou confira a condição.",
+            "bounds": {
+              "unit": "V",
+              "condition": "IF = 10 mA; TA = 25 °C; somente máximo especificado",
+              "min": null,
+              "typ": null,
+              "max": 1
+            }
+          },
+          {
+            "parameter": "junction_capacitance",
+            "reason": "only_limit",
+            "message": "O datasheet só informa um limite; informe um valor ou confira a condição.",
+            "bounds": {
+              "unit": "F",
+              "condition": "VR = 0 V; f = 1 MHz; VHF = 50 mV; TA = 25 °C; somente máximo especificado",
+              "min": null,
+              "typ": null,
+              "max": 4e-12
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "nets": [
+    {
+      "name": "NET_1",
+      "members": [
+        "D_AUTO1.K"
+      ]
+    },
+    {
+      "name": "NET_2",
+      "members": [
+        "D_AUTO1.A"
+      ]
+    }
+  ],
+  "warnings": [
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "D_AUTO1"
+    }
+  ],
+  "confirmed_by_user": false,
+  "status": "draft",
+  "image_independent": true,
+  "source_connectivity_signature": "47e09535bd6885b645bad23c086e17bae7f9dadabd1ede4099eca28f29bb2482",
+  "validation": {
+    "structurally_valid": true,
+    "review_required": true,
+    "component_count": 1,
+    "net_count": 2,
+    "pin_count": 2
+  }
+}

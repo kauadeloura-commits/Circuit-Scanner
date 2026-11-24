@@ -1,0 +1,57 @@
+ATUALIZAÇÃO V5.13.1 — RECONHECIMENTO EM PAPEL E LED/DIODO
+================================================================
+
+O que foi corrigido
+-------------------
+1. Papel cinza, sombra e pautas não são mais contados como se fossem tinta
+   escura do componente durante a validação geométrica.
+2. Indutores desenhados à mão deixam de ser rejeitados por excesso falso de
+   tinta ou baixa proporção de curvas.
+3. Capacitores não polarizados ganham uma segunda leitura por projeção para
+   recuperar placas que o detector de linhas fragmentou.
+4. GND feito à mão aceita pequenas diferenças de tamanho, centralização e
+   espaçamento entre as três barras, mantendo a exigência da haste.
+5. Um diodo com duas setas de emissão é corrigido para LED. Um diodo sem as
+   setas continua sendo diodo.
+6. Uma geometria parcialmente visível só pode sobreviver para revisão quando
+   pelo menos duas vistas da IA concordam e a confiança é suficiente.
+7. Componentes geometricamente confirmados em duas vistas podem ser
+   recuperados entre o limiar interno e o limiar final.
+8. O arquivo detections.json agora registra também candidatos eliminados pelo
+   limiar final, facilitando a investigação de qualquer componente ausente.
+
+Instalação
+----------
+1. Feche o servidor do Circuit Scanner.
+2. Extraia este ZIP na pasta principal do projeto.
+3. Confirme a substituição/mesclagem da pasta backend.
+4. NÃO apague models, real_data, dataset_builds, projects ou o banco de dados.
+5. Inicie o programa normalmente.
+6. Abra o endereço:
+      http://127.0.0.1:8010/system/version
+   O campo build deve mostrar:
+      2026-09-30-handdrawn-recall-led-fix-v5.13.1
+
+Como testar
+-----------
+1. Use novamente a mesma imagem do circuito.
+2. Clique em "Reconhecer e gerar linhas".
+3. Verifique especialmente:
+   - resistor vertical;
+   - indutor;
+   - capacitor não polarizado;
+   - bateria;
+   - GND e VCC;
+   - LED com as duas setas.
+
+Não é necessário refazer o treinamento para testar esta atualização. Ela usa
+o modelo circuit_scanner_yolo.pt que já foi treinado no computador.
+
+Validação realizada
+-------------------
+- 150 testes automatizados aprovados.
+- diodo sem setas permanece diodo;
+- diodo com duas setas é corrigido para LED;
+- pautas isoladas continuam rejeitadas mesmo com confiança 1.00;
+- indutor e capacitor desenhados sobre fundo pautado passam na validação.
+

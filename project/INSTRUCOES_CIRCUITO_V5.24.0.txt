@@ -1,0 +1,51 @@
+ATUALIZAÇÃO V5.24.0 — MODELOS AUTOMÁTICOS E REVISÃO DO CIRCUITO
+
+Feche o programa e faça backup das pastas backend e frontend.
+Extraia backend, frontend e tools deste ZIP em:
+C:\tc2\Circuit_Scanner_Etapa5_Corrigido\project
+Mescle as pastas, substituindo os arquivos presentes no ZIP.
+Preserve projetos, imagens, banco de dados e modelos treinados.
+Reinicie o programa e recarregue o navegador com Ctrl+F5.
+Abra http://127.0.0.1:8010/workflow
+Confira http://127.0.0.1:8010/system/version
+Build esperado: 2026-10-06-circuit-models-netlist-v5.24.0
+
+Em projetos existentes, abra a etapa 5 Circuito e salve a revisão.
+Não é necessário refazer reconhecimento, fios, terminais ou OCR para
+aplicar esta correção de modelos e parâmetros ao circuito salvo.
+
+CORREÇÕES
+- Parâmetros vazios de transistores, MOSFETs e amplificadores recebem
+  estimativas. Modelos vazios recebem uma referência sugerida da classe.
+  Valores digitados ou lidos pelo OCR têm prioridade sobre estimativas.
+- Todos os MOSFETs cadastrados possuem limiar e coeficiente de corrente
+  utilizáveis. VGS(th) e gm sozinhos não substituem o coeficiente KP.
+  Quando necessário, KP é ajustado a partir de RDS(on) e VGS de ensaio,
+  com faixa, condição e origem identificadas.
+- Dados de IRLZ44N, IRF9540N, IRFZ44N e IRF4905 foram completados com
+  as tabelas oficiais do fabricante. RDS máximo permanece identificado
+  como limite; o KP derivado dele é uma aproximação, não um típico publicado.
+- Modelos desconhecidos continuam com o código informado. Estimativas
+  de uma referência da mesma classe são identificadas como referências,
+  sem atribuir o datasheet de outro componente ao código informado.
+- Desmarcar explicitamente a opção de datasheet mantém o campo manual.
+  Se faltar um parâmetro essencial após essa escolha, informe-o ou
+  reative a estimativa. Valores inválidos não são substituídos silenciosamente.
+- Valores de resistência, capacitância e tensão das fontes precisam
+  continuar correspondendo ao circuito real; não são inventados.
+
+ETAPA 5 — CIRCUITO
+Edição em linhas: nome, tipo, modelo, parâmetros, valor/unidade e pinos/redes.
+Os parâmetros ficam disponíveis em Ajustar parâmetros e datasheet.
+Há busca por nome, tipo ou modelo e uma lista das conexões em edição.
+Na mesma página, confira a netlist SPICE e a tabela de modelos e parâmetros.
+A tabela relaciona nomes do circuito aos identificadores SPICE, e a lista
+de nós relaciona nomes das redes a n1, n2, ... e terra 0.
+A prévia acompanha as edições, sem salvar, confirmar ou simular sozinha.
+Salve, confira os avisos e confirme para continuar o fluxo.
+O cabeçalho permanece fixo e a página usa um único scroll.
+
+As simulações de semicondutores continuam usando modelos aproximados.
+Este pacote é cumulativo, incluindo as melhorias anteriores de interface,
+OCR por unidades e bloqueio de caixas totalmente contidas em outras.
+O ZIP foi preparado no workspace; não foi instalado em C:\tc2.

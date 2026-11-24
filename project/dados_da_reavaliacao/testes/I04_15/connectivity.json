@@ -1,0 +1,225 @@
+{
+  "schema_version": "stage10-connectivity-1.0",
+  "created_at": "2026-10-19T19:34:00-03:00",
+  "project_id": "PRJ_0095",
+  "source_signature": "8fabe1020a2344f1bbdb692496cea0b06889d8bcfe8ad60e4565179d4719fbce",
+  "components": [
+    {
+      "component_id": "LED_AUTO1",
+      "detection_id": "DET_001",
+      "type": "led",
+      "class_confidence": 0.916479,
+      "bbox": {
+        "x1": 52.76,
+        "y1": 0.07,
+        "x2": 316.52,
+        "y2": 227.25,
+        "width": 263.76,
+        "height": 227.18,
+        "center_x": 184.64,
+        "center_y": 113.66
+      },
+      "reference": {
+        "text": "LED_AUTO1",
+        "source": "generated",
+        "confidence": null
+      },
+      "value": {
+        "text": "",
+        "normalized": null,
+        "unit": null,
+        "source": "not_applicable",
+        "confidence": null
+      },
+      "ocr_tokens": [],
+      "review_required": true,
+      "review_reasons": [
+        "referencia_nao_lida"
+      ],
+      "model": {
+        "text": "",
+        "source": "missing",
+        "confidence": null
+      },
+      "electrical_parameters": {},
+      "parameter_policy": {},
+      "parameter_pending": [],
+      "learned_terminal_geometry": {
+        "points": {
+          "A": {
+            "x": 175.929,
+            "y": 39.169
+          },
+          "K": {
+            "x": 124.907,
+            "y": 207.789
+          }
+        },
+        "box_confidence": 0.8918375372886658,
+        "keypoint_confidence": 0.9187013208866119,
+        "keypoint_confidences": {
+          "A": 0.902744710445404,
+          "K": 0.9346579313278198
+        },
+        "pad_ratio": 0.24,
+        "score": 0.8193323235233603,
+        "accepted": true,
+        "component_type": "led",
+        "source": "trained_all_component_terminal_model",
+        "review_required": false
+      },
+      "electrical_axis_geometry": {
+        "source": "opposite_collinear_wire_pair",
+        "vertical_pair_score": 272.716,
+        "horizontal_pair_score": 205.876,
+        "top_x": 156.5,
+        "bottom_x": 144.5,
+        "left_y": null,
+        "right_y": null,
+        "pair_gap": 96.0,
+        "pair_darkness": 148.242
+      },
+      "orientation": {
+        "axis": "vertical",
+        "confidence": 0.965,
+        "source": "opposite_collinear_wire_pair",
+        "angle_degrees": 93.02,
+        "angle_confidence": 0.965,
+        "angle_source": "opposite_border_electrical_axis"
+      },
+      "terminals": [
+        {
+          "pin_id": "LED_AUTO1.A",
+          "pin": "A",
+          "electrical_role": "anode",
+          "terminal_side": "top",
+          "index": 1,
+          "position": {
+            "x": 148.0,
+            "y": 6.0
+          },
+          "search_radius_px": 10,
+          "source": "wire_contact_inside_component_bbox",
+          "connection_snap": {
+            "applied": true,
+            "mode": "junction_center"
+          },
+          "confidence": 0.965,
+          "original_ink_confirmed": true,
+          "wire_contact_confirmed": true,
+          "stage8_context_distance_px": 4.0,
+          "stage8_context_confirmed": true
+        },
+        {
+          "pin_id": "LED_AUTO1.K",
+          "pin": "K",
+          "electrical_role": "cathode",
+          "terminal_side": "bottom",
+          "index": 2,
+          "position": {
+            "x": 141.0,
+            "y": 227.0
+          },
+          "search_radius_px": 8,
+          "source": "wire_contact_inside_component_bbox",
+          "connection_snap": {
+            "applied": true,
+            "mode": "junction_center"
+          },
+          "confidence": 0.965,
+          "bbox_constrained": true,
+          "original_ink_confirmed": true,
+          "wire_contact_confirmed": true,
+          "stage8_context_distance_px": 2.0,
+          "stage8_context_confirmed": true
+        }
+      ],
+      "terminal_detection": {
+        "status": "estimated",
+        "pin_count": 2,
+        "review_required": false,
+        "review_reasons": [],
+        "method": "transistor_fork_or_two_terminal_electrical_axis_plus_local_image_geometry",
+        "unobserved_pins": [],
+        "contact_method": "all_classes_original_ink_inside_bbox_after_wires"
+      }
+    }
+  ],
+  "nets": [
+    {
+      "wire_ids": [
+        "WIRE_0001"
+      ],
+      "terminal_refs": [
+        "LED_AUTO1:K"
+      ],
+      "labels": [],
+      "name": "NET_1",
+      "is_ground": false,
+      "member_count": 1
+    },
+    {
+      "wire_ids": [],
+      "terminal_refs": [
+        "LED_AUTO1:A"
+      ],
+      "labels": [],
+      "name": "NET_2",
+      "is_ground": false,
+      "member_count": 1
+    }
+  ],
+  "terminal_connections": [
+    {
+      "terminal_ref": "LED_AUTO1:A",
+      "component_id": "LED_AUTO1",
+      "pin": "A",
+      "electrical_role": "anode",
+      "position": {
+        "x": 148.0,
+        "y": 6.0
+      },
+      "status": "unconnected",
+      "wire_id": null,
+      "distance_px": null,
+      "net": "NET_2"
+    },
+    {
+      "terminal_ref": "LED_AUTO1:K",
+      "component_id": "LED_AUTO1",
+      "pin": "K",
+      "electrical_role": "cathode",
+      "position": {
+        "x": 141.0,
+        "y": 227.0
+      },
+      "status": "attached",
+      "wire_id": "WIRE_0001",
+      "distance_px": 4.0,
+      "net": "NET_1"
+    }
+  ],
+  "warnings": [
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "LED_AUTO1"
+    },
+    {
+      "code": "unconnected_pin",
+      "message": "Pino sem fio externo confirmado.",
+      "terminal_ref": "LED_AUTO1:A"
+    }
+  ],
+  "net_count": 2,
+  "terminal_count": 2,
+  "attached_terminal_count": 1,
+  "unconnected_terminal_count": 1,
+  "ambiguous_terminal_count": 0,
+  "wire_only_net_count": 0,
+  "review_count": 2,
+  "recovered_wire_bridges": [],
+  "recovered_observed_leads": [],
+  "recovered_coincident_contacts": [],
+  "criterion_met": false
+}

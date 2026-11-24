@@ -1,0 +1,41 @@
+VALIDAÇÃO V5.16.3 — FILTRO DE LETRAS E NÚMEROS
+
+O filtro foi executado nas fotos originais e nas caixas salvas dos projetos.
+PRJ_0412: 31 caixas anteriores, 27 preservadas. As quatro removidas foram
+confirmadas visualmente: os valores 10nF, 220Ω e 10kΩ tratados como
+indutores, e letras impressas do papel tratadas como uma fonte DC.
+O indutor real e as duas fontes DC desenhadas foram preservados.
+
+Regressão em fotos: PRJ_0389, PRJ_0393, PRJ_0395, PRJ_0398, PRJ_0399,
+PRJ_0406 e PRJ_0411. As 115 caixas desses sete projetos foram preservadas
+pelo filtro. Isso não significa que todas as caixas anteriores sejam
+corretas: é uma verificação de preservação, não uma avaliação calibrada
+de precisão/recall do detector inteiro.
+
+Oito novos testes passaram, incluindo múltiplos casos por teste:
+- valores e referências em quatro orientações, com confiança 1 e consenso;
+- zeros, O, 8, B e VCC não podem formar uma fonte sem suas ligações;
+- grupos isolados ABC123 recusados nas 15 classes estruturais;
+- indutor e fonte verdadeiros com valores próximos, em seis rotações;
+- números e letras isolados removidos pelo filtro OCR;
+- OCR lendo uma fonte real como 0 preserva o símbolo;
+- correções manuais preservadas;
+- fios dobrados perto de um indutor preservam seu corpo real.
+
+Suíte completa: 323 testes, 321 passaram, duas falhas já existentes:
+1. test_previsoes_fracas_repetidas_nao_sao_resgatadas: a cópia de trabalho
+   não contém dataset/classes.json; a classe mosfet_n esperada fica ausente.
+2. test_diodo_com_duas_setas_e_corrigido_para_led: a fixture das setas
+   produz 0 correções nesta versão do OpenCV, quando espera 1.
+Essas falhas foram observadas antes desta atualização.
+
+Limite da validação: não foi possível executar novamente o YOLO completo
+neste ambiente. O carregamento da biblioteca Torch e o executável do
+ambiente instalado receberam “Acesso negado” do Windows. Não foi instalado
+nenhum pacote nem alterado o ambiente ativo. A validação nas fotos usou
+as detecções anteriores e executou o filtro novo sobre os pixels originais.
+
+Integridade do pacote: sintaxe dos arquivos Python e conteúdo do ZIP
+verificados; apenas recognition.py, ocr.py, main.py e os dois novos módulos
+mudaram em relação à v5.16.2. As funções anteriores de extração de fios e
+as correções de terminais são idênticas à versão anterior.

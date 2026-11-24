@@ -1,0 +1,66 @@
+ATUALIZAÇÃO V5.12.0 — TREINAMENTO IA-FIRST PARA DESENHOS À MÃO
+
+VERSÃO
+
+Abra http://127.0.0.1:8010/system/version e confira:
+2026-09-30-ai-first-handwritten-v5.12.0
+
+POR QUE O RESULTADO ANTERIOR ESTAVA ERRADO
+
+O programa executava muitas versões da mesma fotografia com um limiar interno
+muito baixo. O mesmo erro era repetido e o consenso podia transformar uma
+previsão comum em confiança 1.00. Além disso, cada treino continuava em cima do
+último modelo, inclusive quando esse modelo já havia aprendido falsos positivos.
+
+O QUE MUDOU
+
+- A confiança mostrada nunca ultrapassa a melhor confiança real produzida pela IA.
+- Foi removida a pirâmide de dezenas de recortes sobrepostos em imagens pequenas.
+- A geometria não inventa mais componentes; apenas valida caixas propostas pela IA.
+- Cada caixa anotada gera um recorte focado para o símbolo ocupar uma escala útil.
+- Regiões da própria folha com pautas, textos e fios, mas sem componente, viram
+  negativos difíceis de treinamento.
+- Os próximos treinos partem de uma base estável, não de um modelo degradado.
+- O novo peso precisa alcançar precisão >= 0,60, recall >= 0,35 e mAP50 >= 0,45,
+  além de não piorar os falsos positivos, para substituir o modelo ativo.
+
+PROCEDIMENTO RECOMENDADO — FAÇA NESTA ORDEM
+
+1. Feche o programa.
+2. Extraia o ZIP na pasta principal do projeto e substitua os arquivos.
+3. Inicie o programa.
+4. Abra http://127.0.0.1:8010/component-trainer
+5. Se o modelo atual ainda estiver gerando as caixas falsas da imagem enviada,
+   clique UMA VEZ em "Restaurar modelo anterior".
+6. Teste rapidamente uma imagem. Se o modelo restaurado estiver mais coerente,
+   clique em "Fixar modelo atual como base estável".
+7. Não é necessário gerar novamente a base sintética.
+8. Clique em "Montar dataset misto" usando:
+   - variações reais: 2
+   - negativos de texto: 450
+9. Clique em "Iniciar treinamento" usando:
+   - épocas: 80
+   - imagem: 640
+   - batch: 8
+   - paciência: 20
+   - dispositivo: GPU 0, se houver NVIDIA configurada; caso contrário, CPU
+10. Aguarde o estado final:
+    - completed: o modelo novo foi aprovado e ativado.
+    - rejected: ele piorou a qualidade e NÃO foi ativado; o anterior foi preservado.
+11. Faça novamente o reconhecimento na mesma imagem usada para comparar.
+
+IMPORTANTE SOBRE AS ANOTAÇÕES
+
+As caixas devem envolver somente o símbolo do componente, de forma justa. Não
+inclua trechos longos de fio, outros componentes ou textos como R1, 10k e BC547.
+Uma caixa grande ensinaria justamente o erro visto na captura: vários símbolos e
+fios sendo tratados como um único MOSFET, bateria ou capacitor.
+
+Nenhuma imagem, anotação, circuito CAD ou correção de terminais é apagada.
+
+VALIDAÇÃO
+
+Foram aprovados 143 testes automatizados. Eles incluem: confiança não inflada,
+rejeição de previsões fracas repetidas, criação de recortes positivos focados,
+criação de negativos reais da folha, proteção do modelo ativo e todas as etapas
+anteriores de terminais, linhas e junções.

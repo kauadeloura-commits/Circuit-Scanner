@@ -1,0 +1,62 @@
+ATUALIZACAO V5.15.0 — ETAPAS 10 E 11
+
+Implementacao conforme roteiro_completo_producao_TC_circuit_scanner.docx.
+
+ETAPA 10 — CONSTRUIR CONECTIVIDADE
+Agrupa os segmentos ligados e associa os pinos as redes NET_1, NET_2, GND,
+etc. Usa as conexoes resolvidas na etapa 9. Cruzamentos sem ponto conservam
+caminhos separados; uma juncao pendente nao une seus candidatos.
+
+Contatos curtos e pequenas interrupcoes entre segmentos so sao recuperados
+quando existe continuidade de tinta na foto original, com o filtro de pautas.
+O corpo de um componente nao funciona como ponte entre seus pinos.
+Simbolos de terra compartilham GND. Uma classificacao VCC isolada nao une
+saidas distantes: isso exige um rotulo de rede explicito.
+
+Pinos sem contato e casos ambiguos ficam registrados como pendencias.
+O resultado inclui connectivity.json e connectivity.png, com as redes
+coloridas e a lista dos pinos associados. A associacao nao muda a posicao
+dos terminais nem recalcula os fios a partir dos terminais finais.
+
+ETAPA 11 — GERAR CIRCUIT.JSON
+Produz a representacao interna com components e nets, incluindo id, type,
+value e pins, e membros como R1.1, V1.+ e Q1.B.
+Preserva identificacoes e valores disponiveis. Se a referencia ainda for
+DET_..., atribui um nome logico unico e registra essa origem. Valores
+ausentes permanecem null. Nada e preenchido com um valor presumido.
+
+O arquivo nao depende de coordenadas, caixas, pixels ou da foto. A etapa 11
+pode ser executada sem a imagem depois de construir a conectividade.
+O validador verifica nomes unicos, pinos existentes e um unico destino por
+pino. O formato esta documentado em backend/circuit.schema.json.
+
+O circuito e um rascunho valido: confirmed_by_user=false. Pendencias de
+reconhecimento, valores, ligacoes abertas e possiveis curtos acompanham o
+JSON. A confirmacao humana pertence a etapa 12 do roteiro.
+
+COMO APLICAR
+1. Feche o servidor e guarde uma copia do backend atual.
+2. Extraia a pasta backend deste ZIP na pasta principal do programa,
+   mesclando e substituindo os arquivos. Inclua todos os novos modulos.
+3. Reinicie o programa. Em http://127.0.0.1:8010/system/version, confira:
+   2026-10-01-connectivity-circuit-json-v5.15.0
+4. No fluxo do projeto, abra "Redes e circuit.json".
+5. Para resultados ja calculados, clique em "Construir redes — etapa 10"
+   e depois "Gerar circuit.json — etapa 11". Use "Baixar circuit.json".
+6. Em uma nova deteccao, ou ao refazer fios e terminais, as duas etapas
+   sao geradas automaticamente depois das juncoes, quando os dados permitem.
+
+Alterar terminais ou juncoes invalida a conectividade e o circuito antigos.
+A tela e o download so apresentam arquivos compativeis com o estado atual.
+Reconstrua as redes e o JSON depois de uma correcao manual de terminal.
+
+Arquivos novos por projeto: connectivity.json, connectivity.png, circuit.json.
+Nova tela: /projects/ID/circuit-view.
+Rotas: POST /projects/ID/connectivity; POST e GET /projects/ID/circuit;
+GET /projects/ID/circuit/download; GET /projects/ID/stage10-status e
+GET /projects/ID/stage11-status.
+
+Pacote cumulativo preparado em copia de trabalho. Nao altera o programa
+ativo, nao inclui banco de dados, modelos ou imagens de projetos.
+As correcoes anteriores de fios, pautas, juncoes e polaridades estao inclusas.
+Consulte VALIDACAO_ETAPAS_10_E_11_V5.15.0.txt para os limites da verificacao.

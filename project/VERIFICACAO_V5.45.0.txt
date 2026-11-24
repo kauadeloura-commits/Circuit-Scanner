@@ -1,0 +1,25 @@
+VERIFICAÇÃO 5.45.0
+
+159 testes direcionados passaram após a revisão, incluindo bloqueio real
+do Windows, curvas/junções, contatos próximos, setas/pontos, OCR e fotos anteriores.
+A bateria geral anterior executou 291 testes; as falhas identificadas foram
+corrigidas e verificadas novamente nas famílias afetadas. As duas expectativas
+antigas de tamanho fixo do banco foram atualizadas para os 16 exemplos adicionais.
+
+PRJ_0443, em cópia, com novas inferências YOLO: 7 símbolos corretos, 5 V,
+R1=4700 Ω, R2=3300 Ω, R3=22000 Ω, 6 redes com terminais, nenhum pino isolado.
+As duas junções correspondem aos pontos preenchidos da fotografia.
+Esta foto forneceu exemplos de calibração de OCR; seu resultado não representa
+uma medida independente de precisão. PRJ_0425, PRJ_0428 e PRJ_0435 ficaram fora
+desse acréscimo e foram usados nas verificações de regressão.
+
+Foi treinado um candidato de OCR por 65 épocas, com ampliações de inclinação,
+proporção e espessura. Embora acertasse os dígitos reservados das folhas, piorou
+a foto independente PRJ_0435. O candidato foi rejeitado. Os pesos YOLO e os pesos
+OCR anteriores foram preservados; os filtros de YOLO e a comparação de referências
+foram corrigidos. Não se trata de novo treinamento de pesos YOLO.
+
+Execução de reconhecimento: 40,405 s; OCR: 10,974 s. Outra execução com perfil
+levou 29,072 s em fios/terminais/junções. Testes sob carga de CPU, sem GPU.
+Não comprovam processamento completo em 30 segundos nem ausência universal de
+erros de manuscrito. Edicões manuais e a revisão visual continuam disponíveis.

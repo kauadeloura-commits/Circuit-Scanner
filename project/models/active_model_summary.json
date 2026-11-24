@@ -1,0 +1,348 @@
+{
+  "model_version": "5.46.0-supervised-text-negatives",
+  "completed_at": "2026-10-14",
+  "model_file": "models/circuit_scanner_yolo.pt",
+  "model_sha256": "dc4d523528894e0cfd246611ac2c45953504a5439eeeef5374030752ebf16ebd",
+  "previous_model_sha256": "4d98de590a6eb19b59350d9046345cad4b6a8590dc76432fa63a45ea1b7314a3",
+  "architecture": "YOLO26n",
+  "device": "cpu",
+  "class_mapping": {
+    "0": "resistor",
+    "1": "capacitor",
+    "2": "capacitor_polarized",
+    "3": "diode",
+    "4": "led",
+    "5": "inductor",
+    "6": "source_dc",
+    "7": "battery",
+    "8": "gnd",
+    "9": "vcc",
+    "10": "transistor_npn",
+    "11": "transistor_pnp",
+    "12": "mosfet_n",
+    "13": "mosfet_p",
+    "14": "opamp"
+  },
+  "training": {
+    "method": "head_refinement_with_positive_replay_and_text_negatives_then_validation_selected_interpolation",
+    "actual_epochs": 7,
+    "selected_checkpoint_epoch": 2,
+    "original_parameter_fraction": 0.75,
+    "trained_parameter_fraction": 0.25,
+    "train_images": 357,
+    "validation_images": 207,
+    "test_images": 110,
+    "seed": 546
+  },
+  "validation_before": {
+    "metrics/precision(B)": 0.9388471104425873,
+    "metrics/recall(B)": 0.8642658934814731,
+    "metrics/mAP50(B)": 0.8998674517124878,
+    "metrics/mAP50-95(B)": 0.555565988949549,
+    "fitness": 0.555565988949549
+  },
+  "validation_after": {
+    "metrics/precision(B)": 0.9331080408879067,
+    "metrics/recall(B)": 0.861954780168053,
+    "metrics/mAP50(B)": 0.900374275362356,
+    "metrics/mAP50-95(B)": 0.5518870584286039,
+    "fitness": 0.5518870584286039
+  },
+  "test_before": {
+    "metrics": {
+      "metrics/precision(B)": 0.9574745409472398,
+      "metrics/recall(B)": 0.9400517493435917,
+      "metrics/mAP50(B)": 0.9690014852604045,
+      "metrics/mAP50-95(B)": 0.6252212724662474,
+      "fitness": 0.6252212724662474
+    },
+    "per_class": [
+      {
+        "id": 0,
+        "name": "resistor",
+        "precision": 0.9719119979817064,
+        "recall": 0.9642857142857143,
+        "map50": 0.952272727272727,
+        "map50_95": 0.5353009902607425
+      },
+      {
+        "id": 1,
+        "name": "capacitor",
+        "precision": 0.9703968084521557,
+        "recall": 0.9107005300921868,
+        "map50": 0.9554069340834047,
+        "map50_95": 0.5625260898924045
+      },
+      {
+        "id": 2,
+        "name": "capacitor_polarized",
+        "precision": 0.9272214681608926,
+        "recall": 0.8421052631578947,
+        "map50": 0.9102310924369748,
+        "map50_95": 0.6054589476380398
+      },
+      {
+        "id": 3,
+        "name": "diode",
+        "precision": 1.0,
+        "recall": 0.7586134212497567,
+        "map50": 0.9855502392344497,
+        "map50_95": 0.6619554457522556
+      },
+      {
+        "id": 4,
+        "name": "led",
+        "precision": 0.8724163719167416,
+        "recall": 0.9230769230769231,
+        "map50": 0.9126923076923077,
+        "map50_95": 0.6850214452214451
+      },
+      {
+        "id": 5,
+        "name": "inductor",
+        "precision": 0.9689099724015385,
+        "recall": 0.9523809523809523,
+        "map50": 0.993181818181818,
+        "map50_95": 0.6485348781937017
+      },
+      {
+        "id": 6,
+        "name": "source_dc",
+        "precision": 0.97200518218803,
+        "recall": 1.0,
+        "map50": 0.995,
+        "map50_95": 0.6380795967400914
+      },
+      {
+        "id": 7,
+        "name": "battery",
+        "precision": 0.9615283881649236,
+        "recall": 1.0,
+        "map50": 0.995,
+        "map50_95": 0.6731110837438424
+      },
+      {
+        "id": 8,
+        "name": "gnd",
+        "precision": 0.9677698411328569,
+        "recall": 0.8703550685865156,
+        "map50": 0.9420067007380434,
+        "map50_95": 0.5034552919101817
+      },
+      {
+        "id": 9,
+        "name": "vcc",
+        "precision": 0.9475342371068377,
+        "recall": 0.9782608695652174,
+        "map50": 0.9632637925996761,
+        "map50_95": 0.5076300793669308
+      },
+      {
+        "id": 10,
+        "name": "transistor_npn",
+        "precision": 1.0,
+        "recall": 0.9312840012883713,
+        "map50": 0.9725,
+        "map50_95": 0.698817216117216
+      },
+      {
+        "id": 11,
+        "name": "transistor_pnp",
+        "precision": 0.9520383857380975,
+        "recall": 0.9928061005000481,
+        "map50": 0.9783333333333332,
+        "map50_95": 0.5626320701357466
+      },
+      {
+        "id": 12,
+        "name": "mosfet_n",
+        "precision": 0.9269766987397452,
+        "recall": 1.0,
+        "map50": 0.995,
+        "map50_95": 0.6729280538302277
+      },
+      {
+        "id": 13,
+        "name": "mosfet_p",
+        "precision": 0.9660376207263074,
+        "recall": 1.0,
+        "map50": 0.995,
+        "map50_95": 0.6988661210206863
+      },
+      {
+        "id": 14,
+        "name": "opamp",
+        "precision": 0.9573711414987623,
+        "recall": 0.9769073959702946,
+        "map50": 0.9895833333333335,
+        "map50_95": 0.7240017771701983
+      }
+    ],
+    "text_only_pages": 83,
+    "raw_false_detections": 3,
+    "pipeline_false_detections": 0,
+    "negative_details": [
+      {
+        "file": "text_only_012.jpg",
+        "raw": 1,
+        "accepted": 0
+      },
+      {
+        "file": "text_only_015.jpg",
+        "raw": 1,
+        "accepted": 0
+      },
+      {
+        "file": "text_only_042.jpg",
+        "raw": 1,
+        "accepted": 0
+      }
+    ]
+  },
+  "test_after": {
+    "metrics": {
+      "metrics/precision(B)": 0.956135930020281,
+      "metrics/recall(B)": 0.9375705917904155,
+      "metrics/mAP50(B)": 0.9694549311720242,
+      "metrics/mAP50-95(B)": 0.6214715641427329,
+      "fitness": 0.6214715641427329
+    },
+    "per_class": [
+      {
+        "id": 0,
+        "name": "resistor",
+        "precision": 0.9684151129628024,
+        "recall": 0.9642857142857143,
+        "map50": 0.9526363636363633,
+        "map50_95": 0.5305037238325281
+      },
+      {
+        "id": 1,
+        "name": "capacitor",
+        "precision": 0.9591586851665793,
+        "recall": 0.9166666666666666,
+        "map50": 0.9594425675675677,
+        "map50_95": 0.564076280867172
+      },
+      {
+        "id": 2,
+        "name": "capacitor_polarized",
+        "precision": 0.9391683452597256,
+        "recall": 0.8133573637181768,
+        "map50": 0.9060644257703081,
+        "map50_95": 0.6059904386392237
+      },
+      {
+        "id": 3,
+        "name": "diode",
+        "precision": 1.0,
+        "recall": 0.7727059551967536,
+        "map50": 0.9829186602870814,
+        "map50_95": 0.6346029545803517
+      },
+      {
+        "id": 4,
+        "name": "led",
+        "precision": 0.8501886224753952,
+        "recall": 0.9230769230769231,
+        "map50": 0.9126923076923077,
+        "map50_95": 0.6692548717948718
+      },
+      {
+        "id": 5,
+        "name": "inductor",
+        "precision": 0.9686914361954162,
+        "recall": 0.9523809523809523,
+        "map50": 0.993181818181818,
+        "map50_95": 0.6533291035353536
+      },
+      {
+        "id": 6,
+        "name": "source_dc",
+        "precision": 0.9440953641411107,
+        "recall": 1.0,
+        "map50": 0.995,
+        "map50_95": 0.6327237556561085
+      },
+      {
+        "id": 7,
+        "name": "battery",
+        "precision": 0.9644403066500083,
+        "recall": 1.0,
+        "map50": 0.995,
+        "map50_95": 0.6678150793650793
+      },
+      {
+        "id": 8,
+        "name": "gnd",
+        "precision": 0.9528465024962138,
+        "recall": 0.8786333239842229,
+        "map50": 0.9424001963077693,
+        "map50_95": 0.5049682916788567
+      },
+      {
+        "id": 9,
+        "name": "vcc",
+        "precision": 0.9515828403790727,
+        "recall": 0.9782608695652174,
+        "map50": 0.9650238600212091,
+        "map50_95": 0.5090208632253487
+      },
+      {
+        "id": 10,
+        "name": "transistor_npn",
+        "precision": 1.0,
+        "recall": 0.922964534892291,
+        "map50": 0.9741304347826086,
+        "map50_95": 0.6946076961685658
+      },
+      {
+        "id": 11,
+        "name": "transistor_pnp",
+        "precision": 0.9516982603582699,
+        "recall": 0.985663467523669,
+        "map50": 0.9783333333333332,
+        "map50_95": 0.5529959211145169
+      },
+      {
+        "id": 12,
+        "name": "mosfet_n",
+        "precision": 0.9240892393502905,
+        "recall": 1.0,
+        "map50": 0.995,
+        "map50_95": 0.683361801242236
+      },
+      {
+        "id": 13,
+        "name": "mosfet_p",
+        "precision": 0.9676642348693281,
+        "recall": 1.0,
+        "map50": 0.995,
+        "map50_95": 0.6961182731394622
+      },
+      {
+        "id": 14,
+        "name": "opamp",
+        "precision": 1.0,
+        "recall": 0.9555631055656464,
+        "map50": 0.995,
+        "map50_95": 0.722704407301318
+      }
+    ],
+    "text_only_pages": 83,
+    "raw_false_detections": 1,
+    "pipeline_false_detections": 0,
+    "negative_details": [
+      {
+        "file": "text_only_042.jpg",
+        "raw": 1,
+        "accepted": 0
+      }
+    ]
+  },
+  "text_guard_models": [
+    "backend/handwriting_references/text_component_classifier.npz",
+    "backend/handwriting_references/text_context_classifier.npz"
+  ],
+  "assessment_note": "Fonte nova usada apenas no treino. Fontes de validação e teste pertencem a famílias distintas; métricas não garantem ausência universal de erros."
+}

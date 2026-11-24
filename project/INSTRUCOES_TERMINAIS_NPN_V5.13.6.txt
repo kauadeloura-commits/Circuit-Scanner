@@ -1,0 +1,54 @@
+ATUALIZACAO V5.13.6 - TERMINAIS NPN NOS FIOS REAIS
+================================================
+
+Pacote cumulativo com a pasta backend completa, incluindo as correcoes de
+cor da tinta da v5.13.4 e polaridade, opamp e MOSFET da v5.13.5.
+
+CORRECAO
+--------
+Na foto testada, a barra da base do NPN era horizontal. O refinamento antigo
+confundia as pautas do caderno com os fios e atribuía B/C em locais errados.
+O novo caminho exclusivo para NPN identifica a barra, os dois ramos e os
+tres fios externos. B pertence ao fio que chega a barra; E pertence ao ramo
+com a seta; C pertence ao ramo restante. Rotacao e espelhamento nao fixam
+o emissor em um lado da tela. Os pontos usam pixels do traco, com o mapa
+de fios da etapa 8 como contexto, sem usar o centro de uma pauta como pino.
+
+A referencia de cor dos componentes e prioritaria. Se ela fragmentar as
+bordas de uma foto inclinada, a silhueta original ajuda a ler a geometria,
+mas os contatos ainda precisam pertencer a tinta aprovada.
+
+O PNP conserva o caminho anterior. Correcoes manuais sao preservadas.
+Seta ausente ou conflito entre classe e sentido da seta exigem revisao.
+Simbolos cuja geometria nao pode ser comprovada usam o refinamento anterior;
+essa atualizacao nao garante o reconhecimento de todo desenho ilegivel.
+
+COMO APLICAR
+------------
+1. Feche o servidor do Circuit Scanner e guarde uma copia do backend atual.
+2. Extraia a pasta backend deste ZIP na pasta principal do programa,
+   mesclando e substituindo os arquivos existentes. Inclua os novos arquivos
+   npn_wire_contacts.py e test_npn_wire_contacts.py dentro de backend.
+3. Inicie o programa. Em http://127.0.0.1:8010/system/version, confira:
+   2026-09-30-npn-original-ink-wire-contacts-v5.13.6
+4. Recalcule os TERMINAIS do projeto e aguarde o calculo automatico dos FIOS.
+   O posicionamento final do NPN e refinado depois dos fios, na etapa 8.
+   Confira os terminais e as juncoes antes de consolidar as ligacoes.
+   Apenas reabrir a imagem nao substitui os pontos antigos ja salvos.
+
+Nao e necessario retreinar nem anexar o arquivo novamente. O ZIP nao inclui
+models, projects, database, real_data ou datasets. A entrega foi preparada
+em uma copia de trabalho e nao foi instalada no programa ativo.
+
+CONFERENCIA
+-----------
+Na foto dos projetos PRJ_0394/0395, o NPN DET_010 fica com:
+B (497,973), C (593,1052), E (412,1110), todos sobre o traco real.
+As coordenadas correspondem a foto original de 900 x 1600 pixels.
+O PNP e os demais componentes mantiveram exatamente o resultado anterior
+nas comparacoes com o mesmo mapa de fios.
+
+terminals.json registra source=stage8_original_ink_npn_contact,
+original_ink_confirmed e stage8_context_distance_px nos novos contatos.
+transistor_geometry registra a barra, a evidencia de seta e o passe de imagem.
+Consulte VALIDACAO_TERMINAIS_NPN_V5.13.6.txt para os testes e seus limites.

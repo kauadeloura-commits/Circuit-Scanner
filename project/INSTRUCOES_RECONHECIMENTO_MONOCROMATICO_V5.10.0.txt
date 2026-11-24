@@ -1,0 +1,76 @@
+RECONHECIMENTO MONOCROMÁTICO UNIVERSAL — V5.10.0
+
+OBJETIVO
+Aplicar o reconhecimento preto e branco a qualquer classe registrada em
+dataset/classes.json, sem manter uma lista fixa de componentes no código.
+
+CLASSES ATUAIS COBERTAS
+Resistor, capacitor não polarizado, capacitor polarizado, diodo, LED, indutor,
+fonte DC, bateria, GND, VCC, transistor NPN, transistor PNP, MOSFET N, MOSFET P
+e amplificador operacional genérico.
+
+O QUE MUDOU NO RECONHECIMENTO
+- Quatro vistas automáticas: CLAHE, Otsu, limiar adaptativo e normalização da
+  espessura dos traços.
+- Pirâmide de três tamanhos para ampliar componentes pequenos.
+- Resgate de baixa confiança usa dinamicamente todas as classes de
+  dataset/classes.json.
+- Classes acrescentadas no futuro entram automaticamente após o novo modelo
+  ser treinado com o mesmo mapa de classes.
+- Inferência dos blocos é executada em lotes para evitar demora excessiva e a
+  tela presa em "Carregando".
+- Filtros geométricos anteriores continuam ativos contra letras, pautas e
+  falsos componentes.
+- A proposta geométrica do transistor não é bloqueada por uma caixa fraca do
+  YOLO e preserva um indício PNP/NPN sobreposto para não inverter a subclasse.
+
+O QUE MUDOU NO TREINAMENTO
+- Cada imagem real do split de treino gera obrigatoriamente três cópias P&B:
+  CLAHE, Otsu e limiar adaptativo, mantendo exatamente as mesmas caixas.
+- Isso vale para qualquer classe anotada e também para imagens negativas
+  revisadas.
+- Validação e teste recebem variantes P&B somente dentro do próprio split da
+  imagem-fonte, sem vazamento para o treino.
+
+INSTALAÇÃO
+1. Feche o servidor.
+2. Faça uma cópia de segurança da pasta project.
+3. Extraia este ZIP dentro da pasta project e permita substituir somente os
+   arquivos de backend incluídos.
+4. NÃO apague models, real_data, dataset_builds, database, projects nem as
+   pastas de treinamento de terminais.
+5. Inicie o servidor.
+6. Confira em http://127.0.0.1:8010/system/version:
+   2026-09-27-universal-monochrome-dataset-v5.10.0
+
+TESTE IMEDIATO
+1. Crie um projeto novo com a imagem P&B ou mande reconhecer novamente.
+2. O modelo atual já será executado nas novas vistas e escalas.
+3. Uma caixa recuperada com confiança baixa aparecerá como "revisar" para que
+   você possa corrigi-la e armazená-la no treinamento.
+
+PARA INCORPORAR A MELHORIA AO MODELO
+1. Abra /component-trainer.
+2. Confirme/corrija as caixas de todas as classes desejadas.
+3. Inclua imagens P&B reais variadas; não inclua textos dentro da caixa.
+4. Gere novamente a base sintética, se desejar atualizar os exemplos.
+5. Monte novamente o dataset misto. O manifest deverá mostrar o campo
+   real_monochrome_augmented_train maior que zero.
+6. Inicie novo treinamento a partir do modelo ativo.
+7. Valide com imagens P&B que não participaram do treino.
+
+IMPORTANTE
+O código passa a tratar qualquer classe do dataset, mas um modelo não consegue
+aprender uma classe sem exemplos corretos e representativos. Para classes com
+poucas anotações reais, o fluxo funcionará, porém a precisão só aumentará após
+adicionar exemplos, montar o dataset misto e treinar novamente.
+
+VALIDAÇÃO DESTA ATUALIZAÇÃO
+- 28 testes automatizados aprovados.
+- Compilação dos módulos Python aprovada.
+- Na imagem-base reportada, o fallback com YOLO vazio mantém dois resistores e
+  um transistor NPN.
+- 15 classes atuais confirmadas no resgate monocromático dinâmico.
+- Inferência multiescala em lote confirmada.
+
+Esta atualização é cumulativa e inclui todas as correções até a v5.9.3.

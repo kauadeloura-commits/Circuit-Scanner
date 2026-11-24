@@ -1,0 +1,48 @@
+ATUALIZAÇÃO V5.11.5 — CORREÇÃO DE FALSOS POSITIVOS E MODELO SEGURO
+
+Esta atualização corrige o caso em que linhas do caderno, fios e regiões vazias eram
+identificados como componentes, inclusive com confiança 1.00.
+
+VERSÃO PARA CONFERÊNCIA
+
+Abra:
+http://127.0.0.1:8010/system/version
+
+O campo "build" deve mostrar:
+2026-09-30-false-positive-safety-v5.11.5
+
+COMO RECUPERAR O RECONHECIMENTO ATUAL
+
+1. Feche o programa.
+2. Extraia esta atualização sobre a pasta do projeto, substituindo os arquivos.
+3. Inicie o programa normalmente.
+4. Abra:
+   http://127.0.0.1:8010/component-trainer
+5. Clique UMA VEZ em "Restaurar modelo anterior".
+6. Volte ao projeto e execute novamente o reconhecimento na mesma imagem.
+
+Não é necessário treinar novamente antes desse primeiro teste. O botão arquiva o
+modelo ativo problemático e restaura o último modelo anterior disponível.
+
+PROTEÇÕES ADICIONADAS
+
+- O treinamento novo não substitui mais automaticamente o modelo ativo.
+- O candidato é comparado com o modelo anterior em precisão e mAP50.
+- Imagens negativas são auditadas para medir falsas detecções por imagem.
+- Se a qualidade piorar, o candidato é marcado como REJEITADO e não entra em uso.
+- As verificações geométricas também são aplicadas a detecções com confiança 1.00.
+- Foram adicionadas verificações para resistor, capacitor, capacitor polarizado,
+  indutor, bateria, GND, MOSFET N e MOSFET P.
+- Linhas horizontais do caderno, fios isolados e regiões sem estrutura do símbolo
+  deixam de ser aceitos apenas porque a rede atribuiu confiança alta.
+
+DADOS PRESERVADOS
+
+O dataset, as imagens CAD, as imagens feitas à mão e todas as anotações existentes
+são preservados. A restauração troca apenas o arquivo do modelo ativo.
+
+VALIDAÇÃO
+
+Foram executados 141 testes automatizados, incluindo símbolos válidos, falsos
+positivos em linhas de caderno, auditoria de imagens negativas e bloqueio de um
+modelo treinado que piora a precisão.

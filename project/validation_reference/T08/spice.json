@@ -1,0 +1,118 @@
+{
+  "schema_version": "stage13-spice-1.0",
+  "source_revision": "7e4c645c4b1b52be34f676a451bfb97b826980881155ee130bbe9e921ea050ee",
+  "generator_version": "reviewed-rails-complete-analysis-2",
+  "options": {
+    "analysis": "op"
+  },
+  "nodes": {
+    "VIN": "n1",
+    "BASE": "n2",
+    "OUT": "n3",
+    "GND": "0"
+  },
+  "components": [
+    {
+      "component_id": "Q1",
+      "spice_name": "Q1",
+      "type": "transistor_pnp",
+      "pins": [
+        "B",
+        "C",
+        "E"
+      ],
+      "nodes": {
+        "B": "n2",
+        "C": "n3",
+        "E": "n1"
+      },
+      "electrical_model": {
+        "code": "BC557B",
+        "kind": "parameter_fit",
+        "fit": {
+          "vbe_reference_current_a": 0.002,
+          "BF": 100.0,
+          "IS": 1.631774886584049e-14
+        },
+        "parameters": {
+          "hfe": {
+            "value": 100.0,
+            "unit": "A/A",
+            "source": "manual",
+            "estimated": false
+          },
+          "vbe_on": {
+            "value": -0.66,
+            "unit": "V",
+            "source": "datasheet_typical",
+            "estimated": true,
+            "datasheet": {
+              "model": "BC557B",
+              "manufacturer": "onsemi",
+              "url": "https://www.onsemi.com/pdf/datasheet/bc556bta-d.pdf",
+              "page": 2,
+              "checked_at": "2026-10-01",
+              "unit": "V",
+              "condition": "VCE = -5 V; IC = -2 mA; TA = 25 °C",
+              "min": -0.75,
+              "typ": -0.66,
+              "max": -0.6
+            }
+          }
+        },
+        "pending": []
+      },
+      "current_pins": [
+        "C",
+        "E"
+      ]
+    },
+    {
+      "component_id": "RB",
+      "spice_name": "R1",
+      "type": "resistor",
+      "pins": [
+        "1",
+        "2"
+      ],
+      "nodes": {
+        "1": "0",
+        "2": "n2"
+      },
+      "value_si": 1000000.0
+    },
+    {
+      "component_id": "RL",
+      "spice_name": "R2",
+      "type": "resistor",
+      "pins": [
+        "1",
+        "2"
+      ],
+      "nodes": {
+        "1": "n3",
+        "2": "0"
+      },
+      "value_si": 1000.0
+    },
+    {
+      "component_id": "V1",
+      "spice_name": "V1",
+      "type": "source_dc",
+      "pins": [
+        "+",
+        "-"
+      ],
+      "nodes": {
+        "+": "n1",
+        "-": "0"
+      },
+      "value_si": 5.0
+    }
+  ],
+  "warnings": [
+    "Q1: modelo BJT aproximado; hFE define BF. VBE, quando informado, é ajustado a 2 mA/25 °C; variação de ganho, capacitâncias e efeito Early não são caracterizados."
+  ],
+  "netlist": "Circuit Scanner - confirmed circuit\n.options numdgt=15 reltol=1e-6 abstol=1e-12 vntol=1e-9\nQ1 n3 n2 n1 CS_Q1\n.model CS_Q1 PNP(BF=100 IS=1.63177488658405e-14)\nR1 0 n2 1000000\nR2 n3 0 1000\nV1 n1 0 DC 5\n.save all @q1[ic]\n.op\n.control\nset filetype=ascii\nrun\nwrite simulation.raw all\nquit\n.endc\n.end\n",
+  "netlist_sha256": "cac56a9e14349c284a033cb136d19a9256ef221f9a73b8614177517475b783c0"
+}

@@ -1,0 +1,117 @@
+ATUALIZAÇÃO V5.19.0 — ETAPAS 15 A 18 E PARÂMETROS NA SIMULAÇÃO
+
+INSTALAÇÃO
+1. Feche o backend e o frontend. Guarde uma cópia de backend e frontend.
+2. Extraia backend, frontend e tools deste ZIP dentro de:
+   C:\tc2\Circuit_Scanner_Etapa5_Corrigido\project
+   Mescle as pastas e substitua os arquivos existentes no ZIP.
+   Preserve os demais arquivos, dados, projetos, detector e amostras.
+3. Inicie o programa como antes e recarregue a tela com Ctrl+F5.
+4. Confira http://127.0.0.1:8010/system/version
+   Build: 2026-10-05-final-stages-15-18-v5.19.0
+
+Esta entrega é cumulativa. Não foi aplicada automaticamente ao programa instalado.
+KiCad não é necessário no servidor para gerar os arquivos. Para abri-los e
+continuar o projeto, use KiCad 7 ou superior, disponível em https://www.kicad.org/.
+O ngspice portátil e a biblioteca de QR estão incluídos; a geração do QR é local.
+
+COMO ABRIR
+Fluxo: http://127.0.0.1:8010/projects/PRJ_0412/workflow
+Etapas finais: http://127.0.0.1:8010/projects/PRJ_0412/production-view
+Troque PRJ_0412 pelo seu projeto. Na tela de fluxo há o botão
+“Esquemático, PCB e ZIP — etapas 15 a 18”.
+
+SEQUÊNCIA
+1. Reconheça componentes, execute OCR, confira fios, terminais e junções.
+2. Gere as redes e o circuit.json. Revise valores, pinos e conexões na etapa 12.
+3. Confirme o circuito revisado. As etapas finais exigem essa confirmação.
+4. Se quiser simular, confira os parâmetros em Valores e modelos OCR antes
+   de regenerar as redes/circuito e confirmar. Execute a simulação.
+5. Abra as etapas finais e gere o esquemático. Marque PCB se desejar.
+6. Para a PCB, escolha o footprint inicial por componente e confira a ordem
+   física dos pinos no datasheet. A placa terá pads, nets e contorno, sem trilhas.
+7. Gere o ZIP, o link e o QR Code. Baixe o projeto completo.
+8. Execute os testes de referência da etapa 18 e baixe o relatório.
+
+ETAPA 15 — ESQUEMÁTICO
+Arquivo schematic.kicad_sch editável, com símbolos próprios incorporados.
+O ZIP inclui schematic.kicad_pro, CircuitScanner.kicad_sym e sym-lib-table.
+Abra schematic.kicad_pro no KiCad. As conexões são mantidas por rótulos de rede;
+não se trata de uma cópia da foto. Cada pino possui uma rede explícita.
+Referências incompatíveis com a numeração do KiCad são convertidas para
+R1, R2 etc., preservando o identificador original em CircuitScannerId e kicad.json.
+
+ETAPA 16 — PCB OPCIONAL
+Arquivo board.kicad_pcb com contorno retangular, posições iniciais e nets.
+Uma cópia inicial schematic.kicad_pcb acompanha schematic.kicad_pro para
+o gerenciador do KiCad abrir a placa pelo mesmo nome-base do esquemático.
+Ao continuar o projeto pelo gerenciador, edite schematic.kicad_pcb.
+Os footprints são incluídos na biblioteca CircuitScanner.pretty.
+Disponíveis: conectores de sinais, axial 7,62 mm, radial 5 mm,
+TO-92 CBE/EBC e TO-220 GDS. Os números físicos 1/2/3 de TO-92 são mapeados
+ao B/C/E do símbolo selecionado; nunca é presumido que todo transistor é igual.
+Os presets são geometrias iniciais. Confira passo, furação e corpo real da peça.
+O AOP de três sinais usa conector +/−/OUT: sua alimentação e encapsulamento
+completo precisam ser acrescentados no KiCad. O símbolo lógico atual não
+contém esses pinos. A PCB não está roteada nem pronta para fabricação.
+
+ETAPA 17 — ZIP, LINK E QR
+O ZIP reúne original, processada, resultados existentes e atuais, circuit.json,
+SPICE/resultados quando atuais, esquemático, PCB opcional e project_report.json.
+Não inclui banco de dados, amostras de treinamento, backups ou arquivos arbitrários.
+O compartilhamento só é criado pelo botão de exportação. O link pode ser desativado.
+Depois de uma edição, gere novamente os arquivos e o ZIP: resultados antigos
+não serão anunciados como atuais. Links desativados retornam indisponível.
+
+OUTRO COMPUTADOR OU CELULAR
+Mantenha backend/servidor em execução e os dispositivos na mesma rede.
+No campo “Endereço acessível do servidor”, informe o IP deste computador,
+por exemplo http://192.168.1.10:8010, e gere o QR novamente.
+127.0.0.1 e localhost abrem apenas no computador onde o servidor está executando.
+O backend deve escutar na interface de rede (host 0.0.0.0) e a porta precisa
+estar acessível na rede. Esta atualização não altera o firewall nem publica
+automaticamente o sistema na internet. Um servidor público pode usar sua URL HTTPS.
+
+INTEGRAÇÃO DOS PARÂMETROS COM A SIMULAÇÃO
+Os valores digitados prevalecem. Datasheets continuam sendo usados apenas para
+campos vazios com a opção marcada. Fontes/condições e parâmetros pendentes
+continuam visíveis. A biblioteca possui 112 modelos/variantes verificados.
+Um código comercial é a identificação da peça; não é um macromodelo SPICE
+oficial de fabricante. O ajuste abaixo é uma aproximação elétrica declarada.
+
+- NPN/PNP: hFE define BF. Sem hFE, a simulação pede o parâmetro; não omite
+  o transistor. VBE, se informado, ajusta IS com referência explícita de 2 mA/25 °C.
+  Sem VBE, usa IS genérico 1e-14 A. Não caracteriza ganho versus corrente,
+  capacitâncias, efeito Early ou temperatura.
+- MOSFET N/P: usa modelo LEVEL=1 e corpo ligado à fonte. VGS(th) define VTO.
+  Informe KP em A/V² ou RDS(on) e VGS de acionamento para ajustar KP em baixo VDS.
+  VGS(th) sozinho ou gm sozinho não define a corrente; o sistema pede dados
+  adicionais. gm é transcondutância dependente da polarização, não hFE.
+  Canal P usa VGS negativo. Não caracteriza carga de gate ou efeitos térmicos.
+- AOP: ganho finito em malha aberta; GBW, quando informado, define um polo
+  dominante; offset entra no sinal diferencial. O símbolo só possui +, − e OUT.
+  Alimentação, saturação nos trilhos, limite de corrente e slew rate não são
+  modelados. Um resultado linear pode ultrapassar os trilhos de uma peça real.
+- Indutores/capacitores/fontes/baterias: resistência série informada entra no
+  circuito. A indutância do datasheet pode suprir o valor vazio na netlist,
+  mas a revisão ainda deve conferir o valor nominal. Isat/tolerância/corrente
+  nominal são informações registradas; não há modelo automático de saturação
+  magnética, aquecimento ou sorteio de tolerâncias.
+- Diodos/LEDs continuam usando os modelos genéricos anteriores nesta versão.
+As aproximações e os parâmetros usados aparecem em spice.json e nos avisos.
+
+ETAPA 18 — VALIDAÇÃO
+O botão executa dez circuitos lógicos fixos: LED, divisor, RC, diodo, ramos
+paralelos, ramos separados, NPN, PNP, MOSFET e AOP. Compara tensões esperadas
+e observadas e gera esquemático, PCB e ZIP para cada caso. Não altera projetos pessoais.
+O relatório registra escopo, tolerâncias, valores, avisos e falhas.
+Essa bateria mede o fluxo elétrico/exportação depois da revisão. Precisão do
+detector e OCR em fotos/manuscritos é avaliada separadamente; não é deduzida
+do resultado dos dez circuitos. Veja o relatório de validação incluído.
+
+REFERÊNCIAS TÉCNICAS
+KiCad, formato esquemático: https://dev-docs.kicad.org/en/file-formats/sexpr-schematic/
+KiCad, formato PCB: https://dev-docs.kicad.org/en/file-formats/sexpr-pcb/
+KiCad CLI: https://docs.kicad.org/master/en/cli/cli.html
+ngspice: https://ngspice.sourceforge.io/docs.html
+QR Code: pacote qrcode 8.2; licença incluída em backend/vendor/QRCODE_LICENSE.txt.

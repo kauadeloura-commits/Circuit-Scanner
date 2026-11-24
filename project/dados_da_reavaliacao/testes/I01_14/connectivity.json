@@ -1,0 +1,261 @@
+{
+  "schema_version": "stage10-connectivity-1.0",
+  "created_at": "2026-10-19T19:30:57-03:00",
+  "project_id": "PRJ_0034",
+  "source_signature": "2a08e54a93f304891e2f09378f9fb7978c96eedc17ccf26cfdc29351c6017573",
+  "components": [
+    {
+      "component_id": "VCC1",
+      "detection_id": "DET_001",
+      "type": "vcc",
+      "class_confidence": 0.400273,
+      "bbox": {
+        "x1": 9.63,
+        "y1": 55.63,
+        "x2": 41.3,
+        "y2": 84.48,
+        "width": 31.67,
+        "height": 28.85,
+        "center_x": 25.46,
+        "center_y": 70.06
+      },
+      "reference": {
+        "text": "VCC1",
+        "source": "class",
+        "confidence": 0.400273
+      },
+      "value": {
+        "text": "",
+        "normalized": null,
+        "unit": null,
+        "source": "missing",
+        "confidence": null
+      },
+      "ocr_tokens": [],
+      "review_required": false,
+      "review_reasons": [],
+      "model": {
+        "text": "",
+        "source": "missing",
+        "confidence": null
+      },
+      "electrical_parameters": {},
+      "parameter_policy": {},
+      "parameter_pending": [],
+      "learned_terminal_geometry": {
+        "points": {
+          "VCC": {
+            "x": 29.585,
+            "y": 83.169
+          }
+        },
+        "box_confidence": 0.5485191941261292,
+        "keypoint_confidence": 0.9108666181564331,
+        "keypoint_confidences": {
+          "VCC": 0.9108666181564331
+        },
+        "pad_ratio": 0.24,
+        "score": 0.4996278233475593,
+        "accepted": true,
+        "component_type": "vcc",
+        "source": "trained_all_component_terminal_model",
+        "review_required": false
+      },
+      "orientation": {
+        "axis": "vertical",
+        "confidence": 0.911,
+        "source": "trained_all_component_terminal_model",
+        "angle_degrees": 90.0,
+        "angle_confidence": 0.911,
+        "angle_source": "trained_all_component_terminal_model"
+      },
+      "terminals": [
+        {
+          "pin_id": "VCC1.VCC",
+          "pin": "VCC",
+          "electrical_role": "power",
+          "terminal_side": "bottom",
+          "index": 1,
+          "position": {
+            "x": 41.0,
+            "y": 72.0
+          },
+          "search_radius_px": 16,
+          "source": "wire_contact_inside_component_bbox",
+          "identity_uncertain": false,
+          "confidence": 0.911,
+          "original_ink_confirmed": true,
+          "wire_contact_confirmed": true,
+          "stage8_context_distance_px": 10.0,
+          "stage8_context_confirmed": false
+        }
+      ],
+      "terminal_detection": {
+        "status": "estimated",
+        "pin_count": 1,
+        "review_required": false,
+        "review_reasons": [],
+        "method": "trained_multiclass_pose_with_safe_geometry_fallback",
+        "unobserved_pins": [],
+        "contact_method": "all_classes_original_ink_inside_bbox_after_wires"
+      }
+    },
+    {
+      "component_id": "VCC2",
+      "detection_id": "DET_002",
+      "type": "vcc",
+      "class_confidence": 0.235746,
+      "bbox": {
+        "x1": 16.3,
+        "y1": 62.93,
+        "x2": 78.85,
+        "y2": 97.03,
+        "width": 62.55,
+        "height": 34.1,
+        "center_x": 47.57,
+        "center_y": 79.98
+      },
+      "reference": {
+        "text": "VCC2",
+        "source": "class",
+        "confidence": 0.235746
+      },
+      "value": {
+        "text": "",
+        "normalized": null,
+        "unit": null,
+        "source": "missing",
+        "confidence": null
+      },
+      "ocr_tokens": [],
+      "review_required": true,
+      "review_reasons": [
+        "classe_visual_duvidosa"
+      ],
+      "model": {
+        "text": "",
+        "source": "missing",
+        "confidence": null
+      },
+      "electrical_parameters": {},
+      "parameter_policy": {},
+      "parameter_pending": [],
+      "learned_terminal_geometry": null,
+      "orientation": {
+        "axis": "horizontal",
+        "confidence": 0.834,
+        "source": "bbox_aspect_ratio",
+        "angle_degrees": 0.0,
+        "angle_confidence": 0.0,
+        "angle_source": "bbox_axis"
+      },
+      "terminals": [
+        {
+          "pin_id": "VCC2.VCC",
+          "pin": "VCC",
+          "electrical_role": "power",
+          "terminal_side": "bottom",
+          "index": 1,
+          "position": {
+            "x": 44.0,
+            "y": 97.0
+          },
+          "search_radius_px": 8,
+          "source": "wire_contact_inside_component_bbox",
+          "confidence": 0.834,
+          "bbox_constrained": true,
+          "original_ink_confirmed": true,
+          "wire_contact_confirmed": true,
+          "stage8_context_distance_px": 1.4142135623730951,
+          "stage8_context_confirmed": true
+        }
+      ],
+      "terminal_detection": {
+        "status": "estimated",
+        "pin_count": 1,
+        "review_required": false,
+        "review_reasons": [],
+        "method": "transistor_fork_or_two_terminal_electrical_axis_plus_local_image_geometry",
+        "unobserved_pins": [],
+        "contact_method": "all_classes_original_ink_inside_bbox_after_wires"
+      }
+    }
+  ],
+  "nets": [
+    {
+      "wire_ids": [
+        "WIRE_0001"
+      ],
+      "terminal_refs": [
+        "VCC2:VCC"
+      ],
+      "labels": [],
+      "name": "NET_1",
+      "is_ground": false,
+      "member_count": 1
+    },
+    {
+      "wire_ids": [],
+      "terminal_refs": [
+        "VCC1:VCC"
+      ],
+      "labels": [],
+      "name": "NET_2",
+      "is_ground": false,
+      "member_count": 1
+    }
+  ],
+  "terminal_connections": [
+    {
+      "terminal_ref": "VCC1:VCC",
+      "component_id": "VCC1",
+      "pin": "VCC",
+      "electrical_role": "power",
+      "position": {
+        "x": 41.0,
+        "y": 72.0
+      },
+      "status": "unconnected",
+      "wire_id": null,
+      "distance_px": null,
+      "net": "NET_2"
+    },
+    {
+      "terminal_ref": "VCC2:VCC",
+      "component_id": "VCC2",
+      "pin": "VCC",
+      "electrical_role": "power",
+      "position": {
+        "x": 44.0,
+        "y": 97.0
+      },
+      "status": "attached",
+      "wire_id": "WIRE_0001",
+      "distance_px": 3.162,
+      "net": "NET_1"
+    }
+  ],
+  "warnings": [
+    {
+      "code": "unconnected_pin",
+      "message": "Pino sem fio externo confirmado.",
+      "terminal_ref": "VCC1:VCC"
+    },
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "VCC2"
+    }
+  ],
+  "net_count": 2,
+  "terminal_count": 2,
+  "attached_terminal_count": 1,
+  "unconnected_terminal_count": 1,
+  "ambiguous_terminal_count": 0,
+  "wire_only_net_count": 0,
+  "review_count": 2,
+  "recovered_wire_bridges": [],
+  "recovered_observed_leads": [],
+  "recovered_coincident_contacts": [],
+  "criterion_met": false
+}

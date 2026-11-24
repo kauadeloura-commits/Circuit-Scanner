@@ -1,0 +1,36 @@
+VERIFICAÇÃO V5.39.0
+
+Causa do salvamento reproduzida na cópia do PRJ_0433: VCC não constava
+na tabela de unidades; qualquer salvamento nativo falhava na validação.
+194 testes passaram, incluindo tensão VCC positiva, negativa e zero,
+edição nativa, conectividade, exportação, fluxo, OCR e preservação de dados.
+4 cenários de salvamento no navegador foram verificados em execução
+isolada do JavaScript: rejeição recuperável, conflito, falha temporária
+e novas edições durante uma gravação ainda em andamento.
+
+No Falstad aberto no navegador com uma cópia do projeto: R4 alterado
+de 10 para 20, salvo automaticamente, preservado ao recarregar, depois
+alterado para 21 e salvo novamente. O VCC de 5 V permaneceu no arquivo.
+Foi utilizada a exportação/importação de texto do próprio Falstad para
+aplicar o valor no teste; não foi usado acesso oculto ao simulador.
+Screenshot da mensagem de sucesso disponível junto ao ZIP.
+
+Reconhecimento do PRJ_0433 reproduziu NPN sobre a fonte de 12 V com
+confiança YOLO 0,27015. O validador antigo interpretava arcos do círculo
+como haste e ramos. A nova conferência recuperou source_dc, sem alterar
+os dois transistores reais. A fonte seguiu ao OCR como 12V e recebeu
+dois terminais +/-, sobre os fios superior e inferior.
+Fontes coloridas e cinzentas, quatro orientações e três escalas passaram
+nos controles. Um transistor com círculo externo e uma letra circular
+sem conexões não foram convertidos em fonte.
+
+Cinco fotos anteriores: métricas de classe e caixa não pioraram com
+o mesmo modelo ativo. Isso verifica regressão, não precisão universal.
+Preparação, reconhecimento, OCR e terminais do PRJ_0433: 22,338 s em CPU
+nesta execução. Existem leituras incompletas e erros de OCR em outros
+valores (por exemplo, L1 foi lido como 70H); esta correção não resolve
+todos os defeitos de reconhecimento nem garante esse tempo em toda foto.
+
+Nenhum projeto original, banco, fotografia, ambiente Python, amostra OCR
+ou peso treinado foi modificado pelos testes. Aplicação com backup apenas
+dos arquivos de código/frontend substituídos.

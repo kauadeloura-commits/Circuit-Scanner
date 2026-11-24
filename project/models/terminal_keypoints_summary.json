@@ -1,0 +1,122 @@
+{
+  "schema_version": "bjt-corrected-terminal-pose-1.0",
+  "trained_at": "2026-09-24T08:16:40-03:00",
+  "model_path": "/workspace/scratch/cfb3a39891ce/work_v54/models/terminal_keypoints.pt",
+  "backup_path": "/workspace/scratch/cfb3a39891ce/work_v54/models/terminal_keypoints_before_npn_rule_v5.7.1.pt",
+  "classes": [
+    "transistor_npn",
+    "transistor_pnp"
+  ],
+  "keypoint_order": [
+    "B",
+    "C",
+    "E"
+  ],
+  "dataset": {
+    "source": "terminal_training_all_components/raw",
+    "uses_user_corrected_points": true,
+    "keypoint_order": [
+      "B",
+      "C",
+      "E"
+    ],
+    "counts": {
+      "train": {
+        "transistor_npn": 60,
+        "transistor_pnp": 60
+      },
+      "val": {
+        "transistor_npn": 6,
+        "transistor_pnp": 8
+      },
+      "test": {
+        "transistor_npn": 14,
+        "transistor_pnp": 10
+      }
+    },
+    "npn_emitter_rule_audit": {
+      "clear_horizontal_npn_checked": 55,
+      "by_fork_side": {
+        "right": 52,
+        "left": 3
+      },
+      "rule": "E must be lower-right for right-facing NPN and lower-left for mirrored NPN",
+      "violation_count": 0,
+      "violation_sample_ids": [],
+      "healthy": true
+    }
+  },
+  "training": {
+    "epochs_requested": 40,
+    "imgsz": 416,
+    "batch": 16,
+    "patience": 12,
+    "save_dir": "/workspace/scratch/cfb3a39891ce/work_v54/terminal_training_all_components/pose_dataset_bjt_corrected/runs/bjt_corrected_v571"
+  },
+  "validation_metrics": {
+    "metrics/precision(B)": 0.9145308249293198,
+    "metrics/recall(B)": 0.9955940287965239,
+    "metrics/mAP50(B)": 0.995,
+    "metrics/mAP50-95(B)": 0.9439285714285715,
+    "metrics/precision(P)": 0.9145308249293198,
+    "metrics/recall(P)": 0.9955940287965239,
+    "metrics/mAP50(P)": 0.995,
+    "metrics/mAP50-95(P)": 0.9452375000000002,
+    "fitness": 1.8891660714285716
+  },
+  "validation_per_class": {
+    "transistor_npn": {
+      "box_precision": 1.0,
+      "box_recall": 0.9911880575930477,
+      "box_map50": 0.995,
+      "box_map50_95": 0.9285,
+      "pose_precision": 1.0,
+      "pose_recall": 0.9911880575930477,
+      "pose_map50": 0.995,
+      "pose_map50_95": 0.9106000000000002
+    },
+    "transistor_pnp": {
+      "box_precision": 0.8290616498586397,
+      "box_recall": 1.0,
+      "box_map50": 0.995,
+      "box_map50_95": 0.9593571428571428,
+      "pose_precision": 0.8290616498586397,
+      "pose_recall": 1.0,
+      "pose_map50": 0.995,
+      "pose_map50_95": 0.979875
+    }
+  },
+  "test_metrics": {
+    "metrics/precision(B)": 0.9939767375359825,
+    "metrics/recall(B)": 1.0,
+    "metrics/mAP50(B)": 0.995,
+    "metrics/mAP50-95(B)": 0.9426250000000002,
+    "metrics/precision(P)": 0.9939767375359825,
+    "metrics/recall(P)": 1.0,
+    "metrics/mAP50(P)": 0.995,
+    "metrics/mAP50-95(P)": 0.9288119658119658,
+    "fitness": 1.871436965811966
+  },
+  "test_per_class": {
+    "transistor_npn": {
+      "box_precision": 0.9963581512874017,
+      "box_recall": 1.0,
+      "box_map50": 0.995,
+      "box_map50_95": 0.916,
+      "pose_precision": 0.9963581512874017,
+      "pose_recall": 1.0,
+      "pose_map50": 0.995,
+      "pose_map50_95": 0.9648461538461538
+    },
+    "transistor_pnp": {
+      "box_precision": 0.9915953237845632,
+      "box_recall": 1.0,
+      "box_map50": 0.995,
+      "box_map50_95": 0.9692500000000001,
+      "pose_precision": 0.9915953237845632,
+      "pose_recall": 1.0,
+      "pose_map50": 0.995,
+      "pose_map50_95": 0.8927777777777777
+    }
+  }
+}

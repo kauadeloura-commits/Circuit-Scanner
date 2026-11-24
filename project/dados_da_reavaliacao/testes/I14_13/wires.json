@@ -1,0 +1,1159 @@
+{
+  "schema_version": "stage8-wires-1.0",
+  "created_at": "2026-10-19T19:43:50-03:00",
+  "source_image": "original.png",
+  "image_width": 204,
+  "image_height": 187,
+  "method": "opencv_mask_morphology_skeleton_graph",
+  "scope": "stage8_raw_wires_only",
+  "ink_color_profile": {
+    "schema_version": "component-ink-color-1.0",
+    "active": true,
+    "reason": "reliable_component_color_consensus",
+    "sampled_component_count": 1,
+    "minimum_component_confidence": 0.8,
+    "reliable_component_count": 1,
+    "reference_rgb": [
+      109,
+      107,
+      106
+    ],
+    "reference_hex": "#6D6B6A",
+    "reference_hsv": [
+      10.0,
+      7.0,
+      109.0
+    ],
+    "chromatic": false,
+    "channel_tolerance": 31.84,
+    "hue_tolerance": 12.0,
+    "consensus_component_count": 1,
+    "consensus_component_ids": [
+      "DET_001"
+    ],
+    "consensus_ratio": 1.0,
+    "averaging": "equal_weight_per_component_trimmed_stroke_mean"
+  },
+  "notebook_rule_profile": {
+    "schema_version": "notebook-color-rules-2.0",
+    "active": true,
+    "image_size": [
+      187,
+      204
+    ],
+    "reference_colors": {
+      "traditional_gray": [
+        "#B3B3B3",
+        "#CCCCCC"
+      ],
+      "light_gray": [
+        "#D9D9D9",
+        "#E6E6E6"
+      ],
+      "school_cyan": [
+        "#B3E6E6",
+        "#99FFFF"
+      ]
+    },
+    "reason": "repeated_rules_matching_paper_normalized_colors",
+    "families": [
+      {
+        "angle_degrees": 88.64,
+        "spacing_px": 88.41,
+        "lines": [
+          {
+            "start": [
+              181,
+              0
+            ],
+            "end": [
+              185,
+              186
+            ],
+            "polyline": [
+              [
+                181,
+                0
+              ],
+              [
+                182,
+                17
+              ],
+              [
+                183,
+                34
+              ],
+              [
+                183,
+                51
+              ],
+              [
+                183,
+                68
+              ],
+              [
+                183,
+                85
+              ],
+              [
+                184,
+                101
+              ],
+              [
+                185,
+                118
+              ],
+              [
+                185,
+                135
+              ],
+              [
+                186,
+                152
+              ],
+              [
+                186,
+                169
+              ],
+              [
+                187,
+                186
+              ]
+            ],
+            "half_width_px": 2.87,
+            "normalized_rgb": [
+              198.68,
+              207.52,
+              217.33
+            ],
+            "color_tolerance": 20
+          },
+          {
+            "start": [
+              94,
+              0
+            ],
+            "end": [
+              102,
+              186
+            ],
+            "polyline": [
+              [
+                94,
+                0
+              ],
+              [
+                95,
+                17
+              ],
+              [
+                95,
+                34
+              ],
+              [
+                94,
+                51
+              ],
+              [
+                100,
+                68
+              ],
+              [
+                99,
+                85
+              ],
+              [
+                108,
+                101
+              ],
+              [
+                97,
+                118
+              ],
+              [
+                100,
+                135
+              ],
+              [
+                98,
+                152
+              ],
+              [
+                101,
+                169
+              ],
+              [
+                102,
+                186
+              ]
+            ],
+            "half_width_px": 3.38,
+            "normalized_rgb": [
+              170.63,
+              177.17,
+              187.41
+            ],
+            "color_tolerance": 20
+          },
+          {
+            "start": [
+              6,
+              0
+            ],
+            "end": [
+              12,
+              186
+            ],
+            "polyline": [
+              [
+                5,
+                0
+              ],
+              [
+                5,
+                17
+              ],
+              [
+                6,
+                34
+              ],
+              [
+                7,
+                51
+              ],
+              [
+                8,
+                68
+              ],
+              [
+                9,
+                85
+              ],
+              [
+                9,
+                101
+              ],
+              [
+                9,
+                118
+              ],
+              [
+                11,
+                135
+              ],
+              [
+                11,
+                152
+              ],
+              [
+                12,
+                169
+              ],
+              [
+                13,
+                186
+              ]
+            ],
+            "half_width_px": 2.87,
+            "normalized_rgb": [
+              203.05,
+              211.4,
+              219.45
+            ],
+            "color_tolerance": 20
+          }
+        ]
+      }
+    ],
+    "removed_pixel_count": 1279
+  },
+  "stage9_note": "junction_candidate e cruzamentos ainda não são conexões elétricas confirmadas; isso pertence à Etapa 9.",
+  "parameters": {
+    "mask_components": true,
+    "mask_text": true,
+    "min_segment_length_px": 8.0,
+    "connectivity": 8
+  },
+  "preprocessing": {
+    "otsu_threshold": 227.0,
+    "absolute_dark_limit": 124,
+    "darkness_percentile_p3": 118.0,
+    "strong_local_limit": 205,
+    "background_sigma": 7.0,
+    "component_regions_masked": 1,
+    "ocr_regions_masked": 0,
+    "terminal_regions_preserved": 2,
+    "component_roi_applied": true,
+    "component_roi": {
+      "x1": 0,
+      "y1": 0,
+      "x2": 189,
+      "y2": 187,
+      "margin_px": 28
+    },
+    "component_proximity_filter_applied": true,
+    "component_proximity_px": 12,
+    "kept_candidate_blobs": 4,
+    "removed_candidate_blobs": 0,
+    "terminal_seed_filter_applied": false,
+    "terminal_seed_filter_fallback": true,
+    "terminal_seed_count": 3,
+    "terminal_seed_radius_px": 10,
+    "kept_terminal_seed_blobs": 0,
+    "removed_nonterminal_blobs": 4,
+    "component_ink_color_filter_active": true,
+    "notebook_rule_color_filter_active": true,
+    "notebook_rule_color_pixels_removed": 1279,
+    "pale_page_rulings_removed": 0,
+    "border_frame_artifacts_removed": 1,
+    "ink_pixels_before_masking": 2630,
+    "wire_mask_pixels": 314,
+    "erased_mask_pixels": 20879
+  },
+  "segment_count": 3,
+  "node_count": 7,
+  "endpoint_candidate_count": 7,
+  "junction_candidate_count": 0,
+  "total_wire_length_px": 36.82,
+  "nodes": [
+    {
+      "node_id": "NODE_0001",
+      "position": {
+        "x": 64.33,
+        "y": 3.0
+      },
+      "pixel_count": 3,
+      "raw_branch_count": 1,
+      "kind_candidate": "endpoint_candidate",
+      "segment_degree": 1
+    },
+    {
+      "node_id": "NODE_0002",
+      "position": {
+        "x": 106.0,
+        "y": 4.0
+      },
+      "pixel_count": 3,
+      "raw_branch_count": 1,
+      "kind_candidate": "endpoint_candidate",
+      "segment_degree": 1
+    },
+    {
+      "node_id": "NODE_0003",
+      "position": {
+        "x": 93.0,
+        "y": 8.5
+      },
+      "pixel_count": 2,
+      "raw_branch_count": 0,
+      "kind_candidate": "endpoint_candidate",
+      "segment_degree": 0
+    },
+    {
+      "node_id": "NODE_0004",
+      "position": {
+        "x": 65.0,
+        "y": 19.0
+      },
+      "pixel_count": 3,
+      "raw_branch_count": 1,
+      "kind_candidate": "endpoint_candidate",
+      "segment_degree": 1
+    },
+    {
+      "node_id": "NODE_0005",
+      "position": {
+        "x": 105.0,
+        "y": 20.0
+      },
+      "pixel_count": 3,
+      "raw_branch_count": 1,
+      "kind_candidate": "endpoint_candidate",
+      "segment_degree": 1
+    },
+    {
+      "node_id": "NODE_0006",
+      "position": {
+        "x": 82.0,
+        "y": 172.0
+      },
+      "pixel_count": 3,
+      "raw_branch_count": 1,
+      "kind_candidate": "endpoint_candidate",
+      "segment_degree": 1
+    },
+    {
+      "node_id": "NODE_0007",
+      "position": {
+        "x": 81.33,
+        "y": 182.0
+      },
+      "pixel_count": 3,
+      "raw_branch_count": 1,
+      "kind_candidate": "endpoint_candidate",
+      "segment_degree": 1
+    }
+  ],
+  "segments": [
+    {
+      "wire_id": "WIRE_0001",
+      "start_node": "NODE_0001",
+      "end_node": "NODE_0004",
+      "start": {
+        "x": 64,
+        "y": 4
+      },
+      "end": {
+        "x": 65,
+        "y": 18
+      },
+      "points": [
+        {
+          "x": 64,
+          "y": 4
+        },
+        {
+          "x": 65,
+          "y": 18
+        }
+      ],
+      "raw_point_count": 15,
+      "length_px": 14.41,
+      "bbox": {
+        "x1": 64,
+        "y1": 4,
+        "x2": 65,
+        "y2": 18
+      },
+      "angle_degrees": 85.91,
+      "orientation": "vertical",
+      "semantic_status": "unresolved_until_stage9"
+    },
+    {
+      "wire_id": "WIRE_0002",
+      "start_node": "NODE_0002",
+      "end_node": "NODE_0005",
+      "start": {
+        "x": 106,
+        "y": 5
+      },
+      "end": {
+        "x": 105,
+        "y": 19
+      },
+      "points": [
+        {
+          "x": 106,
+          "y": 5
+        },
+        {
+          "x": 105,
+          "y": 19
+        }
+      ],
+      "raw_point_count": 15,
+      "length_px": 14.41,
+      "bbox": {
+        "x1": 105,
+        "y1": 5,
+        "x2": 106,
+        "y2": 19
+      },
+      "angle_degrees": 94.09,
+      "orientation": "vertical",
+      "semantic_status": "unresolved_until_stage9"
+    },
+    {
+      "wire_id": "WIRE_0003",
+      "start_node": "NODE_0006",
+      "end_node": "NODE_0007",
+      "start": {
+        "x": 82,
+        "y": 173
+      },
+      "end": {
+        "x": 82,
+        "y": 181
+      },
+      "points": [
+        {
+          "x": 82,
+          "y": 173
+        },
+        {
+          "x": 82,
+          "y": 181
+        }
+      ],
+      "raw_point_count": 9,
+      "length_px": 8.0,
+      "bbox": {
+        "x1": 82,
+        "y1": 173,
+        "x2": 82,
+        "y2": 181
+      },
+      "angle_degrees": 90.0,
+      "orientation": "vertical",
+      "semantic_status": "unresolved_until_stage9"
+    }
+  ],
+  "graph_debug": {
+    "raw_skeleton_pixels": 53,
+    "closed_loop_count": 0
+  },
+  "project_id": "PRJ_0293",
+  "generated_from": "ocr_components",
+  "terminal_context_available": true,
+  "wire_detection_version": "5.13.6",
+  "pipeline_order": [
+    "components",
+    "wires",
+    "terminals",
+    "junctions"
+  ],
+  "ocr_context_available": true,
+  "transistor_terminal_refinement": {
+    "method": "stage8_wires_class_arrow_E_base_B_leftover_C",
+    "transistor_count": 0,
+    "refined_count": 0,
+    "manual_preserved_count": 0,
+    "review_count": 0,
+    "components": []
+  },
+  "transistor_wire_refinement": {
+    "method": "stage8_wires_class_arrow_E_base_B_leftover_C",
+    "transistor_count": 0,
+    "refined_count": 0,
+    "manual_preserved_count": 0,
+    "review_count": 0,
+    "components": []
+  },
+  "terminal_detection_after_wires": {
+    "method": "all_classes_original_ink_inside_bbox_after_wires",
+    "components": [
+      {
+        "component_id": "U_AUTO1",
+        "type": "opamp",
+        "rejected_notebook_rule_contacts": 1,
+        "rejected_polarity_glyph_contacts": 0,
+        "contact_count": 5,
+        "opamp_identity": {
+          "source": "opamp_original_signs_triangle_and_joint_contact_assignment",
+          "confirmed": false,
+          "reason": "opamp_triangle_leads_or_input_signs_not_confirmed"
+        },
+        "status": "wire_contacts_inside_bbox"
+      }
+    ],
+    "refined_count": 1,
+    "manual_preserved_count": 0
+  },
+  "stage9": {
+    "schema_version": "stage9-junctions-1.1",
+    "created_at": "2026-10-19T19:43:50-03:00",
+    "scope": "stage9_electrical_junction_resolution",
+    "source_wire_schema": "stage8-wires-1.0",
+    "ink_color_profile": {
+      "schema_version": "component-ink-color-1.0",
+      "active": true,
+      "reason": "reliable_component_color_consensus",
+      "sampled_component_count": 1,
+      "minimum_component_confidence": 0.8,
+      "reliable_component_count": 1,
+      "reference_rgb": [
+        109,
+        107,
+        106
+      ],
+      "reference_hex": "#6D6B6A",
+      "reference_hsv": [
+        10.0,
+        7.0,
+        109.0
+      ],
+      "chromatic": false,
+      "channel_tolerance": 31.84,
+      "hue_tolerance": 12.0,
+      "consensus_component_count": 1,
+      "consensus_component_ids": [
+        "DET_001"
+      ],
+      "consensus_ratio": 1.0,
+      "averaging": "equal_weight_per_component_trimmed_stroke_mean"
+    },
+    "notebook_rule_profile": {
+      "schema_version": "notebook-color-rules-2.0",
+      "active": true,
+      "image_size": [
+        187,
+        204
+      ],
+      "reference_colors": {
+        "traditional_gray": [
+          "#B3B3B3",
+          "#CCCCCC"
+        ],
+        "light_gray": [
+          "#D9D9D9",
+          "#E6E6E6"
+        ],
+        "school_cyan": [
+          "#B3E6E6",
+          "#99FFFF"
+        ]
+      },
+      "reason": "repeated_rules_matching_paper_normalized_colors",
+      "families": [
+        {
+          "angle_degrees": 88.64,
+          "spacing_px": 88.41,
+          "lines": [
+            {
+              "start": [
+                181,
+                0
+              ],
+              "end": [
+                185,
+                186
+              ],
+              "polyline": [
+                [
+                  181,
+                  0
+                ],
+                [
+                  182,
+                  17
+                ],
+                [
+                  183,
+                  34
+                ],
+                [
+                  183,
+                  51
+                ],
+                [
+                  183,
+                  68
+                ],
+                [
+                  183,
+                  85
+                ],
+                [
+                  184,
+                  101
+                ],
+                [
+                  185,
+                  118
+                ],
+                [
+                  185,
+                  135
+                ],
+                [
+                  186,
+                  152
+                ],
+                [
+                  186,
+                  169
+                ],
+                [
+                  187,
+                  186
+                ]
+              ],
+              "half_width_px": 2.87,
+              "normalized_rgb": [
+                198.68,
+                207.52,
+                217.33
+              ],
+              "color_tolerance": 20
+            },
+            {
+              "start": [
+                94,
+                0
+              ],
+              "end": [
+                102,
+                186
+              ],
+              "polyline": [
+                [
+                  94,
+                  0
+                ],
+                [
+                  95,
+                  17
+                ],
+                [
+                  95,
+                  34
+                ],
+                [
+                  94,
+                  51
+                ],
+                [
+                  100,
+                  68
+                ],
+                [
+                  99,
+                  85
+                ],
+                [
+                  108,
+                  101
+                ],
+                [
+                  97,
+                  118
+                ],
+                [
+                  100,
+                  135
+                ],
+                [
+                  98,
+                  152
+                ],
+                [
+                  101,
+                  169
+                ],
+                [
+                  102,
+                  186
+                ]
+              ],
+              "half_width_px": 3.38,
+              "normalized_rgb": [
+                170.63,
+                177.17,
+                187.41
+              ],
+              "color_tolerance": 20
+            },
+            {
+              "start": [
+                6,
+                0
+              ],
+              "end": [
+                12,
+                186
+              ],
+              "polyline": [
+                [
+                  5,
+                  0
+                ],
+                [
+                  5,
+                  17
+                ],
+                [
+                  6,
+                  34
+                ],
+                [
+                  7,
+                  51
+                ],
+                [
+                  8,
+                  68
+                ],
+                [
+                  9,
+                  85
+                ],
+                [
+                  9,
+                  101
+                ],
+                [
+                  9,
+                  118
+                ],
+                [
+                  11,
+                  135
+                ],
+                [
+                  11,
+                  152
+                ],
+                [
+                  12,
+                  169
+                ],
+                [
+                  13,
+                  186
+                ]
+              ],
+              "half_width_px": 2.87,
+              "normalized_rgb": [
+                203.05,
+                211.4,
+                219.45
+              ],
+              "color_tolerance": 20
+            }
+          ]
+        }
+      ],
+      "removed_pixel_count": 1279
+    },
+    "project_id": "PRJ_0293",
+    "image_width": 204,
+    "image_height": 187,
+    "rules": {
+      "t_junction_connects": true,
+      "four_way_requires_dot_to_connect": true,
+      "four_way_without_dot_keeps_opposite_paths_separate": true,
+      "ambiguous_cases_require_review": true,
+      "automatic_t_requires_three_observed_ink_arms": true,
+      "small_gaps_also_require_ink_bridge": true
+    },
+    "nodes": [
+      {
+        "node_id": "NODE_0001",
+        "position": {
+          "x": 64.33,
+          "y": 3.0
+        },
+        "pixel_count": 3,
+        "raw_branch_count": 1,
+        "kind_candidate": "endpoint_candidate",
+        "segment_degree": 1,
+        "incident_wire_ids": [
+          "WIRE_0001"
+        ],
+        "electrical_degree_candidate": 1,
+        "manual_override": false,
+        "review_required": false,
+        "electrical_status": "endpoint",
+        "junction_type": "endpoint",
+        "connected": false,
+        "connection_groups": [
+          [
+            "WIRE_0001"
+          ]
+        ],
+        "confidence": 0.99,
+        "decision_reason": "single_incident_wire"
+      },
+      {
+        "node_id": "NODE_0002",
+        "position": {
+          "x": 106.0,
+          "y": 4.0
+        },
+        "pixel_count": 3,
+        "raw_branch_count": 1,
+        "kind_candidate": "endpoint_candidate",
+        "segment_degree": 1,
+        "incident_wire_ids": [
+          "WIRE_0002"
+        ],
+        "electrical_degree_candidate": 1,
+        "manual_override": false,
+        "review_required": false,
+        "electrical_status": "endpoint",
+        "junction_type": "endpoint",
+        "connected": false,
+        "connection_groups": [
+          [
+            "WIRE_0002"
+          ]
+        ],
+        "confidence": 0.99,
+        "decision_reason": "single_incident_wire"
+      },
+      {
+        "node_id": "NODE_0003",
+        "position": {
+          "x": 93.0,
+          "y": 8.5
+        },
+        "pixel_count": 2,
+        "raw_branch_count": 0,
+        "kind_candidate": "endpoint_candidate",
+        "segment_degree": 0,
+        "incident_wire_ids": [],
+        "electrical_degree_candidate": 0,
+        "manual_override": false,
+        "review_required": false,
+        "electrical_status": "endpoint",
+        "junction_type": "endpoint",
+        "connected": false,
+        "connection_groups": [],
+        "confidence": 0.99,
+        "decision_reason": "single_incident_wire"
+      },
+      {
+        "node_id": "NODE_0004",
+        "position": {
+          "x": 65.0,
+          "y": 19.0
+        },
+        "pixel_count": 3,
+        "raw_branch_count": 1,
+        "kind_candidate": "endpoint_candidate",
+        "segment_degree": 1,
+        "incident_wire_ids": [
+          "WIRE_0001"
+        ],
+        "electrical_degree_candidate": 1,
+        "manual_override": false,
+        "review_required": false,
+        "electrical_status": "endpoint",
+        "junction_type": "endpoint",
+        "connected": false,
+        "connection_groups": [
+          [
+            "WIRE_0001"
+          ]
+        ],
+        "confidence": 0.99,
+        "decision_reason": "single_incident_wire"
+      },
+      {
+        "node_id": "NODE_0005",
+        "position": {
+          "x": 105.0,
+          "y": 20.0
+        },
+        "pixel_count": 3,
+        "raw_branch_count": 1,
+        "kind_candidate": "endpoint_candidate",
+        "segment_degree": 1,
+        "incident_wire_ids": [
+          "WIRE_0002"
+        ],
+        "electrical_degree_candidate": 1,
+        "manual_override": false,
+        "review_required": false,
+        "electrical_status": "endpoint",
+        "junction_type": "endpoint",
+        "connected": false,
+        "connection_groups": [
+          [
+            "WIRE_0002"
+          ]
+        ],
+        "confidence": 0.99,
+        "decision_reason": "single_incident_wire"
+      },
+      {
+        "node_id": "NODE_0006",
+        "position": {
+          "x": 82.0,
+          "y": 172.0
+        },
+        "pixel_count": 3,
+        "raw_branch_count": 1,
+        "kind_candidate": "endpoint_candidate",
+        "segment_degree": 1,
+        "incident_wire_ids": [
+          "WIRE_0003"
+        ],
+        "electrical_degree_candidate": 1,
+        "manual_override": false,
+        "review_required": false,
+        "electrical_status": "endpoint",
+        "junction_type": "endpoint",
+        "connected": false,
+        "connection_groups": [
+          [
+            "WIRE_0003"
+          ]
+        ],
+        "confidence": 0.99,
+        "decision_reason": "single_incident_wire"
+      },
+      {
+        "node_id": "NODE_0007",
+        "position": {
+          "x": 81.33,
+          "y": 182.0
+        },
+        "pixel_count": 3,
+        "raw_branch_count": 1,
+        "kind_candidate": "endpoint_candidate",
+        "segment_degree": 1,
+        "incident_wire_ids": [
+          "WIRE_0003"
+        ],
+        "electrical_degree_candidate": 1,
+        "manual_override": false,
+        "review_required": false,
+        "electrical_status": "endpoint",
+        "junction_type": "endpoint",
+        "connected": false,
+        "connection_groups": [
+          [
+            "WIRE_0003"
+          ]
+        ],
+        "confidence": 0.99,
+        "decision_reason": "single_incident_wire"
+      }
+    ],
+    "segments": [
+      {
+        "wire_id": "WIRE_0001",
+        "start_node": "NODE_0001",
+        "end_node": "NODE_0004",
+        "start": {
+          "x": 64,
+          "y": 4
+        },
+        "end": {
+          "x": 65,
+          "y": 18
+        },
+        "points": [
+          {
+            "x": 64,
+            "y": 4
+          },
+          {
+            "x": 65,
+            "y": 18
+          }
+        ],
+        "raw_point_count": 15,
+        "length_px": 14.41,
+        "bbox": {
+          "x1": 64,
+          "y1": 4,
+          "x2": 65,
+          "y2": 18
+        },
+        "angle_degrees": 85.91,
+        "orientation": "vertical",
+        "semantic_status": "unresolved_until_stage9"
+      },
+      {
+        "wire_id": "WIRE_0002",
+        "start_node": "NODE_0002",
+        "end_node": "NODE_0005",
+        "start": {
+          "x": 106,
+          "y": 5
+        },
+        "end": {
+          "x": 105,
+          "y": 19
+        },
+        "points": [
+          {
+            "x": 106,
+            "y": 5
+          },
+          {
+            "x": 105,
+            "y": 19
+          }
+        ],
+        "raw_point_count": 15,
+        "length_px": 14.41,
+        "bbox": {
+          "x1": 105,
+          "y1": 5,
+          "x2": 106,
+          "y2": 19
+        },
+        "angle_degrees": 94.09,
+        "orientation": "vertical",
+        "semantic_status": "unresolved_until_stage9"
+      },
+      {
+        "wire_id": "WIRE_0003",
+        "start_node": "NODE_0006",
+        "end_node": "NODE_0007",
+        "start": {
+          "x": 82,
+          "y": 173
+        },
+        "end": {
+          "x": 82,
+          "y": 181
+        },
+        "points": [
+          {
+            "x": 82,
+            "y": 173
+          },
+          {
+            "x": 82,
+            "y": 181
+          }
+        ],
+        "raw_point_count": 9,
+        "length_px": 8.0,
+        "bbox": {
+          "x1": 82,
+          "y1": 173,
+          "x2": 82,
+          "y2": 181
+        },
+        "angle_degrees": 90.0,
+        "orientation": "vertical",
+        "semantic_status": "unresolved_until_stage9"
+      }
+    ],
+    "synthesized_t_junction_count": 0,
+    "synthesized_terminal_t_junction_count": 0,
+    "connected_junction_count": 0,
+    "unconnected_crossing_count": 0,
+    "endpoint_count": 7,
+    "path_vertex_count": 0,
+    "review_count": 0,
+    "ready_for_stage10": true
+  },
+  "stage10": {
+    "schema_version": "stage10-connectivity-1.0",
+    "source_signature": "01840412a87fe458cc747e5cd390d8dde76b84ab4e8eedcb26e56cc1e3fb8eac",
+    "net_count": 3,
+    "terminal_count": 3,
+    "attached_terminal_count": 3,
+    "unconnected_terminal_count": 0,
+    "ambiguous_terminal_count": 0,
+    "review_count": 1,
+    "criterion_met": true
+  },
+  "stage11": {
+    "schema_version": "circuit-1.0",
+    "generated": true,
+    "criterion_met": true,
+    "source_signature": "01840412a87fe458cc747e5cd390d8dde76b84ab4e8eedcb26e56cc1e3fb8eac",
+    "validation": {
+      "structurally_valid": true,
+      "review_required": true,
+      "component_count": 1,
+      "net_count": 3,
+      "pin_count": 3
+    }
+  },
+  "electrical_pipeline_order": [
+    "components",
+    "wires",
+    "terminals",
+    "junctions",
+    "connectivity",
+    "circuit"
+  ]
+}

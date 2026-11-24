@@ -1,0 +1,1355 @@
+{
+  "project_id": "PRJ_0029",
+  "name": "EVAL I01_09",
+  "created_at": "2026-10-19T19:30:39-03:00",
+  "status": "terminais_detectados_apos_fios",
+  "path": "projects/PRJ_0029",
+  "original_filename": "I01_09.png",
+  "stored_filename": "original.png",
+  "processed_filename": "processed.png",
+  "detection_filename": "detections.png",
+  "ocr_filename": "ocr.png",
+  "terminals_filename": "terminals.png",
+  "wires_filename": null,
+  "image_url": "http://127.0.0.1:8010/projects-files/PRJ_0029/original.png",
+  "processed_url": "http://127.0.0.1:8010/projects-files/PRJ_0029/processed.png",
+  "detections_url": "http://127.0.0.1:8010/projects-files/PRJ_0029/detections.png",
+  "ocr_url": "http://127.0.0.1:8010/projects-files/PRJ_0029/ocr.png",
+  "components_url": "http://127.0.0.1:8010/projects-files/PRJ_0029/components.json",
+  "terminals_url": "http://127.0.0.1:8010/projects-files/PRJ_0029/terminals.png",
+  "terminals_json_url": "http://127.0.0.1:8010/projects-files/PRJ_0029/terminals.json",
+  "wires_url": null,
+  "wires_json_url": null,
+  "wires_mask_url": null,
+  "wires_skeleton_url": null,
+  "transistor_wire_refinement_url": null,
+  "junctions_url": null,
+  "junctions_json_url": null,
+  "junction_review_url": "http://127.0.0.1:8010/projects/PRJ_0029/junction-review",
+  "workflow_url": "http://127.0.0.1:8010/projects/PRJ_0029/workflow",
+  "stage8_status_url": "http://127.0.0.1:8010/projects/PRJ_0029/stage8-status",
+  "terminal_trainer_url": "http://127.0.0.1:8010/projects/PRJ_0029/terminal-trainer",
+  "stage7_readiness_url": "http://127.0.0.1:8010/projects/PRJ_0029/stage7-readiness",
+  "processing_info": {
+    "operacoes": [
+      "correcao_de_perspectiva_automatica",
+      "escala_de_cinza",
+      "correcao_de_rotacao_automatica",
+      "aumento_de_contraste_CLAHE",
+      "reducao_de_ruido_bilateral",
+      "binarizacao_adaptativa",
+      "limpeza_morfologica_leve"
+    ],
+    "perspectiva_aplicada": false,
+    "angulo_detectado_graus": 0.0,
+    "angulo_corrigido_graus": -0.0,
+    "largura_original": 138,
+    "altura_original": 77,
+    "largura_processada": 138,
+    "altura_processada": 77,
+    "arquivo_saida": "processed.png"
+  },
+  "detections_info": {
+    "elapsed_seconds": 0.849,
+    "performance": {
+      "adaptive": true,
+      "extra_views_needed": true,
+      "identical_views_reused": [],
+      "view_timings": [
+        {
+          "view": "original_color",
+          "duration_seconds": 0.0743,
+          "reused": false
+        },
+        {
+          "view": "normalized_grayscale",
+          "duration_seconds": 0.0474,
+          "reused": false
+        },
+        {
+          "view": "normalized_binary_bw",
+          "duration_seconds": 0.1229,
+          "reused": false
+        },
+        {
+          "view": "monochrome_otsu",
+          "duration_seconds": 0.0986,
+          "reused": false
+        },
+        {
+          "view": "monochrome_adaptive",
+          "duration_seconds": 0.0925,
+          "reused": false
+        },
+        {
+          "view": "rotated_90_cw_all_classes",
+          "duration_seconds": 0.1189,
+          "reused": false
+        },
+        {
+          "view": "rotated_90_ccw_all_classes",
+          "duration_seconds": 0.0775,
+          "reused": false
+        },
+        {
+          "view": "rotated_180_half_all_classes",
+          "duration_seconds": 0.0909,
+          "reused": false
+        },
+        {
+          "view": "paper_context_padding",
+          "duration_seconds": 0.0795,
+          "reused": false
+        }
+      ]
+    },
+    "created_at": "2026-10-19T19:30:40-03:00",
+    "model": "models\\circuit_scanner_yolo.pt",
+    "model_sha256": "dc4d523528894e0cfd246611ac2c45953504a5439eeeef5374030752ebf16ebd",
+    "source_image": "original.png",
+    "source_policy": "original_by_default",
+    "color_invariance": {
+      "enabled": true,
+      "method": "ai_first_component_ink_all_classes_rotations_grayscale_binary_tiles",
+      "decision": "trained_model_confidence_plus_geometry_validation"
+    },
+    "monochrome_input_detected": true,
+    "inference_strategy": "auto",
+    "inference_views": [
+      {
+        "name": "original_color",
+        "imgsz": 640,
+        "raw_detections": 1
+      },
+      {
+        "name": "normalized_grayscale",
+        "imgsz": 640,
+        "raw_detections": 1
+      },
+      {
+        "name": "normalized_binary_bw",
+        "imgsz": 960,
+        "preferred_for_monochrome": true,
+        "raw_detections": 1
+      },
+      {
+        "name": "monochrome_otsu",
+        "imgsz": 960,
+        "universal_dataset_classes": true,
+        "raw_detections": 1
+      },
+      {
+        "name": "monochrome_adaptive",
+        "imgsz": 960,
+        "universal_dataset_classes": true,
+        "raw_detections": 1
+      },
+      {
+        "name": "rotated_90_cw_all_classes",
+        "imgsz": 960,
+        "rotation_degrees": 90,
+        "accepted_classes": "all_trained_classes_with_geometry_validation",
+        "raw_detections": 1,
+        "discarded_other_classes": 0
+      },
+      {
+        "name": "rotated_90_ccw_all_classes",
+        "imgsz": 960,
+        "rotation_degrees": -90,
+        "accepted_classes": "all_trained_classes_with_geometry_validation",
+        "raw_detections": 1,
+        "discarded_other_classes": 0
+      },
+      {
+        "name": "rotated_180_half_all_classes",
+        "imgsz": 960,
+        "rotation_degrees": 180,
+        "accepted_classes": "all_trained_classes_with_geometry_validation",
+        "raw_detections": 0,
+        "discarded_other_classes": 0
+      },
+      {
+        "name": "resistor_zigzag_geometry",
+        "detections": 0,
+        "continuous_alternating_path_and_two_leads": true
+      },
+      {
+        "name": "resistor_iec_geometry",
+        "detections": 0,
+        "strict_closed_body_and_two_leads": true
+      },
+      {
+        "name": "geometry_validation_only",
+        "detections": 0
+      },
+      {
+        "name": "paper_context_padding",
+        "raw_detections": 1,
+        "margin_px": 69,
+        "imgsz": 640
+      },
+      {
+        "name": "continuous_coil_geometry",
+        "detections": 0
+      },
+      {
+        "name": "three_descending_bars_one_lead",
+        "detections": 0
+      },
+      {
+        "name": "separate_plates_opposed_lead_geometry",
+        "detections": 0
+      },
+      {
+        "name": "one_lead_hollow_power_geometry",
+        "detections": 0
+      }
+    ],
+    "confidence_threshold": 0.15,
+    "candidate_confidence_threshold": 0.12,
+    "yolo_nms_iou": 0.55,
+    "yolo_agnostic_nms": false,
+    "yolo_max_detections": 300,
+    "minimum_single_view_confidence": 0.12,
+    "imgsz": 640,
+    "image_width": 138,
+    "image_height": 77,
+    "raw_count": 8,
+    "raw_count_by_source": {
+      "original_color": 1,
+      "normalized_grayscale": 1,
+      "normalized_binary_bw": 1,
+      "monochrome_otsu": 1,
+      "monochrome_adaptive": 1,
+      "rotated_90_cw_all_classes": 1,
+      "rotated_90_ccw_all_classes": 1,
+      "rotated_180_half_all_classes": 0,
+      "resistor_zigzag_geometry": 0,
+      "resistor_iec_geometry": 0,
+      "geometry_validation_only": 0,
+      "paper_context_padding": 1,
+      "continuous_coil_geometry": 0,
+      "three_descending_bars_one_lead": 0,
+      "separate_plates_opposed_lead_geometry": 0,
+      "one_lead_hollow_power_geometry": 0
+    },
+    "count": 1,
+    "geometry_rejected_count": 0,
+    "geometry_rejections": [],
+    "symbol_text_guard": {
+      "policy": "aligned_glyphs_and_class_body_connected_leads_before_consensus_rescue",
+      "ocr_required": false,
+      "rejected_count": 0
+    },
+    "confidence_rejected_count": 0,
+    "confidence_rejections": [],
+    "led_arrow_correction_count": 0,
+    "oversized_enclosing_rejected_count": 0,
+    "oversized_enclosing_rejections": [],
+    "nested_box_rejected_count": 0,
+    "nested_box_rejections": [],
+    "basic_component_rescue_count": 0,
+    "universal_monochrome_rescue_count": 0,
+    "geometry_consensus_rescue_count": 0,
+    "dataset_classes_with_monochrome_runtime": [
+      "battery",
+      "capacitor",
+      "capacitor_polarized",
+      "diode",
+      "gnd",
+      "inductor",
+      "led",
+      "mosfet_n",
+      "mosfet_p",
+      "opamp",
+      "resistor",
+      "source_dc",
+      "transistor_npn",
+      "transistor_pnp",
+      "vcc"
+    ],
+    "rescue_mode": false,
+    "review_count": 0,
+    "duplicate_filter": {
+      "cross_class_conflicts": true,
+      "class_consensus": true,
+      "fully_contained_boxes_allowed": false,
+      "containment_edges_inclusive": true,
+      "iou_threshold": 0.45,
+      "coverage_threshold": 0.8
+    },
+    "detections": [
+      {
+        "detection_id": "DET_001",
+        "class_id": 1,
+        "class": "capacitor",
+        "confidence": 0.6963,
+        "bbox": {
+          "x1": 36.28,
+          "y1": 3.31,
+          "x2": 104.06,
+          "y2": 56.33,
+          "width": 67.78,
+          "height": 53.02,
+          "center_x": 70.17,
+          "center_y": 29.82
+        },
+        "inference_sources": [
+          "monochrome_adaptive",
+          "normalized_grayscale",
+          "original_color",
+          "paper_context_padding"
+        ],
+        "best_view_confidence": 0.6963,
+        "derived_consensus_confidence": 0.873509,
+        "consensus_score": 0.933509,
+        "consensus_votes": 4,
+        "consensus_source_count": 4,
+        "monochrome_variants": [
+          "adaptive"
+        ],
+        "monochrome_variant_count": 1,
+        "consensus_view_families": [
+          "grayscale",
+          "monochrome",
+          "original",
+          "paper_context_padding"
+        ],
+        "alternatives": [
+          {
+            "class_id": 7,
+            "class": "battery",
+            "confidence": 0.48203,
+            "consensus_score": 0.60343,
+            "votes": 3
+          }
+        ],
+        "consensus_margin": 0.330079,
+        "review_required": false,
+        "review_reasons": [],
+        "capacitor_polarity_validation": {
+          "valid": false,
+          "method": "visible_four_arm_plus",
+          "marks": []
+        },
+        "class_resolution": "visible_capacitor_plus",
+        "geometry_validation": {
+          "valid": true,
+          "score": 0.85,
+          "evidence": {
+            "vertical_plates": 1,
+            "horizontal_plates": 3,
+            "parallel_plate_pair": true,
+            "aspect_w_over_h": 1.281,
+            "aspect_ok": true,
+            "pair_with_lead": true,
+            "curved_polarized_structure": false,
+            "polarity_mark_candidates": 0,
+            "projection_plate_evidence": {
+              "vertical_groups": 1,
+              "horizontal_groups": 3,
+              "vertical_centers": [
+                43.5
+              ],
+              "horizontal_centers": [
+                22.5,
+                37.0,
+                53.5
+              ]
+            },
+            "separate_plate_ink_paths": 2,
+            "capacitor_body_with_opposed_leads": true,
+            "plate_gap_px": 32.0,
+            "plate_axis_degrees": 3.0,
+            "outer_plate_centers": [
+              [
+                68.806,
+                20.629
+              ],
+              [
+                70.46,
+                52.76
+              ]
+            ],
+            "outer_plate_lengths": [
+              40.3,
+              68.215
+            ],
+            "electrical_axis": [
+              -0.052335956242943835,
+              0.9986295347545738
+            ],
+            "metric": "two_separate_plate_paths_with_outward_midpoint_leads"
+          }
+        }
+      }
+    ],
+    "requested_source": "original",
+    "text_false_positive_count": 0,
+    "text_false_positives": [],
+    "text_overlap_review_count": 0,
+    "text_overlap_reviews": [],
+    "bbox_adjustment_count": 0,
+    "bbox_adjustments": []
+  },
+  "ocr_info": {
+    "schema_version": "stage6-1.0",
+    "created_at": "2026-10-19T19:30:42-03:00",
+    "source_image": "original.png",
+    "engine": {
+      "ready": true,
+      "engine": "Leitura da sua escrita e texto impresso local",
+      "printed_reader_available": true,
+      "training": true,
+      "glyph_classifier": {
+        "ready": true,
+        "feature_version": "hog48-numpy-projections-aspect-1",
+        "classes": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "A",
+          "B",
+          "C",
+          "E",
+          "F",
+          "H",
+          "K",
+          "L",
+          "M",
+          "N",
+          "P",
+          "R",
+          "V",
+          "W",
+          "Z",
+          "a",
+          "b",
+          "c",
+          "e",
+          "f",
+          "h",
+          "k",
+          "m",
+          "n",
+          "p",
+          "r",
+          "v",
+          "w",
+          "µ",
+          "Ω",
+          "β"
+        ],
+        "method": "supervised_linear_softmax",
+        "font_specialist_ready": true,
+        "font_specialist_classes": [
+          "+",
+          "-",
+          ".",
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "=",
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z",
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g",
+          "h",
+          "i",
+          "j",
+          "k",
+          "l",
+          "m",
+          "n",
+          "o",
+          "p",
+          "q",
+          "r",
+          "s",
+          "t",
+          "u",
+          "v",
+          "w",
+          "x",
+          "y",
+          "z",
+          "µ",
+          "Ω",
+          "β"
+        ]
+      },
+      "reference_count": 101,
+      "version": "supervised-fonts-and-supplied-writing-2026-10-14",
+      "reader_version": "supervised-font-specialist-contextual-references-12",
+      "message": "Escrita pronta para leitura."
+    },
+    "elapsed_seconds": 1.16,
+    "performance_policy": "reference_comparison_component_neighborhoods",
+    "ocr_substage_seconds": {
+      "reference_seconds": 1.1469,
+      "complement_seconds": 0.0043
+    },
+    "text_line_regions": [],
+    "ignored_nontext_regions": [],
+    "text_hard_negative_samples_added": 0,
+    "count": 1,
+    "token_count": 0,
+    "tokens": [],
+    "pending_readings": [
+      {
+        "text": "��",
+        "confidence": 0.0,
+        "reference_ids": [],
+        "unresolved": true,
+        "bbox": {
+          "x1": 43.0,
+          "y1": 0.0,
+          "x2": 97.0,
+          "y2": 77.0,
+          "component_context": {
+            "detection_id": "DET_001",
+            "kind": "capacitor",
+            "distance": 0,
+            "ambiguous": false
+          },
+          "width": 54.0,
+          "height": 77.0,
+          "center_x": 70.0,
+          "center_y": 38.5
+        },
+        "line_region_id": 0,
+        "source": "handwriting_reference",
+        "reference_bank_version": "supervised-fonts-and-supplied-writing-2026-10-14",
+        "reader_version": "supervised-font-specialist-contextual-references-12",
+        "mask_variant": "photograph_color",
+        "text_rotation_degrees": 90,
+        "component_context": {
+          "detection_id": "DET_001",
+          "kind": "capacitor",
+          "distance": 0,
+          "ambiguous": false
+        }
+      }
+    ],
+    "raw_tokens": [
+      {
+        "text": "��",
+        "confidence": 0.0,
+        "reference_ids": [],
+        "unresolved": true,
+        "bbox": {
+          "x1": 43.0,
+          "y1": 0.0,
+          "x2": 97.0,
+          "y2": 77.0,
+          "component_context": {
+            "detection_id": "DET_001",
+            "kind": "capacitor",
+            "distance": 0,
+            "ambiguous": false
+          },
+          "width": 54.0,
+          "height": 77.0,
+          "center_x": 70.0,
+          "center_y": 38.5
+        },
+        "line_region_id": 0,
+        "source": "handwriting_reference",
+        "reference_bank_version": "supervised-fonts-and-supplied-writing-2026-10-14",
+        "reader_version": "supervised-font-specialist-contextual-references-12",
+        "mask_variant": "photograph_color",
+        "text_rotation_degrees": 90,
+        "component_context": {
+          "detection_id": "DET_001",
+          "kind": "capacitor",
+          "distance": 0,
+          "ambiguous": false
+        }
+      }
+    ],
+    "raw_token_count": 1,
+    "ocr_warnings": [
+      "1 escrita(s) precisam de revisão: caractere sem referência ou comparação ambígua."
+    ],
+    "reading_policy": "units_first_then_numbers_references_and_models_with_raw_archive",
+    "bbox_adjustment_count": 0,
+    "bbox_adjustments": [],
+    "retained_detections": [
+      {
+        "detection_id": "DET_001",
+        "class_id": 1,
+        "class": "capacitor",
+        "confidence": 0.6963,
+        "bbox": {
+          "x1": 36.28,
+          "y1": 3.31,
+          "x2": 104.06,
+          "y2": 56.33,
+          "width": 67.78,
+          "height": 53.02,
+          "center_x": 70.17,
+          "center_y": 29.82
+        },
+        "inference_sources": [
+          "monochrome_adaptive",
+          "normalized_grayscale",
+          "original_color",
+          "paper_context_padding"
+        ],
+        "best_view_confidence": 0.6963,
+        "derived_consensus_confidence": 0.873509,
+        "consensus_score": 0.933509,
+        "consensus_votes": 4,
+        "consensus_source_count": 4,
+        "monochrome_variants": [
+          "adaptive"
+        ],
+        "monochrome_variant_count": 1,
+        "consensus_view_families": [
+          "grayscale",
+          "monochrome",
+          "original",
+          "paper_context_padding"
+        ],
+        "alternatives": [
+          {
+            "class_id": 7,
+            "class": "battery",
+            "confidence": 0.48203,
+            "consensus_score": 0.60343,
+            "votes": 3
+          }
+        ],
+        "consensus_margin": 0.330079,
+        "review_required": false,
+        "review_reasons": [],
+        "capacitor_polarity_validation": {
+          "valid": false,
+          "method": "visible_four_arm_plus",
+          "marks": []
+        },
+        "class_resolution": "visible_capacitor_plus",
+        "geometry_validation": {
+          "valid": true,
+          "score": 0.85,
+          "evidence": {
+            "vertical_plates": 1,
+            "horizontal_plates": 3,
+            "parallel_plate_pair": true,
+            "aspect_w_over_h": 1.281,
+            "aspect_ok": true,
+            "pair_with_lead": true,
+            "curved_polarized_structure": false,
+            "polarity_mark_candidates": 0,
+            "projection_plate_evidence": {
+              "vertical_groups": 1,
+              "horizontal_groups": 3,
+              "vertical_centers": [
+                43.5
+              ],
+              "horizontal_centers": [
+                22.5,
+                37.0,
+                53.5
+              ]
+            },
+            "separate_plate_ink_paths": 2,
+            "capacitor_body_with_opposed_leads": true,
+            "plate_gap_px": 32.0,
+            "plate_axis_degrees": 3.0,
+            "outer_plate_centers": [
+              [
+                68.806,
+                20.629
+              ],
+              [
+                70.46,
+                52.76
+              ]
+            ],
+            "outer_plate_lengths": [
+              40.3,
+              68.215
+            ],
+            "electrical_axis": [
+              -0.052335956242943835,
+              0.9986295347545738
+            ],
+            "metric": "two_separate_plate_paths_with_outward_midpoint_leads"
+          }
+        }
+      }
+    ],
+    "text_false_positive_count": 0,
+    "text_false_positives": [],
+    "text_overlap_review_count": 0,
+    "text_overlap_reviews": [],
+    "nested_box_rejections_after_ocr": [],
+    "components": [
+      {
+        "component_id": "C_AUTO1",
+        "detection_id": "DET_001",
+        "type": "capacitor",
+        "class_confidence": 0.6963,
+        "bbox": {
+          "x1": 36.28,
+          "y1": 3.31,
+          "x2": 104.06,
+          "y2": 56.33,
+          "width": 67.78,
+          "height": 53.02,
+          "center_x": 70.17,
+          "center_y": 29.82
+        },
+        "reference": {
+          "text": "C_AUTO1",
+          "source": "generated",
+          "confidence": null
+        },
+        "value": {
+          "text": "",
+          "normalized": null,
+          "unit": null,
+          "source": "missing",
+          "confidence": null
+        },
+        "ocr_tokens": [],
+        "review_required": true,
+        "review_reasons": [
+          "referencia_nao_lida",
+          "valor_nao_lido"
+        ],
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    ],
+    "unassigned_tokens": [],
+    "reference_ocr_count": 0,
+    "value_ocr_count": 0,
+    "model_ocr_count": 0,
+    "review_count": 1
+  },
+  "terminals_info": {
+    "schema_version": "stage7-4.1-visible-terminal-identity",
+    "terminal_identity_ink_profile": null,
+    "created_at": "2026-10-19T19:30:42-03:00",
+    "source_schema_version": "stage6-1.0",
+    "count": 1,
+    "terminal_count": 2,
+    "review_count": 1,
+    "nearby_terminal_snap_count": 0,
+    "method": "class_geometry_plus_model_first_transistor_keypoints",
+    "components": [
+      {
+        "component_id": "C_AUTO1",
+        "detection_id": "DET_001",
+        "type": "capacitor",
+        "class_confidence": 0.6963,
+        "bbox": {
+          "x1": 36.28,
+          "y1": 3.31,
+          "x2": 104.06,
+          "y2": 56.33,
+          "width": 67.78,
+          "height": 53.02,
+          "center_x": 70.17,
+          "center_y": 29.82
+        },
+        "reference": {
+          "text": "C_AUTO1",
+          "source": "generated",
+          "confidence": null
+        },
+        "value": {
+          "text": "",
+          "normalized": null,
+          "unit": null,
+          "source": "missing",
+          "confidence": null
+        },
+        "ocr_tokens": [],
+        "review_required": true,
+        "review_reasons": [
+          "referencia_nao_lida",
+          "valor_nao_lido"
+        ],
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": [],
+        "learned_terminal_geometry": {
+          "points": {
+            "1": {
+              "x": 77.133,
+              "y": 5.734
+            },
+            "2": {
+              "x": 70.69,
+              "y": 60.614
+            }
+          },
+          "box_confidence": 0.9548070430755615,
+          "keypoint_confidence": 0.9144097566604614,
+          "keypoint_confidences": {
+            "1": 0.877606987953186,
+            "2": 0.9512125253677368
+          },
+          "pad_ratio": 0.24,
+          "score": 0.8730848759164189,
+          "accepted": true,
+          "component_type": "capacitor",
+          "source": "trained_all_component_terminal_model",
+          "review_required": false
+        },
+        "electrical_axis_geometry": {
+          "source": "capacitor_parallel_plates",
+          "success": true,
+          "plate_orientation": "horizontal",
+          "plate_pair_score": 4.8291,
+          "plate_gap": 15.0,
+          "plate_center_x": 64.5,
+          "plate_center_y": 31.5,
+          "plate_overlap_ratio": 0.875,
+          "plate_length_similarity": 1.0,
+          "top_x": 64.5,
+          "bottom_x": 64.5,
+          "top_point": [
+            62.0,
+            21.0
+          ],
+          "bottom_point": [
+            68.0,
+            46.0
+          ],
+          "trace_success": true
+        },
+        "orientation": {
+          "axis": "vertical",
+          "confidence": 0.975,
+          "source": "capacitor_parallel_plates",
+          "angle_degrees": 76.5,
+          "angle_confidence": 0.975,
+          "angle_source": "body_axis_endpoints"
+        },
+        "terminals": [
+          {
+            "pin_id": "C_AUTO1.1",
+            "pin": "1",
+            "electrical_role": "terminal_1",
+            "terminal_side": "top",
+            "index": 1,
+            "position": {
+              "x": 75.0,
+              "y": 4.0
+            },
+            "search_radius_px": 8,
+            "source": "wire_contact_inside_component_bbox",
+            "connection_snap": {
+              "applied": true,
+              "mode": "junction_center"
+            },
+            "confidence": 0.975,
+            "bbox_constrained": true,
+            "original_ink_confirmed": true,
+            "wire_contact_confirmed": true,
+            "stage8_context_distance_px": 1.0,
+            "stage8_context_confirmed": true
+          },
+          {
+            "pin_id": "C_AUTO1.2",
+            "pin": "2",
+            "electrical_role": "terminal_2",
+            "terminal_side": "bottom",
+            "index": 2,
+            "position": {
+              "x": 70.0,
+              "y": 56.0
+            },
+            "search_radius_px": 8,
+            "source": "wire_contact_inside_component_bbox",
+            "connection_snap": {
+              "applied": true,
+              "mode": "junction_center"
+            },
+            "confidence": 0.975,
+            "original_ink_confirmed": true,
+            "wire_contact_confirmed": true,
+            "stage8_context_distance_px": 0.0,
+            "stage8_context_confirmed": true
+          }
+        ],
+        "terminal_detection": {
+          "status": "estimated",
+          "pin_count": 2,
+          "review_required": false,
+          "review_reasons": [],
+          "method": "transistor_fork_or_two_terminal_electrical_axis_plus_local_image_geometry",
+          "unobserved_pins": [],
+          "contact_method": "all_classes_original_ink_inside_bbox_after_wires"
+        }
+      }
+    ],
+    "terminals_inside_component_bbox": true,
+    "stage8_transistor_refinement": {
+      "method": "stage8_wires_class_arrow_E_base_B_leftover_C",
+      "transistor_count": 0,
+      "refined_count": 0,
+      "manual_preserved_count": 0,
+      "review_count": 0,
+      "components": []
+    },
+    "wire_terminal_contacts": {
+      "method": "all_classes_original_ink_inside_bbox_after_wires",
+      "components": [
+        {
+          "component_id": "C_AUTO1",
+          "type": "capacitor",
+          "rejected_notebook_rule_contacts": 0,
+          "rejected_polarity_glyph_contacts": 0,
+          "polarized_contact_selection": {
+            "method": "opposed_outer_plate_lead_contacts",
+            "candidates": 2,
+            "selected": 2,
+            "rejected_plate_or_nonopposed_contacts": 0,
+            "axis": [
+              -0.0523,
+              0.9986
+            ]
+          },
+          "contact_count": 2,
+          "status": "wire_contacts_inside_bbox"
+        }
+      ],
+      "refined_count": 1,
+      "manual_preserved_count": 0
+    },
+    "pipeline_order": [
+      "components",
+      "wires",
+      "terminals",
+      "junctions"
+    ],
+    "source_image": "original.png",
+    "image_width": 138,
+    "image_height": 77,
+    "degraded_mode": false,
+    "component_errors": [],
+    "generation_trigger": "ocr",
+    "auto_generated_after_ocr": true,
+    "generated_from": "ocr_components",
+    "source_component_count": 1,
+    "automatic_stage8": {
+      "executed": true,
+      "trigger": "before_terminals_ocr",
+      "segment_count": 1,
+      "transistor_terminal_refinement": {
+        "method": "stage8_wires_class_arrow_E_base_B_leftover_C",
+        "transistor_count": 0,
+        "refined_count": 0,
+        "manual_preserved_count": 0,
+        "review_count": 0,
+        "components": []
+      },
+      "terminal_detection_after_wires": true
+    }
+  },
+  "wires_info": null,
+  "junctions_info": null,
+  "connectivity_info": {
+    "schema_version": "stage10-connectivity-1.0",
+    "created_at": "2026-10-19T19:30:42-03:00",
+    "project_id": "PRJ_0029",
+    "source_signature": "f4677807c96adfc817f78fb1c2c3e9a3b37309b6fbace7e957b445054962fe5d",
+    "components": [
+      {
+        "component_id": "C_AUTO1",
+        "detection_id": "DET_001",
+        "type": "capacitor",
+        "class_confidence": 0.6963,
+        "bbox": {
+          "x1": 36.28,
+          "y1": 3.31,
+          "x2": 104.06,
+          "y2": 56.33,
+          "width": 67.78,
+          "height": 53.02,
+          "center_x": 70.17,
+          "center_y": 29.82
+        },
+        "reference": {
+          "text": "C_AUTO1",
+          "source": "generated",
+          "confidence": null
+        },
+        "value": {
+          "text": "",
+          "normalized": null,
+          "unit": null,
+          "source": "missing",
+          "confidence": null
+        },
+        "ocr_tokens": [],
+        "review_required": true,
+        "review_reasons": [
+          "referencia_nao_lida",
+          "valor_nao_lido"
+        ],
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": [],
+        "learned_terminal_geometry": {
+          "points": {
+            "1": {
+              "x": 77.133,
+              "y": 5.734
+            },
+            "2": {
+              "x": 70.69,
+              "y": 60.614
+            }
+          },
+          "box_confidence": 0.9548070430755615,
+          "keypoint_confidence": 0.9144097566604614,
+          "keypoint_confidences": {
+            "1": 0.877606987953186,
+            "2": 0.9512125253677368
+          },
+          "pad_ratio": 0.24,
+          "score": 0.8730848759164189,
+          "accepted": true,
+          "component_type": "capacitor",
+          "source": "trained_all_component_terminal_model",
+          "review_required": false
+        },
+        "electrical_axis_geometry": {
+          "source": "capacitor_parallel_plates",
+          "success": true,
+          "plate_orientation": "horizontal",
+          "plate_pair_score": 4.8291,
+          "plate_gap": 15.0,
+          "plate_center_x": 64.5,
+          "plate_center_y": 31.5,
+          "plate_overlap_ratio": 0.875,
+          "plate_length_similarity": 1.0,
+          "top_x": 64.5,
+          "bottom_x": 64.5,
+          "top_point": [
+            62.0,
+            21.0
+          ],
+          "bottom_point": [
+            68.0,
+            46.0
+          ],
+          "trace_success": true
+        },
+        "orientation": {
+          "axis": "vertical",
+          "confidence": 0.975,
+          "source": "capacitor_parallel_plates",
+          "angle_degrees": 76.5,
+          "angle_confidence": 0.975,
+          "angle_source": "body_axis_endpoints"
+        },
+        "terminals": [
+          {
+            "pin_id": "C_AUTO1.1",
+            "pin": "1",
+            "electrical_role": "terminal_1",
+            "terminal_side": "top",
+            "index": 1,
+            "position": {
+              "x": 75.0,
+              "y": 4.0
+            },
+            "search_radius_px": 8,
+            "source": "wire_contact_inside_component_bbox",
+            "connection_snap": {
+              "applied": true,
+              "mode": "junction_center"
+            },
+            "confidence": 0.975,
+            "bbox_constrained": true,
+            "original_ink_confirmed": true,
+            "wire_contact_confirmed": true,
+            "stage8_context_distance_px": 1.0,
+            "stage8_context_confirmed": true
+          },
+          {
+            "pin_id": "C_AUTO1.2",
+            "pin": "2",
+            "electrical_role": "terminal_2",
+            "terminal_side": "bottom",
+            "index": 2,
+            "position": {
+              "x": 70.0,
+              "y": 56.0
+            },
+            "search_radius_px": 8,
+            "source": "wire_contact_inside_component_bbox",
+            "connection_snap": {
+              "applied": true,
+              "mode": "junction_center"
+            },
+            "confidence": 0.975,
+            "original_ink_confirmed": true,
+            "wire_contact_confirmed": true,
+            "stage8_context_distance_px": 0.0,
+            "stage8_context_confirmed": true
+          }
+        ],
+        "terminal_detection": {
+          "status": "estimated",
+          "pin_count": 2,
+          "review_required": false,
+          "review_reasons": [],
+          "method": "transistor_fork_or_two_terminal_electrical_axis_plus_local_image_geometry",
+          "unobserved_pins": [],
+          "contact_method": "all_classes_original_ink_inside_bbox_after_wires"
+        }
+      }
+    ],
+    "nets": [
+      {
+        "wire_ids": [
+          "WIRE_0001"
+        ],
+        "terminal_refs": [
+          "C_AUTO1:2"
+        ],
+        "labels": [],
+        "name": "NET_1",
+        "is_ground": false,
+        "member_count": 1
+      },
+      {
+        "wire_ids": [],
+        "terminal_refs": [
+          "C_AUTO1:1"
+        ],
+        "labels": [],
+        "name": "NET_2",
+        "is_ground": false,
+        "member_count": 1
+      }
+    ],
+    "terminal_connections": [
+      {
+        "terminal_ref": "C_AUTO1:1",
+        "component_id": "C_AUTO1",
+        "pin": "1",
+        "electrical_role": "terminal_1",
+        "position": {
+          "x": 75.0,
+          "y": 4.0
+        },
+        "status": "unconnected",
+        "wire_id": null,
+        "distance_px": null,
+        "net": "NET_2"
+      },
+      {
+        "terminal_ref": "C_AUTO1:2",
+        "component_id": "C_AUTO1",
+        "pin": "2",
+        "electrical_role": "terminal_2",
+        "position": {
+          "x": 70.0,
+          "y": 56.0
+        },
+        "status": "attached",
+        "wire_id": "WIRE_0001",
+        "distance_px": 2.0,
+        "net": "NET_1"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "component_pending",
+        "message": "Componente ou identidade dos pinos requer confirmacao.",
+        "component_id": "C_AUTO1"
+      },
+      {
+        "code": "unconnected_pin",
+        "message": "Pino sem fio externo confirmado.",
+        "terminal_ref": "C_AUTO1:1"
+      }
+    ],
+    "net_count": 2,
+    "terminal_count": 2,
+    "attached_terminal_count": 1,
+    "unconnected_terminal_count": 1,
+    "ambiguous_terminal_count": 0,
+    "wire_only_net_count": 0,
+    "review_count": 2,
+    "recovered_wire_bridges": [],
+    "recovered_observed_leads": [],
+    "recovered_coincident_contacts": [],
+    "criterion_met": false
+  },
+  "circuit_info": {
+    "schema_version": "circuit-1.0",
+    "project_id": "PRJ_0029",
+    "name": "EVAL I01_09",
+    "created_at": "2026-10-19T19:30:42-03:00",
+    "components": [
+      {
+        "id": "C_AUTO1",
+        "type": "capacitor",
+        "value": null,
+        "value_text": null,
+        "unit": null,
+        "pins": [
+          "1",
+          "2"
+        ],
+        "metadata": {
+          "source_component_id": "C_AUTO1",
+          "reference_source": "generated",
+          "value_source": "missing",
+          "review_required": true,
+          "model": {
+            "text": "",
+            "source": "missing",
+            "confidence": null
+          },
+          "electrical_parameters": {},
+          "parameter_policy": {},
+          "parameter_pending": []
+        }
+      }
+    ],
+    "nets": [
+      {
+        "name": "NET_1",
+        "members": [
+          "C_AUTO1.2"
+        ]
+      },
+      {
+        "name": "NET_2",
+        "members": [
+          "C_AUTO1.1"
+        ]
+      }
+    ],
+    "warnings": [
+      {
+        "code": "component_pending",
+        "message": "Componente ou identidade dos pinos requer confirmacao.",
+        "component_id": "C_AUTO1"
+      },
+      {
+        "code": "unconnected_pin",
+        "message": "Pino sem fio externo confirmado.",
+        "terminal_ref": "C_AUTO1.1"
+      },
+      {
+        "code": "value_missing",
+        "component_id": "C_AUTO1",
+        "message": "Valor do componente nao informado."
+      }
+    ],
+    "confirmed_by_user": false,
+    "status": "draft",
+    "image_independent": true,
+    "source_connectivity_signature": "f4677807c96adfc817f78fb1c2c3e9a3b37309b6fbace7e957b445054962fe5d",
+    "validation": {
+      "structurally_valid": true,
+      "review_required": true,
+      "component_count": 1,
+      "net_count": 2,
+      "pin_count": 2
+    }
+  },
+  "connectivity_url": "http://127.0.0.1:8010/projects-files/PRJ_0029/connectivity.png",
+  "connectivity_json_url": "http://127.0.0.1:8010/projects-files/PRJ_0029/connectivity.json",
+  "circuit_json_url": "http://127.0.0.1:8010/projects/PRJ_0029/circuit/download",
+  "circuit_view_url": "http://127.0.0.1:8010/projects/PRJ_0029/circuit-view",
+  "simulation_view_url": "http://127.0.0.1:8010/projects/PRJ_0029/simulation-view",
+  "net_count": 2,
+  "detection_count": 1,
+  "logical_component_count": 1,
+  "terminal_count": 2,
+  "wire_segment_count": 0,
+  "wire_endpoint_candidate_count": 0,
+  "junction_connected_count": 0,
+  "junction_crossing_count": 0,
+  "junction_review_count": 0,
+  "terminals_generated_automatically": true,
+  "automatic_stage8": {
+    "executed": true,
+    "trigger": "before_terminals_ocr",
+    "segment_count": 1,
+    "transistor_terminal_refinement": {
+      "method": "stage8_wires_class_arrow_E_base_B_leftover_C",
+      "transistor_count": 0,
+      "refined_count": 0,
+      "manual_preserved_count": 0,
+      "review_count": 0,
+      "components": []
+    },
+    "terminal_detection_after_wires": true
+  },
+  "terminal_preview_url": "http://127.0.0.1:8010/projects-files/PRJ_0029/terminals.png",
+  "mensagem": "OCR concluído em 1.2s: 0 referência(s) 0 valor(es) e 0 modelo(s) lidos; 0 caixa(s) de texto removida(s); 0 caixa(s) marcada(s) para revisão; 0 caixa(s) reduzida(s) para não incluir texto. Etapa 7 executada automaticamente: 2 terminal(is) em 1 componente(s), seguidos automaticamente pela detecção de linhas.",
+  "processing_reused": false
+}

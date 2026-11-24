@@ -1,0 +1,68 @@
+{
+  "schema_version": "circuit-1.0",
+  "status": "confirmed",
+  "confirmed_by_user": true,
+  "components": [
+    {
+      "id": "V1",
+      "type": "source_dc",
+      "value": "5",
+      "pins": [
+        "+",
+        "-"
+      ]
+    },
+    {
+      "id": "V2",
+      "type": "source_dc",
+      "value": "3",
+      "pins": [
+        "+",
+        "-"
+      ]
+    },
+    {
+      "id": "R1",
+      "type": "resistor",
+      "value": "1k",
+      "pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "id": "R2",
+      "type": "resistor",
+      "value": "1k",
+      "pins": [
+        "1",
+        "2"
+      ]
+    }
+  ],
+  "nets": [
+    {
+      "name": "BRANCH1",
+      "members": [
+        "V1.+",
+        "R1.1"
+      ]
+    },
+    {
+      "name": "BRANCH2",
+      "members": [
+        "V2.+",
+        "R2.1"
+      ]
+    },
+    {
+      "name": "GND",
+      "members": [
+        "V1.-",
+        "V2.-",
+        "R1.2",
+        "R2.2"
+      ]
+    }
+  ]
+}

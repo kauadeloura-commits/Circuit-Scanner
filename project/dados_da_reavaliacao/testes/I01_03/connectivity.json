@@ -1,0 +1,237 @@
+{
+  "schema_version": "stage10-connectivity-1.0",
+  "created_at": "2026-10-19T19:30:28-03:00",
+  "project_id": "PRJ_0023",
+  "source_signature": "03c0d3f76f515961d120647b46645c50fa2fa5b3f840dc3af4e5a9256f1d57fa",
+  "components": [
+    {
+      "component_id": "C_AUTO1",
+      "detection_id": "DET_001",
+      "type": "capacitor",
+      "class_confidence": 0.648989,
+      "bbox": {
+        "x1": 59.89,
+        "y1": 50.55,
+        "x2": 147.69,
+        "y2": 114.51,
+        "width": 87.8,
+        "height": 63.96,
+        "center_x": 103.79,
+        "center_y": 82.53
+      },
+      "reference": {
+        "text": "C_AUTO1",
+        "source": "generated",
+        "confidence": null
+      },
+      "value": {
+        "text": "",
+        "normalized": null,
+        "unit": null,
+        "source": "missing",
+        "confidence": null
+      },
+      "ocr_tokens": [],
+      "review_required": true,
+      "review_reasons": [
+        "referencia_nao_lida",
+        "valor_nao_lido"
+      ],
+      "model": {
+        "text": "",
+        "source": "missing",
+        "confidence": null
+      },
+      "electrical_parameters": {},
+      "parameter_policy": {},
+      "parameter_pending": [],
+      "learned_terminal_geometry": {
+        "points": {
+          "1": {
+            "x": 105.304,
+            "y": 36.452
+          },
+          "2": {
+            "x": 102.382,
+            "y": 112.806
+          }
+        },
+        "box_confidence": 0.9905029535293579,
+        "keypoint_confidence": 0.9320672154426575,
+        "keypoint_confidences": {
+          "1": 0.918872058391571,
+          "2": 0.9452623724937439
+        },
+        "pad_ratio": 0.24,
+        "score": 0.9232153297838366,
+        "accepted": true,
+        "component_type": "capacitor",
+        "source": "trained_all_component_terminal_model",
+        "review_required": false
+      },
+      "electrical_axis_geometry": {
+        "source": "capacitor_parallel_plates",
+        "success": true,
+        "plate_orientation": "horizontal",
+        "plate_pair_score": 4.7274,
+        "plate_gap": 15.0,
+        "plate_center_x": 103.75,
+        "plate_center_y": 79.5,
+        "plate_overlap_ratio": 0.995,
+        "plate_length_similarity": 0.407,
+        "top_x": 103.75,
+        "bottom_x": 103.75,
+        "top_point": [
+          99.0,
+          31.0
+        ],
+        "bottom_point": [
+          95.0,
+          93.0
+        ],
+        "trace_success": true
+      },
+      "orientation": {
+        "axis": "vertical",
+        "confidence": 0.958,
+        "source": "capacitor_parallel_plates",
+        "angle_degrees": 90.0,
+        "angle_confidence": 0.958,
+        "angle_source": "body_axis_endpoints"
+      },
+      "terminals": [
+        {
+          "pin_id": "C_AUTO1.1",
+          "pin": "1",
+          "electrical_role": "terminal_1",
+          "terminal_side": "top",
+          "index": 1,
+          "position": {
+            "x": 100.0,
+            "y": 51.0
+          },
+          "search_radius_px": 8,
+          "source": "wire_contact_inside_component_bbox",
+          "connection_snap": {
+            "applied": true,
+            "mode": "junction_center"
+          },
+          "confidence": 0.958,
+          "bbox_constrained": true,
+          "original_ink_confirmed": true,
+          "wire_contact_confirmed": true,
+          "stage8_context_distance_px": 1.0,
+          "stage8_context_confirmed": true
+        },
+        {
+          "pin_id": "C_AUTO1.2",
+          "pin": "2",
+          "electrical_role": "terminal_2",
+          "terminal_side": "bottom",
+          "index": 2,
+          "position": {
+            "x": 111.0,
+            "y": 114.0
+          },
+          "search_radius_px": 16,
+          "source": "wire_contact_inside_component_bbox",
+          "connection_snap": {
+            "applied": true,
+            "mode": "junction_center"
+          },
+          "confidence": 0.958,
+          "original_ink_confirmed": true,
+          "wire_contact_confirmed": true,
+          "stage8_context_distance_px": 10.0,
+          "stage8_context_confirmed": false
+        }
+      ],
+      "terminal_detection": {
+        "status": "estimated",
+        "pin_count": 2,
+        "review_required": false,
+        "review_reasons": [],
+        "method": "transistor_fork_or_two_terminal_electrical_axis_plus_local_image_geometry",
+        "unobserved_pins": [],
+        "contact_method": "all_classes_original_ink_inside_bbox_after_wires"
+      }
+    }
+  ],
+  "nets": [
+    {
+      "wire_ids": [
+        "WIRE_0001"
+      ],
+      "terminal_refs": [
+        "C_AUTO1:1"
+      ],
+      "labels": [],
+      "name": "NET_1",
+      "is_ground": false,
+      "member_count": 1
+    },
+    {
+      "wire_ids": [],
+      "terminal_refs": [
+        "C_AUTO1:2"
+      ],
+      "labels": [],
+      "name": "NET_2",
+      "is_ground": false,
+      "member_count": 1
+    }
+  ],
+  "terminal_connections": [
+    {
+      "terminal_ref": "C_AUTO1:1",
+      "component_id": "C_AUTO1",
+      "pin": "1",
+      "electrical_role": "terminal_1",
+      "position": {
+        "x": 100.0,
+        "y": 51.0
+      },
+      "status": "attached",
+      "wire_id": "WIRE_0001",
+      "distance_px": 3.162,
+      "net": "NET_1"
+    },
+    {
+      "terminal_ref": "C_AUTO1:2",
+      "component_id": "C_AUTO1",
+      "pin": "2",
+      "electrical_role": "terminal_2",
+      "position": {
+        "x": 111.0,
+        "y": 114.0
+      },
+      "status": "unconnected",
+      "wire_id": null,
+      "distance_px": null,
+      "net": "NET_2"
+    }
+  ],
+  "warnings": [
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "C_AUTO1"
+    },
+    {
+      "code": "unconnected_pin",
+      "message": "Pino sem fio externo confirmado.",
+      "terminal_ref": "C_AUTO1:2"
+    }
+  ],
+  "net_count": 2,
+  "terminal_count": 2,
+  "attached_terminal_count": 1,
+  "unconnected_terminal_count": 1,
+  "ambiguous_terminal_count": 0,
+  "wire_only_net_count": 0,
+  "review_count": 2,
+  "recovered_wire_bridges": [],
+  "recovered_observed_leads": [],
+  "recovered_coincident_contacts": [],
+  "criterion_met": false
+}

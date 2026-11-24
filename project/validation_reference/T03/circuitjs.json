@@ -1,0 +1,79 @@
+{
+  "engine": "CircuitJS/Falstad",
+  "source_revision": "76ff26d6d91ba24bd1c5cdf0263f88b9897bd52f456fe5f27c88edf1ba45d93f",
+  "layout_version": "spatial-schematic-1",
+  "circuit": "$ 1 0.000005 10.20027730826997 50 5 50 5e-11\nv 190 140 130 140 0 0 40 5 0 0 0.5\nx 180 112 180 112 4 14 VCC1\\s|\\s5V\nr 322 140 382 140 0 1000\nx 372 112 372 112 4 14 R_top\\s|\\s1k\nc 514 140 574 140 0 1e-06 0 0\nx 564 112 564 112 4 14 R_bottom\\s|\\s1uF\ng 190 140 190 164 0\nw 130 140 130 156 0\nw 130 156 322 156 0\nw 322 156 322 140 0\nw 382 140 514 140 0\nw 190 140 190 124 0\nw 190 124 574 124 0\nw 574 124 574 140 0\n207 130 140 154 140 4 VIN\n207 190 140 214 140 4 GND\n207 382 140 406 140 4 VOUT\n",
+  "components": [
+    {
+      "component_id": "VCC1",
+      "type": "source_dc",
+      "element_index": 0,
+      "pins": {
+        "+": {
+          "position": [
+            130,
+            140
+          ],
+          "net": "VIN",
+          "post_index": 1
+        },
+        "-": {
+          "position": [
+            190,
+            140
+          ],
+          "net": "GND",
+          "post_index": 0
+        }
+      }
+    },
+    {
+      "component_id": "R_top",
+      "type": "resistor",
+      "element_index": 2,
+      "pins": {
+        "1": {
+          "position": [
+            322,
+            140
+          ],
+          "net": "VIN",
+          "post_index": 0
+        },
+        "2": {
+          "position": [
+            382,
+            140
+          ],
+          "net": "VOUT",
+          "post_index": 1
+        }
+      }
+    },
+    {
+      "component_id": "R_bottom",
+      "type": "capacitor",
+      "element_index": 4,
+      "pins": {
+        "1": {
+          "position": [
+            514,
+            140
+          ],
+          "net": "VOUT",
+          "post_index": 0
+        },
+        "2": {
+          "position": [
+            574,
+            140
+          ],
+          "net": "GND",
+          "post_index": 1
+        }
+      }
+    }
+  ],
+  "warnings": [],
+  "model_mode": "reviewed_parameters_with_documented_approximations"
+}

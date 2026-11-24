@@ -1,0 +1,240 @@
+{
+  "schema_version": "circuit-1.0",
+  "project_id": "PRJ_0312",
+  "name": "EVAL C12",
+  "created_at": "2026-10-19T19:48:02-03:00",
+  "components": [
+    {
+      "id": "R2",
+      "type": "resistor",
+      "value": "4700",
+      "value_text": "4700",
+      "unit": "ohm",
+      "pins": [],
+      "metadata": {
+        "source_component_id": "R2",
+        "reference_source": "ocr",
+        "value_source": "ocr",
+        "review_required": true,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "D_AUTO1",
+      "type": "diode",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "A",
+        "K"
+      ],
+      "metadata": {
+        "source_component_id": "D_AUTO1",
+        "reference_source": "generated",
+        "value_source": "missing",
+        "review_required": true,
+        "model": {
+          "text": "1N4148",
+          "source": "suggested",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {
+          "forward_voltage": "datasheet",
+          "junction_capacitance": "datasheet"
+        },
+        "parameter_pending": [
+          {
+            "parameter": "forward_voltage",
+            "reason": "only_limit",
+            "message": "O datasheet só informa um limite; informe um valor ou confira a condição.",
+            "bounds": {
+              "unit": "V",
+              "condition": "IF = 10 mA; TA = 25 °C; somente máximo especificado",
+              "min": null,
+              "typ": null,
+              "max": 1
+            }
+          },
+          {
+            "parameter": "junction_capacitance",
+            "reason": "only_limit",
+            "message": "O datasheet só informa um limite; informe um valor ou confira a condição.",
+            "bounds": {
+              "unit": "F",
+              "condition": "VR = 0 V; f = 1 MHz; VHF = 50 mV; TA = 25 °C; somente máximo especificado",
+              "min": null,
+              "typ": null,
+              "max": 4e-12
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q_AUTO1",
+      "type": "transistor_npn",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [],
+      "metadata": {
+        "source_component_id": "Q_AUTO1",
+        "reference_source": "generated",
+        "value_source": "not_applicable",
+        "review_required": true,
+        "model": {
+          "text": "BC547B",
+          "source": "suggested",
+          "confidence": null
+        },
+        "electrical_parameters": {
+          "hfe": {
+            "value": 325.0,
+            "unit": "A/A",
+            "source": "datasheet_midpoint",
+            "estimated": true,
+            "datasheet": {
+              "model": "BC547B",
+              "manufacturer": "onsemi",
+              "url": "https://m.onsemi.com/download/data-sheet/pdf/bc550-d.pdf",
+              "page": 2,
+              "checked_at": "2026-10-01",
+              "unit": "A/A",
+              "condition": "VCE = 5 V; IC = 2 mA; TC = 25 °C",
+              "min": 200,
+              "typ": null,
+              "max": 450
+            }
+          },
+          "vbe_on": {
+            "value": 0.66,
+            "unit": "V",
+            "source": "datasheet_typical",
+            "estimated": true,
+            "datasheet": {
+              "model": "BC547B",
+              "manufacturer": "onsemi",
+              "url": "https://m.onsemi.com/download/data-sheet/pdf/bc550-d.pdf",
+              "page": 2,
+              "checked_at": "2026-10-01",
+              "unit": "V",
+              "condition": "VCE = 5 V; IC = 2 mA; TC = 25 °C",
+              "min": 0.58,
+              "typ": 0.66,
+              "max": 0.7
+            }
+          }
+        },
+        "parameter_policy": {
+          "hfe": "datasheet",
+          "vbe_on": "datasheet"
+        },
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "R1",
+      "type": "resistor",
+      "value": "9001000",
+      "value_text": "9001kΩ",
+      "unit": "ohm",
+      "pins": [],
+      "metadata": {
+        "source_component_id": "R1",
+        "reference_source": "ocr",
+        "value_source": "ocr",
+        "review_required": false,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    }
+  ],
+  "nets": [
+    {
+      "name": "NET_2",
+      "members": [
+        "D_AUTO1.A"
+      ]
+    },
+    {
+      "name": "NET_3",
+      "members": [
+        "D_AUTO1.K"
+      ]
+    }
+  ],
+  "warnings": [
+    {
+      "code": "pin_count_mismatch",
+      "message": "Quantidade ou nomes de pinos incompletos.",
+      "component_id": "R2",
+      "expected_pins": [
+        "1",
+        "2"
+      ],
+      "observed_pins": []
+    },
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "R2"
+    },
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "D_AUTO1"
+    },
+    {
+      "code": "pin_count_mismatch",
+      "message": "Quantidade ou nomes de pinos incompletos.",
+      "component_id": "Q_AUTO1",
+      "expected_pins": [
+        "B",
+        "C",
+        "E"
+      ],
+      "observed_pins": []
+    },
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "Q_AUTO1"
+    },
+    {
+      "code": "pin_count_mismatch",
+      "message": "Quantidade ou nomes de pinos incompletos.",
+      "component_id": "R1",
+      "expected_pins": [
+        "1",
+        "2"
+      ],
+      "observed_pins": []
+    }
+  ],
+  "confirmed_by_user": false,
+  "status": "draft",
+  "image_independent": true,
+  "source_connectivity_signature": "7923c082e8e2c1bbeca7b24f4bc6d1496a9fcd24e135f8dc9e0a3e3e8b8f57d8",
+  "validation": {
+    "structurally_valid": true,
+    "review_required": true,
+    "component_count": 4,
+    "net_count": 2,
+    "pin_count": 2
+  }
+}

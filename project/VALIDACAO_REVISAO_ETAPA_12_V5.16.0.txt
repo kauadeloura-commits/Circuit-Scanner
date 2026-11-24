@@ -1,0 +1,44 @@
+VALIDACAO V5.16.0 — REVISAO HUMANA DO CIRCUITO
+
+11 testes novos de revisao passaram. Com os testes de conectividade, JSON
+e API das etapas 10/11, a verificacao direcionada passou em 38 testes.
+
+Casos verificados:
+- Corrigir um resistor para capacitor, renomear, alterar valor e ligacao.
+- Salvar, confirmar e baixar o JSON com os dados corrigidos.
+- Adicionar e remover componentes, respeitando os pinos do tipo escolhido.
+- Rejeitar pinos inexistentes, membros duplicados, tipos invalidos e nomes
+  de rede invalidos sem modificar o arquivo salvo.
+- Impedir que uma aba antiga sobrescreva a versao mais recente.
+- Bloquear confirmacao com valores obrigatorios ausentes ou pinos incoerentes.
+- Exigir conferencia explicita dos avisos antes da confirmacao.
+- Retirar a confirmacao ao editar novamente.
+- Preservar geometria e historico, arquivar revisao quando a origem muda.
+- Impedir sobrescrita manual por simples regeneracao da etapa 11.
+- Revisar sem precisar da foto; escapar identificadores na pagina.
+
+Verificacao geral: 297 testes executados, 295 passaram.
+Duas falhas preexistentes, reproduzidas nas v5.14.5 e v5.15.0:
+- test_previsoes_fracas_repetidas_nao_sao_resgatadas: classe mosfet_n ausente
+  no dataset da copia isolada.
+- test_diodo_com_duas_setas_e_corrigido_para_led: filtro geometrico no OpenCV
+  disponivel retorna 0 em vez de 1.
+
+Interface: seis scripts passaram na verificacao de sintaxe. No navegador,
+um circuito sintetico PRJ_9900 foi editado: A virou C1, tipo capacitor,
+valor 100u, unidade F, rede SAIDA compartilhada por C1.2 e B.1.
+Foi salvo e confirmado, com mensagem de sucesso. Essa confirmacao se refere
+somente aos dados de teste; nenhum circuito real do usuario foi confirmado.
+
+Os modulos de visao, conectividade e geracao automatica de circuito ficaram
+inalterados em relacao a v5.15.0. main.py, a tela das etapas 10/11 e o schema
+receberam somente a integracao da revisao. As novas funcoes operam sobre o
+circuito logico e nao reposicionam fios ou terminais.
+
+Valores sao preservados como texto. A validacao de unidades, modelos e
+sintaxe SPICE pertence a etapa 13. Confirmar a revisao nao executa simulacao.
+As conexoes manuais aparecem nas tabelas e JSON; o overlay da etapa 10
+continua mostrando o reconhecimento automatico como referencia.
+
+Pacote conferido por leitura do ZIP, sintaxe Python e comparacao dos demais
+arquivos com o backend original. Nao foram instaladas dependencias.

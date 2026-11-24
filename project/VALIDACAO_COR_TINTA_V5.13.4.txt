@@ -1,0 +1,55 @@
+VALIDACAO DA V5.13.4 - 30/09/2026
+================================
+
+46 testes relacionados passaram: 17 novos testes de cor e integracao, mais
+os testes existentes de fios, juncoes e refinamento de transistores.
+
+Foram verificados: media de dez componentes azuis; papel fora da amostra;
+pautas pretas; azul claro; preto sobre cinza mais claro e mais escuro;
+mesmo codigo preto preservado; exclusao de componentes incertos; revisao
+manual; cores discrepantes; ausencia de consenso; fotos escuras com tinta
+azul pouco saturada, compressao JPEG e pautas verticais inclinadas; fonte
+original para imagem processada; imagem sem cor; referencias com tamanho
+diferente; ponto preto em cruzamento azul; ponte preta entre fios azuis;
+ponte preta entre terminal e fio; salvamento e nova execucao de juncoes.
+
+Na suite completa, 173 testes foram executados: 170 passaram, dois falharam
+e um apresentou erro. As mesmas tres ocorrencias foram reproduzidas na copia
+intacta do backend.zip original (156 testes: 153 passaram). Portanto nao sao
+regressoes introduzidas pela atualizacao de cor. Nao foram corrigidas aqui:
+
+- test_previsoes_fracas_repetidas_nao_sao_resgatadas:
+  o teste espera mosfet_n na lista de classes; o backend isolado nao possui
+  o dataset de classes do projeto e a lista retornada neste ambiente e vazia.
+- test_diodo_com_duas_setas_e_corrigido_para_led:
+  o teste de geometria retorna count=0 em vez de 1, tambem no codigo original.
+- test_wires_then_refinement_rewrites_terminals_and_keeps_wires:
+  o teste consulta transistor_wire_refinement; o codigo original ja salva
+  transistor_terminal_refinement, causando KeyError.
+
+Todos os arquivos Python da entrega foram verificados quanto a sintaxe.
+Ambiente de teste: Python 3.12.14, NumPy 2.3.5, OpenCV 5.0.0. Dependencias
+existentes foram reutilizadas; nenhum pacote ou servidor foi instalado.
+
+FOTO REAL
+---------
+A foto original.jpeg e as deteccoes/terminais ja salvos do projeto PRJ_0393
+foram lidos sem alterar os arquivos do projeto ativo. Dez componentes visuais
+confiaveis forneceram amostras consistentes, com consenso de 100% e cor media
+RGB (82, 77, 107), hexadecimal #524D6B. A mascara de tinta foi inspecionada
+visualmente: os tracos azul/violeta permaneceram e as pautas cinza/preta foram
+removidas da imagem filtrada. O resultado foi salvo somente na pasta de trabalho.
+
+Nao houve nova inferencia YOLO nem certificacao manual de todos os componentes;
+este teste reutilizou as deteccoes existentes para verificar a nova etapa de cor.
+A segmentacao final ainda depende das caixas e dos terminais da etapa anterior.
+
+ARQUIVOS ALTERADOS OU NOVOS
+--------------------------
+backend/ink_color.py: coleta de tinta, consenso, codigo RGB e mascara por cor.
+backend/wire_detection.py: filtro antes do grafo, com fonte de cor original.
+backend/junction_detection.py: cor compartilhada para pontos e pontes.
+backend/main.py: integracao, imagem original e identificacao da v5.13.4.
+backend/test_ink_color.py: 17 novos testes.
+
+Os outros arquivos do backend foram preservados exatamente como no ZIP base.

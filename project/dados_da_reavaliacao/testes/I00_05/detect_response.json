@@ -1,0 +1,381 @@
+{
+  "project_id": "PRJ_0005",
+  "name": "EVAL I00_05",
+  "created_at": "2026-10-19T19:29:32-03:00",
+  "status": "reconhecido",
+  "path": "projects/PRJ_0005",
+  "original_filename": "I00_05.png",
+  "stored_filename": "original.png",
+  "processed_filename": "processed.png",
+  "detection_filename": "detections.png",
+  "ocr_filename": null,
+  "terminals_filename": null,
+  "wires_filename": null,
+  "image_url": "http://127.0.0.1:8010/projects-files/PRJ_0005/original.png",
+  "processed_url": "http://127.0.0.1:8010/projects-files/PRJ_0005/processed.png",
+  "detections_url": "http://127.0.0.1:8010/projects-files/PRJ_0005/detections.png",
+  "ocr_url": null,
+  "components_url": null,
+  "terminals_url": null,
+  "terminals_json_url": null,
+  "wires_url": null,
+  "wires_json_url": null,
+  "wires_mask_url": null,
+  "wires_skeleton_url": null,
+  "transistor_wire_refinement_url": null,
+  "junctions_url": null,
+  "junctions_json_url": null,
+  "junction_review_url": "http://127.0.0.1:8010/projects/PRJ_0005/junction-review",
+  "workflow_url": "http://127.0.0.1:8010/projects/PRJ_0005/workflow",
+  "stage8_status_url": "http://127.0.0.1:8010/projects/PRJ_0005/stage8-status",
+  "terminal_trainer_url": "http://127.0.0.1:8010/projects/PRJ_0005/terminal-trainer",
+  "stage7_readiness_url": "http://127.0.0.1:8010/projects/PRJ_0005/stage7-readiness",
+  "processing_info": {
+    "operacoes": [
+      "correcao_de_perspectiva_automatica",
+      "escala_de_cinza",
+      "correcao_de_rotacao_automatica",
+      "aumento_de_contraste_CLAHE",
+      "reducao_de_ruido_bilateral",
+      "binarizacao_adaptativa",
+      "limpeza_morfologica_leve"
+    ],
+    "perspectiva_aplicada": false,
+    "angulo_detectado_graus": 0.0,
+    "angulo_corrigido_graus": -0.0,
+    "largura_original": 79,
+    "altura_original": 102,
+    "largura_processada": 79,
+    "altura_processada": 102,
+    "arquivo_saida": "processed.png"
+  },
+  "detections_info": {
+    "elapsed_seconds": 0.756,
+    "performance": {
+      "adaptive": true,
+      "extra_views_needed": true,
+      "identical_views_reused": [],
+      "view_timings": [
+        {
+          "view": "original_color",
+          "duration_seconds": 0.0898,
+          "reused": false
+        },
+        {
+          "view": "normalized_grayscale",
+          "duration_seconds": 0.0586,
+          "reused": false
+        },
+        {
+          "view": "normalized_binary_bw",
+          "duration_seconds": 0.0496,
+          "reused": false
+        },
+        {
+          "view": "rotated_90_cw_all_classes",
+          "duration_seconds": 0.1586,
+          "reused": false
+        },
+        {
+          "view": "rotated_90_ccw_all_classes",
+          "duration_seconds": 0.124,
+          "reused": false
+        },
+        {
+          "view": "rotated_180_half_all_classes",
+          "duration_seconds": 0.1657,
+          "reused": false
+        },
+        {
+          "view": "paper_context_padding",
+          "duration_seconds": 0.0612,
+          "reused": false
+        }
+      ]
+    },
+    "created_at": "2026-10-19T19:29:33-03:00",
+    "model": "models\\circuit_scanner_yolo.pt",
+    "model_sha256": "dc4d523528894e0cfd246611ac2c45953504a5439eeeef5374030752ebf16ebd",
+    "source_image": "original.png",
+    "source_policy": "original_by_default",
+    "color_invariance": {
+      "enabled": true,
+      "method": "ai_first_component_ink_all_classes_rotations_grayscale_binary_tiles",
+      "decision": "trained_model_confidence_plus_geometry_validation"
+    },
+    "monochrome_input_detected": false,
+    "inference_strategy": "auto",
+    "inference_views": [
+      {
+        "name": "original_color",
+        "imgsz": 640,
+        "raw_detections": 1
+      },
+      {
+        "name": "normalized_grayscale",
+        "imgsz": 640,
+        "raw_detections": 1
+      },
+      {
+        "name": "normalized_binary_bw",
+        "imgsz": 640,
+        "preferred_for_monochrome": false,
+        "raw_detections": 0
+      },
+      {
+        "name": "rotated_90_cw_all_classes",
+        "imgsz": 960,
+        "rotation_degrees": 90,
+        "accepted_classes": "all_trained_classes_with_geometry_validation",
+        "raw_detections": 0,
+        "discarded_other_classes": 0
+      },
+      {
+        "name": "rotated_90_ccw_all_classes",
+        "imgsz": 960,
+        "rotation_degrees": -90,
+        "accepted_classes": "all_trained_classes_with_geometry_validation",
+        "raw_detections": 0,
+        "discarded_other_classes": 0
+      },
+      {
+        "name": "rotated_180_half_all_classes",
+        "imgsz": 960,
+        "rotation_degrees": 180,
+        "accepted_classes": "all_trained_classes_with_geometry_validation",
+        "raw_detections": 1,
+        "discarded_other_classes": 0
+      },
+      {
+        "name": "resistor_zigzag_geometry",
+        "detections": 0,
+        "continuous_alternating_path_and_two_leads": true
+      },
+      {
+        "name": "resistor_iec_geometry",
+        "detections": 0,
+        "strict_closed_body_and_two_leads": true
+      },
+      {
+        "name": "geometry_validation_only",
+        "detections": 0
+      },
+      {
+        "name": "paper_context_padding",
+        "raw_detections": 1,
+        "margin_px": 51,
+        "imgsz": 640
+      },
+      {
+        "name": "continuous_coil_geometry",
+        "detections": 0
+      },
+      {
+        "name": "three_descending_bars_one_lead",
+        "detections": 0
+      },
+      {
+        "name": "separate_plates_opposed_lead_geometry",
+        "detections": 0
+      },
+      {
+        "name": "one_lead_hollow_power_geometry",
+        "detections": 0
+      }
+    ],
+    "confidence_threshold": 0.15,
+    "candidate_confidence_threshold": 0.12,
+    "yolo_nms_iou": 0.55,
+    "yolo_agnostic_nms": false,
+    "yolo_max_detections": 300,
+    "minimum_single_view_confidence": 0.18,
+    "imgsz": 640,
+    "image_width": 79,
+    "image_height": 102,
+    "raw_count": 4,
+    "raw_count_by_source": {
+      "original_color": 1,
+      "normalized_grayscale": 1,
+      "normalized_binary_bw": 0,
+      "rotated_90_cw_all_classes": 0,
+      "rotated_90_ccw_all_classes": 0,
+      "rotated_180_half_all_classes": 1,
+      "resistor_zigzag_geometry": 0,
+      "resistor_iec_geometry": 0,
+      "geometry_validation_only": 0,
+      "paper_context_padding": 1,
+      "continuous_coil_geometry": 0,
+      "three_descending_bars_one_lead": 0,
+      "separate_plates_opposed_lead_geometry": 0,
+      "one_lead_hollow_power_geometry": 0
+    },
+    "count": 0,
+    "geometry_rejected_count": 2,
+    "geometry_rejections": [
+      {
+        "detection_id": "DET_001",
+        "class_id": 8,
+        "class": "gnd",
+        "confidence": 0.133733,
+        "bbox": {
+          "x1": 60.88,
+          "y1": 0.02,
+          "x2": 79.0,
+          "y2": 9.19,
+          "width": 18.12,
+          "height": 9.17,
+          "center_x": 69.94,
+          "center_y": 4.6
+        },
+        "inference_sources": [
+          "rotated_180_half_all_classes"
+        ],
+        "rotation_restored": "half",
+        "best_view_confidence": 0.133733,
+        "derived_consensus_confidence": 0.133733,
+        "consensus_score": 0.133733,
+        "consensus_votes": 1,
+        "consensus_source_count": 1,
+        "monochrome_variants": [],
+        "monochrome_variant_count": 0,
+        "consensus_view_families": [
+          "rotated_180_half_all_classes"
+        ],
+        "alternatives": [],
+        "consensus_margin": 0.133733,
+        "review_required": true,
+        "review_reasons": [
+          "low_confidence"
+        ],
+        "geometry_validation": {
+          "valid": false,
+          "score": 0.0,
+          "evidence": {
+            "reason": "supervised_text_in_notebook_context",
+            "text_probability": 0.999997,
+            "threshold": 0.9999,
+            "metric": "body-and-halo-hog-1980-v1",
+            "hard_text_rejection": true
+          }
+        },
+        "rejection_reason": "supervised_text_in_notebook_context"
+      },
+      {
+        "detection_id": "DET_002",
+        "class_id": 0,
+        "class": "resistor",
+        "confidence": 0.850272,
+        "bbox": {
+          "x1": 8.78,
+          "y1": 9.66,
+          "x2": 66.99,
+          "y2": 90.52,
+          "width": 58.209999999999994,
+          "height": 80.86,
+          "center_x": 37.885,
+          "center_y": 50.089999999999996
+        },
+        "inference_sources": [
+          "normalized_grayscale",
+          "original_color",
+          "paper_context_padding"
+        ],
+        "best_view_confidence": 0.850272,
+        "derived_consensus_confidence": 0.94404,
+        "consensus_score": 0.98404,
+        "consensus_votes": 3,
+        "consensus_source_count": 3,
+        "monochrome_variants": [],
+        "monochrome_variant_count": 0,
+        "consensus_view_families": [
+          "grayscale",
+          "original",
+          "paper_context_padding"
+        ],
+        "alternatives": [],
+        "consensus_margin": 0.98404,
+        "review_required": false,
+        "review_reasons": [],
+        "geometry_validation": {
+          "valid": false,
+          "score": 0.0,
+          "evidence": {
+            "reason": "no_body_with_two_opposed_leads",
+            "text_like_without_zigzag": true
+          }
+        },
+        "rejection_reason": "resistor_zigzag_missing"
+      }
+    ],
+    "symbol_text_guard": {
+      "policy": "aligned_glyphs_and_class_body_connected_leads_before_consensus_rescue",
+      "ocr_required": false,
+      "rejected_count": 1
+    },
+    "confidence_rejected_count": 0,
+    "confidence_rejections": [],
+    "led_arrow_correction_count": 0,
+    "oversized_enclosing_rejected_count": 0,
+    "oversized_enclosing_rejections": [],
+    "nested_box_rejected_count": 0,
+    "nested_box_rejections": [],
+    "basic_component_rescue_count": 0,
+    "universal_monochrome_rescue_count": 0,
+    "geometry_consensus_rescue_count": 0,
+    "dataset_classes_with_monochrome_runtime": [
+      "battery",
+      "capacitor",
+      "capacitor_polarized",
+      "diode",
+      "gnd",
+      "inductor",
+      "led",
+      "mosfet_n",
+      "mosfet_p",
+      "opamp",
+      "resistor",
+      "source_dc",
+      "transistor_npn",
+      "transistor_pnp",
+      "vcc"
+    ],
+    "rescue_mode": false,
+    "review_count": 0,
+    "duplicate_filter": {
+      "cross_class_conflicts": true,
+      "class_consensus": true,
+      "fully_contained_boxes_allowed": false,
+      "containment_edges_inclusive": true,
+      "iou_threshold": 0.45,
+      "coverage_threshold": 0.8
+    },
+    "detections": [],
+    "requested_source": "original"
+  },
+  "ocr_info": null,
+  "terminals_info": null,
+  "wires_info": null,
+  "junctions_info": null,
+  "connectivity_info": null,
+  "circuit_info": null,
+  "connectivity_url": null,
+  "connectivity_json_url": null,
+  "circuit_json_url": null,
+  "circuit_view_url": "http://127.0.0.1:8010/projects/PRJ_0005/circuit-view",
+  "simulation_view_url": "http://127.0.0.1:8010/projects/PRJ_0005/simulation-view",
+  "net_count": 0,
+  "detection_count": 0,
+  "logical_component_count": 0,
+  "terminal_count": 0,
+  "wire_segment_count": 0,
+  "wire_endpoint_candidate_count": 0,
+  "junction_connected_count": 0,
+  "junction_crossing_count": 0,
+  "junction_review_count": 0,
+  "geometry_deferred_until_ocr": true,
+  "terminals_generated_automatically": false,
+  "automatic_stage8": null,
+  "terminal_preview_url": null,
+  "mensagem": "Reconhecimento concluído: 0 componente(s) detectado(s). Fios e terminais serão calculados após a leitura do OCR.",
+  "processing_reused": false
+}

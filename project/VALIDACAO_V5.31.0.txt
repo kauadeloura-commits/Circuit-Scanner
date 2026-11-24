@@ -1,0 +1,60 @@
+VALIDAÇÃO V5.31.0
+
+125 testes aprovados: 20 novos de desenho espacial, preservação de redes,
+polos/ordem de terminais, importação CircuitJS, API, VCC, análise abortada
+e transiente parcial, escolha de motor e fluxo Falstad sem falso resultado
+ngspice; 105 existentes de modelos/circuito/ngspice/KiCad/
+ZIP/fluxo. A suíte inclui execução real do ngspice em referências elétricas.
+
+KiCad CLI leu os dez esquemáticos de referência e o projeto 423. Todos
+os conjuntos de pinos e redes extraídos pelo KiCad foram exatamente iguais
+aos do circuito confirmado, incluindo B/C/E e a numeração de encapsulamento.
+PRJ_0423: 17 pinos, 9 redes, posição original da imagem.
+Geração esquemático + conversão CircuitJS no 423: aproximadamente 0,010 s,
+sem reconhecimento/OCR. Esse tempo não mede a inferência nem o carregamento
+do navegador.
+
+Conferência visual em navegador do simulador oficial local, sem mocks:
+- Divisor: VIN 5 V, VOUT 2,5 V, GND 0 V; tempo avançou.
+- MOSFET N: VIN 5 V, GATE 3 V, OUT aproximadamente 0,12577 V.
+- AOP seguidor: VOUT 2,5 V e BUFFER aproximadamente 2,5 V.
+- PRJ_0423: circuito da imagem carregado, 12 V em NET_12; animação,
+  tempo e medições funcionando. Sua fonte de 5 V tem retorno isolado.
+- MOSFET P e transistores verificados conforme o registro visual adicional.
+
+Scripts das páginas Simulação, Arquivos e Fluxo passaram na validação de
+sintaxe JavaScript. Python e integridade/bytes do ZIP foram conferidos.
+O pacote inclui os assets oficiais CircuitJS, GPL, proveniência e código
+fonte upstream identificado. Os arquivos compilados são os oficiais.
+
+Nenhuma foto, banco, projeto, modelo treinado ou amostra pessoal está no
+pacote de atualização. C:\tc2 não foi alterado. Prévia/testes usam cópias.
+
+RESULTADOS REAIS NGSPICE DO PROJETO 423
+{
+  "op": {
+    "success": false,
+    "error_code": "simulator_error",
+    "message": "O circuito não convergiu. Confira terra, redes abertas, curtos e ligações das fontes.",
+    "elapsed_seconds": 0.204,
+    "warnings": [
+      "L2: corrente de saturação registrada como referência; o indutor desta simulação é linear.",
+      "QAUTO1: modelo BJT aproximado; hFE define BF. VBE, quando informado, é ajustado a 2 mA/25 °C; variação de ganho, capacitâncias e efeito Early não são caracterizados.",
+      "VCC1: alimentação ideal de 12 V em relação ao GND, usando a tensão explícita revisada.",
+      "NET_10: apenas um terminal conectado (VAUTO1.-); confira se a ligação aberta é intencional.",
+      "Análise DC: capacitores ficam abertos. Para observar carga, descarga ou oscilação, selecione Evolução no tempo."
+    ]
+  },
+  "tran": {
+    "success": false,
+    "error_code": "simulator_error",
+    "message": "O circuito não convergiu. Confira terra, redes abertas, curtos e ligações das fontes.",
+    "elapsed_seconds": 1.172,
+    "warnings": [
+      "L2: corrente de saturação registrada como referência; o indutor desta simulação é linear.",
+      "QAUTO1: modelo BJT aproximado; hFE define BF. VBE, quando informado, é ajustado a 2 mA/25 °C; variação de ganho, capacitâncias e efeito Early não são caracterizados.",
+      "VCC1: alimentação ideal de 12 V em relação ao GND, usando a tensão explícita revisada.",
+      "NET_10: apenas um terminal conectado (VAUTO1.-); confira se a ligação aberta é intencional."
+    ]
+  }
+}

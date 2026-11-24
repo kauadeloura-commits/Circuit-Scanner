@@ -1,0 +1,29 @@
+VALIDAÇÃO V5.23.0
+
+69 testes da suíte focada aprovados, zero falhas e zero erros.
+Inclui 20 testes específicos de OCR por unidade, modelos, parâmetros,
+fragmentos, confiança, leituras conflitantes e gravação real de JSON/imagem.
+95 testes de produção, modelos, circuito, fluxo guiado, netlist e simulação
+aprovados, zero falhas e zero erros. Há casos comuns entre as duas suítes.
+Cinco amostras impressas lidas pelo executável Tesseract real passaram:
+10 microfarads, 4,7 kiloohms, 10 millihenries, 500mV e BC547B.
+Essas amostras verificam a integração; não medem acurácia em manuscritos.
+18 scripts da interface com sintaxe validada. O controlador do fluxo
+passou nos cenários de sequência automática, retomada e falha de salvamento.
+
+Verificação ampliada de geometria/texto: 53 de 55 testes passaram.
+As mesmas duas falhas ocorreram na base v5.22.1, antes desta mudança:
+- test_previsoes_fracas_repetidas_nao_sao_resgatadas: lista de modelos
+  monocromáticos vazia no ambiente de testes.
+- test_diodo_com_duas_setas_e_corrigido_para_led: contagem 0 em vez de 1.
+Nenhuma nova falha apareceu nessa comparação.
+Prévia local verificada no navegador: correção de valor com leitura original,
+correção do modelo e painel de textos sem associação. O fluxo mantém um
+único scroll e o cabeçalho fixo. Evidências em OCR_v5.23.0_valor.png e
+OCR_v5.23.0_revisao.png (dados sintéticos de teste).
+
+ZIP verificado por integridade e comparação byte a byte com os arquivos.
+Comparação com a v5.22.1 limita alterações a OCR, parser de medidas,
+leitura de modelos/parâmetros, revisão de OCR, identificação da versão
+e testes específicos. Detector, fios, terminais e simulação preservados.
+O pacote foi preparado no workspace; não foi instalado na pasta C:\tc2.

@@ -1,0 +1,31 @@
+ATUALIZAÇÃO V5.42.0 — OCR TREINADO COM SUA ESCRITA
+
+Reinicie INICIAR_NA_REDE.bat e pressione Ctrl+F5 no navegador.
+Build: 2026-10-13-trained-handwriting-references-v5.42.0
+Endereço: http://127.0.0.1:8010/workflow
+
+Separados 91 caracteres e 11 grupos de escrita da foto de 13/10.
+Treinado um classificador leve na CPU, com 41 classes, 126 caracteres
+originais de treinamento e 6.360 variações. Foram usadas somente as
+quatro fotos de referência fornecidas por você, sem fontes externas.
+
+Os exemplos C1–C10, R1–R9 e L1–L9 foram compostos com os recortes das
+letras e números reais: são 112 exemplos para treinar e 62 variações
+para validar, incluindo C11, R10, L10, C22, R29 e L42. As faixas dos
+exemplos não limitam os números que o programa pode ler.
+
+A leitura verifica a letra inicial junto ao tipo do componente e
+então lê o sufixo numérico completo. Uma letra sozinha continua pendente;
+o programa não inventa o número. Corrigido também o caso em que R9 era
+ignorado como se fosse um sinal de polaridade.
+
+O treino ajuda a ler referências e modelos que ficaram incompletos.
+Leituras anteriores confiáveis de valores, unidades e modelos são
+preservadas. Não há treinamento enquanto o usuário processa fotos.
+As otimizações de CPU e reaproveitamento da v5.41 continuam incluídas.
+
+Este ZIP é cumulativo. Para instalar em outra pasta, extraia fora do
+projeto e execute APLICAR_ATUALIZACAO.ps1. Ele cria backup. Se o Windows
+bloquear scripts, faça backup e mescle backend e frontend manualmente.
+Preserve projects, database, fotos, venv e models. Não altere a política
+de execução do Windows. Os pesos de detecção de componentes são mantidos.

@@ -1,0 +1,60 @@
+VALIDACAO V5.14.2 - 30/09/2026
+
+FOTOS REAIS E PRESERVACAO DA VERSAO APROVADA
+Cinco fotos diferentes foram processadas integralmente em copias com as
+caixas salvas dos componentes. Ordem: componentes, fios, terminais, juncoes.
+Todos os 126 contatos ficaram sobre tinta observada e dentro das caixas.
+
+Comparacao com v5.14.1 nas mesmas fotos:
+- As 126 coordenadas dos contatos permaneceram exatamente iguais.
+- Mascara de fios, esqueleto e mascara apagada permaneceram iguais byte a byte.
+- Segmentos, nos, parametros e demais resultados da etapa de fios coincidem.
+  O JSON tambem armazena data, relatorio posterior de terminais e juncoes:
+  esses campos posteriores foram excluidos da comparacao da etapa de fios.
+- wire_detection.py permanece identico byte a byte ao da v5.13.6.
+
+Projeto     Terminais preservados    Polaridades com os dois contatos
+PRJ_0399             23               fonte DC e capacitor
+PRJ_0398             26               fonte DC, capacitor e bateria
+PRJ_0395             34               fonte DC e bateria
+PRJ_0393             32               fonte DC, capacitor e bateria
+PRJ_0389             11               fonte DC
+TOTAL               126               11 componentes com dois contatos
+
+Os polos desses 11 componentes foram conferidos nas fotos: cinco fontes DC,
+tres capacitores e tres baterias. O positivo acompanha o sinal +; nas tres
+baterias sem sinal +, acompanha a barra maior. Um capacitor e uma bateria
+dessas fotos so tinham um contato final: seus contatos foram preservados,
+sem inventar o contato ausente. A contagem de 11 exclui esses dois casos.
+
+TESTES AUTOMATICOS
+237 testes executados: 235 aprovados, duas falhas preexistentes, tambem
+observadas no backend anterior intacto no mesmo ambiente:
+- test_previsoes_fracas_repetidas_nao_sao_resgatadas: a previsao fraca e
+  rejeitada; a lista de classes do dataset nao inclui mosfet_n na copia
+  isolada, que nao leva o dataset do programa.
+- test_diodo_com_duas_setas_e_corrigido_para_led: count=0 em vez de 1,
+  reproduzido no backend anterior com o mesmo OpenCV.
+
+Os oito novos testes passaram, cobrindo 36 cenarios:
+- Fonte DC e capacitor com + em ambos os lados, em quatro rotacoes.
+- Fonte com circulo aberto e sinal + visivel.
+- Fios de comprimentos diferentes: o centro do corpo orienta o polo,
+  evitando a inversao pelo ponto medio dos contatos.
+- Bateria sem + em quatro rotacoes e com espelhamento.
+- Bateria com quatro barras e fios que dividem os segmentos da barra maior.
+- Sinal + explicito da bateria prevalece sobre o comprimento das barras.
+- Sinal + pertencente a um componente vizinho nao muda o polo da bateria.
+- Correcao de polos apos posicionar os contatos preserva pixels dos fios.
+
+Os demais testes de terminais, limite das caixas, tinta, NPN/PNP, MOSFET,
+opamp, rotacoes, correcoes manuais e ordem das etapas continuam aprovados.
+Os quatro scripts da interface e os fontes Python passaram na verificacao
+de sintaxe. O ZIP foi reaberto e verificado quanto a integridade e fontes,
+sem incluir caches, dados de projetos, banco ou pesos.
+
+Python 3.12.14, NumPy 2.3.5 e OpenCV 5.0.0, com dependencias ja existentes.
+A inferencia YOLO com pesos reais nao foi reexecutada; as fotos usam caixas
+salvas e os testes de inferencia usam previsoes controladas. A verificacao
+dessas fotos nao constitui uma medicao de acuracia para qualquer desenho.
+Nenhuma coordenada ou identificador dessas fotos esta no algoritmo de producao.

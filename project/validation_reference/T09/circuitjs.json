@@ -1,0 +1,112 @@
+{
+  "engine": "CircuitJS/Falstad",
+  "source_revision": "da9498534adc3c3e61a49184d987dca6e16b59855ea667fc4371b06ac03e4a55",
+  "layout_version": "spatial-schematic-1",
+  "circuit": "$ 1 0.000005 10.20027730826997 50 5 50 5e-11\nv 190 140 130 140 0 0 40 5 0 0 0.5\nx 180 112 180 112 4 14 V1\\s|\\s5\nv 382 140 322 140 0 0 40 3 0 0 0.5\nx 372 112 372 112 4 14 VG\\s|\\s3\nr 514 140 574 140 0 1000\nx 564 112 564 112 4 14 RL\\s|\\s1k\nf 706 140 766 140 40 1 0.02\nx 756 112 756 112 4 14 M1\ng 190 140 190 164 0\nw 766 124 766 125 0\nw 766 156 766 155 0\nw 130 140 130 156 0\nw 130 156 514 156 0\nw 514 156 514 140 0\nw 322 140 322 124 0\nw 322 124 706 124 0\nw 706 124 706 140 0\nw 574 140 766 125 0\nw 190 140 190 172 0\nw 190 172 382 172 0\nw 382 172 382 140 0\nw 382 140 766 155 0\n207 130 140 154 140 4 VIN\n207 190 140 214 140 4 GND\n207 322 140 346 140 4 GATE\n207 574 140 598 140 4 OUT\n",
+  "components": [
+    {
+      "component_id": "V1",
+      "type": "source_dc",
+      "element_index": 0,
+      "pins": {
+        "+": {
+          "position": [
+            130,
+            140
+          ],
+          "net": "VIN",
+          "post_index": 1
+        },
+        "-": {
+          "position": [
+            190,
+            140
+          ],
+          "net": "GND",
+          "post_index": 0
+        }
+      }
+    },
+    {
+      "component_id": "VG",
+      "type": "source_dc",
+      "element_index": 2,
+      "pins": {
+        "+": {
+          "position": [
+            322,
+            140
+          ],
+          "net": "GATE",
+          "post_index": 1
+        },
+        "-": {
+          "position": [
+            382,
+            140
+          ],
+          "net": "GND",
+          "post_index": 0
+        }
+      }
+    },
+    {
+      "component_id": "RL",
+      "type": "resistor",
+      "element_index": 4,
+      "pins": {
+        "1": {
+          "position": [
+            514,
+            140
+          ],
+          "net": "VIN",
+          "post_index": 0
+        },
+        "2": {
+          "position": [
+            574,
+            140
+          ],
+          "net": "OUT",
+          "post_index": 1
+        }
+      }
+    },
+    {
+      "component_id": "M1",
+      "type": "mosfet_n",
+      "element_index": 6,
+      "pins": {
+        "G": {
+          "position": [
+            706,
+            140
+          ],
+          "net": "GATE",
+          "post_index": 0
+        },
+        "D": {
+          "position": [
+            766,
+            124
+          ],
+          "net": "OUT",
+          "post_index": 2
+        },
+        "S": {
+          "position": [
+            766,
+            156
+          ],
+          "net": "GND",
+          "post_index": 1
+        }
+      }
+    }
+  ],
+  "warnings": [
+    "M1: Falstad recebe VGS(th) e KP; capacitâncias e lambda do ajuste SPICE não são transferidas. O modelo comercial é uma identificação, não um macromodelo completo."
+  ],
+  "model_mode": "reviewed_parameters_with_documented_approximations"
+}

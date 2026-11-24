@@ -1,0 +1,166 @@
+{
+  "schema_version": "stage8-wires-1.0",
+  "created_at": "2026-10-19T19:37:03-03:00",
+  "source_image": "original.png",
+  "image_width": 128,
+  "image_height": 118,
+  "method": "opencv_mask_morphology_skeleton_graph",
+  "scope": "stage8_raw_wires_only",
+  "ink_color_profile": {
+    "schema_version": "component-ink-color-1.0",
+    "active": false,
+    "reason": "no_reliable_component_samples",
+    "sampled_component_count": 0,
+    "minimum_component_confidence": 0.8,
+    "reliable_component_count": 0
+  },
+  "notebook_rule_profile": {
+    "schema_version": "notebook-color-rules-2.0",
+    "active": false,
+    "image_size": [
+      118,
+      128
+    ],
+    "reference_colors": {
+      "traditional_gray": [
+        "#B3B3B3",
+        "#CCCCCC"
+      ],
+      "light_gray": [
+        "#D9D9D9",
+        "#E6E6E6"
+      ],
+      "school_cyan": [
+        "#B3E6E6",
+        "#99FFFF"
+      ]
+    },
+    "reason": "no_repeated_color_rule_family",
+    "families": [],
+    "removed_pixel_count": 0
+  },
+  "stage9_note": "junction_candidate e cruzamentos ainda não são conexões elétricas confirmadas; isso pertence à Etapa 9.",
+  "parameters": {
+    "mask_components": true,
+    "mask_text": true,
+    "min_segment_length_px": 8.0,
+    "connectivity": 8
+  },
+  "preprocessing": {
+    "otsu_threshold": 219.0,
+    "absolute_dark_limit": 105,
+    "darkness_percentile_p3": 90.0,
+    "strong_local_limit": 197,
+    "background_sigma": 7.0,
+    "component_regions_masked": 1,
+    "ocr_regions_masked": 0,
+    "terminal_regions_preserved": 2,
+    "component_roi_applied": true,
+    "component_roi": {
+      "x1": 0,
+      "y1": 0,
+      "x2": 128,
+      "y2": 118,
+      "margin_px": 28
+    },
+    "component_proximity_filter_applied": true,
+    "component_proximity_px": 12,
+    "kept_candidate_blobs": 2,
+    "removed_candidate_blobs": 0,
+    "terminal_seed_filter_applied": true,
+    "terminal_seed_filter_fallback": false,
+    "terminal_seed_count": 2,
+    "terminal_seed_radius_px": 10,
+    "kept_terminal_seed_blobs": 2,
+    "removed_nonterminal_blobs": 0,
+    "component_ink_color_filter_active": false,
+    "notebook_rule_color_filter_active": false,
+    "notebook_rule_color_pixels_removed": 0,
+    "pale_page_rulings_removed": 0,
+    "border_frame_artifacts_removed": 0,
+    "ink_pixels_before_masking": 942,
+    "wire_mask_pixels": 26,
+    "erased_mask_pixels": 10230
+  },
+  "segment_count": 0,
+  "node_count": 1,
+  "endpoint_candidate_count": 1,
+  "junction_candidate_count": 0,
+  "total_wire_length_px": 0,
+  "nodes": [
+    {
+      "node_id": "NODE_0001",
+      "position": {
+        "x": 62.0,
+        "y": 2.0
+      },
+      "pixel_count": 1,
+      "raw_branch_count": 0,
+      "kind_candidate": "endpoint_candidate",
+      "segment_degree": 0
+    }
+  ],
+  "segments": [],
+  "graph_debug": {
+    "raw_skeleton_pixels": 1,
+    "closed_loop_count": 0
+  },
+  "project_id": "PRJ_0157",
+  "generated_from": "ocr_components",
+  "terminal_context_available": true,
+  "wire_detection_version": "5.13.6",
+  "pipeline_order": [
+    "components",
+    "wires",
+    "terminals",
+    "junctions"
+  ],
+  "ocr_context_available": true,
+  "transistor_terminal_refinement": {
+    "method": "stage8_wires_class_arrow_E_base_B_leftover_C",
+    "transistor_count": 0,
+    "refined_count": 0,
+    "manual_preserved_count": 0,
+    "review_count": 0,
+    "components": []
+  },
+  "transistor_wire_refinement": {
+    "method": "stage8_wires_class_arrow_E_base_B_leftover_C",
+    "transistor_count": 0,
+    "refined_count": 0,
+    "manual_preserved_count": 0,
+    "review_count": 0,
+    "components": []
+  },
+  "terminal_detection_after_wires": {
+    "method": "all_classes_original_ink_inside_bbox_after_wires",
+    "components": [
+      {
+        "component_id": "BAT_AUTO1",
+        "type": "battery",
+        "rejected_notebook_rule_contacts": 0,
+        "rejected_polarity_glyph_contacts": 0,
+        "polarized_contact_selection": {
+          "method": "opposed_outer_plate_lead_contacts",
+          "candidates": 1,
+          "selected": 1,
+          "rejected_plate_or_nonopposed_contacts": 0,
+          "axis": [
+            -0.0,
+            1.0
+          ]
+        },
+        "contact_count": 1,
+        "polarity": {
+          "source": "visible_polarity_on_final_wire_contacts",
+          "confirmed": false,
+          "reason": "opposite_polarized_lead_not_observed"
+        },
+        "status": "wire_contacts_inside_bbox"
+      }
+    ],
+    "refined_count": 1,
+    "manual_preserved_count": 0
+  },
+  "stage9_warning": "Execute a Etapa 8 de linhas antes da Etapa 9."
+}

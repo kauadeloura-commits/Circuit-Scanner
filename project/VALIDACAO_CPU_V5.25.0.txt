@@ -1,0 +1,49 @@
+VALIDAÇÃO V5.25.0 — CPU
+
+105 testes de produção, modelos, circuitos, simulação e fluxo: aprovados.
+69 testes focados de OCR e integração: aprovados.
+19 testes de otimização e reaproveitamento: aprovados.
+104 testes de fios, junções, contatos, polaridade e transistores: aprovados.
+As suítes têm sobreposição; estas contagens não são casos todos distintos.
+18 scripts de interface: sintaxe validada.
+Controlador guiado: sequência automática, retomada, falhas e revisão aprovados.
+5 amostras impressas com Tesseract real: unidades e BC547B aprovados.
+10 circuitos de referência com ngspice real, KiCad e ZIP: 10/10 aprovados.
+
+Verificados: mudança de imagem/caixa/modelo treinado/código invalida cache;
+saída ausente/alterada e cache corrompido não são aceitos; pedidos iguais
+concorrentes calculam uma vez; mudanças de valores não movem terminais;
+OCR usa a chave das caixas finais e verifica a geometria mesmo quando
+reaproveita textos; o fluxo calcula geometria uma vez, após o OCR;
+leituras gerais/brutas ficam preservadas e dúvidas recebem releituras;
+números cobertos pela mesma unidade não viram referências falsas;
+aprovação parcial da referência não permite concluir o fluxo.
+
+Medições ilustrativas em uma execução por modo:
+- Dez referências: 2.3512 s na execução e
+  0.0417 s no reaproveitamento.
+- Geometria de capacitor sintético: 0.6770 s e
+  0.0461 s, com contatos idênticos.
+- OCR PRJ_0416 com Tesseract na CPU: 1.9294 s antes e
+  1.5985 s depois. Valores já lidos foram preservados; o indutor, antes vazio,
+  passou a 100mH, mantendo L_AUTO1 como referência provisória. Há 12
+  pendências de revisão em ambas as versões; isso não comprova leitura perfeita.
+Esses exemplos não representam o tempo total nem garantem uma porcentagem
+universal de aceleração. Fotos difíceis mantêm as buscas adicionais.
+
+Limitação da comparação real do detector/EasyOCR: a biblioteca Torch
+instalada não pôde ser carregada neste ambiente de validação (WinError 5,
+acesso negado à DLL). Não foi medida sua aceleração nem uma métrica real
+de precisão do detector. As decisões de vistas/releituras foram cobertas
+por testes controlados. Nenhuma configuração de GPU foi habilitada.
+
+Verificação no navegador com circuito sintético: painel de tempos exibido
+na mesma página da revisão; marcação de reaproveitamento; netlist disponível;
+cabeçalho sticky em y=0; iframe 4327 px, conteúdo 4325 px e overflow visible,
+sem scroll interno. Evidência: Desempenho_CPU_v5.25.0.png.
+
+Arquivos alterados comparados com v5.24.0. Frontend, algoritmos de fios,
+contatos e identidade dos terminais permanecem iguais. Integração evita
+trabalho duplicado e gravações repetidas de máscaras. Pacote cumulativo,
+sem projetos/fotos/modelos treinados do usuário ou caches de validação.
+Integridade do ZIP e bytes de cada arquivo conferidos. C:\tc2 não foi alterado.

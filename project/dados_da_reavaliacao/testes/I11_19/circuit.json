@@ -1,0 +1,122 @@
+{
+  "schema_version": "circuit-1.0",
+  "project_id": "PRJ_0239",
+  "name": "EVAL I11_19",
+  "created_at": "2026-10-19T19:40:43-03:00",
+  "components": [
+    {
+      "id": "Q_AUTO1",
+      "type": "transistor_pnp",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "B",
+        "C",
+        "E"
+      ],
+      "metadata": {
+        "source_component_id": "Q_AUTO1",
+        "reference_source": "generated",
+        "value_source": "not_applicable",
+        "review_required": true,
+        "model": {
+          "text": "BC557B",
+          "source": "suggested",
+          "confidence": null
+        },
+        "electrical_parameters": {
+          "hfe": {
+            "value": 325.0,
+            "unit": "A/A",
+            "source": "datasheet_midpoint",
+            "estimated": true,
+            "datasheet": {
+              "model": "BC557B",
+              "manufacturer": "onsemi",
+              "url": "https://www.onsemi.com/pdf/datasheet/bc556bta-d.pdf",
+              "page": 2,
+              "checked_at": "2026-10-01",
+              "unit": "A/A",
+              "condition": "VCE = -5 V; IC = -2 mA; TA = 25 °C",
+              "min": 200,
+              "typ": null,
+              "max": 450
+            }
+          },
+          "vbe_on": {
+            "value": -0.66,
+            "unit": "V",
+            "source": "datasheet_typical",
+            "estimated": true,
+            "datasheet": {
+              "model": "BC557B",
+              "manufacturer": "onsemi",
+              "url": "https://www.onsemi.com/pdf/datasheet/bc556bta-d.pdf",
+              "page": 2,
+              "checked_at": "2026-10-01",
+              "unit": "V",
+              "condition": "VCE = -5 V; IC = -2 mA; TA = 25 °C",
+              "min": -0.75,
+              "typ": -0.66,
+              "max": -0.6
+            }
+          }
+        },
+        "parameter_policy": {
+          "hfe": "datasheet",
+          "vbe_on": "datasheet"
+        },
+        "parameter_pending": []
+      }
+    }
+  ],
+  "nets": [
+    {
+      "name": "NET_1",
+      "members": [
+        "Q_AUTO1.B"
+      ]
+    },
+    {
+      "name": "NET_2",
+      "members": [
+        "Q_AUTO1.C"
+      ]
+    },
+    {
+      "name": "NET_3",
+      "members": [
+        "Q_AUTO1.E"
+      ]
+    }
+  ],
+  "warnings": [
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "Q_AUTO1"
+    },
+    {
+      "code": "unconnected_pin",
+      "message": "Pino sem fio externo confirmado.",
+      "terminal_ref": "Q_AUTO1.C"
+    },
+    {
+      "code": "unconnected_pin",
+      "message": "Pino sem fio externo confirmado.",
+      "terminal_ref": "Q_AUTO1.E"
+    }
+  ],
+  "confirmed_by_user": false,
+  "status": "draft",
+  "image_independent": true,
+  "source_connectivity_signature": "68708ceb208f3d03397ed6a58099b38a17108eda817c788b436fe7a686cb1b37",
+  "validation": {
+    "structurally_valid": true,
+    "review_required": true,
+    "component_count": 1,
+    "net_count": 3,
+    "pin_count": 3
+  }
+}

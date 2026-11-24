@@ -1,0 +1,298 @@
+{
+  "schema_version": "circuit-1.0",
+  "project_id": "PRJ_0304",
+  "name": "EVAL C04",
+  "created_at": "2026-10-19T19:45:39-03:00",
+  "components": [
+    {
+      "id": "LED_AUTO1",
+      "type": "led",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "A",
+        "K"
+      ],
+      "metadata": {
+        "source_component_id": "LED_AUTO1",
+        "reference_source": "generated",
+        "value_source": "not_applicable",
+        "review_required": true,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "C_AUTO1",
+      "type": "capacitor",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "2"
+      ],
+      "metadata": {
+        "source_component_id": "C_AUTO1",
+        "reference_source": "generated",
+        "value_source": "missing",
+        "review_required": true,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "Q_AUTO1",
+      "type": "transistor_npn",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "B",
+        "C",
+        "E"
+      ],
+      "metadata": {
+        "source_component_id": "Q_AUTO1",
+        "reference_source": "generated",
+        "value_source": "not_applicable",
+        "review_required": true,
+        "model": {
+          "text": "BC547B",
+          "source": "suggested",
+          "confidence": null
+        },
+        "electrical_parameters": {
+          "hfe": {
+            "value": 325.0,
+            "unit": "A/A",
+            "source": "datasheet_midpoint",
+            "estimated": true,
+            "datasheet": {
+              "model": "BC547B",
+              "manufacturer": "onsemi",
+              "url": "https://m.onsemi.com/download/data-sheet/pdf/bc550-d.pdf",
+              "page": 2,
+              "checked_at": "2026-10-01",
+              "unit": "A/A",
+              "condition": "VCE = 5 V; IC = 2 mA; TC = 25 °C",
+              "min": 200,
+              "typ": null,
+              "max": 450
+            }
+          },
+          "vbe_on": {
+            "value": 0.66,
+            "unit": "V",
+            "source": "datasheet_typical",
+            "estimated": true,
+            "datasheet": {
+              "model": "BC547B",
+              "manufacturer": "onsemi",
+              "url": "https://m.onsemi.com/download/data-sheet/pdf/bc550-d.pdf",
+              "page": 2,
+              "checked_at": "2026-10-01",
+              "unit": "V",
+              "condition": "VCE = 5 V; IC = 2 mA; TC = 25 °C",
+              "min": 0.58,
+              "typ": 0.66,
+              "max": 0.7
+            }
+          }
+        },
+        "parameter_policy": {
+          "hfe": "datasheet",
+          "vbe_on": "datasheet"
+        },
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "LED_AUTO2",
+      "type": "led",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "A",
+        "K"
+      ],
+      "metadata": {
+        "source_component_id": "LED_AUTO2",
+        "reference_source": "generated",
+        "value_source": "not_applicable",
+        "review_required": true,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "GND1",
+      "type": "gnd",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "GND"
+      ],
+      "metadata": {
+        "source_component_id": "GND1",
+        "reference_source": "class",
+        "value_source": "not_applicable",
+        "review_required": false,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "GND2",
+      "type": "gnd",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "GND"
+      ],
+      "metadata": {
+        "source_component_id": "GND2",
+        "reference_source": "class",
+        "value_source": "not_applicable",
+        "review_required": false,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    }
+  ],
+  "nets": [
+    {
+      "name": "GND",
+      "members": [
+        "C_AUTO1.2",
+        "GND1.GND",
+        "GND2.GND",
+        "Q_AUTO1.B"
+      ]
+    },
+    {
+      "name": "NET_1",
+      "members": [
+        "Q_AUTO1.E"
+      ]
+    },
+    {
+      "name": "NET_3",
+      "members": [
+        "LED_AUTO2.A",
+        "Q_AUTO1.C"
+      ]
+    },
+    {
+      "name": "NET_4",
+      "members": [
+        "LED_AUTO2.K"
+      ]
+    },
+    {
+      "name": "NET_5",
+      "members": [
+        "LED_AUTO1.A"
+      ]
+    },
+    {
+      "name": "NET_6",
+      "members": [
+        "LED_AUTO1.K"
+      ]
+    }
+  ],
+  "warnings": [
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "LED_AUTO1"
+    },
+    {
+      "code": "unconnected_pin",
+      "message": "Pino sem fio externo confirmado.",
+      "terminal_ref": "LED_AUTO1.A"
+    },
+    {
+      "code": "unconnected_pin",
+      "message": "Pino sem fio externo confirmado.",
+      "terminal_ref": "LED_AUTO1.K"
+    },
+    {
+      "code": "pin_count_mismatch",
+      "message": "Quantidade ou nomes de pinos incompletos.",
+      "component_id": "C_AUTO1",
+      "expected_pins": [
+        "1",
+        "2"
+      ],
+      "observed_pins": [
+        "2"
+      ]
+    },
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "C_AUTO1"
+    },
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "Q_AUTO1"
+    },
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "LED_AUTO2"
+    },
+    {
+      "code": "value_missing",
+      "component_id": "C_AUTO1",
+      "message": "Valor do componente nao informado."
+    }
+  ],
+  "confirmed_by_user": false,
+  "status": "draft",
+  "image_independent": true,
+  "source_connectivity_signature": "7115e003883710feac73eb7112614022ea139460525d27923492ab8ecfabc4dc",
+  "validation": {
+    "structurally_valid": true,
+    "review_required": true,
+    "component_count": 6,
+    "net_count": 6,
+    "pin_count": 10
+  }
+}

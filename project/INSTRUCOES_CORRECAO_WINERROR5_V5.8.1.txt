@@ -1,0 +1,19 @@
+CORREÇÃO DO ERRO [WinError 5] AO MONTAR O DATASET MISTO
+
+1. Feche o servidor do Circuit Scanner.
+2. Faça uma cópia de segurança da sua pasta project.
+3. Extraia este ZIP dentro da pasta project e permita substituir somente:
+   - backend/real_dataset.py
+   - backend/component_learning.py
+   - backend/main.py
+4. NÃO apague nem substitua as pastas real_data, database, projects, dataset ou models.
+5. Inicie o servidor novamente.
+6. Abra http://127.0.0.1:8010/component-trainer
+7. Clique novamente em "Montar dataset misto".
+
+O sistema passará a criar datasets versionados em dataset_builds/build_... e
+usará dataset_builds/active.json para selecionar o último build concluído.
+A pasta dataset_mixed antiga pode permanecer onde está; ela não será apagada.
+
+Suas imagens e as 1.911 caixas anotadas permanecem em real_data e não são
+alteradas por esta correção.

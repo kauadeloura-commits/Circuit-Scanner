@@ -1,0 +1,165 @@
+CORRECAO DA ETAPA 6 - CIRCUIT SCANNER
+======================================
+
+Este pacote contém o modelo final retreinado e as correções do reconhecimento.
+Ele evita que textos do circuito sejam aceitos como componentes e separa as
+responsabilidades:
+
+- YOLO: identifica a categoria e a posição do componente.
+- OCR: lê referência, modelo e valor do texto próximo ao componente.
+
+COMO INSTALAR
+-------------
+
+1. Pare o backend e o frontend com Ctrl+C nas duas janelas do terminal.
+
+2. Extraia o conteúdo deste ZIP diretamente em:
+
+   C:\tc2\Circuit_Scanner_Etapa5_Corrigido\project
+
+3. Quando o Windows perguntar, confirme a substituição dos arquivos.
+
+4. Não apague as pastas projects, database, real_data ou dataset_mixed. O ZIP
+   substitui o modelo ativo, mas inclui também dois backups em models.
+
+5. Abra o Prompt de Comando na pasta project, ative o ambiente virtual e
+   instale as dependências. O EasyOCR é utilizado para as anotações feitas
+   à mão e o Tesseract continua funcionando como apoio:
+
+   venv\Scripts\activate
+   python -m pip install -r requirements.txt
+   set "TESSERACT_CMD=C:\Program Files\Tesseract-OCR\tesseract.exe"
+
+6. Inicie o backend:
+
+   uvicorn backend.main:app --reload
+
+7. Em outro Prompt de Comando, na mesma pasta, inicie o frontend:
+
+   venv\Scripts\activate
+   python -m http.server 5500 --directory frontend
+
+8. Abra http://localhost:5500 e pressione Ctrl+F5 para limpar o cache.
+
+TESTE RECOMENDADO
+-----------------
+
+Use primeiro a imagem de teste. Clique em "Reconhecer componentes" e depois em
+"Ler textos". Letras e números como R1, C2, 10k e 100n devem aparecer como
+texto, e não como novos componentes. Na primeira execução, a preparação do
+leitor pode acrescentar alguns segundos.
+
+REVISAO DO RECONHECIMENTO
+-------------------------
+
+O reconhecimento usa confiança 0,25, resolução 640 e uma visão adicional em
+960 px. Como desenhos manuais podem continuar ambíguos, a tela
+possui o quadro "Corrigir reconhecimento":
+
+- classe errada: troque a classe na tabela;
+- falso componente: clique em "Excluir";
+- componente ausente: escolha a classe e arraste uma caixa sobre o símbolo;
+- finalize em "Salvar reconhecimento corrigido" e execute o OCR novamente.
+
+O botão da lista de projetos agora se chama "Abrir reconhecimento".
+
+COMPONENTES SEM CAMPO DE VALOR
+------------------------------
+
+LED, GND, transistor NPN e transistor PNP não exibem campo para informar
+valor. O sistema mostra "Não se aplica" e também impede que o OCR associe
+um número ou texto como valor desses componentes.
+
+ORDEM DO RECONHECIMENTO
+-----------------------
+
+1. O YOLO encontra primeiro os componentes.
+2. O OCR analisa as áreas ao redor das caixas em um lote de recortes
+   independentes. Uma palavra nunca atravessa a célula de outro componente.
+3. As referências são relacionadas globalmente à caixa compatível mais
+   próxima. Assim, R4 só concorre entre resistores; C2 só entre capacitores;
+   Q1 só entre transistores e MOSFETs.
+4. O valor é associado depois à mesma caixa compatível mais próxima.
+5. O núcleo dos símbolos é mascarado durante a leitura para não virar texto.
+6. Se uma referência ou valor entrar na caixa do componente, a caixa é
+   reduzida automaticamente pelo lado ocupado pelo texto, mas somente com
+   OCR confiável e preservando pelo menos 25% da largura e altura originais.
+
+Quando uma referência não é lida, o sistema usa R_AUTO1, C_AUTO1 etc. Esses
+nomes deixam claro que o número não veio da imagem. Por exemplo, ele não cria
+R7 fingindo que leu a escrita.
+
+Sobreposições duvidosas são apenas marcadas para revisão. Uma caixa é excluída
+automaticamente somente quando coincide quase inteira com um texto confirmado
+pelo OCR. Isso remove casos como R4 previsto como resistor, C1 previsto como
+capacitor ou o zero de 10V previsto como VCC. Caixas maiores que contêm símbolo
+e escrita são preservadas e reduzidas pelo lado ocupado pelas letras.
+
+Os parágrafos explicativos abaixo das seções foram retirados da página.
+
+BIBLIOTECA DA ESCRITA
+---------------------
+
+Quando uma leitura errada é corrigida e salva na tabela (por exemplo, R7 para
+R4), o programa guarda automaticamente o recorte confirmado em ocr_samples.
+Nas próximas execuções ele compara os novos textos com até 500 amostras da
+escrita do usuário. Apenas alterações reais alimentam a biblioteca, evitando
+que uma leitura errada seja aprendida sem correção.
+
+As linhas longas do caderno e fios que atravessam o recorte são removidos da
+amostra antes da comparação. Não é necessário editar index.json manualmente.
+Este pacote já inclui 19 amostras confirmadas retiradas da imagem enviada:
+R1 a R6, C1, C2, LED1, 10V e seus valores. Elas formam a biblioteca inicial
+da escrita; as correções salvas pelo usuário acrescentam novos exemplos.
+
+TREINO PARA NAO CONFUNDIR TEXTO COM COMPONENTE
+----------------------------------------------
+
+Cada texto alfanumérico encontrado pelo OCR também é salvo em text_negatives.
+Esses recortes não possuem caixas YOLO: eles ensinam que LED, LED1, R4, C2,
+10V, 100nF, LM358 e outras escritas são fundo, não componentes.
+
+1. Execute o OCR em algumas imagens reais para coletar a sua escrita.
+2. Abra "Imagens reais / anotações".
+3. Gere o dataset misto com 450 ou 600 exemplos negativos de texto.
+4. No terminal, continue o treino a partir do modelo ativo:
+
+   python scripts\train_yolo_mixed.py --epochs 30 --base-model auto
+
+O script cria um backup do modelo anterior e usa o circuit_scanner_yolo.pt
+atual como base. Os negativos gerados e os coletados pelo OCR aparecem no
+manifest.json do dataset misto.
+
+MELHORIAS DESTA VERSAO
+----------------------
+
+- LED escrito como led, LED ou Led é aceito mesmo sem número.
+- Referências curtas, principalmente C1 e C2, recebem uma leitura ampliada por
+  componente com EasyOCR em modo rápido e consulta à biblioteca confirmada.
+- O modo beam search foi retirado. O EasyOCR usa a imagem original e um lote
+  de recortes independentes no modo greedy.
+- O Tesseract só é executado quando o EasyOCR não encontra referências
+  suficientes. Rotações e divisões repetidas da imagem foram eliminadas.
+- O tempo real da leitura aparece na mensagem final e também em components.json.
+- A detecção de componentes usa também uma visão em 960 px para recuperar
+  símbolos pequenos que poderiam ficar ausentes em 640 px.
+- As caixas podem ser reduzidas mais agressivamente quando uma escrita invade
+  sua lateral, mantendo somente a região do símbolo.
+
+RESULTADO VALIDADO EM 02/09/2026
+--------------------------------
+
+- A imagem enviada possui 15 símbolos e o fluxo real reconheceu os 15.
+- Nenhuma das 15 caixas ficou marcada para revisão.
+- Em 36 imagens reservadas contendo somente texto, o modelo antigo criou 112
+  falsas detecções com confiança 0,10; o modelo final criou zero.
+- Precisão do modelo final: 97,7%.
+- Sensibilidade: 92,9%.
+- mAP50: 96,2%.
+- mAP50-95: 90,2%.
+- Na imagem enviada, foram relacionados R1 a R6, C1, C2, LED1, dois textos
+  10V e oito valores. A leitura completa levou 22,52 segundos.
+- O único item para revisão foi o transistor Q_AUTO1, pois não existe Q1
+  escrito próximo ao símbolo na imagem.
+- Testes automatizados: 22 aprovados.
+- O modelo anterior está salvo como circuit_scanner_yolo_antes_texto.pt.

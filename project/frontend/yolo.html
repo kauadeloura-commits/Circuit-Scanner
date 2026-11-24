@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treinamento - Circuit Scanner</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="container">
+        <a class="voltar" href="index.html">← Voltar para projetos</a>
+
+        <section class="card">
+            <h1>Treinamento do reconhecimento</h1>
+
+            <div id="status-yolo" class="dataset-resumo">
+                Carregando...
+            </div>
+
+            <button id="botao-atualizar-yolo" type="button">
+                Atualizar status
+            </button>
+        </section>
+
+        <section class="card">
+            <h2>Como treinar</h2>
+
+            <p><strong>Teste rápido:</strong></p>
+            <pre class="comando">python scripts\train_yolo.py --epochs 10</pre>
+
+            <p><strong>Treinamento recomendado depois dos testes:</strong></p>
+            <pre class="comando">python scripts\train_yolo.py --epochs 50</pre>
+
+            <p>
+                Ao terminar, deve existir:
+                <code>models/circuit_scanner_yolo.pt</code>.
+            </p>
+
+            <p><strong>Validar o modelo:</strong></p>
+            <pre class="comando">python scripts\validate_yolo.py</pre>
+        </section>
+
+        <section class="card">
+            <h2>Antes do treinamento final</h2>
+            <p>
+                Gere um conjunto maior antes do treinamento final.
+            </p>
+
+            <a class="link-botao" href="dataset.html">
+                Abrir dataset
+            </a>
+        </section>
+
+        <section class="card">
+            <h2>Treinamento com imagens reais</h2>
+            <p>Depois de gerar o dataset misto com os negativos de texto:</p>
+            <pre class="comando">python scripts\train_yolo_mixed.py --epochs 30 --base-model auto</pre>
+            <p>Depois valide:</p>
+            <pre class="comando">python scripts\validate_yolo_mixed.py</pre>
+            <a class="link-botao" href="annotate.html">Abrir imagens reais / anotações</a>
+        </section>
+    </main>
+
+    <script src="js/yolo.js"></script>
+</body>
+</html>

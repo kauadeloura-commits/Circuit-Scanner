@@ -1,0 +1,61 @@
+ATUALIZACAO V5.10.2 - FALSOS DIODOS E AMP-OP A LAPIS
+======================================================
+
+O que foi corrigido
+-------------------
+
+1. Toda deteccao de diodo, inclusive a vinda da imagem completa, agora passa
+   por validacao fisica obrigatoria.
+
+2. Para aceitar um diodo, o programa procura em conjunto:
+   - o corpo triangular do simbolo (por linhas ou area preenchida);
+   - a barra do diodo;
+   - linhas estruturais compatíveis com os terminais;
+   - uma quantidade minima de traco dentro da caixa.
+
+3. Trechos isolados das pautas do caderno deixam de ser aceitos como diodo,
+   mesmo quando o modelo YOLO atribui confiança alta.
+
+4. O detector geometrico de amplificador operacional recebeu uma passagem
+   para tracos claros/desenhados a lapis. A proposta autonoma somente e criada
+   quando encontra triangulo, base, ligacoes e o par de marcadores + e -.
+   Isso evita que linhas aleatorias sejam marcadas como amp-op.
+
+Como instalar
+-------------
+
+1. Feche o servidor do Circuit Scanner.
+2. Extraia este ZIP na pasta raiz do projeto.
+3. Confirme a substituicao dos arquivos da pasta backend.
+4. Inicie o servidor novamente.
+5. Abra http://127.0.0.1:8010/system/version e confirme:
+
+   2026-09-28-diode-geometry-opamp-pencil-hotfix-v5.10.2
+
+6. Refaca o reconhecimento usando a imagem original, sem caixas e rotulos
+   desenhados por uma execucao anterior.
+
+Treinamento
+-----------
+
+Esta correcao de filtragem funciona sem novo treinamento. Para melhorar o
+modelo de forma permanente, continue salvando como imagens negativas revisadas
+as fotos sem componentes e corrija todas as caixas verdadeiras antes de treinar.
+As imagens de validacao/teste nao devem ser copiadas para o conjunto de treino.
+
+Validacao realizada
+-------------------
+
+- 33 testes automatizados aprovados.
+- pauta horizontal rejeitada como diodo;
+- diodo sintetico preservado;
+- deteccao ampliada sem confirmacao da imagem completa continua rejeitada;
+- amp-op geometrico exige ancora de polaridade + e -.
+
+Observacao importante
+---------------------
+
+O filtro privilegia precisao. Um diodo muito apagado, cortado ou sem a barra
+visivel pode ser enviado para revisao ou rejeitado. Nesse caso, mantenha a
+imagem original no dataset e corrija manualmente a caixa para usa-la no proximo
+treinamento.

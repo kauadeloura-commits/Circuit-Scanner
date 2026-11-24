@@ -1,0 +1,74 @@
+{
+  "schema_version": "stage13-spice-1.0",
+  "source_revision": "392608823a51abe5722f1076b05175987db24abbb6749f5c43d1b635bbd618c9",
+  "generator_version": "reviewed-rails-complete-analysis-2",
+  "options": {
+    "analysis": "op"
+  },
+  "nodes": {
+    "BRANCH1": "n1",
+    "BRANCH2": "n2",
+    "GND": "0"
+  },
+  "components": [
+    {
+      "component_id": "R1",
+      "spice_name": "R1",
+      "type": "resistor",
+      "pins": [
+        "1",
+        "2"
+      ],
+      "nodes": {
+        "1": "n1",
+        "2": "0"
+      },
+      "value_si": 1000.0
+    },
+    {
+      "component_id": "R2",
+      "spice_name": "R2",
+      "type": "resistor",
+      "pins": [
+        "1",
+        "2"
+      ],
+      "nodes": {
+        "1": "n2",
+        "2": "0"
+      },
+      "value_si": 1000.0
+    },
+    {
+      "component_id": "V1",
+      "spice_name": "V1",
+      "type": "source_dc",
+      "pins": [
+        "+",
+        "-"
+      ],
+      "nodes": {
+        "+": "n1",
+        "-": "0"
+      },
+      "value_si": 5.0
+    },
+    {
+      "component_id": "V2",
+      "spice_name": "V2",
+      "type": "source_dc",
+      "pins": [
+        "+",
+        "-"
+      ],
+      "nodes": {
+        "+": "n2",
+        "-": "0"
+      },
+      "value_si": 3.0
+    }
+  ],
+  "warnings": [],
+  "netlist": "Circuit Scanner - confirmed circuit\n.options numdgt=15 reltol=1e-6 abstol=1e-12 vntol=1e-9\nR1 n1 0 1000\nR2 n2 0 1000\nV1 n1 0 DC 5\nV2 n2 0 DC 3\n.save all\n.op\n.control\nset filetype=ascii\nrun\nwrite simulation.raw all\nquit\n.endc\n.end\n",
+  "netlist_sha256": "9e8c83cbb05e8b0bd9bb392621f9ab00687cb22cbe47298e4fe48406be1cbc8f"
+}

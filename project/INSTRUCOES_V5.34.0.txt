@@ -1,0 +1,58 @@
+ATUALIZAÇÃO V5.34.0 — REVISÃO VISUAL, FALSTAD E SÍMBOLOS
+
+PARA USAR
+Feche o servidor antigo e aplique esta atualização com backup, mantendo
+os projetos, fotos, banco de dados, venv e pesos do detector.
+O ZIP é cumulativo. Extraia fora da pasta do projeto e use o script
+APLICAR_ATUALIZACAO.ps1 ou mescle backend/frontend e tools/circuitjs
+conforme as pastas do pacote. Se o Windows bloquear o script, copie as
+pastas manualmente sem mudar a política do computador.
+Depois abra INICIAR_NA_REDE.bat e atualize o navegador com Ctrl+F5.
+Link: http://127.0.0.1:8010/workflow
+Versão em /system/version: 2026-10-08-visual-edit-symbols-connections-v5.34.0
+
+REVISÃO DO CIRCUITO E SIMULAÇÃO
+Compare a foto com o esquemático digital na mesma tela.
+Ligar dois pontos: clique no primeiro terminal e depois no segundo.
+Separar um ponto: clique no terminal cuja ligação quer remover.
+Mover componente: arraste o símbolo. Os fios serão recalculados.
+Alterar valor: clique no componente, preencha o campo e salve.
+As correções no desenho são salvas automaticamente no projeto.
+Pontos laranja indicam terminais ainda sem ligação. Eles precisam ser
+conectados antes de confirmar e continuar pelo fluxo normal.
+
+Na aba Falstad ao vivo é possível editar os fios, valores e componentes.
+Salvar alterações do Falstad atualiza o circuito do projeto. As alterações
+também são salvas ao continuar pelo fluxo ou baixar o esquemático.
+O botão Restaurar último salvo descarta apenas as alterações ainda não salvas
+no simulador. As versões anteriores do circuito ficam no histórico do projeto.
+Baixar esquemático editável entrega o projeto KiCad e sua biblioteca;
+Baixar esquemático SVG entrega o desenho da versão corrigida.
+Arquivos/ZIP do projeto também usam as ligações e edições salvas.
+Elementos Falstad sem representação no scanner são informados; uma edição
+incompatível não substitui o circuito salvo. O próprio Falstad permite
+exportar esses circuitos pelo seu menu Arquivo.
+
+RECONHECIMENTO E LIGAÇÕES
+Quando o grafo de fios termina antes do terminal, a busca examina um entorno
+maior e exige tinta contínua no fio externo. Uma lacuna branca ou um cruzamento
+declarado separado impede a conexão automática. Onde a evidência não basta,
+o ponto fica destacado para correção visual; não se inventa uma ligação.
+Os contatos coincidentes de projetos antigos continuam sendo recuperados
+com histórico. Uma correção visual salva tem prioridade sobre a foto.
+
+VCC pequeno: círculo vazado e um único fio externo; círculos divididos por
+ramificações de transistor e VCC com vários fios são rejeitados.
+Indutor: busca complementar por curvas repetidas conectadas a dois fios.
+LED: duas setas com direções próximas e cabeça verificada.
+Capacitor polarizado: sinal + visível, inclusive fora da proposta inicial.
+Propostas sobrepostas para as mesmas duas placas viram um componente.
+Não é necessário refazer OCR para usar o novo editor. Para aplicar o novo
+reconhecimento de símbolos a uma foto antiga, volte a Reconhecimento e
+execute novamente, conferindo as revisões seguintes.
+
+O desenho conserva uma escala uniforme e a disposição dos terminais da
+foto. Símbolos que se sobrepõem podem ser afastados para permitir fios
+legíveis; desenhos muito densos ainda podem precisar de reorganização.
+Os modelos elétricos do Falstad seguem as aproximações já usadas pelo
+programa. Esta atualização não acrescenta GPU, treino de IA ou ngspice.

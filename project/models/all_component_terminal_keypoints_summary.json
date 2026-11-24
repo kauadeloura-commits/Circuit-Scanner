@@ -1,0 +1,342 @@
+{
+  "schema_version": "all-component-terminal-pose-1.0",
+  "trained_at": "2026-09-24T07:41:46-03:00",
+  "model_path": "/workspace/scratch/cfb3a39891ce/work_v54/models/all_component_terminal_keypoints.pt",
+  "initial_model": "/workspace/scratch/cfb3a39891ce/work_v54/models/terminal_keypoints.pt",
+  "classes": [
+    "vcc",
+    "transistor_npn",
+    "transistor_pnp",
+    "diode",
+    "led",
+    "resistor",
+    "capacitor"
+  ],
+  "keypoint_schemas": {
+    "vcc": [
+      "VCC",
+      null,
+      null
+    ],
+    "transistor_npn": [
+      "B",
+      "C",
+      "E"
+    ],
+    "transistor_pnp": [
+      "B",
+      "C",
+      "E"
+    ],
+    "diode": [
+      "A",
+      "K",
+      null
+    ],
+    "led": [
+      "A",
+      "K",
+      null
+    ],
+    "resistor": [
+      "1",
+      "2",
+      null
+    ],
+    "capacitor": [
+      "1",
+      "2",
+      null
+    ]
+  },
+  "dataset": {
+    "created_at": "2026-09-24T07:27:39-03:00",
+    "selected_classes": [
+      "vcc",
+      "transistor_npn",
+      "transistor_pnp",
+      "diode",
+      "led",
+      "resistor",
+      "capacitor"
+    ],
+    "keypoint_schemas": {
+      "vcc": [
+        "VCC",
+        null,
+        null
+      ],
+      "transistor_npn": [
+        "B",
+        "C",
+        "E"
+      ],
+      "transistor_pnp": [
+        "B",
+        "C",
+        "E"
+      ],
+      "diode": [
+        "A",
+        "K",
+        null
+      ],
+      "led": [
+        "A",
+        "K",
+        null
+      ],
+      "resistor": [
+        "1",
+        "2",
+        null
+      ],
+      "capacitor": [
+        "1",
+        "2",
+        null
+      ]
+    },
+    "raw_sample_count": 589,
+    "project_count": 75,
+    "split_is_project_grouped": true,
+    "original_counts": {
+      "train": {
+        "vcc": 33,
+        "transistor_npn": 51,
+        "transistor_pnp": 39,
+        "diode": 21,
+        "led": 13,
+        "resistor": 224,
+        "capacitor": 48
+      },
+      "val": {
+        "vcc": 5,
+        "transistor_npn": 6,
+        "transistor_pnp": 8,
+        "diode": 6,
+        "led": 2,
+        "resistor": 28,
+        "capacitor": 4
+      },
+      "test": {
+        "vcc": 5,
+        "transistor_npn": 14,
+        "transistor_pnp": 10,
+        "diode": 9,
+        "led": 4,
+        "resistor": 47,
+        "capacitor": 12
+      }
+    },
+    "written_counts": {
+      "train": {
+        "vcc": 60,
+        "transistor_npn": 60,
+        "transistor_pnp": 60,
+        "diode": 60,
+        "led": 60,
+        "resistor": 120,
+        "capacitor": 60
+      },
+      "val": {
+        "vcc": 5,
+        "transistor_npn": 6,
+        "transistor_pnp": 8,
+        "diode": 6,
+        "led": 2,
+        "resistor": 28,
+        "capacitor": 4
+      },
+      "test": {
+        "vcc": 5,
+        "transistor_npn": 14,
+        "transistor_pnp": 10,
+        "diode": 9,
+        "led": 4,
+        "resistor": 47,
+        "capacitor": 12
+      }
+    },
+    "balance_target": 60,
+    "resistor_train_cap": 120
+  },
+  "training": {
+    "epochs_requested": 60,
+    "imgsz": 416,
+    "batch": 16,
+    "patience": 15,
+    "save_dir": "/workspace/scratch/cfb3a39891ce/work_v54/terminal_training_all_components/pose_dataset_7_classes/runs/terminals_7_classes",
+    "epochs_completed": 32,
+    "best_epoch_zero_based": 17,
+    "best_epoch_human": 18,
+    "stopped_early": true,
+    "selection_fitness": 1.83419
+  },
+  "validation_metrics": {
+    "metrics/precision(B)": 0.9475238498280635,
+    "metrics/recall(B)": 0.9467801095565646,
+    "metrics/mAP50(B)": 0.9855714285714285,
+    "metrics/mAP50-95(B)": 0.8910329866283813,
+    "metrics/precision(P)": 0.9423355822389384,
+    "metrics/recall(P)": 0.941793730360993,
+    "metrics/mAP50(P)": 0.9811718483536664,
+    "metrics/mAP50-95(P)": 0.9229600598153482,
+    "fitness": 1.8139930464437295
+  },
+  "test_metrics": {
+    "metrics/precision(B)": 0.9654644880679886,
+    "metrics/recall(B)": 0.9510144888063585,
+    "metrics/mAP50(B)": 0.9872288676236043,
+    "metrics/mAP50-95(B)": 0.9128208266803436,
+    "metrics/precision(P)": 0.9654644880679886,
+    "metrics/recall(P)": 0.9510144888063585,
+    "metrics/mAP50(P)": 0.9872288676236043,
+    "metrics/mAP50-95(P)": 0.9104250580298421,
+    "fitness": 1.8232458847101856
+  },
+  "validation_per_class": {
+    "vcc": {
+      "box_precision": 1.0,
+      "box_recall": 0.9055263087339293,
+      "box_map50": 0.995,
+      "box_map50_95": 0.859,
+      "pose_precision": 1.0,
+      "pose_recall": 0.9058042312102116,
+      "pose_map50": 0.995,
+      "pose_map50_95": 0.9211550201899843
+    },
+    "transistor_npn": {
+      "box_precision": 1.0,
+      "box_recall": 0.9218328360407881,
+      "box_map50": 0.995,
+      "box_map50_95": 0.92025,
+      "pose_precision": 1.0,
+      "pose_recall": 0.9220404006131656,
+      "pose_map50": 0.995,
+      "pose_map50_95": 0.8262500000000002
+    },
+    "transistor_pnp": {
+      "box_precision": 0.9522278172987257,
+      "box_recall": 1.0,
+      "box_map50": 0.995,
+      "box_map50_95": 0.92025,
+      "pose_precision": 0.9520997376152114,
+      "pose_recall": 1.0,
+      "pose_map50": 0.995,
+      "pose_map50_95": 0.9425000000000001
+    },
+    "diode": {
+      "box_precision": 0.8421596499954527,
+      "box_recall": 0.8333333333333334,
+      "box_map50": 0.9309999999999999,
+      "box_map50_95": 0.8714000000000001,
+      "pose_precision": 0.8418244141587589,
+      "pose_recall": 0.8333333333333334,
+      "pose_map50": 0.9309999999999999,
+      "pose_map50_95": 0.9309999999999998
+    },
+    "led": {
+      "box_precision": 0.929936604920419,
+      "box_recall": 1.0,
+      "box_map50": 0.995,
+      "box_map50_95": 0.9949999999999999,
+      "pose_precision": 0.9294007850605777,
+      "pose_recall": 1.0,
+      "pose_map50": 0.995,
+      "pose_map50_95": 0.9949999999999999
+    },
+    "resistor": {
+      "box_precision": 0.931194280657612,
+      "box_recall": 0.9667682887879011,
+      "box_map50": 0.993,
+      "box_map50_95": 0.8505809063986696,
+      "pose_precision": 0.8968227176771267,
+      "pose_recall": 0.9313781473702408,
+      "pose_map50": 0.9622029384756656,
+      "pose_map50_95": 0.9248153985174536
+    },
+    "capacitor": {
+      "box_precision": 0.9771485959242348,
+      "box_recall": 1.0,
+      "box_map50": 0.995,
+      "box_map50_95": 0.82075,
+      "pose_precision": 0.9762014211608938,
+      "pose_recall": 1.0,
+      "pose_map50": 0.995,
+      "pose_map50_95": 0.9199999999999999
+    }
+  },
+  "test_per_class": {
+    "vcc": {
+      "box_precision": 0.9649693130511565,
+      "box_recall": 1.0,
+      "box_map50": 0.995,
+      "box_map50_95": 0.9283333333333333,
+      "pose_precision": 0.9649693130511565,
+      "pose_recall": 1.0,
+      "pose_map50": 0.995,
+      "pose_map50_95": 0.851
+    },
+    "transistor_npn": {
+      "box_precision": 0.8966255752402869,
+      "box_recall": 0.9285714285714286,
+      "box_map50": 0.9862500000000001,
+      "box_map50_95": 0.8992375000000001,
+      "pose_precision": 0.8966255752402869,
+      "pose_recall": 0.9285714285714286,
+      "pose_map50": 0.9862500000000001,
+      "pose_map50_95": 0.8817980769230769
+    },
+    "transistor_pnp": {
+      "box_precision": 0.9745578483101863,
+      "box_recall": 0.9,
+      "box_map50": 0.985909090909091,
+      "box_map50_95": 0.9344949494949495,
+      "pose_precision": 0.9745578483101863,
+      "pose_recall": 0.9,
+      "pose_map50": 0.985909090909091,
+      "pose_map50_95": 0.8004090909090908
+    },
+    "diode": {
+      "box_precision": 1.0,
+      "box_recall": 0.9830577504267832,
+      "box_map50": 0.995,
+      "box_map50_95": 0.9766666666666666,
+      "pose_precision": 1.0,
+      "pose_recall": 0.9830577504267832,
+      "pose_map50": 0.995,
+      "pose_map50_95": 0.9730000000000001
+    },
+    "led": {
+      "box_precision": 0.9434311384675058,
+      "box_recall": 1.0,
+      "box_map50": 0.995,
+      "box_map50_95": 0.9285,
+      "pose_precision": 0.9434311384675058,
+      "pose_recall": 1.0,
+      "pose_map50": 0.995,
+      "pose_map50_95": 0.9949999999999999
+    },
+    "resistor": {
+      "box_precision": 0.9786675414067842,
+      "box_recall": 0.9761537132227163,
+      "box_map50": 0.9879166666666663,
+      "box_map50_95": 0.8568339114301343,
+      "pose_precision": 0.9786675414067842,
+      "pose_recall": 0.9761537132227163,
+      "pose_map50": 0.9879166666666663,
+      "pose_map50_95": 0.934103166606391
+    },
+    "capacitor": {
+      "box_precision": 1.0,
+      "box_recall": 0.8693185294235811,
+      "box_map50": 0.9655263157894736,
+      "box_map50_95": 0.8656794258373205,
+      "pose_precision": 1.0,
+      "pose_recall": 0.8693185294235811,
+      "pose_map50": 0.9655263157894736,
+      "pose_map50_95": 0.9376650717703349
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "engine": "CircuitJS/Falstad",
+  "source_revision": "392608823a51abe5722f1076b05175987db24abbb6749f5c43d1b635bbd618c9",
+  "layout_version": "spatial-schematic-1",
+  "circuit": "$ 1 0.000005 10.20027730826997 50 5 50 5e-11\nv 190 140 130 140 0 0 40 5 0 0 0.5\nx 180 112 180 112 4 14 V1\\s|\\s5\nv 382 140 322 140 0 0 40 3 0 0 0.5\nx 372 112 372 112 4 14 V2\\s|\\s3\nr 514 140 574 140 0 1000\nx 564 112 564 112 4 14 R1\\s|\\s1k\nr 706 140 766 140 0 1000\nx 756 112 756 112 4 14 R2\\s|\\s1k\ng 190 140 190 164 0\nw 130 140 130 156 0\nw 130 156 514 156 0\nw 514 156 514 140 0\nw 322 140 322 124 0\nw 322 124 706 124 0\nw 706 124 706 140 0\nw 382 140 382 172 0\nw 382 172 574 172 0\nw 574 172 574 140 0\nw 574 140 574 156 0\nw 574 156 766 156 0\nw 766 156 766 140 0\nw 190 140 190 172 0\nw 190 172 382 172 0\n207 130 140 154 140 4 BRANCH1\n207 190 140 214 140 4 GND\n207 322 140 346 140 4 BRANCH2\n",
+  "components": [
+    {
+      "component_id": "V1",
+      "type": "source_dc",
+      "element_index": 0,
+      "pins": {
+        "+": {
+          "position": [
+            130,
+            140
+          ],
+          "net": "BRANCH1",
+          "post_index": 1
+        },
+        "-": {
+          "position": [
+            190,
+            140
+          ],
+          "net": "GND",
+          "post_index": 0
+        }
+      }
+    },
+    {
+      "component_id": "V2",
+      "type": "source_dc",
+      "element_index": 2,
+      "pins": {
+        "+": {
+          "position": [
+            322,
+            140
+          ],
+          "net": "BRANCH2",
+          "post_index": 1
+        },
+        "-": {
+          "position": [
+            382,
+            140
+          ],
+          "net": "GND",
+          "post_index": 0
+        }
+      }
+    },
+    {
+      "component_id": "R1",
+      "type": "resistor",
+      "element_index": 4,
+      "pins": {
+        "1": {
+          "position": [
+            514,
+            140
+          ],
+          "net": "BRANCH1",
+          "post_index": 0
+        },
+        "2": {
+          "position": [
+            574,
+            140
+          ],
+          "net": "GND",
+          "post_index": 1
+        }
+      }
+    },
+    {
+      "component_id": "R2",
+      "type": "resistor",
+      "element_index": 6,
+      "pins": {
+        "1": {
+          "position": [
+            706,
+            140
+          ],
+          "net": "BRANCH2",
+          "post_index": 0
+        },
+        "2": {
+          "position": [
+            766,
+            140
+          ],
+          "net": "GND",
+          "post_index": 1
+        }
+      }
+    }
+  ],
+  "warnings": [],
+  "model_mode": "reviewed_parameters_with_documented_approximations"
+}

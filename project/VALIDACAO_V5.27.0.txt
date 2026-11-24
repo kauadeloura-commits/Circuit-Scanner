@@ -1,0 +1,44 @@
+VALIDAÇÃO V5.27.0
+
+386 execuções de testes aprovadas (algumas suítes se sobrepõem):
+- 105 de produção, fluxo, modelos, circuitos e simulação.
+- 69 de OCR e integração.
+- 19 de desempenho e reaproveitamento na CPU.
+- 48 de salvamento automático, texto, caixas, resistores e VCC.
+- 104 de componentes → fios → terminais → junções, contatos nas bordas,
+  transistores, amplificadores e polaridade.
+- 41 específicos de identidade elétrica, contatos e geometria polarizada:
+  duas polaridades, quatro rotações, espelhamento, várias células,
+  sinais tocando placas e fios, junções em T, pontas das placas,
+  previsões antigas incorretas, fios desiguais, ausência de um contato,
+  correções manuais, variação de brilho da tinta e inclinações de
+  15°, 30°, 45°, 70° e 125°, com escalas diferentes e papel cinza.
+
+Reprocessamento real da geometria a partir das detecções/componentes salvos:
+PRJ_0418: BATAUTO1, CAUTO2 e C4 com os dois polos sobre os fios, dentro
+das caixas e com a polaridade esperada. Nessa cópia, os pontos salvos já
+estavam corretos; foi validada a interpretação nova das placas e dos sinais.
+As três máscaras de fios ficaram idênticas byte a byte à v5.26.0.
+Os nomes/posições dos terminais dos outros componentes também ficaram iguais.
+PRJ_0419: a bateria passou a ter positivo no fio da placa externa maior à
+esquerda; uma junção em T não conseguiu mais impor o positivo à direita.
+Capacitores sem sinal + legível deixaram de manter confirmação falsa.
+As caixas antigas em letras L/H permaneceram sem terminais; o filtro de
+texto da v5.26.0 deve ser aplicado refazendo o reconhecimento.
+PRJ_0404: capacitor DET_004 com positivo no fio direito, junto do + real;
+bateria DET_013 recuperou o fio superior mais claro e os dois contatos,
+com positivo no lado da placa externa maior.
+
+Também foram examinados 18 componentes polarizados de oito fotos únicas
+nos projetos existentes, sem alterar os arquivos originais.
+Evidência visual: Terminais_PRJ_0418_v5.27.0.png, examinada após geração.
+
+Não houve nova inferência YOLO/EasyOCR: a biblioteca Torch instalada não
+carrega neste ambiente de validação (WinError 5/acesso à DLL).
+A validação usa as fotos reais e as detecções já persistidas; não mede
+a precisão geral do detector nem garante ausência de erros em toda foto.
+
+Frontend idêntico à v5.26.0. Pacote cumulativo sem projetos, imagens,
+banco de dados, amostras pessoais ou modelos treinados do usuário.
+C:\tc2 não foi alterado. GPU não foi habilitada.
+Sintaxe Python, integridade e bytes dos arquivos do ZIP conferidos.

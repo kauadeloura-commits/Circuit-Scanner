@@ -1,0 +1,211 @@
+{
+  "schema_version": "stage10-connectivity-1.0",
+  "created_at": "2026-10-19T19:38:08-03:00",
+  "project_id": "PRJ_0185",
+  "source_signature": "b2b5bd7ff85794e6474d7207dacea07e2baace9f282a38adf5b25164a6e3d7c4",
+  "components": [
+    {
+      "component_id": "V_AUTO1",
+      "detection_id": "DET_001",
+      "type": "source_dc",
+      "class_confidence": 0.183515,
+      "bbox": {
+        "x1": 57.58,
+        "y1": 49.17,
+        "x2": 118.0,
+        "y2": 155.0,
+        "width": 60.42,
+        "height": 105.83,
+        "center_x": 87.79,
+        "center_y": 102.09
+      },
+      "reference": {
+        "text": "V_AUTO1",
+        "source": "generated",
+        "confidence": null
+      },
+      "value": {
+        "text": "",
+        "normalized": null,
+        "unit": null,
+        "source": "missing",
+        "confidence": null
+      },
+      "ocr_tokens": [],
+      "review_required": true,
+      "review_reasons": [
+        "classe_visual_duvidosa",
+        "referencia_nao_lida",
+        "valor_nao_lido",
+        "visible_polarity_mark_not_confirmed"
+      ],
+      "model": {
+        "text": "",
+        "source": "missing",
+        "confidence": null
+      },
+      "electrical_parameters": {},
+      "parameter_policy": {},
+      "parameter_pending": [],
+      "terminal_identity_geometry": {
+        "source": "visible_polarity_on_final_wire_contacts",
+        "confirmed": false,
+        "reason": "visible_polarity_mark_not_confirmed",
+        "body_center": [
+          87.15,
+          73.92
+        ],
+        "marks": []
+      },
+      "orientation": {
+        "axis": "vertical",
+        "confidence": 0.796,
+        "source": "bbox_aspect_ratio",
+        "angle_degrees": 95.73,
+        "angle_confidence": 0.83,
+        "angle_source": "local_hough"
+      },
+      "terminals": [
+        {
+          "pin_id": "V_AUTO1.+",
+          "pin": "+",
+          "electrical_role": "positive",
+          "terminal_side": "left",
+          "index": 1,
+          "position": {
+            "x": 58.0,
+            "y": 128.0
+          },
+          "search_radius_px": 8,
+          "source": "wire_contact_inside_component_bbox",
+          "connection_snap": {
+            "applied": false,
+            "mode": "none"
+          },
+          "confidence": 0.796,
+          "identity_uncertain": true,
+          "original_ink_confirmed": true,
+          "wire_contact_confirmed": true,
+          "stage8_context_distance_px": 0.0,
+          "stage8_context_confirmed": true
+        },
+        {
+          "pin_id": "V_AUTO1.-",
+          "pin": "-",
+          "electrical_role": "negative",
+          "terminal_side": "right",
+          "index": 2,
+          "position": {
+            "x": 80.0,
+            "y": 149.0
+          },
+          "search_radius_px": 9,
+          "source": "wire_contact_inside_component_bbox",
+          "connection_snap": {
+            "applied": false,
+            "mode": "none"
+          },
+          "confidence": 0.796,
+          "identity_uncertain": true,
+          "original_ink_confirmed": true,
+          "wire_contact_confirmed": true,
+          "stage8_context_distance_px": 3.0,
+          "stage8_context_confirmed": true
+        }
+      ],
+      "terminal_detection": {
+        "status": "estimated",
+        "pin_count": 2,
+        "review_required": true,
+        "review_reasons": [
+          "confirmar_identidade_eletrica_dos_lados",
+          "visible_polarity_mark_not_confirmed"
+        ],
+        "method": "transistor_fork_or_two_terminal_electrical_axis_plus_local_image_geometry",
+        "unobserved_pins": [],
+        "contact_method": "all_classes_original_ink_inside_bbox_after_wires"
+      }
+    }
+  ],
+  "nets": [
+    {
+      "wire_ids": [
+        "WIRE_0001"
+      ],
+      "terminal_refs": [
+        "V_AUTO1:+"
+      ],
+      "labels": [],
+      "name": "NET_1",
+      "is_ground": false,
+      "member_count": 1
+    },
+    {
+      "wire_ids": [],
+      "terminal_refs": [
+        "V_AUTO1:-"
+      ],
+      "labels": [],
+      "name": "NET_2",
+      "is_ground": false,
+      "member_count": 1
+    }
+  ],
+  "terminal_connections": [
+    {
+      "terminal_ref": "V_AUTO1:+",
+      "component_id": "V_AUTO1",
+      "pin": "+",
+      "electrical_role": "positive",
+      "position": {
+        "x": 58.0,
+        "y": 128.0
+      },
+      "status": "attached",
+      "wire_id": "WIRE_0001",
+      "distance_px": 1.0,
+      "net": "NET_1"
+    },
+    {
+      "terminal_ref": "V_AUTO1:-",
+      "component_id": "V_AUTO1",
+      "pin": "-",
+      "electrical_role": "negative",
+      "position": {
+        "x": 80.0,
+        "y": 149.0
+      },
+      "status": "unconnected",
+      "wire_id": null,
+      "distance_px": null,
+      "net": "NET_2"
+    }
+  ],
+  "warnings": [
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "V_AUTO1"
+    },
+    {
+      "code": "unconnected_pin",
+      "message": "Pino sem fio externo confirmado.",
+      "terminal_ref": "V_AUTO1:-"
+    },
+    {
+      "code": "source_without_ground",
+      "message": "Circuito com fonte sem referencia GND reconhecida."
+    }
+  ],
+  "net_count": 2,
+  "terminal_count": 2,
+  "attached_terminal_count": 1,
+  "unconnected_terminal_count": 1,
+  "ambiguous_terminal_count": 0,
+  "wire_only_net_count": 0,
+  "review_count": 3,
+  "recovered_wire_bridges": [],
+  "recovered_observed_leads": [],
+  "recovered_coincident_contacts": [],
+  "criterion_met": false
+}

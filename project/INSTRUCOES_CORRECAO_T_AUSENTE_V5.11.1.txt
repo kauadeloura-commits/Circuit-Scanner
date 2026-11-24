@@ -1,0 +1,54 @@
+ATUALIZACAO V5.11.1 - RECUPERACAO DE JUNCAO T AUSENTE
+=====================================================
+
+Problema corrigido
+------------------
+
+Em alguns desenhos, a mascara da Etapa 8 deixava o fim de um ramo a poucos
+pixels do fio horizontal. Visualmente existia um T, mas o grafo recebia tres
+endpoints separados. Por isso a tela de revisao ficava vazia e a juncao nao
+era sinalizada.
+
+Nova regra automatica
+---------------------
+
+A Etapa 9 agora procura endpoints proximos ao interior de outro fio. O T so e
+recuperado quando:
+
+- a distancia esta dentro do limite de encaixe;
+- o ramo chega em angulo diferente do fio principal;
+- existe tinta real entre o endpoint e o fio na imagem original;
+- nao existe outra juncao ja resolvida no mesmo local.
+
+Quando os criterios passam, o sistema cria uma juncao verde conectada e grava
+o motivo endpoint_snapped_to_wire_forms_t em junctions.json.
+
+Correcao manual por clique
+--------------------------
+
+Se uma juncao ainda nao aparecer:
+
+1. Abra Revisar juncoes.
+2. Clique exatamente no encontro em T na imagem.
+3. Clique em Adicionar juncao no ponto clicado.
+4. O sistema localiza os fios proximos, cria a juncao conectada e atualiza a
+   imagem e o JSON.
+
+O clique nao cria uma juncao se nao houver fios suficientes perto do ponto.
+Isso evita inventar conexoes em areas vazias.
+
+Instalacao
+----------
+
+1. Feche o servidor.
+2. Extraia o ZIP na pasta principal e substitua a pasta backend.
+3. Inicie novamente o servidor.
+4. Confira em /system/version:
+
+   2026-09-28-stage9-missing-t-recovery-v5.11.1
+
+5. Abra o fluxo e clique em Refazer linhas. A Etapa 9 sera repetida com a nova
+   recuperacao de T.
+
+As correcoes anteriores de reconhecimento, terminais, transistores, fios,
+falsos diodos e cruzamentos foram preservadas.

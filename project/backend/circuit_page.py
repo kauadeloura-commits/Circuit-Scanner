@@ -1,0 +1,35 @@
+import json
+
+
+def circuit_page(project_id):
+    payload=json.dumps({'project_id':project_id},ensure_ascii=False).replace('<','\\u003c')
+    return HTML.replace('__PAYLOAD__',payload)
+
+
+HTML="""<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Redes e circuito</title>
+<style>body{font-family:Arial,sans-serif;background:#f4f6f8;color:#17202a;margin:0}main{max-width:1200px;margin:auto;padding:22px}h1{margin:18px 0 8px}p{line-height:1.5}.bar{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}button,.button{border:0;border-radius:6px;padding:11px 15px;background:#1769aa;color:white;cursor:pointer;text-decoration:none;font:inherit}button:disabled{opacity:.5;cursor:wait}.secondary{background:#566573}.layout{display:grid;grid-template-columns:minmax(260px,1fr) minmax(350px,1.2fr);gap:18px}.card{background:white;padding:18px;border:1px solid #d5dde5;border-radius:8px;margin-bottom:18px}.card img{max-width:100%;max-height:720px;object-fit:contain}table{border-collapse:collapse;width:100%;font-size:14px}th,td{text-align:left;padding:10px;border-bottom:1px solid #e5e7eb;overflow-wrap:anywhere}th{background:#f4f6f8;white-space:nowrap}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px}.status{white-space:pre-wrap;padding:14px;background:#e7f0f7;border-radius:6px}.warn{background:#fff3dc}.scroll{overflow:auto}li{margin:8px 0;line-height:1.45}[hidden]{display:none!important}@media(max-width:850px){.layout{grid-template-columns:1fr}main{padding:14px}}</style></head>
+<body><main><a id="back">Voltar ao fluxo do projeto</a><h1>Redes e circuito</h1>
+<p>A etapa 10 relaciona fios e pinos em redes elétricas. A etapa 11 reúne os componentes, valores e redes em um arquivo que pode ser usado sem a imagem.</p>
+<div class="bar"><button id="nets">Construir redes — etapa 10</button><button id="circuit">Gerar circuit.json — etapa 11</button><a class="button secondary" id="review">Revisar circuito — etapa 12</a><a class="button secondary" id="simulation">Simular — etapas 13 e 14</a><a class="button secondary" id="download" hidden>Baixar circuit.json</a></div>
+<div id="status" class="status" role="status">Carregando...</div><div class="layout"><section><div class="card"><h2>Redes sobre o desenho</h2><img id="preview" hidden alt="Fios agrupados por rede"><p id="noPreview">Construa as redes para visualizar.</p></div><div class="card"><h2>Pendências registradas</h2><p>As pendências acompanham o arquivo para a revisão do circuito prevista na etapa 12.</p><ul id="issues"></ul></div></section>
+<section><div class="card"><h2>Componentes e pinos</h2><div class="scroll"><table><thead><tr><th>Componente</th><th>Tipo</th><th>Valor</th><th>Pinos → redes</th></tr></thead><tbody id="components"></tbody></table></div></div>
+<div class="card"><h2>Membros das redes</h2><div class="scroll"><table><thead><tr><th>Rede</th><th>Pinos</th></tr></thead><tbody id="netRows"></tbody></table></div></div>
+<details class="card"><summary>Conteúdo do circuit.json</summary><pre id="json"></pre></details></section></div></main>
+<script id="payload" type="application/json">__PAYLOAD__</script><script>
+const id=JSON.parse(document.getElementById('payload').textContent).project_id;
+const base='/projects/'+encodeURIComponent(id),status=document.getElementById('status'),netsButton=document.getElementById('nets'),circuitButton=document.getElementById('circuit');
+let hasNets=false;
+document.getElementById('simulation').href=base+'/simulation-view';document.getElementById('back').href=base+'/workflow';document.getElementById('review').href=base+'/circuit-review-view';
+function row(parent,values){const tr=document.createElement('tr');for(const value of values){const td=document.createElement('td');td.textContent=value;tr.appendChild(td)}parent.appendChild(tr)}
+async function load(message=''){const r=await fetch(base),p=await r.json();if(!r.ok)throw new Error(p.detail||'Projeto indisponível');const n=p.connectivity_info,c=p.circuit_info;
+document.getElementById('components').replaceChildren();document.getElementById('netRows').replaceChildren();document.getElementById('issues').replaceChildren();
+const warnings=c?c.warnings:(n?n.warnings:[]);status.className='status'+(warnings.length?' warn':'');status.textContent=(message?message+'\\n':'')+(n?'Redes: '+n.net_count+' | Pinos associados: '+n.attached_terminal_count+'/'+n.terminal_count:'Etapa 10 ainda não gerada.')+'\\n'+(c?(c.confirmed_by_user?'Circuito confirmado na etapa 12.':'Etapa 11: JSON válido. Circuito ainda não confirmado na revisão.'):'Etapa 11 ainda não gerada.');
+const preview=document.getElementById('preview');preview.hidden=!p.connectivity_url;document.getElementById('noPreview').hidden=!!p.connectivity_url;if(p.connectivity_url)preview.src='/projects-files/'+encodeURIComponent(id)+'/connectivity.png?t='+Date.now();
+const download=document.getElementById('download');download.hidden=!c;if(c)download.href=base+'/circuit/download';hasNets=!!n;circuitButton.disabled=!hasNets;
+if(c){for(const comp of c.components){const pinNets=comp.pins.map(pin=>{const net=c.nets.find(net=>net.members.includes(comp.id+'.'+pin));return pin+' → '+(net?net.name:'Sem rede')}).join(' | ');row(document.getElementById('components'),[comp.id,comp.type,comp.value_text||comp.value||'Não informado',pinNets])}for(const net of c.nets)row(document.getElementById('netRows'),[net.name,net.members.join(', ')]);document.getElementById('json').textContent=JSON.stringify(c,null,2)}
+else if(n){for(const comp of n.components){const pins=n.terminal_connections.filter(t=>t.component_id===comp.component_id).map(t=>t.pin+' → '+t.net).join(' | ');const value=typeof comp.value==='object'&&comp.value?comp.value.text:comp.value;row(document.getElementById('components'),[comp.component_id,comp.type,value||'Não informado',pins])}for(const net of n.nets)row(document.getElementById('netRows'),[net.name,net.terminal_refs.join(', ')||'Fragmento sem pino associado']);document.getElementById('json').textContent='Gere o arquivo da etapa 11.'}
+for(const warning of warnings){const li=document.createElement('li');li.textContent=(warning.component_id||warning.terminal_ref||warning.node_id||'Circuito')+': '+warning.message;document.getElementById('issues').appendChild(li)}if(!warnings.length){const li=document.createElement('li');li.textContent=n?'Nenhuma pendência automática nesta etapa.':'Construa as redes para conferir as ligações.';document.getElementById('issues').appendChild(li)}}
+async function run(action){netsButton.disabled=true;circuitButton.disabled=true;status.textContent='Processando...';try{const r=await fetch(base+'/'+action,{method:'POST'}),p=await r.json();if(!r.ok)throw new Error(p.detail||'Não foi possível concluir');await load(p.mensagem)}catch(e){status.className='status warn';status.textContent='Erro: '+e.message}finally{netsButton.disabled=false;circuitButton.disabled=!hasNets}}
+netsButton.onclick=()=>run('connectivity');circuitButton.onclick=()=>run('circuit');load().catch(e=>status.textContent='Erro: '+e.message);
+</script></body></html>"""

@@ -1,0 +1,68 @@
+ATUALIZAÇÃO V5.28.0 — SINAIS VISÍVEIS E DESEMPENHO NA CPU
+
+Feche o programa e faça backup das pastas backend e frontend.
+Extraia backend, frontend e tools deste ZIP em:
+C:\tc2\Circuit_Scanner_Etapa5_Corrigido\project
+Mescle as pastas e substitua os arquivos presentes no ZIP.
+Preserve projetos, imagens, banco de dados e modelos treinados.
+Reinicie o programa e recarregue o navegador com Ctrl+F5.
+Abra http://127.0.0.1:8010/workflow
+Confira http://127.0.0.1:8010/system/version
+Build esperado: 2026-10-07-visible-symbols-cpu-v5.28.0
+
+Pacote cumulativo, com as melhorias anteriores de interface, salvamento
+automático, leitura de unidades/modelos, terminais, circuito e simulação.
+Foi preparado no workspace; não foi instalado em C:\tc2.
+Não exige GPU nem treinamento de um novo detector.
+
+CLASSES E CAIXAS
+- Na detecção automática, LED exige um par de setas de emissão alinhadas
+  e voltadas para fora do símbolo. Sem essa evidência, a classe é diodo.
+  Traços simples, números e letras próximos não bastam para formar setas.
+  Uma cabeça preenchida/desfocada pode acompanhar outra seta cujo formato
+  foi confirmado, desde que a largura, proximidade e direção concordem.
+- Capacitor polarizado exige um sinal + visível com quatro braços.
+  Sem esse sinal, a classe automática é capacitor comum.
+  Pequenos traços e junções em T não valem como sinal +.
+- A busca inclui a vizinhança da caixa e a caixa final inclui as setas/+.
+  Sinais pertencentes a outro componente próximo não são emprestados.
+- O + determina a polaridade; os terminais continuam sobre os fios,
+  dentro da caixa. Correções manuais de classe são preservadas.
+- Bateria e fonte DC mantêm suas regras anteriores de polaridade.
+
+DESEMPENHO
+- A imagem não recebe mais a segunda ampliação de 1,5x no EasyOCR.
+  A leitura global usa canvas de até 1600 e os recortes usam canvas 320.
+  A releitura dos componentes incertos e a leitura de unidades permanecem.
+- A concorrência interna dos modelos na CPU fica limitada a até quatro
+  threads e uma thread de coordenação, evitando excesso de concorrência.
+- A análise geométrica reutiliza máscaras idênticas dentro da execução.
+  O resultado é copiado para impedir que um componente altere outro.
+- O grafo dos fios usa contagem vetorizada de vizinhos e recortes de cada
+  grupo, em vez de percorrer toda a imagem para cada junção.
+- Os moldes do + são calculados uma vez e suas comparações são vetorizadas.
+- As setas dos transistores mantêm todos os moldes, calculando somente
+  posições que já eram aceitas. O contraste local é calculado uma vez
+  por pixel em vez de ser repetido em cada segmento do componente.
+- Imagens e resultados sem alterações continuam sendo reaproveitados;
+  alterações de versão, imagem, caixas ou modelos invalidam o resultado.
+- O painel separa o tempo do OCR do processamento de fios/terminais nele
+  executado, evitando contar duas vezes a mesma etapa.
+
+COMO CONFERIR NO PRJ_0420
+1. Abra o projeto no fluxo integrado e execute novamente Reconhecimento
+   e OCR para recalcular as classes e caixas com esta versão.
+2. O símbolo à esquerda, sem setas, deve ser diodo. O LED à direita deve
+   incluir as duas setas na caixa. O capacitor com + deve incluir o sinal,
+   mantendo os polos nos fios, sem colocar um terminal em cima do +.
+3. Compare os novos tempos, após a primeira execução, com uma nova leitura
+   de uma imagem diferente e com o reaproveitamento da mesma imagem.
+   Só abrir o resultado antigo não mede a velocidade do processamento.
+4. Revise normalmente os terminais, valores e modelos; o salvamento
+   automático permanece ativo.
+
+Os ganhos de cada cálculo não são uma previsão do tempo total de OCR.
+A primeira leitura completa na CPU não está garantida como instantânea.
+Como o Torch instalado não carrega no ambiente de validação, o novo tempo
+de YOLO/EasyOCR precisa ser conferido após instalar esta atualização.
+Fotos com sinais apagados ou encobertos ainda precisam ser revisadas.

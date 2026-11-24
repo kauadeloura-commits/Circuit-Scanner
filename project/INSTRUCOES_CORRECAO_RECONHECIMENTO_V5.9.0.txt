@@ -1,0 +1,37 @@
+CORREÇÃO DE FALSOS POSITIVOS, PNP E AMP-OP — V5.9.0
+
+INSTALAÇÃO
+1. Feche o servidor do Circuit Scanner.
+2. Extraia a atualização na pasta principal project.
+3. Permita substituir somente os arquivos da pasta backend.
+4. Não apague models, real_data, dataset_builds, database nem projects.
+5. Inicie novamente o servidor.
+
+TESTE IMEDIATO, SEM NOVO TREINO
+1. Abra um projeto novo com o circuito usado no teste.
+2. Clique em "Reconhecer e gerar linhas".
+3. As caixas LED que contêm somente pautas horizontais devem ser rejeitadas.
+4. NPN/PNP desenhados para a esquerda ou direita passam pela mesma validação.
+
+COMO ENSINAR O FUNDO PAUTADO
+1. Abra http://127.0.0.1:8010/component-trainer
+2. Adicione imagens de folhas pautadas, sombras, dobras e regiões vazias.
+3. Quando não existir componente, deixe zero caixas e clique em
+   "Salvar anotações". A imagem aparecerá no contador de negativos revisados.
+4. Adicione também o circuito que falhou e marque somente os símbolos reais.
+5. Para PNP e amp-op, procure chegar a pelo menos 100 caixas reais de cada
+   classe, com desenhos para os dois lados e estilos variados.
+6. Monte um novo dataset misto e treine partindo do modelo atual.
+
+O QUE FOI ALTERADO
+- LED saiu do resgate genérico de baixa confiança.
+- Pautas sem estrutura de símbolo são rejeitadas geometricamente.
+- Vistas binária, cinza e de alta resolução correlacionadas não multiplicam
+  artificialmente a confiança.
+- BJT normal e espelhado são validados.
+- Amp-op pode ser recuperado com baixa confiança quando o triângulo é confirmado.
+- Imagens reais revisadas com zero caixas entram como negativos YOLO.
+- O relatório de validação real passa a mostrar mAP50-95 por classe.
+- /recognition/status mostra o resumo de treinamento mais recente.
+
+Depois do novo treino, avalie com circuitos que não foram usados nas anotações.

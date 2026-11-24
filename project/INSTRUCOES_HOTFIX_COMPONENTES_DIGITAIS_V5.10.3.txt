@@ -1,0 +1,57 @@
+ATUALIZACAO V5.10.3 - COMPONENTES DE ESQUEMAS DIGITAIS
+======================================================
+
+Esta atualizacao e cumulativa e inclui as correcoes anteriores da v5.10.2.
+
+Correcao reproduzida na imagem enviada
+--------------------------------------
+
+Na imagem de teste, a verificacao geometrica passou a localizar:
+
+- 2 transistores NPN;
+- 4 resistores retangulares IEC;
+- 1 capacitor parcialmente cortado na borda esquerda.
+
+O que mudou
+-----------
+
+1. Transistor NPN/PNP
+   A barra da base pode ficar proxima da borda do circulo. A antiga faixa de
+   20% a 80% rejeitava o NPN da direita; agora a faixa aceita a posicao fisica
+   observada, mas ainda exige circulo, base e dois ramos do transistor.
+
+2. Resistor retangular IEC
+   Foi acrescentado um detector proprio para o retangulo alongado com um fio
+   em cada extremo. Letras e caixas de texto sem dois terminais sao rejeitadas.
+
+3. Capacitor nao polarizado
+   Foi acrescentado um detector por duas placas paralelas e terminais opostos.
+   Se o capacitor estiver cortado pela borda da imagem, a placa externa pode
+   perder um terminal, desde que a placa interna e a ligacao sejam confirmadas.
+
+4. Protecao contra falsos positivos
+   Pares de fios longos do circuito nao sao aceitos como capacitor. Contornos
+   cortados pela borda nao sao classificados como resistores retangulares.
+
+Instalacao
+----------
+
+1. Feche o servidor.
+2. Extraia o ZIP na pasta principal do projeto e substitua os arquivos.
+3. Inicie o servidor novamente.
+4. Verifique em http://127.0.0.1:8010/system/version se aparece:
+
+   2026-09-28-digital-symbol-recall-hotfix-v5.10.3
+
+5. Refaca o reconhecimento a partir da imagem original.
+
+Esta correcao funciona sem novo treinamento.
+
+Validacao
+---------
+
+- 36 testes automatizados aprovados;
+- reproducao direta da imagem enviada: 2 NPN, 4 resistores e 1 capacitor;
+- resistores IEC testados nas orientacoes suportadas pelo mesmo eixo;
+- capacitor completo e capacitor cortado na borda testados;
+- filtros de falsos diodos da v5.10.2 preservados.

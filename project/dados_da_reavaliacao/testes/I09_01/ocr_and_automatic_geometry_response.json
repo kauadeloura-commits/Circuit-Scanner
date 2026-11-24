@@ -1,0 +1,957 @@
+{
+  "project_id": "PRJ_0181",
+  "name": "EVAL I09_01",
+  "created_at": "2026-10-19T19:37:57-03:00",
+  "status": "terminais_detectados_apos_fios",
+  "path": "projects/PRJ_0181",
+  "original_filename": "I09_01.png",
+  "stored_filename": "original.png",
+  "processed_filename": "processed.png",
+  "detection_filename": "detections.png",
+  "ocr_filename": "ocr.png",
+  "terminals_filename": "terminals.png",
+  "wires_filename": null,
+  "image_url": "http://127.0.0.1:8010/projects-files/PRJ_0181/original.png",
+  "processed_url": "http://127.0.0.1:8010/projects-files/PRJ_0181/processed.png",
+  "detections_url": "http://127.0.0.1:8010/projects-files/PRJ_0181/detections.png",
+  "ocr_url": "http://127.0.0.1:8010/projects-files/PRJ_0181/ocr.png",
+  "components_url": "http://127.0.0.1:8010/projects-files/PRJ_0181/components.json",
+  "terminals_url": "http://127.0.0.1:8010/projects-files/PRJ_0181/terminals.png",
+  "terminals_json_url": "http://127.0.0.1:8010/projects-files/PRJ_0181/terminals.json",
+  "wires_url": null,
+  "wires_json_url": null,
+  "wires_mask_url": null,
+  "wires_skeleton_url": null,
+  "transistor_wire_refinement_url": null,
+  "junctions_url": null,
+  "junctions_json_url": null,
+  "junction_review_url": "http://127.0.0.1:8010/projects/PRJ_0181/junction-review",
+  "workflow_url": "http://127.0.0.1:8010/projects/PRJ_0181/workflow",
+  "stage8_status_url": "http://127.0.0.1:8010/projects/PRJ_0181/stage8-status",
+  "terminal_trainer_url": "http://127.0.0.1:8010/projects/PRJ_0181/terminal-trainer",
+  "stage7_readiness_url": "http://127.0.0.1:8010/projects/PRJ_0181/stage7-readiness",
+  "processing_info": {
+    "operacoes": [
+      "correcao_de_perspectiva_automatica",
+      "escala_de_cinza",
+      "correcao_de_rotacao_automatica",
+      "aumento_de_contraste_CLAHE",
+      "reducao_de_ruido_bilateral",
+      "binarizacao_adaptativa",
+      "limpeza_morfologica_leve"
+    ],
+    "perspectiva_aplicada": false,
+    "angulo_detectado_graus": 0.0,
+    "angulo_corrigido_graus": -0.0,
+    "largura_original": 107,
+    "altura_original": 100,
+    "largura_processada": 107,
+    "altura_processada": 100,
+    "arquivo_saida": "processed.png"
+  },
+  "detections_info": {
+    "elapsed_seconds": 1.0945,
+    "performance": {
+      "adaptive": true,
+      "extra_views_needed": true,
+      "identical_views_reused": [],
+      "view_timings": [
+        {
+          "view": "original_color",
+          "duration_seconds": 0.0701,
+          "reused": false
+        },
+        {
+          "view": "normalized_grayscale",
+          "duration_seconds": 0.0646,
+          "reused": false
+        },
+        {
+          "view": "normalized_binary_bw",
+          "duration_seconds": 0.1415,
+          "reused": false
+        },
+        {
+          "view": "monochrome_otsu",
+          "duration_seconds": 0.1385,
+          "reused": false
+        },
+        {
+          "view": "monochrome_adaptive",
+          "duration_seconds": 0.1403,
+          "reused": false
+        },
+        {
+          "view": "rotated_90_cw_all_classes",
+          "duration_seconds": 0.1464,
+          "reused": false
+        },
+        {
+          "view": "rotated_90_ccw_all_classes",
+          "duration_seconds": 0.1411,
+          "reused": false
+        },
+        {
+          "view": "rotated_180_half_all_classes",
+          "duration_seconds": 0.1446,
+          "reused": false
+        },
+        {
+          "view": "paper_context_padding",
+          "duration_seconds": 0.0732,
+          "reused": false
+        }
+      ]
+    },
+    "created_at": "2026-10-19T19:37:58-03:00",
+    "model": "models\\circuit_scanner_yolo.pt",
+    "model_sha256": "dc4d523528894e0cfd246611ac2c45953504a5439eeeef5374030752ebf16ebd",
+    "source_image": "original.png",
+    "source_policy": "original_by_default",
+    "color_invariance": {
+      "enabled": true,
+      "method": "ai_first_component_ink_all_classes_rotations_grayscale_binary_tiles",
+      "decision": "trained_model_confidence_plus_geometry_validation"
+    },
+    "monochrome_input_detected": true,
+    "inference_strategy": "auto",
+    "inference_views": [
+      {
+        "name": "original_color",
+        "imgsz": 640,
+        "raw_detections": 1
+      },
+      {
+        "name": "normalized_grayscale",
+        "imgsz": 640,
+        "raw_detections": 1
+      },
+      {
+        "name": "normalized_binary_bw",
+        "imgsz": 960,
+        "preferred_for_monochrome": true,
+        "raw_detections": 2
+      },
+      {
+        "name": "monochrome_otsu",
+        "imgsz": 960,
+        "universal_dataset_classes": true,
+        "raw_detections": 1
+      },
+      {
+        "name": "monochrome_adaptive",
+        "imgsz": 960,
+        "universal_dataset_classes": true,
+        "raw_detections": 2
+      },
+      {
+        "name": "rotated_90_cw_all_classes",
+        "imgsz": 960,
+        "rotation_degrees": 90,
+        "accepted_classes": "all_trained_classes_with_geometry_validation",
+        "raw_detections": 1,
+        "discarded_other_classes": 0
+      },
+      {
+        "name": "rotated_90_ccw_all_classes",
+        "imgsz": 960,
+        "rotation_degrees": -90,
+        "accepted_classes": "all_trained_classes_with_geometry_validation",
+        "raw_detections": 1,
+        "discarded_other_classes": 0
+      },
+      {
+        "name": "rotated_180_half_all_classes",
+        "imgsz": 960,
+        "rotation_degrees": 180,
+        "accepted_classes": "all_trained_classes_with_geometry_validation",
+        "raw_detections": 0,
+        "discarded_other_classes": 0
+      },
+      {
+        "name": "resistor_zigzag_geometry",
+        "detections": 0,
+        "continuous_alternating_path_and_two_leads": true
+      },
+      {
+        "name": "resistor_iec_geometry",
+        "detections": 0,
+        "strict_closed_body_and_two_leads": true
+      },
+      {
+        "name": "geometry_validation_only",
+        "detections": 0
+      },
+      {
+        "name": "paper_context_padding",
+        "raw_detections": 1,
+        "margin_px": 54,
+        "imgsz": 640
+      },
+      {
+        "name": "continuous_coil_geometry",
+        "detections": 0
+      },
+      {
+        "name": "three_descending_bars_one_lead",
+        "detections": 0
+      },
+      {
+        "name": "separate_plates_opposed_lead_geometry",
+        "detections": 0
+      },
+      {
+        "name": "one_lead_hollow_power_geometry",
+        "detections": 0
+      }
+    ],
+    "confidence_threshold": 0.15,
+    "candidate_confidence_threshold": 0.12,
+    "yolo_nms_iou": 0.55,
+    "yolo_agnostic_nms": false,
+    "yolo_max_detections": 300,
+    "minimum_single_view_confidence": 0.12,
+    "imgsz": 640,
+    "image_width": 107,
+    "image_height": 100,
+    "raw_count": 10,
+    "raw_count_by_source": {
+      "original_color": 1,
+      "normalized_grayscale": 1,
+      "normalized_binary_bw": 2,
+      "monochrome_otsu": 1,
+      "monochrome_adaptive": 2,
+      "rotated_90_cw_all_classes": 1,
+      "rotated_90_ccw_all_classes": 1,
+      "rotated_180_half_all_classes": 0,
+      "resistor_zigzag_geometry": 0,
+      "resistor_iec_geometry": 0,
+      "geometry_validation_only": 0,
+      "paper_context_padding": 1,
+      "continuous_coil_geometry": 0,
+      "three_descending_bars_one_lead": 0,
+      "separate_plates_opposed_lead_geometry": 0,
+      "one_lead_hollow_power_geometry": 0
+    },
+    "count": 1,
+    "geometry_rejected_count": 0,
+    "geometry_rejections": [],
+    "symbol_text_guard": {
+      "policy": "aligned_glyphs_and_class_body_connected_leads_before_consensus_rescue",
+      "ocr_required": false,
+      "rejected_count": 0
+    },
+    "confidence_rejected_count": 0,
+    "confidence_rejections": [],
+    "led_arrow_correction_count": 0,
+    "oversized_enclosing_rejected_count": 0,
+    "oversized_enclosing_rejections": [],
+    "nested_box_rejected_count": 0,
+    "nested_box_rejections": [],
+    "basic_component_rescue_count": 0,
+    "universal_monochrome_rescue_count": 0,
+    "geometry_consensus_rescue_count": 0,
+    "dataset_classes_with_monochrome_runtime": [
+      "battery",
+      "capacitor",
+      "capacitor_polarized",
+      "diode",
+      "gnd",
+      "inductor",
+      "led",
+      "mosfet_n",
+      "mosfet_p",
+      "opamp",
+      "resistor",
+      "source_dc",
+      "transistor_npn",
+      "transistor_pnp",
+      "vcc"
+    ],
+    "rescue_mode": false,
+    "review_count": 1,
+    "duplicate_filter": {
+      "cross_class_conflicts": true,
+      "class_consensus": true,
+      "fully_contained_boxes_allowed": false,
+      "containment_edges_inclusive": true,
+      "iou_threshold": 0.45,
+      "coverage_threshold": 0.8
+    },
+    "detections": [
+      {
+        "detection_id": "DET_001",
+        "class_id": 10,
+        "class": "transistor_npn",
+        "confidence": 0.68658,
+        "bbox": {
+          "x1": 31.13,
+          "y1": 28.27,
+          "x2": 88.63,
+          "y2": 90.8,
+          "width": 57.5,
+          "height": 62.53,
+          "center_x": 59.88,
+          "center_y": 59.53
+        },
+        "inference_sources": [
+          "monochrome_adaptive",
+          "normalized_binary_bw",
+          "rotated_90_ccw_all_classes",
+          "rotated_90_cw_all_classes"
+        ],
+        "rotation_restored": "cw",
+        "best_view_confidence": 0.68658,
+        "derived_consensus_confidence": 0.85948,
+        "consensus_score": 0.899481,
+        "consensus_votes": 3,
+        "consensus_source_count": 4,
+        "monochrome_variants": [
+          "adaptive",
+          "normalized_binary"
+        ],
+        "monochrome_variant_count": 2,
+        "consensus_view_families": [
+          "monochrome",
+          "rotated_90_ccw_all_classes",
+          "rotated_90_cw_all_classes"
+        ],
+        "alternatives": [
+          {
+            "class_id": 6,
+            "class": "source_dc",
+            "confidence": 0.763094,
+            "consensus_score": 0.885468,
+            "votes": 2
+          },
+          {
+            "class_id": 9,
+            "class": "vcc",
+            "confidence": 0.745195,
+            "consensus_score": 0.745195,
+            "votes": 1
+          },
+          {
+            "class_id": 11,
+            "class": "transistor_pnp",
+            "confidence": 0.330909,
+            "consensus_score": 0.330909,
+            "votes": 1
+          }
+        ],
+        "consensus_margin": 0.014013,
+        "review_required": true,
+        "review_reasons": [
+          "class_conflict_between_views",
+          "close_consensus",
+          "visually_similar_classes"
+        ],
+        "geometry_validation": {
+          "valid": true,
+          "score": 1.0,
+          "evidence": {
+            "transistor_class": "transistor_npn",
+            "aspect_w_over_h": 0.92,
+            "base_vertical_lines": 1,
+            "base_horizontal_lines": 1,
+            "upper_fork_lines": 8,
+            "lower_fork_lines": 5,
+            "fork_connected": true,
+            "base_lead_connected": true,
+            "symbol_orientation": "right",
+            "subtype_source": "yolo_class_after_bjt_geometry_validation"
+          }
+        }
+      }
+    ],
+    "requested_source": "original",
+    "text_false_positive_count": 0,
+    "text_false_positives": [],
+    "text_overlap_review_count": 0,
+    "text_overlap_reviews": [],
+    "bbox_adjustment_count": 0,
+    "bbox_adjustments": []
+  },
+  "ocr_info": {
+    "schema_version": "stage6-1.0",
+    "created_at": "2026-10-19T19:37:58-03:00",
+    "source_image": "original.png",
+    "engine": {
+      "ready": true,
+      "engine": "Leitura da sua escrita e texto impresso local",
+      "printed_reader_available": true,
+      "training": true,
+      "glyph_classifier": {
+        "ready": true,
+        "feature_version": "hog48-numpy-projections-aspect-1",
+        "classes": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "A",
+          "B",
+          "C",
+          "E",
+          "F",
+          "H",
+          "K",
+          "L",
+          "M",
+          "N",
+          "P",
+          "R",
+          "V",
+          "W",
+          "Z",
+          "a",
+          "b",
+          "c",
+          "e",
+          "f",
+          "h",
+          "k",
+          "m",
+          "n",
+          "p",
+          "r",
+          "v",
+          "w",
+          "µ",
+          "Ω",
+          "β"
+        ],
+        "method": "supervised_linear_softmax",
+        "font_specialist_ready": true,
+        "font_specialist_classes": [
+          "+",
+          "-",
+          ".",
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "=",
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z",
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g",
+          "h",
+          "i",
+          "j",
+          "k",
+          "l",
+          "m",
+          "n",
+          "o",
+          "p",
+          "q",
+          "r",
+          "s",
+          "t",
+          "u",
+          "v",
+          "w",
+          "x",
+          "y",
+          "z",
+          "µ",
+          "Ω",
+          "β"
+        ]
+      },
+      "reference_count": 101,
+      "version": "supervised-fonts-and-supplied-writing-2026-10-14",
+      "reader_version": "supervised-font-specialist-contextual-references-12",
+      "message": "Escrita pronta para leitura."
+    },
+    "elapsed_seconds": 0.02,
+    "performance_policy": "reference_comparison_component_neighborhoods",
+    "ocr_substage_seconds": {
+      "reference_seconds": 0.0082,
+      "complement_seconds": 0.0043
+    },
+    "text_line_regions": [],
+    "ignored_nontext_regions": [],
+    "text_hard_negative_samples_added": 0,
+    "count": 1,
+    "token_count": 0,
+    "tokens": [],
+    "pending_readings": [],
+    "raw_tokens": [],
+    "raw_token_count": 0,
+    "ocr_warnings": [],
+    "reading_policy": "units_first_then_numbers_references_and_models_with_raw_archive",
+    "bbox_adjustment_count": 0,
+    "bbox_adjustments": [],
+    "retained_detections": [
+      {
+        "detection_id": "DET_001",
+        "class_id": 10,
+        "class": "transistor_npn",
+        "confidence": 0.68658,
+        "bbox": {
+          "x1": 31.13,
+          "y1": 28.27,
+          "x2": 88.63,
+          "y2": 90.8,
+          "width": 57.5,
+          "height": 62.53,
+          "center_x": 59.88,
+          "center_y": 59.53
+        },
+        "inference_sources": [
+          "monochrome_adaptive",
+          "normalized_binary_bw",
+          "rotated_90_ccw_all_classes",
+          "rotated_90_cw_all_classes"
+        ],
+        "rotation_restored": "cw",
+        "best_view_confidence": 0.68658,
+        "derived_consensus_confidence": 0.85948,
+        "consensus_score": 0.899481,
+        "consensus_votes": 3,
+        "consensus_source_count": 4,
+        "monochrome_variants": [
+          "adaptive",
+          "normalized_binary"
+        ],
+        "monochrome_variant_count": 2,
+        "consensus_view_families": [
+          "monochrome",
+          "rotated_90_ccw_all_classes",
+          "rotated_90_cw_all_classes"
+        ],
+        "alternatives": [
+          {
+            "class_id": 6,
+            "class": "source_dc",
+            "confidence": 0.763094,
+            "consensus_score": 0.885468,
+            "votes": 2
+          },
+          {
+            "class_id": 9,
+            "class": "vcc",
+            "confidence": 0.745195,
+            "consensus_score": 0.745195,
+            "votes": 1
+          },
+          {
+            "class_id": 11,
+            "class": "transistor_pnp",
+            "confidence": 0.330909,
+            "consensus_score": 0.330909,
+            "votes": 1
+          }
+        ],
+        "consensus_margin": 0.014013,
+        "review_required": true,
+        "review_reasons": [
+          "class_conflict_between_views",
+          "close_consensus",
+          "visually_similar_classes"
+        ],
+        "geometry_validation": {
+          "valid": true,
+          "score": 1.0,
+          "evidence": {
+            "transistor_class": "transistor_npn",
+            "aspect_w_over_h": 0.92,
+            "base_vertical_lines": 1,
+            "base_horizontal_lines": 1,
+            "upper_fork_lines": 8,
+            "lower_fork_lines": 5,
+            "fork_connected": true,
+            "base_lead_connected": true,
+            "symbol_orientation": "right",
+            "subtype_source": "yolo_class_after_bjt_geometry_validation"
+          }
+        }
+      }
+    ],
+    "text_false_positive_count": 0,
+    "text_false_positives": [],
+    "text_overlap_review_count": 0,
+    "text_overlap_reviews": [],
+    "nested_box_rejections_after_ocr": [],
+    "components": [
+      {
+        "component_id": "Q_AUTO1",
+        "detection_id": "DET_001",
+        "type": "transistor_npn",
+        "class_confidence": 0.68658,
+        "bbox": {
+          "x1": 31.13,
+          "y1": 28.27,
+          "x2": 88.63,
+          "y2": 90.8,
+          "width": 57.5,
+          "height": 62.53,
+          "center_x": 59.88,
+          "center_y": 59.53
+        },
+        "reference": {
+          "text": "Q_AUTO1",
+          "source": "generated",
+          "confidence": null
+        },
+        "value": {
+          "text": "",
+          "normalized": null,
+          "unit": null,
+          "source": "not_applicable",
+          "confidence": null
+        },
+        "ocr_tokens": [],
+        "review_required": true,
+        "review_reasons": [
+          "classe_visual_duvidosa",
+          "referencia_nao_lida"
+        ],
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    ],
+    "unassigned_tokens": [],
+    "reference_ocr_count": 0,
+    "value_ocr_count": 0,
+    "model_ocr_count": 0,
+    "review_count": 1
+  },
+  "terminals_info": {
+    "schema_version": "stage7-4.1-visible-terminal-identity",
+    "terminal_identity_ink_profile": null,
+    "created_at": "2026-10-19T19:37:59-03:00",
+    "source_schema_version": "stage6-1.0",
+    "count": 1,
+    "terminal_count": 0,
+    "review_count": 1,
+    "nearby_terminal_snap_count": 0,
+    "method": "class_geometry_plus_model_first_transistor_keypoints",
+    "components": [
+      {
+        "component_id": "Q_AUTO1",
+        "detection_id": "DET_001",
+        "type": "transistor_npn",
+        "class_confidence": 0.68658,
+        "bbox": {
+          "x1": 31.13,
+          "y1": 28.27,
+          "x2": 88.63,
+          "y2": 90.8,
+          "width": 57.5,
+          "height": 62.53,
+          "center_x": 59.88,
+          "center_y": 59.53
+        },
+        "reference": {
+          "text": "Q_AUTO1",
+          "source": "generated",
+          "confidence": null
+        },
+        "value": {
+          "text": "",
+          "normalized": null,
+          "unit": null,
+          "source": "not_applicable",
+          "confidence": null
+        },
+        "ocr_tokens": [],
+        "review_required": true,
+        "review_reasons": [
+          "classe_visual_duvidosa",
+          "referencia_nao_lida",
+          "stage8_three_distinct_transistor_wires_not_found"
+        ],
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": [],
+        "transistor_geometry": {
+          "success": true,
+          "source": "stage8_wire_topology_refinement",
+          "transistor_type": "NPN",
+          "fork_side": "right",
+          "base_axis": "vertical",
+          "symbol_orientation": "horizontal",
+          "base_x": 41.27,
+          "base_y": 44.0,
+          "base_wire_y": 44.0,
+          "fork_vertex_x": 45.0,
+          "fork_vertex_y": 41.0,
+          "upper_branch_outer": {
+            "x": 58.0,
+            "y": 34.0
+          },
+          "lower_branch_outer": {
+            "x": 57.0,
+            "y": 41.0
+          },
+          "arrow_branch": "lower",
+          "visual_arrow_branch_before_rule": null,
+          "npn_emitter_rule_applied": true,
+          "npn_emitter_side": "lower_right",
+          "expected_arrow_direction": "outward",
+          "detected_arrow_direction": null,
+          "class_arrow_consistent": true,
+          "upper_arrow_direction": null,
+          "lower_arrow_direction": null,
+          "upper_arrow_score": 4.534,
+          "lower_arrow_score": 5.455,
+          "upper_arrow_fine_score": 0.0,
+          "lower_arrow_fine_score": 0.0,
+          "upper_arrow_pixel_score": 3.943,
+          "lower_arrow_pixel_score": 4.743,
+          "arrow_circle_mask": {
+            "cx": 37.8,
+            "cy": 30.6,
+            "radius": 26.24,
+            "band": 4.0
+          },
+          "branch_separation_px": 7.07,
+          "branch_distinct": true,
+          "base_candidates": 3,
+          "bc_refinement": {
+            "success": true,
+            "source": "bc_from_confirmed_emitter_v32",
+            "fork_angle_deg": 108.96,
+            "branch_length_similarity": 0.729,
+            "emitter_anchor": {
+              "x": 57.0,
+              "y": 41.0
+            },
+            "fork_vertex_x": 45.0,
+            "fork_vertex_y": 41.0
+          },
+          "reliable": true,
+          "model_runtime": null,
+          "training_required": false,
+          "wire_refinement_failed": true,
+          "wire_candidate_count": 1,
+          "wire_candidates": [
+            {
+              "x": 57.0,
+              "y": 93.0,
+              "angle_degrees": 90.0,
+              "linearity": 1.0,
+              "boundary_distance": 2.2
+            }
+          ]
+        },
+        "orientation": {
+          "axis": "horizontal",
+          "confidence": 0.92,
+          "source": "transistor_fork_geometry",
+          "angle_degrees": 0.0,
+          "angle_confidence": 0.0,
+          "angle_source": "transistor_fork_emitter_anchored_v32"
+        },
+        "terminals": [],
+        "terminal_detection": {
+          "status": "review_required_after_wires",
+          "pin_count": 0,
+          "review_required": true,
+          "review_reasons": [
+            "stage8_three_distinct_transistor_wires_not_found"
+          ],
+          "method": "stage8_wire_topology_refinement"
+        }
+      }
+    ],
+    "terminals_inside_component_bbox": true,
+    "stage8_transistor_refinement": {
+      "method": "stage8_wires_class_arrow_E_base_B_leftover_C",
+      "transistor_count": 1,
+      "refined_count": 0,
+      "manual_preserved_count": 0,
+      "review_count": 1,
+      "components": [
+        {
+          "component_id": "Q_AUTO1",
+          "type": "transistor_npn",
+          "detector_class": "transistor_npn",
+          "original_ink_geometry": {
+            "source": "npn_original_ink_bar_branches_and_external_leads",
+            "body_found": false,
+            "external_contact_count": 2,
+            "reason": "npn_body_or_three_original_ink_leads_not_proven",
+            "image_pass": "original_edges_with_component_ink_contacts"
+          },
+          "wire_candidate_count": 1,
+          "model_evidence_source": "trained_terminal_keypoint_model",
+          "model_class": "transistor_npn",
+          "status": "review",
+          "reason": "less_than_three_coherent_wire_paths"
+        }
+      ]
+    },
+    "wire_terminal_contacts": {
+      "method": "all_classes_original_ink_inside_bbox_after_wires",
+      "components": [
+        {
+          "component_id": "Q_AUTO1",
+          "type": "transistor_npn",
+          "rejected_notebook_rule_contacts": 0,
+          "rejected_polarity_glyph_contacts": 0,
+          "contact_count": 2,
+          "status": "no_visible_contact"
+        }
+      ],
+      "refined_count": 0,
+      "manual_preserved_count": 0
+    },
+    "pipeline_order": [
+      "components",
+      "wires",
+      "terminals",
+      "junctions"
+    ],
+    "source_image": "original.png",
+    "image_width": 107,
+    "image_height": 100,
+    "degraded_mode": false,
+    "component_errors": [],
+    "generation_trigger": "ocr",
+    "auto_generated_after_ocr": true,
+    "generated_from": "ocr_components",
+    "source_component_count": 1,
+    "automatic_stage8": {
+      "executed": true,
+      "trigger": "before_terminals_ocr",
+      "segment_count": 0,
+      "transistor_terminal_refinement": {
+        "method": "stage8_wires_class_arrow_E_base_B_leftover_C",
+        "transistor_count": 1,
+        "refined_count": 0,
+        "manual_preserved_count": 0,
+        "review_count": 1,
+        "components": [
+          {
+            "component_id": "Q_AUTO1",
+            "type": "transistor_npn",
+            "detector_class": "transistor_npn",
+            "original_ink_geometry": {
+              "source": "npn_original_ink_bar_branches_and_external_leads",
+              "body_found": false,
+              "external_contact_count": 2,
+              "reason": "npn_body_or_three_original_ink_leads_not_proven",
+              "image_pass": "original_edges_with_component_ink_contacts"
+            },
+            "wire_candidate_count": 1,
+            "model_evidence_source": "trained_terminal_keypoint_model",
+            "model_class": "transistor_npn",
+            "status": "review",
+            "reason": "less_than_three_coherent_wire_paths"
+          }
+        ]
+      },
+      "terminal_detection_after_wires": true
+    }
+  },
+  "wires_info": null,
+  "junctions_info": null,
+  "connectivity_info": null,
+  "circuit_info": null,
+  "connectivity_url": null,
+  "connectivity_json_url": null,
+  "circuit_json_url": null,
+  "circuit_view_url": "http://127.0.0.1:8010/projects/PRJ_0181/circuit-view",
+  "simulation_view_url": "http://127.0.0.1:8010/projects/PRJ_0181/simulation-view",
+  "net_count": 0,
+  "detection_count": 1,
+  "logical_component_count": 1,
+  "terminal_count": 0,
+  "wire_segment_count": 0,
+  "wire_endpoint_candidate_count": 0,
+  "junction_connected_count": 0,
+  "junction_crossing_count": 0,
+  "junction_review_count": 0,
+  "terminals_generated_automatically": true,
+  "automatic_stage8": {
+    "executed": true,
+    "trigger": "before_terminals_ocr",
+    "segment_count": 0,
+    "transistor_terminal_refinement": {
+      "method": "stage8_wires_class_arrow_E_base_B_leftover_C",
+      "transistor_count": 1,
+      "refined_count": 0,
+      "manual_preserved_count": 0,
+      "review_count": 1,
+      "components": [
+        {
+          "component_id": "Q_AUTO1",
+          "type": "transistor_npn",
+          "detector_class": "transistor_npn",
+          "original_ink_geometry": {
+            "source": "npn_original_ink_bar_branches_and_external_leads",
+            "body_found": false,
+            "external_contact_count": 2,
+            "reason": "npn_body_or_three_original_ink_leads_not_proven",
+            "image_pass": "original_edges_with_component_ink_contacts"
+          },
+          "wire_candidate_count": 1,
+          "model_evidence_source": "trained_terminal_keypoint_model",
+          "model_class": "transistor_npn",
+          "status": "review",
+          "reason": "less_than_three_coherent_wire_paths"
+        }
+      ]
+    },
+    "terminal_detection_after_wires": true
+  },
+  "terminal_preview_url": "http://127.0.0.1:8010/projects-files/PRJ_0181/terminals.png",
+  "mensagem": "OCR concluído em 0.0s: 0 referência(s) 0 valor(es) e 0 modelo(s) lidos; 0 caixa(s) de texto removida(s); 0 caixa(s) marcada(s) para revisão; 0 caixa(s) reduzida(s) para não incluir texto. Etapa 7 executada automaticamente: 0 terminal(is) em 1 componente(s), seguidos automaticamente pela detecção de linhas.",
+  "processing_reused": false
+}

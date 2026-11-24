@@ -1,0 +1,581 @@
+{
+  "project_id": "PRJ_0242",
+  "name": "EVAL I12_02",
+  "created_at": "2026-10-19T19:40:49-03:00",
+  "status": "reconhecido",
+  "path": "projects/PRJ_0242",
+  "original_filename": "I12_02.png",
+  "stored_filename": "original.png",
+  "processed_filename": "processed.png",
+  "detection_filename": "detections.png",
+  "ocr_filename": null,
+  "terminals_filename": null,
+  "wires_filename": null,
+  "image_url": "http://127.0.0.1:8010/projects-files/PRJ_0242/original.png",
+  "processed_url": "http://127.0.0.1:8010/projects-files/PRJ_0242/processed.png",
+  "detections_url": "http://127.0.0.1:8010/projects-files/PRJ_0242/detections.png",
+  "ocr_url": null,
+  "components_url": null,
+  "terminals_url": null,
+  "terminals_json_url": null,
+  "wires_url": null,
+  "wires_json_url": null,
+  "wires_mask_url": null,
+  "wires_skeleton_url": null,
+  "transistor_wire_refinement_url": null,
+  "junctions_url": null,
+  "junctions_json_url": null,
+  "junction_review_url": "http://127.0.0.1:8010/projects/PRJ_0242/junction-review",
+  "workflow_url": "http://127.0.0.1:8010/projects/PRJ_0242/workflow",
+  "stage8_status_url": "http://127.0.0.1:8010/projects/PRJ_0242/stage8-status",
+  "terminal_trainer_url": "http://127.0.0.1:8010/projects/PRJ_0242/terminal-trainer",
+  "stage7_readiness_url": "http://127.0.0.1:8010/projects/PRJ_0242/stage7-readiness",
+  "processing_info": {
+    "operacoes": [
+      "correcao_de_perspectiva_automatica",
+      "escala_de_cinza",
+      "correcao_de_rotacao_automatica",
+      "aumento_de_contraste_CLAHE",
+      "reducao_de_ruido_bilateral",
+      "binarizacao_adaptativa",
+      "limpeza_morfologica_leve"
+    ],
+    "perspectiva_aplicada": false,
+    "angulo_detectado_graus": -2.164,
+    "angulo_corrigido_graus": 2.164,
+    "largura_original": 244,
+    "altura_original": 223,
+    "largura_processada": 252,
+    "altura_processada": 232,
+    "arquivo_saida": "processed.png"
+  },
+  "detections_info": {
+    "elapsed_seconds": 1.2584,
+    "performance": {
+      "adaptive": true,
+      "extra_views_needed": true,
+      "identical_views_reused": [],
+      "view_timings": [
+        {
+          "view": "original_color",
+          "duration_seconds": 0.0757,
+          "reused": false
+        },
+        {
+          "view": "normalized_grayscale",
+          "duration_seconds": 0.0625,
+          "reused": false
+        },
+        {
+          "view": "normalized_binary_bw",
+          "duration_seconds": 0.1754,
+          "reused": false
+        },
+        {
+          "view": "monochrome_otsu",
+          "duration_seconds": 0.1294,
+          "reused": false
+        },
+        {
+          "view": "monochrome_adaptive",
+          "duration_seconds": 0.1256,
+          "reused": false
+        },
+        {
+          "view": "rotated_90_cw_all_classes",
+          "duration_seconds": 0.1831,
+          "reused": false
+        },
+        {
+          "view": "rotated_90_ccw_all_classes",
+          "duration_seconds": 0.1406,
+          "reused": false
+        },
+        {
+          "view": "rotated_180_half_all_classes",
+          "duration_seconds": 0.1441,
+          "reused": false
+        },
+        {
+          "view": "paper_context_padding",
+          "duration_seconds": 0.0621,
+          "reused": false
+        }
+      ]
+    },
+    "created_at": "2026-10-19T19:40:50-03:00",
+    "model": "models\\circuit_scanner_yolo.pt",
+    "model_sha256": "dc4d523528894e0cfd246611ac2c45953504a5439eeeef5374030752ebf16ebd",
+    "source_image": "original.png",
+    "source_policy": "original_by_default",
+    "color_invariance": {
+      "enabled": true,
+      "method": "ai_first_component_ink_all_classes_rotations_grayscale_binary_tiles",
+      "decision": "trained_model_confidence_plus_geometry_validation"
+    },
+    "monochrome_input_detected": true,
+    "inference_strategy": "auto",
+    "inference_views": [
+      {
+        "name": "original_color",
+        "imgsz": 640,
+        "raw_detections": 0
+      },
+      {
+        "name": "normalized_grayscale",
+        "imgsz": 640,
+        "raw_detections": 0
+      },
+      {
+        "name": "normalized_binary_bw",
+        "imgsz": 960,
+        "preferred_for_monochrome": true,
+        "raw_detections": 1
+      },
+      {
+        "name": "monochrome_otsu",
+        "imgsz": 960,
+        "universal_dataset_classes": true,
+        "raw_detections": 1
+      },
+      {
+        "name": "monochrome_adaptive",
+        "imgsz": 960,
+        "universal_dataset_classes": true,
+        "raw_detections": 1
+      },
+      {
+        "name": "rotated_90_cw_all_classes",
+        "imgsz": 960,
+        "rotation_degrees": 90,
+        "accepted_classes": "all_trained_classes_with_geometry_validation",
+        "raw_detections": 0,
+        "discarded_other_classes": 0
+      },
+      {
+        "name": "rotated_90_ccw_all_classes",
+        "imgsz": 960,
+        "rotation_degrees": -90,
+        "accepted_classes": "all_trained_classes_with_geometry_validation",
+        "raw_detections": 1,
+        "discarded_other_classes": 0
+      },
+      {
+        "name": "rotated_180_half_all_classes",
+        "imgsz": 960,
+        "rotation_degrees": 180,
+        "accepted_classes": "all_trained_classes_with_geometry_validation",
+        "raw_detections": 0,
+        "discarded_other_classes": 0
+      },
+      {
+        "name": "resistor_zigzag_geometry",
+        "detections": 0,
+        "continuous_alternating_path_and_two_leads": true
+      },
+      {
+        "name": "resistor_iec_geometry",
+        "detections": 1,
+        "strict_closed_body_and_two_leads": true
+      },
+      {
+        "name": "geometry_validation_only",
+        "detections": 0
+      },
+      {
+        "name": "paper_context_padding",
+        "raw_detections": 2,
+        "margin_px": 122,
+        "imgsz": 640
+      },
+      {
+        "name": "continuous_coil_geometry",
+        "detections": 0
+      },
+      {
+        "name": "three_descending_bars_one_lead",
+        "detections": 0
+      },
+      {
+        "name": "separate_plates_opposed_lead_geometry",
+        "detections": 0
+      },
+      {
+        "name": "one_lead_hollow_power_geometry",
+        "detections": 0
+      }
+    ],
+    "confidence_threshold": 0.15,
+    "candidate_confidence_threshold": 0.12,
+    "yolo_nms_iou": 0.55,
+    "yolo_agnostic_nms": false,
+    "yolo_max_detections": 300,
+    "minimum_single_view_confidence": 0.12,
+    "imgsz": 640,
+    "image_width": 244,
+    "image_height": 223,
+    "raw_count": 7,
+    "raw_count_by_source": {
+      "original_color": 0,
+      "normalized_grayscale": 0,
+      "normalized_binary_bw": 1,
+      "monochrome_otsu": 1,
+      "monochrome_adaptive": 1,
+      "rotated_90_cw_all_classes": 0,
+      "rotated_90_ccw_all_classes": 1,
+      "rotated_180_half_all_classes": 0,
+      "resistor_zigzag_geometry": 0,
+      "resistor_iec_geometry": 1,
+      "geometry_validation_only": 0,
+      "paper_context_padding": 2,
+      "continuous_coil_geometry": 0,
+      "three_descending_bars_one_lead": 0,
+      "separate_plates_opposed_lead_geometry": 0,
+      "one_lead_hollow_power_geometry": 0
+    },
+    "count": 1,
+    "geometry_rejected_count": 1,
+    "geometry_rejections": [
+      {
+        "detection_id": "DET_001",
+        "class_id": 9,
+        "class": "vcc",
+        "confidence": 0.533626,
+        "bbox": {
+          "x1": 32.99,
+          "y1": 23.69,
+          "x2": 86.19,
+          "y2": 214.09,
+          "width": 53.2,
+          "height": 190.4,
+          "center_x": 59.59,
+          "center_y": 118.89
+        },
+        "inference_sources": [
+          "monochrome_adaptive",
+          "monochrome_otsu",
+          "normalized_binary_bw"
+        ],
+        "best_view_confidence": 0.533626,
+        "derived_consensus_confidence": 0.533626,
+        "consensus_score": 0.533626,
+        "consensus_votes": 1,
+        "consensus_source_count": 3,
+        "monochrome_variants": [
+          "adaptive",
+          "normalized_binary",
+          "otsu"
+        ],
+        "monochrome_variant_count": 3,
+        "consensus_view_families": [
+          "monochrome"
+        ],
+        "alternatives": [],
+        "consensus_margin": 0.533626,
+        "review_required": false,
+        "review_reasons": [],
+        "geometry_validation": {
+          "valid": false,
+          "score": 0.05,
+          "evidence": {
+            "node_found": true,
+            "branch_count": 2,
+            "node_radius": 5.0,
+            "node_center": {
+              "x": 64,
+              "y": 186
+            },
+            "inner_radius": 6.75,
+            "outer_radius": 15.49,
+            "distance_peak": 4.997,
+            "stroke_reference": 3.0,
+            "thickness_ratio": 1.666,
+            "branch_sizes": [
+              56,
+              66
+            ],
+            "validation_mode": "connection_dot_topology",
+            "connection_branch_count": 5,
+            "external_lead_count": 5,
+            "junction_rejected": true,
+            "hard_topology_rejection": true
+          }
+        },
+        "rejection_reason": "vcc_shape_missing"
+      }
+    ],
+    "symbol_text_guard": {
+      "policy": "aligned_glyphs_and_class_body_connected_leads_before_consensus_rescue",
+      "ocr_required": false,
+      "rejected_count": 0
+    },
+    "confidence_rejected_count": 0,
+    "confidence_rejections": [],
+    "led_arrow_correction_count": 0,
+    "oversized_enclosing_rejected_count": 1,
+    "oversized_enclosing_rejections": [
+      {
+        "detection_id": "DET_001",
+        "class_id": 12,
+        "class": "mosfet_n",
+        "confidence": 0.934768,
+        "bbox": {
+          "x1": 3.01,
+          "y1": 0,
+          "x2": 220.13,
+          "y2": 223,
+          "width": 217.12,
+          "height": 223,
+          "center_x": 111.57,
+          "center_y": 111.5
+        },
+        "inference_sources": [
+          "paper_context_padding"
+        ],
+        "best_view_confidence": 0.934768,
+        "derived_consensus_confidence": 0.934768,
+        "consensus_score": 0.934768,
+        "consensus_votes": 1,
+        "consensus_source_count": 1,
+        "monochrome_variants": [],
+        "monochrome_variant_count": 0,
+        "consensus_view_families": [
+          "paper_context_padding"
+        ],
+        "alternatives": [
+          {
+            "class_id": 0,
+            "class": "resistor",
+            "confidence": 0.142345,
+            "consensus_score": 0.142345,
+            "votes": 1
+          }
+        ],
+        "consensus_margin": 0.792423,
+        "review_required": false,
+        "review_reasons": [],
+        "rejection_reason": "oversized_box_contains_multiple_components",
+        "contained_detection_ids": [
+          "DET_003",
+          "DET_002"
+        ]
+      }
+    ],
+    "nested_box_rejected_count": 0,
+    "nested_box_rejections": [],
+    "basic_component_rescue_count": 0,
+    "universal_monochrome_rescue_count": 0,
+    "geometry_consensus_rescue_count": 0,
+    "dataset_classes_with_monochrome_runtime": [
+      "battery",
+      "capacitor",
+      "capacitor_polarized",
+      "diode",
+      "gnd",
+      "inductor",
+      "led",
+      "mosfet_n",
+      "mosfet_p",
+      "opamp",
+      "resistor",
+      "source_dc",
+      "transistor_npn",
+      "transistor_pnp",
+      "vcc"
+    ],
+    "rescue_mode": false,
+    "review_count": 0,
+    "duplicate_filter": {
+      "cross_class_conflicts": true,
+      "class_consensus": true,
+      "fully_contained_boxes_allowed": false,
+      "containment_edges_inclusive": true,
+      "iou_threshold": 0.45,
+      "coverage_threshold": 0.8
+    },
+    "detections": [
+      {
+        "detection_id": "DET_001",
+        "class_id": 0,
+        "class": "resistor",
+        "confidence": 0.92,
+        "bbox": {
+          "x1": 116.44,
+          "y1": 173.94,
+          "x2": 170.56,
+          "y2": 207.06,
+          "width": 54.120000000000005,
+          "height": 33.120000000000005,
+          "center_x": 143.5,
+          "center_y": 190.5
+        },
+        "inference_sources": [
+          "resistor_iec_geometry"
+        ],
+        "resistor_shape_evidence": {
+          "iec_rectangular_body": true,
+          "iec_line_body": true,
+          "opposed_leads": true,
+          "lead_support_px": [
+            8,
+            8
+          ],
+          "body_size": [
+            41.0,
+            23.0
+          ],
+          "body_center": [
+            143.5,
+            190.5
+          ],
+          "body_axis": [
+            -1.0,
+            0.0
+          ],
+          "body_corners": [
+            [
+              164.0,
+              202.0
+            ],
+            [
+              123.0,
+              202.0
+            ],
+            [
+              123.0,
+              179.0
+            ],
+            [
+              164.0,
+              179.0
+            ]
+          ]
+        },
+        "best_view_confidence": 0.92,
+        "derived_consensus_confidence": 0.92,
+        "consensus_score": 0.92,
+        "consensus_votes": 1,
+        "consensus_source_count": 1,
+        "monochrome_variants": [],
+        "monochrome_variant_count": 0,
+        "consensus_view_families": [
+          "resistor_iec_geometry"
+        ],
+        "alternatives": [],
+        "consensus_margin": 0.92,
+        "review_required": false,
+        "review_reasons": [],
+        "geometry_validation": {
+          "valid": true,
+          "score": 0.92,
+          "evidence": {
+            "iec_rectangular_body": true,
+            "iec_line_body": true,
+            "opposed_leads": true,
+            "lead_support_px": [
+              8,
+              8
+            ],
+            "body_size": [
+              41.0,
+              23.0
+            ],
+            "body_center": [
+              143.5,
+              190.5
+            ],
+            "body_axis": [
+              -1.0,
+              0.0
+            ],
+            "body_corners": [
+              [
+                164.0,
+                202.0
+              ],
+              [
+                123.0,
+                202.0
+              ],
+              [
+                123.0,
+                179.0
+              ],
+              [
+                164.0,
+                179.0
+              ]
+            ],
+            "validation_context": "original_page_body_and_leads"
+          }
+        },
+        "resistor_body": {
+          "iec_rectangular_body": true,
+          "iec_line_body": true,
+          "opposed_leads": true,
+          "lead_support_px": [
+            8,
+            8
+          ],
+          "body_size": [
+            41.0,
+            23.0
+          ],
+          "body_center": [
+            143.5,
+            190.5
+          ],
+          "body_axis": [
+            -1.0,
+            0.0
+          ],
+          "body_corners": [
+            [
+              164.0,
+              202.0
+            ],
+            [
+              123.0,
+              202.0
+            ],
+            [
+              123.0,
+              179.0
+            ],
+            [
+              164.0,
+              179.0
+            ]
+          ]
+        }
+      }
+    ],
+    "requested_source": "original"
+  },
+  "ocr_info": null,
+  "terminals_info": null,
+  "wires_info": null,
+  "junctions_info": null,
+  "connectivity_info": null,
+  "circuit_info": null,
+  "connectivity_url": null,
+  "connectivity_json_url": null,
+  "circuit_json_url": null,
+  "circuit_view_url": "http://127.0.0.1:8010/projects/PRJ_0242/circuit-view",
+  "simulation_view_url": "http://127.0.0.1:8010/projects/PRJ_0242/simulation-view",
+  "net_count": 0,
+  "detection_count": 1,
+  "logical_component_count": 0,
+  "terminal_count": 0,
+  "wire_segment_count": 0,
+  "wire_endpoint_candidate_count": 0,
+  "junction_connected_count": 0,
+  "junction_crossing_count": 0,
+  "junction_review_count": 0,
+  "geometry_deferred_until_ocr": true,
+  "terminals_generated_automatically": false,
+  "automatic_stage8": null,
+  "terminal_preview_url": null,
+  "mensagem": "Reconhecimento concluído: 1 componente(s) detectado(s). Fios e terminais serão calculados após a leitura do OCR.",
+  "processing_reused": false
+}

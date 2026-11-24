@@ -1,0 +1,55 @@
+VALIDACAO V5.15.0 — ETAPAS 10 E 11
+
+Novos testes: 27 passaram.
+Cobrem redes em serie para sete classes, GND comum, cruzamentos com e sem
+conexao, juncao pendente, correcao manual, ambiguidade, lacuna branca,
+recuperacao de contato curto, continuidade de tinta, VCC separado, ordem
+independente dos membros e preservacao das entradas.
+
+A geracao de circuit.json foi verificada em dez circuitos de referencia,
+incluindo normalizacao de valores, nomes unicos, pendencias e round-trip
+JSON sem imagem. A API foi verificada com geracao, download, atualizacao,
+prerequisitos, retirada da foto depois da etapa 10 e publicacao automatica
+das etapas 10 e 11 pelo fluxo de deteccao.
+
+Verificacao geral: 285 testes executados, 283 passaram. Duas falhas ja
+existiam na v5.14.5, no mesmo ambiente:
+- test_previsoes_fracas_repetidas_nao_sao_resgatadas: classe mosfet_n nao
+  disponivel no dataset da copia isolada.
+- test_diodo_com_duas_setas_e_corrigido_para_led: diferenca na contagem do
+  filtro geometrico no OpenCV disponivel (0 em vez de 1).
+O teste adicional de publicacao automatica foi executado posteriormente,
+junto com os outros 26 testes novos; todos os 27 passaram.
+
+Seis fotos existentes foram processadas somente pelas novas etapas:
+Projeto   Redes visuais  Pinos associados/total  Ambiguos  Sem contato
+PRJ_0389       11                6/11              0          5
+PRJ_0393       21               24/32              0          8
+PRJ_0395       23               29/34              0          5
+PRJ_0398       24               21/26              2          3
+PRJ_0399       13               17/23              0          6
+PRJ_0406       10               29/29              0          0
+
+Os seis JSONs passaram no validador interno de estrutura e referencias
+de pinos e na conferência dos campos declarados no schema. Nao foi usado
+um validador externo da biblioteca jsonschema.
+
+No ultimo exemplo, as 10 redes visuais resultaram em 7 redes logicas com
+pinos; fragmentos sem pinos nao entram no circuit.json. A etapa 10 registra
+13 avisos de identidade ou possivel curto. A etapa 11 acrescenta avisos de
+referencias automaticas e valores ausentes. Os 29 contatos associados nao
+significam que os tipos, polaridades e valores foram confirmados pelo usuario.
+
+As fotos antigas continuam com contatos abertos ou ambiguos explicitamente
+registrados. Nao ha garantia de conectividade completa para qualquer foto.
+O criterio de conclusao da etapa 10 e exposto separadamente para cada projeto.
+
+A tela foi conferida no navegador, incluindo os botoes das duas etapas,
+imagem das redes, tabelas de pinos e disponibilizacao do download.
+Os cinco scripts da interface passaram na verificacao de sintaxe.
+Os arquivos de visao permanecem iguais aos da v5.14.5; somente a integracao
+do fluxo em main.py recebe as novas etapas. Nenhum fio ou terminal antigo
+foi reposicionado para produzir as redes.
+
+ZIP conferido por leitura integral, compilacao sintatica dos arquivos Python
+e comparacao dos arquivos nao alterados com o backend original.

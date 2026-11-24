@@ -1,0 +1,23 @@
+CORREÇÃO PARA DIAGRAMAS PEQUENOS EM PRETO E BRANCO — V5.9.1
+
+1. Feche o servidor do Circuit Scanner.
+2. Extraia este ZIP na pasta principal project.
+3. Permita substituir somente os arquivos da pasta backend.
+4. Não apague models, real_data, dataset_builds, database nem projects.
+5. Inicie novamente o servidor.
+6. Confirme em http://127.0.0.1:8010/system/version que o build termina em
+   small-monochrome-diagram-fix-v5.9.1.
+7. Crie um projeto novo com a imagem preto e branco e execute
+   "Reconhecer e gerar linhas".
+
+O modo preto e branco agora faz também inferência em blocos menores. No exemplo
+333x379, regiões de aproximadamente 235 pixels são ampliadas para 640 durante
+a inferência e as caixas retornam às coordenadas originais.
+
+As vistas de detalhe continuam pertencendo à família binária no consenso. Isso
+melhora a visibilidade do símbolo, mas não cria votos artificiais adicionais.
+LED, VCC, BJT e amp-op de baixa confiança só recebem resgate quando a geometria
+do símbolo também for confirmada.
+
+Esta atualização é cumulativa e inclui as correções v5.9.0 para falsos LEDs,
+BJT espelhado, amp-op, negativos reais vazios e métricas reais por classe.

@@ -1,0 +1,47 @@
+ATUALIZAÇÃO V5.16.1 — RECONHECIMENTO DE RESISTORES E VCC
+
+COMO APLICAR
+1. Feche o servidor e guarde uma cópia do backend atual.
+2. Extraia a pasta backend deste ZIP dentro de:
+   C:\tc2\Circuit_Scanner_Etapa5_Corrigido\project
+   Mescle as pastas e substitua os arquivos. Inclua os novos módulos
+   resistor_geometry.py e vcc_topology.py.
+3. Reinicie o programa e abra:
+   http://127.0.0.1:8010/system/version
+   A versão deve ser: 2026-10-01-resistors-vcc-v5.16.1.
+4. Abra o projeto e execute novamente “Reconhecer e gerar linhas”.
+   Apenas refazer fios não executa o reconhecimento dos componentes.
+   Resultados antigos não mudam automaticamente ao substituir o backend.
+5. Confira os resistores e os pontos classificados como VCC na imagem.
+
+O QUE MUDOU
+- Resistores retangulares: análise do corpo fechado e de dois fios saindo
+  em lados opostos, com tolerância a inclinações, proporções diferentes,
+  pequenos desvios e irregularidades do desenho à mão.
+- Resistores em zigue-zague: busca de um traçado conectado com dentes
+  alternados e fios nas duas extremidades. Pequenos artefatos nas pontas
+  do traço são tratados sem interromper o reconhecimento.
+- No modo automático, ambos os formatos podem ser recuperados mesmo
+  quando o modelo não propõe um resistor.
+- A validação usa o contraste local do papel e a filtragem de pautas,
+  preservando traços escuros e coloridos. Textos, círculos, triângulos,
+  texturas densas e grandes laços passam por verificações adicionais.
+- VCC: verificação das ligações físicas na imagem original. A rotação
+  não recorta nem oculta os fios. Mais de uma ligação saindo do corpo
+  invalida a proposta de VCC, mesmo com confiança alta do modelo.
+  Um nó com três fios não é convertido em VCC nem tem fios ocultados.
+  O componente VCC continua com um único terminal.
+
+As alterações não dependem do número do projeto nem de coordenadas de
+uma fotografia específica. Os pesos do modelo não foram retreinados.
+As correções anteriores e as etapas 10, 11 e 12 estão incluídas neste
+pacote cumulativo. A lógica anterior de extração dos fios foi preservada.
+
+Após refazer o reconhecimento, reconstrua as redes e gere o circuit.json.
+Uma revisão anterior fica arquivada e a confirmação deve ser refeita,
+pois o novo reconhecimento pode alterar componentes e conexões.
+
+Esta atualização foi preparada em uma cópia de trabalho e não foi
+instalada no programa ativo. Não inclui modelos nem dados de projetos.
+Fotos muito desfocadas, traços interrompidos ou símbolos ambíguos ainda
+podem exigir conferência; os testes não garantem acerto em toda imagem.

@@ -1,0 +1,666 @@
+{
+  "schema_version": "stage8-wires-1.0",
+  "created_at": "2026-10-19T19:40:21-03:00",
+  "source_image": "original.png",
+  "image_width": 143,
+  "image_height": 165,
+  "method": "opencv_mask_morphology_skeleton_graph",
+  "scope": "stage8_raw_wires_only",
+  "ink_color_profile": {
+    "schema_version": "component-ink-color-1.0",
+    "active": false,
+    "reason": "no_reliable_component_samples",
+    "sampled_component_count": 0,
+    "minimum_component_confidence": 0.8,
+    "reliable_component_count": 0
+  },
+  "notebook_rule_profile": {
+    "schema_version": "notebook-color-rules-2.0",
+    "active": false,
+    "image_size": [
+      165,
+      143
+    ],
+    "reference_colors": {
+      "traditional_gray": [
+        "#B3B3B3",
+        "#CCCCCC"
+      ],
+      "light_gray": [
+        "#D9D9D9",
+        "#E6E6E6"
+      ],
+      "school_cyan": [
+        "#B3E6E6",
+        "#99FFFF"
+      ]
+    },
+    "reason": "no_repeated_color_rule_family",
+    "families": [],
+    "removed_pixel_count": 0
+  },
+  "stage9_note": "junction_candidate e cruzamentos ainda não são conexões elétricas confirmadas; isso pertence à Etapa 9.",
+  "parameters": {
+    "mask_components": true,
+    "mask_text": true,
+    "min_segment_length_px": 8.0,
+    "connectivity": 8
+  },
+  "preprocessing": {
+    "otsu_threshold": 231.0,
+    "absolute_dark_limit": 135,
+    "darkness_percentile_p3": 129.0,
+    "strong_local_limit": 209,
+    "background_sigma": 7.0,
+    "component_regions_masked": 1,
+    "ocr_regions_masked": 0,
+    "terminal_regions_preserved": 0,
+    "component_roi_applied": true,
+    "component_roi": {
+      "x1": 0,
+      "y1": 0,
+      "x2": 143,
+      "y2": 165,
+      "margin_px": 28
+    },
+    "component_proximity_filter_applied": true,
+    "component_proximity_px": 12,
+    "kept_candidate_blobs": 3,
+    "removed_candidate_blobs": 0,
+    "terminal_seed_filter_applied": true,
+    "terminal_seed_filter_fallback": false,
+    "terminal_seed_count": 36,
+    "terminal_seed_radius_px": 10,
+    "kept_terminal_seed_blobs": 3,
+    "removed_nonterminal_blobs": 0,
+    "component_ink_color_filter_active": false,
+    "notebook_rule_color_filter_active": false,
+    "notebook_rule_color_pixels_removed": 0,
+    "pale_page_rulings_removed": 1,
+    "border_frame_artifacts_removed": 0,
+    "ink_pixels_before_masking": 1519,
+    "wire_mask_pixels": 49,
+    "erased_mask_pixels": 18012
+  },
+  "segment_count": 0,
+  "node_count": 4,
+  "endpoint_candidate_count": 4,
+  "junction_candidate_count": 0,
+  "total_wire_length_px": 0,
+  "nodes": [
+    {
+      "node_id": "NODE_0001",
+      "position": {
+        "x": 98.0,
+        "y": 3.0
+      },
+      "pixel_count": 3,
+      "raw_branch_count": 1,
+      "kind_candidate": "endpoint_candidate",
+      "segment_degree": 0
+    },
+    {
+      "node_id": "NODE_0002",
+      "position": {
+        "x": 102.0,
+        "y": 2.0
+      },
+      "pixel_count": 3,
+      "raw_branch_count": 1,
+      "kind_candidate": "endpoint_candidate",
+      "segment_degree": 0
+    },
+    {
+      "node_id": "NODE_0003",
+      "position": {
+        "x": 2.0,
+        "y": 72.0
+      },
+      "pixel_count": 1,
+      "raw_branch_count": 0,
+      "kind_candidate": "endpoint_candidate",
+      "segment_degree": 0
+    },
+    {
+      "node_id": "NODE_0004",
+      "position": {
+        "x": 70.0,
+        "y": 162.0
+      },
+      "pixel_count": 1,
+      "raw_branch_count": 0,
+      "kind_candidate": "endpoint_candidate",
+      "segment_degree": 0
+    }
+  ],
+  "segments": [],
+  "graph_debug": {
+    "raw_skeleton_pixels": 9,
+    "closed_loop_count": 0
+  },
+  "project_id": "PRJ_0230",
+  "generated_from": "ocr_components",
+  "terminal_context_available": true,
+  "wire_detection_version": "5.13.6",
+  "pipeline_order": [
+    "components",
+    "wires",
+    "terminals",
+    "junctions"
+  ],
+  "ocr_context_available": true,
+  "transistor_terminal_refinement": {
+    "method": "stage8_wires_class_arrow_E_base_B_leftover_C",
+    "transistor_count": 1,
+    "refined_count": 1,
+    "manual_preserved_count": 0,
+    "review_count": 0,
+    "components": [
+      {
+        "component_id": "Q_AUTO1",
+        "type": "transistor_pnp",
+        "detector_class": "transistor_pnp",
+        "original_ink_geometry": {
+          "source": "bjt_original_ink_bar_branches_and_external_leads",
+          "body_found": true,
+          "external_contact_count": 3,
+          "arrow_confirmed": true,
+          "reason": "npn_three_original_ink_leads",
+          "base_bar_points": [
+            [
+              15.736700194067154,
+              125.6106383678734
+            ],
+            [
+              42.447645229777706,
+              41.09123760850855
+            ]
+          ],
+          "branch_anchors": [
+            {
+              "near": [
+                44.0,
+                42.0
+              ],
+              "far": [
+                121.0,
+                7.0
+              ]
+            },
+            {
+              "near": [
+                26.0,
+                100.0
+              ],
+              "far": [
+                70.0,
+                160.0
+              ]
+            }
+          ],
+          "base_bar_angle_degrees": -72.46,
+          "arrow_evidence": [
+            {
+              "score": 10.319220542907715,
+              "direction": null,
+              "tip": [
+                110.5,
+                8.0
+              ],
+              "shape_scores": {
+                "outward": 0.8599350452423096,
+                "inward": 0.8244273662567139,
+                "dot": 0.7336955070495605
+              },
+              "source": "branch_head_silhouette_and_wings",
+              "metric": "exclusive_branch_head_without_base_bar"
+            },
+            {
+              "score": 0.0,
+              "direction": null,
+              "shape_scores": {
+                "outward": 0.9293476939201355,
+                "inward": 0.9450547695159912,
+                "dot": 0.9550561904907227
+              },
+              "source": "two_opposed_arrow_wings",
+              "rejected_base_or_plain_branch": true,
+              "metric": "exclusive_branch_head_without_base_bar"
+            }
+          ],
+          "branch_head_margin_normalized": 1.0,
+          "identity_metric": "exclusive_branch_head_then_base_then_remaining_collector",
+          "detected_arrow_direction": null,
+          "direction_conflict": false,
+          "stage8_distances_px": [
+            2.23606797749979,
+            18.681541692269406,
+            2.0
+          ],
+          "image_pass": "original_ink_paths"
+        },
+        "wire_candidate_count": 3,
+        "model_evidence_source": "bjt_original_ink_bar_branches_and_external_leads",
+        "model_class": "transistor_pnp",
+        "status": "refined",
+        "refined": true,
+        "B": {
+          "x": 4.0,
+          "y": 73.0
+        },
+        "C": {
+          "x": 70.0,
+          "y": 160.0
+        },
+        "E": {
+          "x": 121.0,
+          "y": 7.0
+        },
+        "wire_selection": {
+          "method": "bjt_original_ink_leads_with_stage8_context",
+          "selection_score": 5.0,
+          "role_neutral": false,
+          "original_ink_geometry": {
+            "source": "bjt_original_ink_bar_branches_and_external_leads",
+            "body_found": true,
+            "external_contact_count": 3,
+            "arrow_confirmed": true,
+            "reason": "npn_three_original_ink_leads",
+            "base_bar_points": [
+              [
+                15.736700194067154,
+                125.6106383678734
+              ],
+              [
+                42.447645229777706,
+                41.09123760850855
+              ]
+            ],
+            "branch_anchors": [
+              {
+                "near": [
+                  44.0,
+                  42.0
+                ],
+                "far": [
+                  121.0,
+                  7.0
+                ]
+              },
+              {
+                "near": [
+                  26.0,
+                  100.0
+                ],
+                "far": [
+                  70.0,
+                  160.0
+                ]
+              }
+            ],
+            "base_bar_angle_degrees": -72.46,
+            "arrow_evidence": [
+              {
+                "score": 10.319220542907715,
+                "direction": null,
+                "tip": [
+                  110.5,
+                  8.0
+                ],
+                "shape_scores": {
+                  "outward": 0.8599350452423096,
+                  "inward": 0.8244273662567139,
+                  "dot": 0.7336955070495605
+                },
+                "source": "branch_head_silhouette_and_wings",
+                "metric": "exclusive_branch_head_without_base_bar"
+              },
+              {
+                "score": 0.0,
+                "direction": null,
+                "shape_scores": {
+                  "outward": 0.9293476939201355,
+                  "inward": 0.9450547695159912,
+                  "dot": 0.9550561904907227
+                },
+                "source": "two_opposed_arrow_wings",
+                "rejected_base_or_plain_branch": true,
+                "metric": "exclusive_branch_head_without_base_bar"
+              }
+            ],
+            "branch_head_margin_normalized": 1.0,
+            "identity_metric": "exclusive_branch_head_then_base_then_remaining_collector",
+            "detected_arrow_direction": null,
+            "direction_conflict": false,
+            "stage8_distances_px": [
+              2.23606797749979,
+              18.681541692269406,
+              2.0
+            ],
+            "image_pass": "original_ink_paths"
+          },
+          "ordered_role_assignment": {
+            "source": "arrow_then_base_bar_then_collector_leftover",
+            "sequence": [
+              "stage8_wires",
+              "detector_NPN_PNP",
+              "arrow_emitter",
+              "base_bar",
+              "collector_leftover"
+            ],
+            "detector_class": "transistor_pnp",
+            "emitter": {
+              "source": "physical_arrow_then_base_bar",
+              "physical_arrow": true,
+              "distance_px": 0.0,
+              "margin_normalized": 0.6557
+            },
+            "base": {
+              "source": "physical_arrow_then_base_bar",
+              "physical_base_bar": true,
+              "distance_px": 0.0,
+              "margin_normalized": 0.533
+            },
+            "collector": {
+              "source": "remaining_wire_after_E_and_B"
+            },
+            "confidence": 0.99,
+            "identity_uncertain": false,
+            "class_arrow_direction_conflict": false,
+            "multi_pass_geometry_uncertain": false,
+            "mapping": {
+              "B": 0,
+              "C": 2,
+              "E": 1
+            }
+          }
+        },
+        "ordered_identity": {
+          "source": "arrow_then_base_bar_then_collector_leftover",
+          "confidence": 0.99,
+          "identity_uncertain": false,
+          "emitter": {
+            "source": "physical_arrow_then_base_bar",
+            "physical_arrow": true,
+            "distance_px": 0.0,
+            "margin_normalized": 0.6557
+          },
+          "base": {
+            "source": "physical_arrow_then_base_bar",
+            "physical_base_bar": true,
+            "distance_px": 0.0,
+            "margin_normalized": 0.533
+          },
+          "collector": {
+            "source": "remaining_wire_after_E_and_B"
+          }
+        }
+      }
+    ]
+  },
+  "transistor_wire_refinement": {
+    "method": "stage8_wires_class_arrow_E_base_B_leftover_C",
+    "transistor_count": 1,
+    "refined_count": 1,
+    "manual_preserved_count": 0,
+    "review_count": 0,
+    "components": [
+      {
+        "component_id": "Q_AUTO1",
+        "type": "transistor_pnp",
+        "detector_class": "transistor_pnp",
+        "original_ink_geometry": {
+          "source": "bjt_original_ink_bar_branches_and_external_leads",
+          "body_found": true,
+          "external_contact_count": 3,
+          "arrow_confirmed": true,
+          "reason": "npn_three_original_ink_leads",
+          "base_bar_points": [
+            [
+              15.736700194067154,
+              125.6106383678734
+            ],
+            [
+              42.447645229777706,
+              41.09123760850855
+            ]
+          ],
+          "branch_anchors": [
+            {
+              "near": [
+                44.0,
+                42.0
+              ],
+              "far": [
+                121.0,
+                7.0
+              ]
+            },
+            {
+              "near": [
+                26.0,
+                100.0
+              ],
+              "far": [
+                70.0,
+                160.0
+              ]
+            }
+          ],
+          "base_bar_angle_degrees": -72.46,
+          "arrow_evidence": [
+            {
+              "score": 10.319220542907715,
+              "direction": null,
+              "tip": [
+                110.5,
+                8.0
+              ],
+              "shape_scores": {
+                "outward": 0.8599350452423096,
+                "inward": 0.8244273662567139,
+                "dot": 0.7336955070495605
+              },
+              "source": "branch_head_silhouette_and_wings",
+              "metric": "exclusive_branch_head_without_base_bar"
+            },
+            {
+              "score": 0.0,
+              "direction": null,
+              "shape_scores": {
+                "outward": 0.9293476939201355,
+                "inward": 0.9450547695159912,
+                "dot": 0.9550561904907227
+              },
+              "source": "two_opposed_arrow_wings",
+              "rejected_base_or_plain_branch": true,
+              "metric": "exclusive_branch_head_without_base_bar"
+            }
+          ],
+          "branch_head_margin_normalized": 1.0,
+          "identity_metric": "exclusive_branch_head_then_base_then_remaining_collector",
+          "detected_arrow_direction": null,
+          "direction_conflict": false,
+          "stage8_distances_px": [
+            2.23606797749979,
+            18.681541692269406,
+            2.0
+          ],
+          "image_pass": "original_ink_paths"
+        },
+        "wire_candidate_count": 3,
+        "model_evidence_source": "bjt_original_ink_bar_branches_and_external_leads",
+        "model_class": "transistor_pnp",
+        "status": "refined",
+        "refined": true,
+        "B": {
+          "x": 4.0,
+          "y": 73.0
+        },
+        "C": {
+          "x": 70.0,
+          "y": 160.0
+        },
+        "E": {
+          "x": 121.0,
+          "y": 7.0
+        },
+        "wire_selection": {
+          "method": "bjt_original_ink_leads_with_stage8_context",
+          "selection_score": 5.0,
+          "role_neutral": false,
+          "original_ink_geometry": {
+            "source": "bjt_original_ink_bar_branches_and_external_leads",
+            "body_found": true,
+            "external_contact_count": 3,
+            "arrow_confirmed": true,
+            "reason": "npn_three_original_ink_leads",
+            "base_bar_points": [
+              [
+                15.736700194067154,
+                125.6106383678734
+              ],
+              [
+                42.447645229777706,
+                41.09123760850855
+              ]
+            ],
+            "branch_anchors": [
+              {
+                "near": [
+                  44.0,
+                  42.0
+                ],
+                "far": [
+                  121.0,
+                  7.0
+                ]
+              },
+              {
+                "near": [
+                  26.0,
+                  100.0
+                ],
+                "far": [
+                  70.0,
+                  160.0
+                ]
+              }
+            ],
+            "base_bar_angle_degrees": -72.46,
+            "arrow_evidence": [
+              {
+                "score": 10.319220542907715,
+                "direction": null,
+                "tip": [
+                  110.5,
+                  8.0
+                ],
+                "shape_scores": {
+                  "outward": 0.8599350452423096,
+                  "inward": 0.8244273662567139,
+                  "dot": 0.7336955070495605
+                },
+                "source": "branch_head_silhouette_and_wings",
+                "metric": "exclusive_branch_head_without_base_bar"
+              },
+              {
+                "score": 0.0,
+                "direction": null,
+                "shape_scores": {
+                  "outward": 0.9293476939201355,
+                  "inward": 0.9450547695159912,
+                  "dot": 0.9550561904907227
+                },
+                "source": "two_opposed_arrow_wings",
+                "rejected_base_or_plain_branch": true,
+                "metric": "exclusive_branch_head_without_base_bar"
+              }
+            ],
+            "branch_head_margin_normalized": 1.0,
+            "identity_metric": "exclusive_branch_head_then_base_then_remaining_collector",
+            "detected_arrow_direction": null,
+            "direction_conflict": false,
+            "stage8_distances_px": [
+              2.23606797749979,
+              18.681541692269406,
+              2.0
+            ],
+            "image_pass": "original_ink_paths"
+          },
+          "ordered_role_assignment": {
+            "source": "arrow_then_base_bar_then_collector_leftover",
+            "sequence": [
+              "stage8_wires",
+              "detector_NPN_PNP",
+              "arrow_emitter",
+              "base_bar",
+              "collector_leftover"
+            ],
+            "detector_class": "transistor_pnp",
+            "emitter": {
+              "source": "physical_arrow_then_base_bar",
+              "physical_arrow": true,
+              "distance_px": 0.0,
+              "margin_normalized": 0.6557
+            },
+            "base": {
+              "source": "physical_arrow_then_base_bar",
+              "physical_base_bar": true,
+              "distance_px": 0.0,
+              "margin_normalized": 0.533
+            },
+            "collector": {
+              "source": "remaining_wire_after_E_and_B"
+            },
+            "confidence": 0.99,
+            "identity_uncertain": false,
+            "class_arrow_direction_conflict": false,
+            "multi_pass_geometry_uncertain": false,
+            "mapping": {
+              "B": 0,
+              "C": 2,
+              "E": 1
+            }
+          }
+        },
+        "ordered_identity": {
+          "source": "arrow_then_base_bar_then_collector_leftover",
+          "confidence": 0.99,
+          "identity_uncertain": false,
+          "emitter": {
+            "source": "physical_arrow_then_base_bar",
+            "physical_arrow": true,
+            "distance_px": 0.0,
+            "margin_normalized": 0.6557
+          },
+          "base": {
+            "source": "physical_arrow_then_base_bar",
+            "physical_base_bar": true,
+            "distance_px": 0.0,
+            "margin_normalized": 0.533
+          },
+          "collector": {
+            "source": "remaining_wire_after_E_and_B"
+          }
+        }
+      }
+    ]
+  },
+  "terminal_detection_after_wires": {
+    "method": "all_classes_original_ink_inside_bbox_after_wires",
+    "components": [
+      {
+        "component_id": "Q_AUTO1",
+        "type": "transistor_pnp",
+        "rejected_notebook_rule_contacts": 0,
+        "rejected_polarity_glyph_contacts": 0,
+        "contact_count": 3,
+        "status": "wire_contacts_inside_bbox"
+      }
+    ],
+    "refined_count": 1,
+    "manual_preserved_count": 0
+  },
+  "stage9_warning": "Execute a Etapa 8 de linhas antes da Etapa 9."
+}

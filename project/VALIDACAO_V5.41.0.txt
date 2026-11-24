@@ -1,0 +1,35 @@
+VERIFICAÇÃO V5.41.0
+
+227 testes de reconhecimento, OCR, leitura contextual de unidades, referências,
+modelos, terminais, junções, edição, salvamento automático, conectividade,
+simulação, compartilhamento e reaproveitamento passaram.
+24 testes adicionais do fluxo e dos arquivos passaram, incluindo duas novas
+verificações de continuação da simulação e repetição de geração dos arquivos.
+8 cenários JavaScript de salvamento automático e carregamento das junções passaram.
+
+Comparação com a v5.40.1 usando os mesmos pesos e referências:
+- Componentes, leituras e posições dos terminais iguais nos PRJ_0434 e PRJ_0413.
+- 145 máscaras/limites de iteração: afinamento dos fios exatamente igual, pixel a pixel.
+- 224 comparações de candidatos de escrita: melhor candidato igual; diferença
+  numérica máxima 2,71e-8, sem alteração da interpretação dos caracteres.
+- ZIP antes/depois: mesmos 34 arquivos e conteúdos. Geração medida em 1,41 s
+  antes e 0,60 s depois. Tamanho passou de 2,47 MB para 3,18 MB nesse projeto,
+  devido à menor recompressão das imagens; a qualidade dos arquivos foi preservada.
+
+Medições completas de API, sem profiler e com detector já preparado:
+PRJ_0434: preparação 0,27 s, reconhecimento 4,14 s, OCR/fios/terminais 6,36 s;
+total 10,78 s. Mesma foto em outro projeto: 1,41 s.
+PRJ_0413: preparação 0,16 s, reconhecimento 7,79 s, OCR/fios/terminais 16,69 s;
+total 24,64 s. Mesma foto em outro projeto: 1,58 s.
+Em uma execução anterior, os totais foram 8,32 s e 15,76 s, respectivamente,
+demonstrando a variação normal de carga de CPU entre as execuções.
+Reabrir OCR/terminais: 0,13–0,25 s. Renomear: 0,38–0,41 s.
+Consulta de etapa: 0,01–0,02 s.
+
+Circuito pequeno de referência: geração inicial esquemático/PCB 0,25 s,
+repetição 0,034 s; ZIP inicial 0,23 s, repetição 0,046 s; arquivos 0,012 s.
+Esses valores não representam a geração inicial de uma placa de qualquer tamanho.
+
+As medições foram feitas em cópias. Projetos originais, fotos, banco de dados,
+modelos treinados e correções do usuário não foram alterados pelos testes.
+Modelo preservado: SHA256 4d98de590a6eb19b59350d9046345cad4b6a8590dc76432fa63a45ea1b7314a3.

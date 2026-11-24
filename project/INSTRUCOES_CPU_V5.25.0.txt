@@ -1,0 +1,61 @@
+ATUALIZAÇÃO V5.25.0 — DESEMPENHO NA CPU
+
+Feche o programa e faça backup das pastas backend e frontend.
+Extraia backend, frontend e tools deste ZIP em:
+C:\tc2\Circuit_Scanner_Etapa5_Corrigido\project
+Mescle as pastas e substitua os arquivos presentes no ZIP.
+Preserve projetos, imagens, banco de dados e modelos treinados.
+Reinicie o programa e recarregue o navegador com Ctrl+F5.
+Abra http://127.0.0.1:8010/workflow
+Confira http://127.0.0.1:8010/system/version
+Build esperado: 2026-10-06-cpu-performance-v5.25.0
+
+Este pacote é cumulativo. Inclui os modelos automáticos, a revisão de
+componentes/valores/modelos/netlist na etapa Circuito e as melhorias
+anteriores de interface, OCR, caixas, terminais, fios e junções.
+O ZIP foi preparado no workspace; não foi instalado em C:\tc2.
+
+OTIMIZAÇÕES
+1. No fluxo integrado, fios, terminais e junções são calculados após o
+   OCR. A geração provisória anterior ao OCR deixa de duplicar esse trabalho.
+   As linhas continuam sendo detectadas antes dos terminais finais.
+2. Preparação, reconhecimento e OCR reaproveitam resultados válidos da
+   mesma imagem/opções/versão. Uma alteração relevante ou a ausência/
+   alteração de arquivos de saída invalida o reaproveitamento.
+   Solicitações iguais simultâneas no mesmo projeto não duplicam o cálculo.
+3. Alterar apenas valores ou modelos atualiza os metadados sem recalcular
+   posições de fios e terminais. Redes/circuito derivados são invalidados
+   quando necessário para refletir os novos dados elétricos.
+4. O OCR mantém a leitura geral e o arquivo de leituras brutas. Releituras
+   extras são concentradas nos componentes com informação incerta.
+   Fotos grandes permanecem em resolução nativa, sem ampliação obrigatória
+   de 1,5 vez. Letras/unidades e os recortes numéricos continuam disponíveis.
+   Se EasyOCR falhar, a leitura ampla pelo Tesseract continua disponível.
+   Um número já explicado pela unidade (100 mH, por exemplo) não pode
+   reaparecer na mesma posição como referência L00 de outra leitura OCR.
+5. O detector preserva as primeiras vistas de cor, cinza e binária.
+   Dúvidas de confiança/geometria ou tinta não explicada mantêm as vistas
+   adicionais, rotações e blocos. Vistas exatamente iguais compartilham a
+   inferência, preservando sua origem na consolidação.
+6. A aprovação dos dez circuitos de referência é reaproveitada somente
+   se os dez passaram e código, simulador, relatório e ZIPs continuam válidos.
+   Cada circuito do usuário continua sendo revisado e simulado normalmente.
+7. Na mesma tela do fluxo, abra Tempos de processamento. São mostrados
+   o tempo da última execução e a indicação de resultado reaproveitado.
+   Os tempos englobados pelas etapas não devem ser somados duas vezes.
+
+Não é necessário instalar GPU, CUDA ou trocar o modelo treinado.
+As mudanças são automáticas na CPU, usando as dependências já existentes.
+O primeiro processamento ainda executa as tarefas necessárias; o maior
+benefício do reaproveitamento aparece ao repetir/retomar resultados válidos.
+As revisões manuais continuam disponíveis e são respeitadas.
+
+CONTROLE TÉCNICO OPCIONAL
+POST /projects/{id}/process?force=true
+POST /projects/{id}/detect?force=true
+POST /projects/{id}/ocr?force=true
+Força a execução das respectivas etapas, sem aceitar o resultado em cache.
+POST /projects/{id}/detect?adaptive=false&force=true
+Executa a estratégia completa para comparação; não ativa GPU.
+GET /projects/{id}/performance
+Consulta os tempos registrados. O fluxo não exige acessar esses links.

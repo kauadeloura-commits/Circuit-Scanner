@@ -1,0 +1,54 @@
+ATUALIZACAO V5.13.5 - POLARIDADE E IDENTIDADE DOS TERMINAIS
+=======================================================
+
+Pacote cumulativo: inclui a cor da tinta para fios/juncoes da v5.13.4 e a
+nova leitura visual de terminais. Contem a pasta backend completa, sem caches.
+
+O QUE FOI CORRIGIDO
+------------------
+- Capacitor polarizado e fonte DC: o sinal '+' visivel identifica o lado
+  positivo; o terminal oposto recebe '-'. O lado nao e fixado por esquerda,
+  direita, cima ou baixo. A fonte usa o corpo e os fios visiveis do simbolo;
+  o capacitor preserva a geometria das placas e dos fios ja encontrada.
+- Bateria: o '+' explicito tem prioridade. Quando nao existe sinal legivel,
+  placas de comprimentos claramente diferentes permitem usar a placa longa
+  como positiva. Placas indistinguiveis permanecem para revisao.
+- Amplificador operacional: '+' e '-' identificam as respectivas entradas;
+  OUT fica no fio que sai do vertice do triangulo. As entradas sao nao
+  inversora e inversora; nao sao os terminais de alimentacao do amplificador.
+  Este simbolo conserva tres terminais, sem inventar pinos de alimentacao.
+- MOSFET N/P: os terminais continuam G, D e S. A barra isolada identifica G;
+  a evidencia visual do ramo ligado ao corpo/seta ajuda a separar S e D.
+  Se o desenho nao permite essa separacao, D/S ficam incertos para revisao.
+- Nomes previstos pelo modelo nao prevalecem sobre sinais visiveis claros.
+- Correcoes manuais de terminais sao preservadas.
+- Um cruzamento sobre o fio nao deve ser confundido com '+'. Sinais pequenos
+  e sinais encostados nas placas tambem sao considerados.
+- A etapa usa a foto original e a referencia da tinta, mantendo a protecao
+  contra pautas do caderno. A contagem de revisoes inclui identidade incerta.
+
+COMO APLICAR
+------------
+1. Feche o servidor do Circuit Scanner e guarde uma copia do backend atual.
+2. Extraia a pasta backend deste ZIP na pasta principal do programa,
+   mesclando e substituindo os arquivos existentes.
+3. Mantenha os novos arquivos backend/terminal_identity.py e backend/ink_color.py.
+4. Inicie o programa normalmente. Em http://127.0.0.1:8010/system/version,
+   confira o build:
+   2026-09-30-visible-polarity-opamp-mosfet-terminals-v5.13.5
+5. Execute novamente a deteccao de TERMINAIS do projeto. Reabrir uma imagem
+   ou recalcular somente os fios nao corrige os nomes de terminais ja salvos.
+   O fluxo automatico recalcula as linhas depois dos terminais; confira
+   tambem o resultado de fios e juncoes antes de consolidar as ligacoes.
+
+Nao e necessario retreinar. O ZIP nao inclui models, projects, database,
+real_data ou datasets. Esta entrega nao foi instalada na pasta ativa.
+
+CONFERENCIA
+-----------
+terminals.json > components > terminal_identity_geometry registra os sinais,
+o motivo da decisao e confirmed. Terminais duvidosos recebem identity_uncertain
+e '?' no preview, com review_required. Uma caixa de componente incorreta ou
+um simbolo ilegivel ainda pode exigir correcao manual.
+
+Consulte VALIDACAO_TERMINAIS_V5.13.5.txt para os resultados e limites do teste.

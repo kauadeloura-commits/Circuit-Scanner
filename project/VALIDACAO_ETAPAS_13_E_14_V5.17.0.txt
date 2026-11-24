@@ -1,0 +1,49 @@
+VALIDAÇÃO V5.17.0 — ETAPAS 13 E 14
+
+19 testes específicos passaram após os ajustes finais.
+Incluem valores e unidades, confirmação obrigatória, polaridades,
+geração SPICE, execução real do ngspice, leitura dos resultados,
+downloads, erros, timeout, componentes sem modelos, revisões alteradas
+durante a simulação e invalidação de resultados antigos.
+As unidades base retornadas pelo OCR também foram verificadas.
+
+Circuitos de referência executados com ngspice 47 portátil:
+- Divisor 5 V, 1 kΩ + 1 kΩ: VOUT = 2,5 V; I = 0,0025 A.
+- RC 5 V, 1 kΩ, 1 µF: 512 amostras; VOUT em 5 ms =
+  4,9663116594 V. Compatível com 5 × (1 - exp(-5)).
+- RL 5 V, 1 kΩ, 10 mH em DC: VOUT = 0 V; I = 0,005 A.
+- Diodo genérico com resistor 1 kΩ e fonte 5 V:
+  VOUT = 0,6933156961 V; I = 0,0043066843 A.
+- LED genérico com resistor 1 kΩ e fonte 5 V:
+  VOUT = 2,0860630529 V; I = 0,0029139369 A.
+- Capacitor ideal em DC: circuito aberto, VOUT = 5 V.
+
+Interface conferida no navegador com projetos fictícios de referência:
+divisor de tensão, carga RC, consulta por instante e arquivos disponíveis.
+Na amostra em 0,8924666 ms, o RC exibiu 2,951794 V; no fim, 4,966312 V.
+Os 7 scripts das interfaces passaram na verificação de sintaxe.
+Não foi atribuída confirmação humana a projetos reais para realizar testes.
+
+A execução ampla anterior aos ajustes finais de unidades e interface
+executou 351 testes: 349 aprovações e 2 falhas já existentes na v5.16.3.
+Essa contagem incluía 9 testes de API repetidos por uma importação, que
+foi corrigida. As falhas preexistentes foram:
+1. test_previsoes_fracas_repetidas_nao_sao_resgatadas:
+   o conjunto de classes de dataset não está presente na cópia de teste.
+2. test_diodo_com_duas_setas_e_corrigido_para_led:
+   a amostra sintética de setas retornou 0 em vez de 1 neste ambiente.
+Nenhuma falha nova foi observada. As duas não foram escondidas nem
+corrigidas alterando os critérios dos testes.
+
+Empacotamento: integridade CRC, sintaxe Python, conteúdo dos arquivos,
+binário portátil e licença verificados. O ZIP foi extraído em uma pasta
+isolada e executou o RC com seu próprio simulador e unidades retornadas
+pelo OCR, obtendo novamente 4,9663116594 V em 5 ms.
+Arquivos não relacionados às
+etapas 13 e 14 comparados com a v5.16.3. Funções anteriores de geometria
+dos fios preservadas. O ZIP não contém projetos fictícios, cache,
+dados pessoais, pesos ou ambiente Python.
+
+Os projetos reais com AOP ou transistores continuam exigindo modelos
+específicos antes de serem simulados. A entrega conclui o escopo inicial
+de simulação do roteiro; não afirma validação elétrica desses modelos.

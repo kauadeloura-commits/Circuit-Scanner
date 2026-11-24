@@ -1,0 +1,105 @@
+ATUALIZAÇÃO V5.32.1 — CORREÇÃO DA LEITURA DE CARACTERES E UNIDADES
+
+CORREÇÃO APLICADA AOS QUATRO ARQUIVOS DO BACKEND EM C:\tc2.
+Feche a janela do servidor e reabra INICIAR_NA_REDE.bat para carregar a nova versão.
+Depois clique em Ler OCR na etapa Valores e modelos do projeto.
+O ZIP abaixo é cumulativo, para reaplicação ou outra instalação quando necessário.
+
+COMO APLICAR
+1. Feche o programa/servidor antigo para que não continue usando a versão anterior.
+2. Extraia este ZIP em uma pasta fora do projeto, por exemplo em Downloads.
+3. Na pasta extraída, execute APLICAR_ATUALIZACAO.ps1 pelo PowerShell:
+   powershell -NoProfile -File .\APLICAR_ATUALIZACAO.ps1
+   Destino padrão: C:\tc2\Circuit_Scanner_Etapa5_Corrigido\project
+   Se o Windows bloquear scripts, aplique manualmente conforme abaixo;
+   não é preciso mudar a política de execução do computador.
+4. Na pasta do projeto, abra INICIAR_NA_REDE.bat e mantenha essa janela aberta.
+5. Abra http://127.0.0.1:8010/workflow e atualize com Ctrl+F5.
+   Projeto 425: http://127.0.0.1:8010/projects/PRJ_0425/workflow
+   Build em /system/version: 2026-10-08-reference-ocr-characters-v5.32.1
+6. Em projetos antigos, volte a Arquivos e gere novamente para atualizar
+   o esquemático, a PCB, o ZIP e o QR. As revisões manuais são preservadas.
+
+O script faz backup apenas dos arquivos substituídos e arquiva os arquivos
+antigos ngspice em _backup_v5.32_DATA. Não altera projects, fotos, banco,
+venv, modelos treinados de componentes nem amostras pessoais antigas.
+Essas amostras antigas não são usadas pelo novo OCR.
+
+APLICAÇÃO MANUAL, SE NECESSÁRIA
+Faça backup de backend, frontend e tools. Mescle as pastas backend,
+frontend e tools\circuitjs deste pacote no destino, substituindo arquivos.
+Copie também iniciar_scanner.py e INICIAR_NA_REDE.bat para o destino.
+Mova para seu backup os arquivos antigos backend\spice_netlist.py,
+backend\spice_simulation.py, backend\spice_page.py,
+backend\production_validation.py e tools\ngspice. Preserve os dados pessoais.
+
+APÓS REINICIAR: ATUALIZE A LEITURA DO PROJETO EXISTENTE
+Na etapa Valores e modelos, clique em Ler OCR. A instalação não reprocessa
+os projetos sozinha. A leitura anterior continua salva até você executar o OCR.
+Referências, valores, modelos e parâmetros informados manualmente são
+preservados quando o componente, a classe e a caixa continuam os mesmos.
+
+CORREÇÕES DESTA VERSÃO
+- Separação por espaços e vales de tinta, sem fundir vários números em
+  uma letra nem cortar indevidamente uma letra isolada.
+- Comparação de contornos e traços tolerando espessura e proporção.
+- Leitura por unidades, identificadores e números; prefixos mantêm escala.
+- Divisão de unidades encostadas por um caminho que acompanha os espaços
+  entre os traços: não exige uma linha de corte vertical perfeita.
+- Diferenças de C/c não rejeitam C1. β e = são tratados como atribuição de
+  ganho, seguida de números. Decimais e sinais numéricos são preservados.
+- Recortes de + e fragmentos isolados pertencem à análise de símbolos,
+  sem gerar pendências falsas na revisão de escritas.
+- OCR usa a foto original no recorte e tenta a máscara filtrada quando
+  necessário. A máscara de fios não é a única fonte para ler letras.
+
+No PRJ_0425 foram lidos 100nF, β=58, 5V, C1, 27KΩ, R1, 10nF, R2, L2,
+10mH, 10KΩ e 12V, sem pendências de texto. Os valores e hFE=58 foram
+associados aos componentes compatíveis. Escritas sem componente compatível,
+como 12V quando não houver um VCC detectado, continuam visíveis para revisão.
+
+OCR DAS TRÊS FOTOS
+As fotos fornecidas foram orientadas, recortadas e identificadas em 56
+referências de números, letras, unidades e expressões. A leitura compara
+formas, proporções e traços com esses recortes, priorizando o entorno dos
+componentes e as unidades de medida. Não treina IA nem consulta OCR de IA.
+O banco contém somente recortes dessas três fotos; nenhuma correção manual
+acrescenta automaticamente referências novas.
+Leituras incertas aparecem em “Escritas para conferir”, com o recorte
+original. Confira e informe manualmente quando necessário. Por exemplo,
+não há N nas fotos: 1N4001 pode ficar incompleto em vez de inventar a letra.
+Não foi demonstrada precisão geral com apenas essas três fotos.
+
+FLUXO E INTERFACE
+Salvar e continuar em Valores e modelos segue diretamente para Junções
+(etapa 3 para 4), inclusive quando houve ajustes em terminais.
+Falstad é o único simulador. A simulação e o circuito digital ficam na
+etapa Simulação; Pronto apresenta downloads e QR, sem relatórios de
+validação do programador nem repetição do simulador.
+As conexões do esquemático foram compactadas e organizadas em segmentos
+ortogonais, preservando as redes e as funções dos terminais confirmados.
+
+CELULAR
+INICIAR_NA_REDE.bat abre a edição apenas em 127.0.0.1:8010 e o visualizador
+compartilhado na porta 8012 da rede local. O QR usa o endereço do computador
+na rede, sem localhost. Conecte o celular ao mesmo Wi-Fi e mantenha o
+programa aberto. Se houver várias redes, ajuste o endereço em Arquivos.
+Se o Windows solicitar acesso à rede, permita Python somente na rede
+privada em que pretende testar. O pacote não muda firewall nem cria um
+link público. O celular consulta o circuito pelo link com token; não
+recebe as ferramentas de edição. “Desativar link” revoga esse acesso.
+
+PCB
+Incluir PCB com roteamento inicial vem selecionado. Escolha encapsulamentos
+e confira os pinos físicos. O roteador cria trilhas em duas camadas e vias,
+conectando os pads disponíveis; informa se alguma ligação ficar pendente.
+Encapsulamento não definido usa um conector de sinais. Isso não substitui
+um projeto final de fabricação: confira encapsulamentos, pinos de alimentação
+(especialmente AOP), dimensões, correntes e regras da placa no KiCad.
+
+MODELOS NO FALSTAD
+Nomes comerciais permanecem visíveis. Falstad usa componentes nativos com
+hFE, limiar/KP de MOSFET e ganho de AOP quando disponíveis; diodos/LEDs
+usam aproximações genéricas. Não é um macromodelo completo de fabricante.
+No PRJ_0423, o retorno VAUTO1.- permanece em NET_10 isolada porque essa é
+a ligação confirmada. A atualização não inventa uma ligação ao terra.

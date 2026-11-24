@@ -1,0 +1,206 @@
+{
+  "schema_version": "stage10-connectivity-1.0",
+  "created_at": "2026-10-19T19:39:26-03:00",
+  "project_id": "PRJ_0214",
+  "source_signature": "5b0a9a2de70a4ebc46f08ac27c841da72596b626711ede871011c3a83d8f20ee",
+  "components": [
+    {
+      "component_id": "D_AUTO1",
+      "detection_id": "DET_001",
+      "type": "diode",
+      "class_confidence": 0.575415,
+      "bbox": {
+        "x1": 2.29,
+        "y1": 42.0,
+        "x2": 190.94,
+        "y2": 153.46,
+        "width": 188.65,
+        "height": 111.46,
+        "center_x": 96.61,
+        "center_y": 97.73
+      },
+      "reference": {
+        "text": "D_AUTO1",
+        "source": "generated",
+        "confidence": null
+      },
+      "value": {
+        "text": "",
+        "normalized": null,
+        "unit": null,
+        "source": "missing",
+        "confidence": null
+      },
+      "ocr_tokens": [],
+      "review_required": true,
+      "review_reasons": [
+        "referencia_nao_lida",
+        "contato_interno_sem_tinta_confirmada"
+      ],
+      "model": {
+        "text": "",
+        "source": "missing",
+        "confidence": null
+      },
+      "electrical_parameters": {},
+      "parameter_policy": {},
+      "parameter_pending": [],
+      "learned_terminal_geometry": null,
+      "electrical_axis_geometry": {
+        "source": "cathode_bar",
+        "bar_angle": 0.0,
+        "bar_center_x": 93.5,
+        "bar_center_y": 43.0,
+        "top_x": 93.5,
+        "bottom_x": 93.5,
+        "left_y": null,
+        "right_y": null,
+        "diagonal_join_count": 2
+      },
+      "orientation": {
+        "axis": "vertical",
+        "confidence": 0.9,
+        "source": "cathode_bar",
+        "angle_degrees": 90.0,
+        "angle_confidence": 0.9,
+        "angle_source": "opposite_border_electrical_axis"
+      },
+      "terminals": [
+        {
+          "pin_id": "D_AUTO1.K",
+          "pin": "K",
+          "electrical_role": "cathode",
+          "terminal_side": "top",
+          "index": 1,
+          "position": {
+            "x": 90.0,
+            "y": 43.0
+          },
+          "search_radius_px": 9,
+          "source": "wire_contact_inside_component_bbox",
+          "connection_snap": {
+            "applied": true,
+            "mode": "wire_centerline"
+          },
+          "confidence": 0.9,
+          "bbox_constrained": true,
+          "original_ink_confirmed": true,
+          "wire_contact_confirmed": true,
+          "stage8_context_distance_px": 3.0,
+          "stage8_context_confirmed": true
+        },
+        {
+          "pin_id": "D_AUTO1.A",
+          "pin": "A",
+          "electrical_role": "anode",
+          "terminal_side": "bottom",
+          "index": 2,
+          "position": {
+            "x": 43.0,
+            "y": 153.0
+          },
+          "search_radius_px": 23,
+          "source": "wire_contact_inside_component_bbox",
+          "connection_snap": {
+            "applied": true,
+            "mode": "wire_centerline"
+          },
+          "confidence": 0.9,
+          "bbox_constrained": true,
+          "original_ink_confirmed": true,
+          "wire_contact_confirmed": true,
+          "stage8_context_distance_px": 17.0,
+          "stage8_context_confirmed": false
+        }
+      ],
+      "terminal_detection": {
+        "status": "estimated",
+        "pin_count": 2,
+        "review_required": true,
+        "review_reasons": [
+          "contato_interno_sem_tinta_confirmada"
+        ],
+        "method": "transistor_fork_or_two_terminal_electrical_axis_plus_local_image_geometry",
+        "unobserved_pins": [],
+        "contact_method": "all_classes_original_ink_inside_bbox_after_wires"
+      }
+    }
+  ],
+  "nets": [
+    {
+      "wire_ids": [
+        "WIRE_0001"
+      ],
+      "terminal_refs": [
+        "D_AUTO1:K"
+      ],
+      "labels": [],
+      "name": "NET_1",
+      "is_ground": false,
+      "member_count": 1
+    },
+    {
+      "wire_ids": [],
+      "terminal_refs": [
+        "D_AUTO1:A"
+      ],
+      "labels": [],
+      "name": "NET_2",
+      "is_ground": false,
+      "member_count": 1
+    }
+  ],
+  "terminal_connections": [
+    {
+      "terminal_ref": "D_AUTO1:K",
+      "component_id": "D_AUTO1",
+      "pin": "K",
+      "electrical_role": "cathode",
+      "position": {
+        "x": 90.0,
+        "y": 43.0
+      },
+      "status": "attached",
+      "wire_id": "WIRE_0001",
+      "distance_px": 4.295,
+      "net": "NET_1"
+    },
+    {
+      "terminal_ref": "D_AUTO1:A",
+      "component_id": "D_AUTO1",
+      "pin": "A",
+      "electrical_role": "anode",
+      "position": {
+        "x": 43.0,
+        "y": 153.0
+      },
+      "status": "unconnected",
+      "wire_id": null,
+      "distance_px": null,
+      "net": "NET_2"
+    }
+  ],
+  "warnings": [
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "D_AUTO1"
+    },
+    {
+      "code": "unconnected_pin",
+      "message": "Pino sem fio externo confirmado.",
+      "terminal_ref": "D_AUTO1:A"
+    }
+  ],
+  "net_count": 2,
+  "terminal_count": 2,
+  "attached_terminal_count": 1,
+  "unconnected_terminal_count": 1,
+  "ambiguous_terminal_count": 0,
+  "wire_only_net_count": 0,
+  "review_count": 2,
+  "recovered_wire_bridges": [],
+  "recovered_observed_leads": [],
+  "recovered_coincident_contacts": [],
+  "criterion_met": false
+}

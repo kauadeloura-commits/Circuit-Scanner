@@ -1,0 +1,161 @@
+{
+  "schema_version": "circuit-1.0",
+  "project_id": "PRJ_0120",
+  "name": "EVAL I05_20",
+  "created_at": "2026-10-19T19:35:04-03:00",
+  "components": [
+    {
+      "id": "L_AUTO1",
+      "type": "inductor",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "1",
+        "2"
+      ],
+      "metadata": {
+        "source_component_id": "L_AUTO1",
+        "reference_source": "generated",
+        "value_source": "missing",
+        "review_required": true,
+        "model": {
+          "text": "SRR6028-100Y",
+          "source": "suggested",
+          "confidence": null
+        },
+        "electrical_parameters": {
+          "inductance": {
+            "value": 9.999999999999999e-06,
+            "unit": "H",
+            "source": "datasheet_typical",
+            "estimated": true,
+            "datasheet": {
+              "model": "SRR6028-100Y",
+              "manufacturer": "Bourns",
+              "url": "https://www.bourns.com/docs/Product-Datasheets/SRR6028.pdf",
+              "page": 1,
+              "checked_at": "2026-10-01",
+              "unit": "H",
+              "condition": "Indutância nominal da tabela; ensaio a 100 kHz",
+              "min": null,
+              "typ": 9.999999999999999e-06,
+              "max": null
+            }
+          },
+          "saturation_current": {
+            "value": 1.7,
+            "unit": "A",
+            "source": "datasheet_typical",
+            "estimated": true,
+            "datasheet": {
+              "model": "SRR6028-100Y",
+              "manufacturer": "Bourns",
+              "url": "https://www.bourns.com/docs/Product-Datasheets/SRR6028.pdf",
+              "page": 1,
+              "checked_at": "2026-10-01",
+              "unit": "A",
+              "condition": "Isat da tabela; redução típica de 35% da indutância",
+              "min": null,
+              "typ": 1.7,
+              "max": null
+            }
+          },
+          "tolerance": {
+            "value": 30,
+            "unit": "%",
+            "source": "datasheet_typical",
+            "estimated": true,
+            "datasheet": {
+              "model": "SRR6028-100Y",
+              "manufacturer": "Bourns",
+              "url": "https://www.bourns.com/docs/Product-Datasheets/SRR6028.pdf",
+              "page": 1,
+              "checked_at": "2026-10-01",
+              "unit": "%",
+              "condition": "Tolerância da indutância nominal",
+              "min": null,
+              "typ": 30,
+              "max": null
+            }
+          }
+        },
+        "parameter_policy": {
+          "inductance": "datasheet",
+          "series_resistance": "datasheet",
+          "saturation_current": "datasheet",
+          "rated_current": "datasheet",
+          "tolerance": "datasheet"
+        },
+        "parameter_pending": [
+          {
+            "parameter": "series_resistance",
+            "reason": "only_limit",
+            "message": "O datasheet só informa um limite; informe um valor ou confira a condição.",
+            "bounds": {
+              "unit": "ohm",
+              "condition": "DCR máxima da tabela; não é um valor típico",
+              "min": null,
+              "typ": null,
+              "max": 0.065
+            }
+          },
+          {
+            "parameter": "rated_current",
+            "reason": "only_limit",
+            "message": "O datasheet só informa um limite; informe um valor ou confira a condição.",
+            "bounds": {
+              "unit": "A",
+              "condition": "Irms da tabela; limite térmico",
+              "min": null,
+              "typ": null,
+              "max": 2
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "nets": [
+    {
+      "name": "NET_1",
+      "members": [
+        "L_AUTO1.1"
+      ]
+    },
+    {
+      "name": "NET_2",
+      "members": [
+        "L_AUTO1.2"
+      ]
+    }
+  ],
+  "warnings": [
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "L_AUTO1"
+    },
+    {
+      "code": "unconnected_pin",
+      "message": "Pino sem fio externo confirmado.",
+      "terminal_ref": "L_AUTO1.2"
+    },
+    {
+      "code": "value_missing",
+      "component_id": "L_AUTO1",
+      "message": "Valor do componente nao informado."
+    }
+  ],
+  "confirmed_by_user": false,
+  "status": "draft",
+  "image_independent": true,
+  "source_connectivity_signature": "5a0f729498e33613f74b2e77d2b64539bfe554a70874338786f158afb233d788",
+  "validation": {
+    "structurally_valid": true,
+    "review_required": true,
+    "component_count": 1,
+    "net_count": 2,
+    "pin_count": 2
+  }
+}

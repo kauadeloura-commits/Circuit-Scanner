@@ -1,0 +1,38 @@
+ATUALIZACAO V5.14.4 - PAUTAS POR COR E PADRAO DE REPETICAO
+
+O programa usa as faixas de referencia fornecidas para as pautas:
+- Cinza tradicional: #B3B3B3 a #CCCCCC, RGB 179 a 204 por canal.
+- Cinza claro: #D9D9D9 a #E6E6E6, RGB 217 a 230 por canal.
+- Ciano: #B3E6E6 e #99FFFF como referencias da faixa escolar.
+
+Esses codigos sao aproximacoes, nao uma regra para apagar todo pixel dessa
+cor. Lapis claro e caneta clara tambem podem entrar nessas faixas. Por isso
+o programa confirma linhas longas, paralelas e regularmente espacadas antes
+de classifica-las como pautas. Tambem aceita paginas giradas e quadriculadas.
+
+A comparacao de cor e ajustada ao fundo do papel para lidar com sombras,
+iluminacao e tonalidade da foto. A cor efetivamente observada de cada pauta
+e medida e comparada com tolerancia, protegendo a tinta de referencia dos
+componentes confiaveis. Tracos mais escuros que a pauta sao preservados.
+
+O perfil das pautas e salvo em wires.json e reutilizado nos contatos dos
+terminais e nas juncoes. Isso evita que uma pauta rejeitada volte a ser
+considerada um contato ou uma ponte eletrica nas etapas seguintes.
+
+A leitura dos simbolos e dos sinais + continua usando a fotografia original.
+O detector anterior de fios e mantido como base, com a nova exclusao aplicada
+ao seu resultado de tinta. Regioes grossas de tinta/sombra nao recebem furos
+de pixels que poderiam criar novas ramificacoes falsas. O filtro de cor nao
+modifica pesos, caixas de componentes nem correcoes manuais.
+
+COMO APLICAR
+1. Feche o servidor e guarde uma copia do backend atual.
+2. Extraia a pasta backend do ZIP na pasta principal do programa, mesclando
+   e substituindo os arquivos. Inclua o novo notebook_rulings.py.
+3. Reinicie o programa e confira http://127.0.0.1:8010/system/version:
+   2026-09-30-notebook-color-families-shared-filter-v5.14.4
+4. Na imagem, clique em Refazer fios e terminais para recalcular os resultados.
+
+Pacote cumulativo, preparado em copia de trabalho; nao instalado no programa
+ativo. Nao inclui pesos, banco, projetos ou dados de treinamento. Consulte
+VALIDACAO_IGNORAR_PAUTAS_V5.14.4.txt para os testes e seus limites.

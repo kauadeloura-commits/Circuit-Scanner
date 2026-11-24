@@ -1,0 +1,141 @@
+{
+  "schema_version": "stage10-connectivity-1.0",
+  "created_at": "2026-10-19T19:37:51-03:00",
+  "project_id": "PRJ_0179",
+  "source_signature": "6c7945f7ae772d1419b1fe6638af2b15d9e68abfce9d683d991ba33b75fb95b9",
+  "components": [
+    {
+      "component_id": "GND1",
+      "detection_id": "DET_001",
+      "type": "gnd",
+      "class_confidence": 0.88,
+      "bbox": {
+        "x1": 43.0,
+        "y1": 28.75,
+        "x2": 122.0,
+        "y2": 105.25,
+        "width": 79.0,
+        "height": 76.5,
+        "center_x": 82.5,
+        "center_y": 67.0
+      },
+      "reference": {
+        "text": "GND1",
+        "source": "class",
+        "confidence": 0.88
+      },
+      "value": {
+        "text": "",
+        "normalized": null,
+        "unit": null,
+        "source": "not_applicable",
+        "confidence": null
+      },
+      "ocr_tokens": [],
+      "review_required": false,
+      "review_reasons": [],
+      "model": {
+        "text": "",
+        "source": "missing",
+        "confidence": null
+      },
+      "electrical_parameters": {},
+      "parameter_policy": {},
+      "parameter_pending": [],
+      "orientation": {
+        "axis": "vertical",
+        "confidence": 0.45,
+        "source": "bbox_aspect_ratio",
+        "angle_degrees": 90.0,
+        "angle_confidence": 0.0,
+        "angle_source": "bbox_axis"
+      },
+      "terminals": [
+        {
+          "pin_id": "GND1.GND",
+          "pin": "GND",
+          "electrical_role": "ground",
+          "terminal_side": "top",
+          "index": 1,
+          "position": {
+            "x": 78.0,
+            "y": 29.0
+          },
+          "search_radius_px": 8,
+          "source": "wire_contact_inside_component_bbox",
+          "confidence": 0.45,
+          "bbox_constrained": true,
+          "original_ink_confirmed": true,
+          "wire_contact_confirmed": true,
+          "stage8_context_distance_px": 2.0,
+          "stage8_context_confirmed": true
+        }
+      ],
+      "terminal_detection": {
+        "status": "estimated",
+        "pin_count": 1,
+        "review_required": false,
+        "review_reasons": [],
+        "method": "transistor_fork_or_two_terminal_electrical_axis_plus_local_image_geometry",
+        "unobserved_pins": [],
+        "contact_method": "all_classes_original_ink_inside_bbox_after_wires"
+      }
+    }
+  ],
+  "nets": [
+    {
+      "wire_ids": [],
+      "terminal_refs": [
+        "GND1:GND"
+      ],
+      "labels": [],
+      "name": "GND",
+      "is_ground": true,
+      "member_count": 1
+    },
+    {
+      "wire_ids": [
+        "WIRE_0001"
+      ],
+      "terminal_refs": [],
+      "labels": [],
+      "name": "NET_1",
+      "is_ground": false,
+      "member_count": 0
+    }
+  ],
+  "terminal_connections": [
+    {
+      "terminal_ref": "GND1:GND",
+      "component_id": "GND1",
+      "pin": "GND",
+      "electrical_role": "ground",
+      "position": {
+        "x": 78.0,
+        "y": 29.0
+      },
+      "status": "unconnected",
+      "wire_id": null,
+      "distance_px": null,
+      "net": "GND"
+    }
+  ],
+  "warnings": [
+    {
+      "code": "unconnected_pin",
+      "message": "Pino sem fio externo confirmado.",
+      "terminal_ref": "GND1:GND"
+    }
+  ],
+  "net_count": 2,
+  "terminal_count": 1,
+  "attached_terminal_count": 0,
+  "unconnected_terminal_count": 1,
+  "ambiguous_terminal_count": 0,
+  "wire_only_net_count": 1,
+  "review_count": 1,
+  "recovered_wire_bridges": [],
+  "recovered_observed_leads": [],
+  "recovered_coincident_contacts": [],
+  "criterion_met": false
+}

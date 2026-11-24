@@ -1,0 +1,60 @@
+ATUALIZACAO V5.11.4 — AREA DE TREINAMENTO CAD
+
+O que foi acrescentado
+
+1. A tela "Treinar reconhecimento de componentes" agora possui duas entradas:
+   - Desenho feito a mao ou foto
+   - Adicionar circuito CAD
+
+2. As imagens continuam entrando no mesmo treinamento, mas a origem fica
+   registrada como "handwritten" ou "cad".
+
+3. A lista pode ser filtrada por:
+   - Todas as origens
+   - Somente feitas a mao
+   - Somente CAD
+
+4. A contagem mostra separadamente:
+   - quantidade de imagens feitas a mao;
+   - quantidade de imagens CAD;
+   - caixas anotadas em imagens feitas a mao;
+   - caixas anotadas em imagens CAD.
+
+5. O campo opcional "Grupo/projeto CAD" serve para paginas, capturas ou
+   versoes do mesmo projeto. Todas as imagens que usam exatamente o mesmo
+   grupo permanecem no mesmo conjunto (treino, validacao ou teste), evitando
+   uma avaliacao artificialmente alta.
+
+6. Imagens cadastradas antes desta atualizacao continuam funcionando e sao
+   tratadas como feitas a mao. Nenhuma anotacao anterior e apagada.
+
+Como usar
+
+1. Abra http://127.0.0.1:8010/component-trainer
+2. Em "Adicionar circuito CAD", escolha PNG, JPG ou JPEG.
+3. Informe um nome opcional.
+4. Se houver mais paginas ou versoes do mesmo circuito, escreva o mesmo texto
+   em "Grupo/projeto CAD" para todas elas.
+5. Clique em "Adicionar circuito CAD".
+6. Desenhe uma caixa justa em cada componente e escolha a classe correta.
+7. Clique em "Salvar anotacoes".
+8. Repita para as demais imagens CAD e feitas a mao.
+9. Quando terminar, clique em "Montar dataset misto".
+10. Depois clique em "Iniciar treinamento".
+
+Importante
+
+- Marque todos os componentes visiveis.
+- Evite incluir textos e fios longos dentro da caixa.
+- Imagens sem componentes podem ser salvas com zero caixas como negativas.
+- CAD e desenhos feitos a mao podem ser usados juntos no mesmo treinamento.
+
+Versao esperada
+
+Abra http://127.0.0.1:8010/system/version e confirme:
+
+2026-09-28-cad-training-source-v5.11.4
+
+Validacao
+
+138 testes automatizados do backend aprovados.

@@ -1,0 +1,71 @@
+ATUALIZAÇÃO V5.37.0 — SALVAMENTO AUTOMÁTICO, COMPARTILHAMENTO E CIRCUITOS DENSOS
+
+COMO USAR
+Feche o servidor antigo, extraia este ZIP fora do projeto e aplique
+APLICAR_ATUALIZACAO.ps1. O script faz backup dos arquivos substituídos.
+Se o Windows bloquear o script, mescle manualmente backend e frontend
+com o projeto, depois de fazer backup dessas pastas. Não é necessário
+alterar a política de execução do Windows.
+Preserve projects, fotos, banco de dados, venv e pesos do detector.
+O ZIP é cumulativo e inclui o CircuitJS local já utilizado.
+Reabra INICIAR_NA_REDE.bat e pressione Ctrl+F5 no navegador.
+Link: http://127.0.0.1:8010/workflow
+Build em /system/version: 2026-10-09-autosave-shared-crowded-v5.37.0
+
+NAVEGAÇÃO E FALSTAD
+A ilustração decorativa do circuito foi retirada da tela inicial.
+Ao abrir um projeto salvo pela lista, a tela inicial é Arquivos.
+Projetos incompletos continuam permitindo voltar às revisões; abrir
+Arquivos não confirma automaticamente um circuito ainda não revisado.
+O fluxo novo continua Reconhecimento > Terminais > Valores e modelos >
+Junções > Simulação > Arquivos > Pronto.
+
+No Falstad, alterações são salvas automaticamente após a edição,
+sem os botões de salvar alterações ou restaurar o último salvo.
+O salvamento não recarrega o simulador nem reinicia a simulação.
+Ao mudar de etapa, o fluxo aguarda as alterações serem salvas.
+Uma cópia local no navegador permite recuperar edições em caso de falha
+temporária de conexão. Conflitos com outra tela são informados.
+Confirmar o circuito preserva a edição nativa e permite continuar editando.
+Os próximos arquivos gerados usam a versão salva do circuito.
+
+O link compartilhado agora recebe o script do visualizador no servidor
+do celular; o erro que o deixava preparando indefinidamente foi corrigido.
+As falhas de carregamento exibem uma mensagem para tentar novamente.
+Mantenha computador e celular na mesma rede Wi-Fi e o programa aberto.
+O link permite simular e experimentar alterações naquela sessão;
+ele não permite modificar o projeto original.
+
+PASSAGEM ENTRE ETAPAS
+O desenho digital é reutilizado enquanto o circuito e sua geometria
+permanecem iguais. Os dados do editor são carregados em paralelo.
+Foi retirada a observação de cada mudança de texto na tela de simulação
+que gerava redimensionamentos repetidos. A navegação evita consultas
+repetidas quando já recebeu o estado atualizado da etapa.
+
+RECONHECIMENTO E OCR
+Circuitos densos recebem recortes com escala ajustada ao tamanho dos
+componentes. Toda a foto continua coberta; caixas cortadas nas bordas
+internas dos recortes são rejeitadas. Processamento somente em CPU.
+O formato dos resistores e das bobinas é conferido também na cor da caneta,
+reduzindo falsos retângulos formados pelas linhas do caderno e letras.
+O entorno dos componentes recebe uma busca local complementar de textos.
+Não há corte arbitrário nos primeiros 100 textos; cada componente recebe
+uma vez na ordem de leitura. Unidades, referências, modelos e ganhos
+usam o contexto do componente e a comparação com a escrita fornecida.
+Beta e o sinal de igualdade têm verificação local de forma e números.
+Modelos candidatos são conferidos com o catálogo e as referências reais.
+Não houve treinamento de novos pesos. O banco continua com somente
+as três fotos e os 56 recortes de escrita autorizados pelo usuário.
+
+TESTE PEDIDO: PRJ_0413
+O teste foi feito em cópia da foto, preservando o projeto original.
+Recuperados indutor/100mH, BC547B, ganhos beta 58/120, VCC/12V,
+100nF, 9V e 1kΩ. A leitura ainda precisa de revisão: 10kΩ ficou
+incompleto, 10µF recebeu candidato incorreto e o modelo do diodo ficou
+incompleto por ausência de N nas referências. Há subtipos e um GND
+a conferir. Não se promete reconhecimento perfeito.
+Tempo completo medido: 43,56 s em CPU. A meta de 30 s ainda não foi
+atingida nesta foto; não se interrompem etapas para esconder demora.
+Em projetos antigos, volte ao Reconhecimento e execute novamente para
+usar a lógica nova. Apenas abrir o projeto não apaga correções anteriores.

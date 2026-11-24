@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anotações reais - Circuit Scanner</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="container">
+        <a class="voltar" href="index.html">← Voltar para projetos</a>
+
+        <section class="card">
+            <h1>Imagens reais e anotações</h1>
+            <p class="descricao-curta">
+                Envie fotos ou desenhos reais e marque cada componente com uma caixa.
+                Essas imagens serão misturadas ao dataset sintético no novo treinamento.
+            </p>
+
+            <label for="real-name">Nome da imagem</label>
+            <input id="real-name" type="text" maxlength="100" placeholder="Ex.: circuito à mão 01">
+
+            <label for="real-file">Foto ou desenho</label>
+            <input id="real-file" type="file" accept=".jpg,.jpeg,.png,image/jpeg,image/png">
+
+            <button id="upload-real" type="button">Adicionar imagem real</button>
+            <p id="upload-status" class="status"></p>
+        </section>
+
+        <section class="card">
+            <div class="cabecalho-lista">
+                <div>
+                    <h2>Anotar imagem</h2>
+                    <p id="real-info" class="texto-suave">Carregando...</p>
+                </div>
+                <button id="refresh-real" class="secundario" type="button">Atualizar</button>
+            </div>
+
+            <label for="real-image-select">Imagem</label>
+            <select id="real-image-select" class="select-campo"></select>
+
+            <label for="class-select">Classe da próxima caixa</label>
+            <select id="class-select" class="select-campo"></select>
+
+            <p class="texto-suave">
+                Clique e arraste sobre o componente. A caixa deve envolver apenas o símbolo,
+                sem incluir textos como R1, 5k ou C1 quando for possível.
+            </p>
+
+            <div class="annotation-toolbar">
+                <button id="undo-box" class="secundario" type="button">Desfazer última caixa</button>
+                <button id="clear-boxes" class="secundario" type="button">Limpar caixas</button>
+                <button id="save-boxes" type="button">Salvar anotações</button>
+            </div>
+
+            <p id="annotation-status" class="status"></p>
+
+            <div id="canvas-wrap" class="annotation-canvas-wrap">
+                <canvas id="annotation-canvas"></canvas>
+            </div>
+
+            <div class="tabela-wrapper">
+                <table class="tabela-deteccoes">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Classe</th>
+                            <th>Coordenadas</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody id="annotation-table"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Gerar dataset misto</h2>
+            <p class="texto-suave">
+                O sistema preserva o dataset sintético atual e acrescenta as imagens reais anotadas.
+                As variações da mesma foto real ficam somente no treino, evitando vazamento para validação e teste.
+            </p>
+
+            <label for="real-augments">Variações adicionais por foto real de treino</label>
+            <select id="real-augments" class="select-campo">
+                <option value="0">0 — somente as fotos originais</option>
+                <option value="1">1 variação</option>
+                <option value="2" selected>2 variações</option>
+                <option value="3">3 variações</option>
+                <option value="5">5 variações</option>
+            </select>
+
+            <label for="text-negative-count">Exemplos de textos que não são componentes</label>
+            <select id="text-negative-count" class="select-campo">
+                <option value="300">300</option>
+                <option value="450" selected>450</option>
+                <option value="600">600</option>
+                <option value="900">900</option>
+            </select>
+
+            <button id="build-mixed" type="button">Gerar dataset misto</button>
+            <p id="mixed-status" class="status"></p>
+            <pre id="mixed-summary" class="comando escondido"></pre>
+        </section>
+    </main>
+
+    <script src="js/annotate.js"></script>
+</body>
+</html>

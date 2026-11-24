@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Circuit Scanner circuit.json version 1",
+  "type": "object",
+  "required": ["schema_version", "components", "nets"],
+  "properties": {
+    "schema_version": {"const": "circuit-1.0"},
+    "project_id": {"type": ["string", "null"]},
+    "name": {"type": "string"},
+    "created_at": {"type": "string"},
+    "status": {"enum": ["draft", "confirmed"]},
+    "confirmed_by_user": {"type": "boolean"},
+    "image_independent": {"type": "boolean"},
+    "source_connectivity_signature": {"type": ["string", "null"]},
+    "components": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "pins"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"},
+          "type": {"type": "string", "minLength": 1},
+          "value": {"type": ["string", "null"]},
+          "value_text": {"type": ["string", "null"]},
+          "unit": {"type": ["string", "null"]},
+          "pins": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1, "pattern": "^[^.:]+$"}},
+          "metadata": {"type": "object"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "nets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "members"],
+        "properties": {
+          "name": {"type": "string", "minLength": 1},
+          "members": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 3}}
+        },
+        "additionalProperties": false
+      }
+    },
+    "warnings": {"type": "array", "items": {"type": "object"}},
+    "validation": {"type": "object"},
+    "review": {"type": "object"}
+  },
+  "additionalProperties": false
+}

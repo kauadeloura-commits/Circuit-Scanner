@@ -1,0 +1,43 @@
+ATUALIZACAO V5.14.1 - FIOS RESTAURADOS E TERMINAIS PELOS CONTATOS DAS BORDAS
+
+A deteccao de linhas volta a usar wire_detection.py da v5.13.6, sem nenhuma
+alteracao nesse arquivo. Mantem seus filtros de tinta, pautas, mascaramento,
+esqueleto e montagem dos segmentos. Os pinos finais sao calculados depois
+de salvar esse resultado e nao voltam a modificar as linhas.
+
+O mascaramento antigo utiliza referencias internas de geometria para
+preservar os trechos de fio junto aos componentes. Essas referencias sao
+reconstruidas pelo mesmo procedimento anterior; nao sao publicadas como
+terminais finais. Assim, recalcular com pontos automaticos antigos errados
+nao muda o mapa de fios. Correcoes manuais explicitas sao preservadas.
+
+Para os terminais, o sistema procura tracos que atravessam as extremidades
+das caixas e acompanha sua continuidade na foto. Fios finos, inclinados,
+curvos e pequenos trechos fragmentados por uma pauta recebem tratamento
+comum, sem nomes de projetos ou coordenadas de imagens no algoritmo.
+O ponto fica em tinta observada, estritamente dentro da caixa. Nao basta
+limitar um ponto previsto a uma area vazia dentro da caixa.
+
+NPN e PNP usam a barra para identificar B, o ramo com seta para E e o ramo
+restante para C. Quando segmentos da barra/ramo sao interrompidos, o sistema
+acompanha os caminhos de tinta dos contatos ate a barra. As identidades por
+sinais de polaridade, vertice do opamp e estrutura do MOSFET foram mantidas.
+
+A falta de um contato nao apaga automaticamente todos os outros pinos do
+componente. Os contatos realmente observados sao mantidos; um contato que
+nao existe na foto nao e inventado. Incerteza de identidade ainda pode ser
+indicada, mas a revisao nao substitui a procura automatica dos terminais.
+
+COMO APLICAR
+1. Feche o servidor e guarde uma copia do backend atual.
+2. Extraia a pasta backend deste ZIP na pasta principal do programa,
+   mesclando e substituindo os arquivos. Inclua os novos arquivos do pacote.
+3. Inicie o programa e confira http://127.0.0.1:8010/system/version:
+   2026-09-30-legacy-wires-border-contact-terminals-v5.14.1
+4. Com as caixas corretas, clique em Refazer fios e terminais.
+   Apenas reabrir uma foto nao recalcula os resultados anteriormente salvos.
+
+Pacote cumulativo. Nao inclui nem substitui pesos, banco, projetos ou dados
+de treinamento. Foi preparado e validado em copia de trabalho; nao foi
+instalado no programa ativo. Consulte VALIDACAO_FIOS_TERMINAIS_V5.14.1.txt
+para os testes e limites da verificacao.
