@@ -1,0 +1,961 @@
+{
+  "created_at": "2026-09-08T22:20:59-03:00",
+  "model": "models\\circuit_scanner_yolo.pt",
+  "model_sha256": "2858da1cd375145218c4d1d0a6c3e916feaef5896098009cb044eb3c59c3e029",
+  "source_image": "original.jpeg",
+  "source_policy": "original_by_default",
+  "color_invariance": {
+    "enabled": true,
+    "method": "normalized_grayscale_lab_background_distance",
+    "decision": "cross_view_class_consensus_plus_geometry"
+  },
+  "inference_strategy": "auto",
+  "inference_views": [
+    {
+      "name": "original_color",
+      "imgsz": 640
+    },
+    {
+      "name": "normalized_grayscale",
+      "imgsz": 640
+    },
+    {
+      "name": "color_invariant_ink",
+      "imgsz": 640
+    },
+    {
+      "name": "electronic_symbol_geometry",
+      "detections": 1
+    },
+    {
+      "name": "normalized_grayscale_high_resolution",
+      "imgsz": 960
+    }
+  ],
+  "confidence_threshold": 0.25,
+  "candidate_confidence_threshold": 0.05,
+  "minimum_single_view_confidence": 0.18,
+  "imgsz": 640,
+  "image_width": 720,
+  "image_height": 1280,
+  "raw_count": 70,
+  "count": 15,
+  "review_count": 0,
+  "duplicate_filter": {
+    "cross_class_conflicts": true,
+    "class_consensus": true,
+    "iou_threshold": 0.45,
+    "coverage_threshold": 0.8
+  },
+  "detections": [
+    {
+      "detection_id": "DET_001",
+      "class_id": 9,
+      "class": "vcc",
+      "confidence": 0.980423,
+      "bbox": {
+        "x1": 410.37,
+        "y1": 309.09,
+        "x2": 433.0,
+        "y2": 374.97,
+        "width": 22.63,
+        "height": 65.88,
+        "center_x": 421.69,
+        "center_y": 342.03
+      },
+      "inference_sources": [
+        "color_invariant_ink",
+        "normalized_grayscale",
+        "normalized_grayscale_high_resolution",
+        "original_color"
+      ],
+      "best_view_confidence": 0.783635,
+      "consensus_score": 2.477417,
+      "consensus_votes": 4,
+      "alternatives": [],
+      "consensus_margin": 2.477417,
+      "review_required": false,
+      "review_reasons": [],
+      "bbox_before_text_adjustment": {
+        "x1": 410.37,
+        "y1": 309.09,
+        "x2": 456.14,
+        "y2": 374.97,
+        "width": 45.77,
+        "height": 65.88,
+        "center_x": 433.25,
+        "center_y": 342.03
+      },
+      "bbox_adjusted_for_text": true,
+      "bbox_adjustment_tokens": [
+        {
+          "token_id": "TXT_001",
+          "text": "R1",
+          "side": "right"
+        }
+      ]
+    },
+    {
+      "detection_id": "DET_002",
+      "class_id": 9,
+      "class": "vcc",
+      "confidence": 0.995973,
+      "bbox": {
+        "x1": 215.6,
+        "y1": 315.53,
+        "x2": 279.54,
+        "y2": 379.09,
+        "width": 63.94,
+        "height": 63.56,
+        "center_x": 247.57,
+        "center_y": 347.31
+      },
+      "inference_sources": [
+        "color_invariant_ink",
+        "normalized_grayscale",
+        "normalized_grayscale_high_resolution",
+        "original_color"
+      ],
+      "best_view_confidence": 0.810137,
+      "consensus_score": 3.093023,
+      "consensus_votes": 4,
+      "alternatives": [],
+      "consensus_margin": 3.093023,
+      "review_required": false,
+      "review_reasons": []
+    },
+    {
+      "detection_id": "DET_003",
+      "class_id": 0,
+      "class": "resistor",
+      "confidence": 0.958177,
+      "bbox": {
+        "x1": 380.64,
+        "y1": 357.76,
+        "x2": 433.0,
+        "y2": 448.61,
+        "width": 52.36,
+        "height": 90.85,
+        "center_x": 406.82,
+        "center_y": 403.19
+      },
+      "inference_sources": [
+        "color_invariant_ink",
+        "normalized_grayscale",
+        "normalized_grayscale_high_resolution",
+        "original_color"
+      ],
+      "best_view_confidence": 0.88912,
+      "consensus_score": 1.808698,
+      "consensus_votes": 4,
+      "alternatives": [],
+      "consensus_margin": 1.808698,
+      "review_required": false,
+      "review_reasons": [],
+      "bbox_before_text_adjustment": {
+        "x1": 380.64,
+        "y1": 357.76,
+        "x2": 449.51,
+        "y2": 448.61,
+        "width": 68.87,
+        "height": 90.85,
+        "center_x": 415.07,
+        "center_y": 403.19
+      },
+      "bbox_adjusted_for_text": true,
+      "bbox_adjustment_tokens": [
+        {
+          "token_id": "TXT_001",
+          "text": "R1",
+          "side": "right"
+        }
+      ]
+    },
+    {
+      "detection_id": "DET_004",
+      "class_id": 0,
+      "class": "resistor",
+      "confidence": 0.995151,
+      "bbox": {
+        "x1": 214.96,
+        "y1": 368.26,
+        "x2": 284.39,
+        "y2": 461.13,
+        "width": 69.43,
+        "height": 92.87,
+        "center_x": 249.68,
+        "center_y": 414.69
+      },
+      "inference_sources": [
+        "color_invariant_ink",
+        "normalized_grayscale",
+        "normalized_grayscale_high_resolution",
+        "original_color"
+      ],
+      "best_view_confidence": 0.898634,
+      "consensus_score": 2.791771,
+      "consensus_votes": 4,
+      "alternatives": [],
+      "consensus_margin": 2.791771,
+      "review_required": false,
+      "review_reasons": []
+    },
+    {
+      "detection_id": "DET_005",
+      "class_id": 0,
+      "class": "resistor",
+      "confidence": 0.531187,
+      "bbox": {
+        "x1": 388.99,
+        "y1": 440.65,
+        "x2": 442.57,
+        "y2": 553.65,
+        "width": 53.58,
+        "height": 113.0,
+        "center_x": 415.78,
+        "center_y": 497.15
+      },
+      "inference_sources": [
+        "color_invariant_ink",
+        "original_color"
+      ],
+      "best_view_confidence": 0.46247,
+      "consensus_score": 0.640308,
+      "consensus_votes": 2,
+      "alternatives": [],
+      "consensus_margin": 0.640308,
+      "review_required": false,
+      "review_reasons": []
+    },
+    {
+      "detection_id": "DET_006",
+      "class_id": 4,
+      "class": "led",
+      "confidence": 0.999903,
+      "bbox": {
+        "x1": 231.69,
+        "y1": 453.86,
+        "x2": 325.86,
+        "y2": 544.07,
+        "width": 94.17,
+        "height": 90.21,
+        "center_x": 278.77,
+        "center_y": 498.97
+      },
+      "inference_sources": [
+        "color_invariant_ink",
+        "normalized_grayscale",
+        "original_color"
+      ],
+      "best_view_confidence": 0.987196,
+      "consensus_score": 2.91263,
+      "consensus_votes": 3,
+      "alternatives": [],
+      "consensus_margin": 2.91263,
+      "review_required": false,
+      "review_reasons": [],
+      "bbox_before_text_adjustment": {
+        "x1": 208.19,
+        "y1": 453.86,
+        "x2": 325.86,
+        "y2": 544.07,
+        "width": 117.67,
+        "height": 90.21,
+        "center_x": 267.02,
+        "center_y": 498.97
+      },
+      "bbox_adjusted_for_text": true,
+      "bbox_adjustment_tokens": [
+        {
+          "token_id": "TXT_022",
+          "text": "Led4-",
+          "side": "left"
+        }
+      ]
+    },
+    {
+      "detection_id": "DET_007",
+      "class_id": 0,
+      "class": "resistor",
+      "confidence": 0.990804,
+      "bbox": {
+        "x1": 221.2,
+        "y1": 538.17,
+        "x2": 285.35,
+        "y2": 662.87,
+        "width": 64.15,
+        "height": 124.7,
+        "center_x": 253.28,
+        "center_y": 600.52
+      },
+      "inference_sources": [
+        "color_invariant_ink",
+        "normalized_grayscale",
+        "original_color"
+      ],
+      "best_view_confidence": 0.878817,
+      "consensus_score": 2.249675,
+      "consensus_votes": 3,
+      "alternatives": [],
+      "consensus_margin": 2.249675,
+      "review_required": false,
+      "review_reasons": []
+    },
+    {
+      "detection_id": "DET_008",
+      "class_id": 10,
+      "class": "transistor_npn",
+      "confidence": 0.993027,
+      "bbox": {
+        "x1": 359.53,
+        "y1": 558.31,
+        "x2": 483.83,
+        "y2": 730.78,
+        "width": 124.3,
+        "height": 172.47,
+        "center_x": 421.68,
+        "center_y": 644.54
+      },
+      "inference_sources": [
+        "color_invariant_ink",
+        "normalized_grayscale",
+        "normalized_grayscale_high_resolution",
+        "original_color"
+      ],
+      "best_view_confidence": 0.917798,
+      "consensus_score": 2.618011,
+      "consensus_votes": 4,
+      "alternatives": [],
+      "consensus_margin": 2.618011,
+      "review_required": false,
+      "review_reasons": []
+    },
+    {
+      "detection_id": "DET_009",
+      "class_id": 0,
+      "class": "resistor",
+      "confidence": 0.919143,
+      "bbox": {
+        "x1": 218.9,
+        "y1": 655.5,
+        "x2": 255.0,
+        "y2": 748.32,
+        "width": 36.1,
+        "height": 92.82,
+        "center_x": 236.95,
+        "center_y": 701.91
+      },
+      "inference_sources": [
+        "color_invariant_ink",
+        "normalized_grayscale",
+        "normalized_grayscale_high_resolution",
+        "original_color"
+      ],
+      "best_view_confidence": 0.627021,
+      "consensus_score": 1.915152,
+      "consensus_votes": 4,
+      "alternatives": [
+        {
+          "class_id": 8,
+          "class": "gnd",
+          "confidence": 0.86,
+          "consensus_score": 0.86,
+          "votes": 1
+        },
+        {
+          "class_id": 9,
+          "class": "vcc",
+          "confidence": 0.099141,
+          "consensus_score": 0.099141,
+          "votes": 1
+        }
+      ],
+      "consensus_margin": 1.055152,
+      "review_required": false,
+      "review_reasons": [],
+      "bbox_before_text_adjustment": {
+        "x1": 218.9,
+        "y1": 655.5,
+        "x2": 288.69,
+        "y2": 748.32,
+        "width": 69.79,
+        "height": 92.82,
+        "center_x": 253.8,
+        "center_y": 701.91
+      },
+      "bbox_adjusted_for_text": true,
+      "bbox_adjustment_tokens": [
+        {
+          "token_id": "TXT_005",
+          "text": "R5",
+          "side": "right"
+        }
+      ]
+    },
+    {
+      "detection_id": "DET_010",
+      "class_id": 1,
+      "class": "capacitor",
+      "confidence": 0.983906,
+      "bbox": {
+        "x1": 492.07,
+        "y1": 743.17,
+        "x2": 529.0,
+        "y2": 810.46,
+        "width": 36.93,
+        "height": 67.29,
+        "center_x": 510.53,
+        "center_y": 776.82
+      },
+      "inference_sources": [
+        "color_invariant_ink",
+        "normalized_grayscale",
+        "original_color"
+      ],
+      "best_view_confidence": 0.942351,
+      "consensus_score": 1.917094,
+      "consensus_votes": 3,
+      "alternatives": [
+        {
+          "class_id": 0,
+          "class": "resistor",
+          "confidence": 0.189559,
+          "consensus_score": 0.290679,
+          "votes": 2
+        }
+      ],
+      "consensus_margin": 1.626415,
+      "review_required": false,
+      "review_reasons": [],
+      "bbox_before_text_adjustment": {
+        "x1": 492.07,
+        "y1": 743.17,
+        "x2": 555.67,
+        "y2": 810.46,
+        "width": 63.6,
+        "height": 67.29,
+        "center_x": 523.87,
+        "center_y": 776.82
+      },
+      "bbox_adjusted_for_text": true,
+      "bbox_adjustment_tokens": [
+        {
+          "token_id": "TXT_008",
+          "text": "C2",
+          "side": "right"
+        },
+        {
+          "token_id": "TXT_020",
+          "text": "100nF",
+          "side": "right"
+        }
+      ]
+    },
+    {
+      "detection_id": "DET_011",
+      "class_id": 0,
+      "class": "resistor",
+      "confidence": 0.992969,
+      "bbox": {
+        "x1": 443.0,
+        "y1": 747.37,
+        "x2": 475.83,
+        "y2": 828.12,
+        "width": 32.83,
+        "height": 80.75,
+        "center_x": 459.41,
+        "center_y": 787.75
+      },
+      "inference_sources": [
+        "color_invariant_ink",
+        "normalized_grayscale",
+        "original_color"
+      ],
+      "best_view_confidence": 0.875783,
+      "consensus_score": 2.437448,
+      "consensus_votes": 3,
+      "alternatives": [],
+      "consensus_margin": 2.437448,
+      "review_required": false,
+      "review_reasons": [],
+      "bbox_before_text_adjustment": {
+        "x1": 418.12,
+        "y1": 747.37,
+        "x2": 475.83,
+        "y2": 828.12,
+        "width": 57.71,
+        "height": 80.75,
+        "center_x": 446.98,
+        "center_y": 787.75
+      },
+      "bbox_adjusted_for_text": true,
+      "bbox_adjustment_tokens": [
+        {
+          "token_id": "TXT_006",
+          "text": "R6",
+          "side": "left"
+        }
+      ]
+    },
+    {
+      "detection_id": "DET_012",
+      "class_id": 1,
+      "class": "capacitor",
+      "confidence": 0.910767,
+      "bbox": {
+        "x1": 215.53,
+        "y1": 749.07,
+        "x2": 257.0,
+        "y2": 810.81,
+        "width": 41.47,
+        "height": 61.74,
+        "center_x": 236.26,
+        "center_y": 779.94
+      },
+      "inference_sources": [
+        "color_invariant_ink",
+        "normalized_grayscale_high_resolution",
+        "original_color"
+      ],
+      "best_view_confidence": 0.857287,
+      "consensus_score": 1.363396,
+      "consensus_votes": 3,
+      "alternatives": [
+        {
+          "class_id": 9,
+          "class": "vcc",
+          "confidence": 0.077909,
+          "consensus_score": 0.077909,
+          "votes": 1
+        }
+      ],
+      "consensus_margin": 1.285487,
+      "review_required": false,
+      "review_reasons": [],
+      "bbox_before_text_adjustment": {
+        "x1": 215.53,
+        "y1": 749.07,
+        "x2": 275.74,
+        "y2": 810.81,
+        "width": 60.21,
+        "height": 61.74,
+        "center_x": 245.63,
+        "center_y": 779.94
+      },
+      "bbox_adjusted_for_text": true,
+      "bbox_adjustment_tokens": [
+        {
+          "token_id": "TXT_007",
+          "text": "C1",
+          "side": "right"
+        }
+      ]
+    },
+    {
+      "detection_id": "DET_013",
+      "class_id": 8,
+      "class": "gnd",
+      "confidence": 0.970014,
+      "bbox": {
+        "x1": 210.15,
+        "y1": 839.0,
+        "x2": 320.02,
+        "y2": 886.37,
+        "width": 109.87,
+        "height": 47.37,
+        "center_x": 265.08,
+        "center_y": 862.68
+      },
+      "inference_sources": [
+        "color_invariant_ink",
+        "normalized_grayscale",
+        "normalized_grayscale_high_resolution",
+        "original_color"
+      ],
+      "best_view_confidence": 0.846937,
+      "consensus_score": 2.197444,
+      "consensus_votes": 4,
+      "alternatives": [],
+      "consensus_margin": 2.197444,
+      "review_required": false,
+      "review_reasons": [],
+      "bbox_before_text_adjustment": {
+        "x1": 210.15,
+        "y1": 807.58,
+        "x2": 320.02,
+        "y2": 886.37,
+        "width": 109.87,
+        "height": 78.79,
+        "center_x": 265.08,
+        "center_y": 846.98
+      },
+      "bbox_adjusted_for_text": true,
+      "bbox_adjustment_tokens": [
+        {
+          "token_id": "TXT_016",
+          "text": "10nF",
+          "side": "top"
+        }
+      ]
+    },
+    {
+      "detection_id": "DET_014",
+      "class_id": 8,
+      "class": "gnd",
+      "confidence": 0.769617,
+      "bbox": {
+        "x1": 490.03,
+        "y1": 818.0,
+        "x2": 569.25,
+        "y2": 875.87,
+        "width": 79.22,
+        "height": 57.87,
+        "center_x": 529.64,
+        "center_y": 846.93
+      },
+      "inference_sources": [
+        "color_invariant_ink",
+        "normalized_grayscale",
+        "normalized_grayscale_high_resolution",
+        "original_color"
+      ],
+      "best_view_confidence": 0.59433,
+      "consensus_score": 1.257939,
+      "consensus_votes": 4,
+      "alternatives": [],
+      "consensus_margin": 1.257939,
+      "review_required": false,
+      "review_reasons": [],
+      "bbox_before_text_adjustment": {
+        "x1": 490.03,
+        "y1": 809.29,
+        "x2": 569.25,
+        "y2": 875.87,
+        "width": 79.22,
+        "height": 66.58,
+        "center_x": 529.64,
+        "center_y": 842.58
+      },
+      "bbox_adjusted_for_text": true,
+      "bbox_adjustment_tokens": [
+        {
+          "token_id": "TXT_020",
+          "text": "100nF",
+          "side": "top"
+        }
+      ]
+    },
+    {
+      "detection_id": "DET_015",
+      "class_id": 8,
+      "class": "gnd",
+      "confidence": 0.990265,
+      "bbox": {
+        "x1": 388.68,
+        "y1": 816.88,
+        "x2": 474.73,
+        "y2": 887.48,
+        "width": 86.05,
+        "height": 70.6,
+        "center_x": 431.71,
+        "center_y": 852.18
+      },
+      "inference_sources": [
+        "color_invariant_ink",
+        "normalized_grayscale",
+        "normalized_grayscale_high_resolution",
+        "original_color"
+      ],
+      "best_view_confidence": 0.933261,
+      "consensus_score": 2.284218,
+      "consensus_votes": 4,
+      "alternatives": [],
+      "consensus_margin": 2.284218,
+      "review_required": false,
+      "review_reasons": []
+    }
+  ],
+  "requested_source": "original",
+  "text_false_positive_count": 0,
+  "text_false_positives": [],
+  "text_overlap_review_count": 0,
+  "text_overlap_reviews": [],
+  "bbox_adjustment_count": 9,
+  "bbox_adjustments": [
+    {
+      "detection_id": "DET_001",
+      "before": {
+        "x1": 410.37,
+        "y1": 309.09,
+        "x2": 456.14,
+        "y2": 374.97,
+        "width": 45.77,
+        "height": 65.88,
+        "center_x": 433.25,
+        "center_y": 342.03
+      },
+      "after": {
+        "x1": 410.37,
+        "y1": 309.09,
+        "x2": 433.0,
+        "y2": 374.97,
+        "width": 22.63,
+        "height": 65.88,
+        "center_x": 421.69,
+        "center_y": 342.03
+      },
+      "tokens": [
+        {
+          "token_id": "TXT_001",
+          "text": "R1",
+          "side": "right"
+        }
+      ]
+    },
+    {
+      "detection_id": "DET_003",
+      "before": {
+        "x1": 380.64,
+        "y1": 357.76,
+        "x2": 449.51,
+        "y2": 448.61,
+        "width": 68.87,
+        "height": 90.85,
+        "center_x": 415.07,
+        "center_y": 403.19
+      },
+      "after": {
+        "x1": 380.64,
+        "y1": 357.76,
+        "x2": 433.0,
+        "y2": 448.61,
+        "width": 52.36,
+        "height": 90.85,
+        "center_x": 406.82,
+        "center_y": 403.19
+      },
+      "tokens": [
+        {
+          "token_id": "TXT_001",
+          "text": "R1",
+          "side": "right"
+        }
+      ]
+    },
+    {
+      "detection_id": "DET_006",
+      "before": {
+        "x1": 208.19,
+        "y1": 453.86,
+        "x2": 325.86,
+        "y2": 544.07,
+        "width": 117.67,
+        "height": 90.21,
+        "center_x": 267.02,
+        "center_y": 498.97
+      },
+      "after": {
+        "x1": 231.69,
+        "y1": 453.86,
+        "x2": 325.86,
+        "y2": 544.07,
+        "width": 94.17,
+        "height": 90.21,
+        "center_x": 278.77,
+        "center_y": 498.97
+      },
+      "tokens": [
+        {
+          "token_id": "TXT_022",
+          "text": "Led4-",
+          "side": "left"
+        }
+      ]
+    },
+    {
+      "detection_id": "DET_009",
+      "before": {
+        "x1": 218.9,
+        "y1": 655.5,
+        "x2": 288.69,
+        "y2": 748.32,
+        "width": 69.79,
+        "height": 92.82,
+        "center_x": 253.8,
+        "center_y": 701.91
+      },
+      "after": {
+        "x1": 218.9,
+        "y1": 655.5,
+        "x2": 255.0,
+        "y2": 748.32,
+        "width": 36.1,
+        "height": 92.82,
+        "center_x": 236.95,
+        "center_y": 701.91
+      },
+      "tokens": [
+        {
+          "token_id": "TXT_005",
+          "text": "R5",
+          "side": "right"
+        }
+      ]
+    },
+    {
+      "detection_id": "DET_010",
+      "before": {
+        "x1": 492.07,
+        "y1": 743.17,
+        "x2": 555.67,
+        "y2": 810.46,
+        "width": 63.6,
+        "height": 67.29,
+        "center_x": 523.87,
+        "center_y": 776.82
+      },
+      "after": {
+        "x1": 492.07,
+        "y1": 743.17,
+        "x2": 529.0,
+        "y2": 810.46,
+        "width": 36.93,
+        "height": 67.29,
+        "center_x": 510.53,
+        "center_y": 776.82
+      },
+      "tokens": [
+        {
+          "token_id": "TXT_008",
+          "text": "C2",
+          "side": "right"
+        },
+        {
+          "token_id": "TXT_020",
+          "text": "100nF",
+          "side": "right"
+        }
+      ]
+    },
+    {
+      "detection_id": "DET_011",
+      "before": {
+        "x1": 418.12,
+        "y1": 747.37,
+        "x2": 475.83,
+        "y2": 828.12,
+        "width": 57.71,
+        "height": 80.75,
+        "center_x": 446.98,
+        "center_y": 787.75
+      },
+      "after": {
+        "x1": 443.0,
+        "y1": 747.37,
+        "x2": 475.83,
+        "y2": 828.12,
+        "width": 32.83,
+        "height": 80.75,
+        "center_x": 459.41,
+        "center_y": 787.75
+      },
+      "tokens": [
+        {
+          "token_id": "TXT_006",
+          "text": "R6",
+          "side": "left"
+        }
+      ]
+    },
+    {
+      "detection_id": "DET_012",
+      "before": {
+        "x1": 215.53,
+        "y1": 749.07,
+        "x2": 275.74,
+        "y2": 810.81,
+        "width": 60.21,
+        "height": 61.74,
+        "center_x": 245.63,
+        "center_y": 779.94
+      },
+      "after": {
+        "x1": 215.53,
+        "y1": 749.07,
+        "x2": 257.0,
+        "y2": 810.81,
+        "width": 41.47,
+        "height": 61.74,
+        "center_x": 236.26,
+        "center_y": 779.94
+      },
+      "tokens": [
+        {
+          "token_id": "TXT_007",
+          "text": "C1",
+          "side": "right"
+        }
+      ]
+    },
+    {
+      "detection_id": "DET_013",
+      "before": {
+        "x1": 210.15,
+        "y1": 807.58,
+        "x2": 320.02,
+        "y2": 886.37,
+        "width": 109.87,
+        "height": 78.79,
+        "center_x": 265.08,
+        "center_y": 846.98
+      },
+      "after": {
+        "x1": 210.15,
+        "y1": 839.0,
+        "x2": 320.02,
+        "y2": 886.37,
+        "width": 109.87,
+        "height": 47.37,
+        "center_x": 265.08,
+        "center_y": 862.68
+      },
+      "tokens": [
+        {
+          "token_id": "TXT_016",
+          "text": "10nF",
+          "side": "top"
+        }
+      ]
+    },
+    {
+      "detection_id": "DET_014",
+      "before": {
+        "x1": 490.03,
+        "y1": 809.29,
+        "x2": 569.25,
+        "y2": 875.87,
+        "width": 79.22,
+        "height": 66.58,
+        "center_x": 529.64,
+        "center_y": 842.58
+      },
+      "after": {
+        "x1": 490.03,
+        "y1": 818.0,
+        "x2": 569.25,
+        "y2": 875.87,
+        "width": 79.22,
+        "height": 57.87,
+        "center_x": 529.64,
+        "center_y": 846.93
+      },
+      "tokens": [
+        {
+          "token_id": "TXT_020",
+          "text": "100nF",
+          "side": "top"
+        }
+      ]
+    }
+  ]
+}

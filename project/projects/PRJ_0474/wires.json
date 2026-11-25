@@ -1,0 +1,2903 @@
+{
+  "schema_version": "stage8-wires-1.0",
+  "created_at": "2026-11-05T17:06:01-03:00",
+  "source_image": "original.jpeg",
+  "image_width": 720,
+  "image_height": 1280,
+  "method": "opencv_mask_morphology_skeleton_graph",
+  "scope": "stage8_raw_wires_only",
+  "ink_color_profile": {
+    "schema_version": "component-ink-color-1.0",
+    "active": true,
+    "reason": "reliable_component_color_consensus",
+    "sampled_component_count": 5,
+    "minimum_component_confidence": 0.8,
+    "reliable_component_count": 5,
+    "reference_rgb": [
+      43,
+      36,
+      69
+    ],
+    "reference_hex": "#2B2445",
+    "reference_hsv": [
+      126.0,
+      122.0,
+      69.0
+    ],
+    "chromatic": true,
+    "channel_tolerance": 65.0,
+    "hue_tolerance": 12.0,
+    "consensus_component_count": 5,
+    "consensus_component_ids": [
+      "DET_001",
+      "DET_002",
+      "DET_003",
+      "DET_004",
+      "DET_011"
+    ],
+    "consensus_ratio": 1.0,
+    "averaging": "equal_weight_per_component_trimmed_stroke_mean"
+  },
+  "conductor_ink_policy": {
+    "active": false,
+    "method": "local_paper_contrast_when_global_ink_fragments",
+    "sampled": 11,
+    "fragmented": 0
+  },
+  "notebook_rule_profile": {
+    "schema_version": "notebook-color-rules-2.0",
+    "active": false,
+    "image_size": [
+      1280,
+      720
+    ],
+    "reference_colors": {
+      "traditional_gray": [
+        "#B3B3B3",
+        "#CCCCCC"
+      ],
+      "light_gray": [
+        "#D9D9D9",
+        "#E6E6E6"
+      ],
+      "school_cyan": [
+        "#B3E6E6",
+        "#99FFFF"
+      ]
+    },
+    "reason": "no_repeated_color_rule_family",
+    "families": [],
+    "removed_pixel_count": 0
+  },
+  "stage9_note": "junction_candidate e cruzamentos ainda não são conexões elétricas confirmadas; isso pertence à Etapa 9.",
+  "parameters": {
+    "mask_components": true,
+    "mask_text": true,
+    "min_segment_length_px": 8.0,
+    "connectivity": 8
+  },
+  "preprocessing": {
+    "otsu_threshold": 186.0,
+    "absolute_dark_limit": 105,
+    "darkness_percentile_p3": 53.0,
+    "strong_local_limit": 164,
+    "background_sigma": 13.09,
+    "component_regions_masked": 13,
+    "ocr_regions_masked": 18,
+    "terminal_regions_preserved": 10,
+    "observed_text_crossing_wires_preserved": 7,
+    "text_mask_conductor_pixels_preserved": 0,
+    "component_roi_applied": true,
+    "component_roi": {
+      "x1": 0,
+      "y1": 284,
+      "x2": 720,
+      "y2": 1152,
+      "margin_px": 128
+    },
+    "component_proximity_filter_applied": true,
+    "component_proximity_px": 32,
+    "kept_candidate_blobs": 15,
+    "removed_candidate_blobs": 0,
+    "terminal_seed_filter_applied": true,
+    "terminal_seed_filter_fallback": false,
+    "terminal_seed_count": 56,
+    "terminal_seed_radius_px": 22,
+    "kept_terminal_seed_blobs": 9,
+    "removed_nonterminal_blobs": 6,
+    "component_ink_color_filter_active": true,
+    "notebook_rule_color_filter_active": false,
+    "notebook_rule_color_pixels_removed": 0,
+    "pale_page_rulings_removed": 0,
+    "border_frame_artifacts_removed": 0,
+    "ink_pixels_before_masking": 35394,
+    "wire_mask_pixels": 3342,
+    "erased_mask_pixels": 186089
+  },
+  "segment_count": 11,
+  "node_count": 26,
+  "endpoint_candidate_count": 22,
+  "junction_candidate_count": 0,
+  "total_wire_length_px": 402.66,
+  "nodes": [
+    {
+      "node_id": "NODE_0001",
+      "position": {
+        "x": 433.0,
+        "y": 448.0
+      },
+      "pixel_count": 3,
+      "raw_branch_count": 1,
+      "kind_candidate": "endpoint_candidate",
+      "segment_degree": 0
+    },
+    {
+      "node_id": "NODE_0002",
+      "position": {
+        "x": 300.0,
+        "y": 450.0
+      },
+      "pixel_count": 3,
+      "raw_branch_count": 1,
+      "kind_candidate": "endpoint_candidate",
+      "segment_degree": 0
+    },
+    {
+      "node_id": "NODE_0003",
+      "position": {
+        "x": 312.25,
+        "y": 452.12
+      },
+      "pixel_count": 16,
+      "raw_branch_count": 3,
+      "kind_candidate": "endpoint_candidate",
+      "segment_degree": 1
+    },
+    {
+      "node_id": "NODE_0004",
+      "position": {
+        "x": 322.0,
+        "y": 451.0
+      },
+      "pixel_count": 3,
+      "raw_branch_count": 1,
+      "kind_candidate": "endpoint_candidate",
+      "segment_degree": 0
+    },
+    {
+      "node_id": "NODE_0005",
+      "position": {
+        "x": 436.64,
+        "y": 455.91
+      },
+      "pixel_count": 11,
+      "raw_branch_count": 3,
+      "kind_candidate": "path_vertex_candidate",
+      "segment_degree": 2
+    },
+    {
+      "node_id": "NODE_0006",
+      "position": {
+        "x": 457.0,
+        "y": 456.0
+      },
+      "pixel_count": 3,
+      "raw_branch_count": 1,
+      "kind_candidate": "endpoint_candidate",
+      "segment_degree": 1
+    },
+    {
+      "node_id": "NODE_0007",
+      "position": {
+        "x": 562.0,
+        "y": 462.0
+      },
+      "pixel_count": 3,
+      "raw_branch_count": 1,
+      "kind_candidate": "endpoint_candidate",
+      "segment_degree": 1
+    },
+    {
+      "node_id": "NODE_0008",
+      "position": {
+        "x": 580.0,
+        "y": 462.33
+      },
+      "pixel_count": 3,
+      "raw_branch_count": 1,
+      "kind_candidate": "endpoint_candidate",
+      "segment_degree": 1
+    },
+    {
+      "node_id": "NODE_0009",
+      "position": {
+        "x": 304.5,
+        "y": 498.0
+      },
+      "pixel_count": 8,
+      "raw_branch_count": 2,
+      "kind_candidate": "path_vertex_candidate",
+      "segment_degree": 2
+    },
+    {
+      "node_id": "NODE_0010",
+      "position": {
+        "x": 432.5,
+        "y": 502.0
+      },
+      "pixel_count": 8,
+      "raw_branch_count": 2,
+      "kind_candidate": "path_vertex_candidate",
+      "segment_degree": 2
+    },
+    {
+      "node_id": "NODE_0011",
+      "position": {
+        "x": 428.44,
+        "y": 538.44
+      },
+      "pixel_count": 9,
+      "raw_branch_count": 1,
+      "kind_candidate": "endpoint_candidate",
+      "segment_degree": 1
+    },
+    {
+      "node_id": "NODE_0012",
+      "position": {
+        "x": 303.0,
+        "y": 540.0
+      },
+      "pixel_count": 3,
+      "raw_branch_count": 1,
+      "kind_candidate": "endpoint_candidate",
+      "segment_degree": 1
+    },
+    {
+      "node_id": "NODE_0013",
+      "position": {
+        "x": 353.0,
+        "y": 718.0
+      },
+      "pixel_count": 3,
+      "raw_branch_count": 1,
+      "kind_candidate": "endpoint_candidate",
+      "segment_degree": 1
+    },
+    {
+      "node_id": "NODE_0014",
+      "position": {
+        "x": 354.0,
+        "y": 764.0
+      },
+      "pixel_count": 3,
+      "raw_branch_count": 1,
+      "kind_candidate": "endpoint_candidate",
+      "segment_degree": 1
+    },
+    {
+      "node_id": "NODE_0015",
+      "position": {
+        "x": 425.0,
+        "y": 815.0
+      },
+      "pixel_count": 3,
+      "raw_branch_count": 1,
+      "kind_candidate": "endpoint_candidate",
+      "segment_degree": 1
+    },
+    {
+      "node_id": "NODE_0016",
+      "position": {
+        "x": 444.0,
+        "y": 816.0
+      },
+      "pixel_count": 3,
+      "raw_branch_count": 1,
+      "kind_candidate": "endpoint_candidate",
+      "segment_degree": 1
+    },
+    {
+      "node_id": "NODE_0017",
+      "position": {
+        "x": 426.83,
+        "y": 854.83
+      },
+      "pixel_count": 12,
+      "raw_branch_count": 1,
+      "kind_candidate": "endpoint_candidate",
+      "segment_degree": 1
+    },
+    {
+      "node_id": "NODE_0018",
+      "position": {
+        "x": 463.0,
+        "y": 859.0
+      },
+      "pixel_count": 3,
+      "raw_branch_count": 1,
+      "kind_candidate": "endpoint_candidate",
+      "segment_degree": 1
+    },
+    {
+      "node_id": "NODE_0019",
+      "position": {
+        "x": 547.0,
+        "y": 859.33
+      },
+      "pixel_count": 3,
+      "raw_branch_count": 1,
+      "kind_candidate": "endpoint_candidate",
+      "segment_degree": 0
+    },
+    {
+      "node_id": "NODE_0020",
+      "position": {
+        "x": 556.0,
+        "y": 859.0
+      },
+      "pixel_count": 3,
+      "raw_branch_count": 1,
+      "kind_candidate": "endpoint_candidate",
+      "segment_degree": 0
+    },
+    {
+      "node_id": "NODE_0021",
+      "position": {
+        "x": 222.0,
+        "y": 880.0
+      },
+      "pixel_count": 3,
+      "raw_branch_count": 1,
+      "kind_candidate": "endpoint_candidate",
+      "segment_degree": 0
+    },
+    {
+      "node_id": "NODE_0022",
+      "position": {
+        "x": 230.14,
+        "y": 881.86
+      },
+      "pixel_count": 7,
+      "raw_branch_count": 2,
+      "kind_candidate": "endpoint_candidate",
+      "segment_degree": 1
+    },
+    {
+      "node_id": "NODE_0023",
+      "position": {
+        "x": 103.0,
+        "y": 885.0
+      },
+      "pixel_count": 3,
+      "raw_branch_count": 1,
+      "kind_candidate": "endpoint_candidate",
+      "segment_degree": 0
+    },
+    {
+      "node_id": "NODE_0024",
+      "position": {
+        "x": 109.0,
+        "y": 885.0
+      },
+      "pixel_count": 3,
+      "raw_branch_count": 1,
+      "kind_candidate": "endpoint_candidate",
+      "segment_degree": 0
+    },
+    {
+      "node_id": "NODE_0025",
+      "position": {
+        "x": 226.14,
+        "y": 975.43
+      },
+      "pixel_count": 7,
+      "raw_branch_count": 2,
+      "kind_candidate": "path_vertex_candidate",
+      "segment_degree": 2
+    },
+    {
+      "node_id": "NODE_0026",
+      "position": {
+        "x": 194.0,
+        "y": 975.0
+      },
+      "pixel_count": 3,
+      "raw_branch_count": 1,
+      "kind_candidate": "endpoint_candidate",
+      "segment_degree": 1
+    }
+  ],
+  "segments": [
+    {
+      "wire_id": "WIRE_0001",
+      "start_node": "NODE_0003",
+      "end_node": "NODE_0009",
+      "start": {
+        "x": 310,
+        "y": 456
+      },
+      "end": {
+        "x": 305,
+        "y": 495
+      },
+      "points": [
+        {
+          "x": 310,
+          "y": 456
+        },
+        {
+          "x": 305,
+          "y": 495
+        }
+      ],
+      "raw_point_count": 40,
+      "length_px": 41.07,
+      "bbox": {
+        "x1": 305,
+        "y1": 456,
+        "x2": 310,
+        "y2": 495
+      },
+      "angle_degrees": 97.31,
+      "orientation": "vertical",
+      "semantic_status": "unresolved_until_stage9"
+    },
+    {
+      "wire_id": "WIRE_0002",
+      "start_node": "NODE_0005",
+      "end_node": "NODE_0010",
+      "start": {
+        "x": 435,
+        "y": 459
+      },
+      "end": {
+        "x": 433,
+        "y": 499
+      },
+      "points": [
+        {
+          "x": 435,
+          "y": 459
+        },
+        {
+          "x": 433,
+          "y": 499
+        }
+      ],
+      "raw_point_count": 41,
+      "length_px": 41.66,
+      "bbox": {
+        "x1": 433,
+        "y1": 459,
+        "x2": 435,
+        "y2": 499
+      },
+      "angle_degrees": 92.86,
+      "orientation": "vertical",
+      "semantic_status": "unresolved_until_stage9"
+    },
+    {
+      "wire_id": "WIRE_0003",
+      "start_node": "NODE_0005",
+      "end_node": "NODE_0006",
+      "start": {
+        "x": 440,
+        "y": 455
+      },
+      "end": {
+        "x": 456,
+        "y": 456
+      },
+      "points": [
+        {
+          "x": 440,
+          "y": 455
+        },
+        {
+          "x": 456,
+          "y": 456
+        }
+      ],
+      "raw_point_count": 17,
+      "length_px": 16.41,
+      "bbox": {
+        "x1": 440,
+        "y1": 455,
+        "x2": 456,
+        "y2": 456
+      },
+      "angle_degrees": 3.58,
+      "orientation": "horizontal",
+      "semantic_status": "unresolved_until_stage9"
+    },
+    {
+      "wire_id": "WIRE_0004",
+      "start_node": "NODE_0007",
+      "end_node": "NODE_0008",
+      "start": {
+        "x": 563,
+        "y": 462
+      },
+      "end": {
+        "x": 579,
+        "y": 462
+      },
+      "points": [
+        {
+          "x": 563,
+          "y": 462
+        },
+        {
+          "x": 579,
+          "y": 462
+        }
+      ],
+      "raw_point_count": 17,
+      "length_px": 16.0,
+      "bbox": {
+        "x1": 563,
+        "y1": 462,
+        "x2": 579,
+        "y2": 462
+      },
+      "angle_degrees": 0.0,
+      "orientation": "horizontal",
+      "semantic_status": "unresolved_until_stage9"
+    },
+    {
+      "wire_id": "WIRE_0005",
+      "start_node": "NODE_0009",
+      "end_node": "NODE_0012",
+      "start": {
+        "x": 304,
+        "y": 501
+      },
+      "end": {
+        "x": 303,
+        "y": 539
+      },
+      "points": [
+        {
+          "x": 304,
+          "y": 501
+        },
+        {
+          "x": 303,
+          "y": 539
+        }
+      ],
+      "raw_point_count": 39,
+      "length_px": 38.41,
+      "bbox": {
+        "x1": 303,
+        "y1": 501,
+        "x2": 304,
+        "y2": 539
+      },
+      "angle_degrees": 91.51,
+      "orientation": "vertical",
+      "semantic_status": "unresolved_until_stage9"
+    },
+    {
+      "wire_id": "WIRE_0006",
+      "start_node": "NODE_0010",
+      "end_node": "NODE_0011",
+      "start": {
+        "x": 432,
+        "y": 505
+      },
+      "end": {
+        "x": 429,
+        "y": 535
+      },
+      "points": [
+        {
+          "x": 432,
+          "y": 505
+        },
+        {
+          "x": 429,
+          "y": 535
+        }
+      ],
+      "raw_point_count": 31,
+      "length_px": 31.24,
+      "bbox": {
+        "x1": 429,
+        "y1": 505,
+        "x2": 432,
+        "y2": 535
+      },
+      "angle_degrees": 95.71,
+      "orientation": "vertical",
+      "semantic_status": "unresolved_until_stage9"
+    },
+    {
+      "wire_id": "WIRE_0007",
+      "start_node": "NODE_0013",
+      "end_node": "NODE_0014",
+      "start": {
+        "x": 353,
+        "y": 719
+      },
+      "end": {
+        "x": 354,
+        "y": 763
+      },
+      "points": [
+        {
+          "x": 353,
+          "y": 719
+        },
+        {
+          "x": 354,
+          "y": 763
+        }
+      ],
+      "raw_point_count": 45,
+      "length_px": 46.07,
+      "bbox": {
+        "x1": 353,
+        "y1": 719,
+        "x2": 354,
+        "y2": 763
+      },
+      "angle_degrees": 88.7,
+      "orientation": "vertical",
+      "semantic_status": "unresolved_until_stage9"
+    },
+    {
+      "wire_id": "WIRE_0008",
+      "start_node": "NODE_0015",
+      "end_node": "NODE_0016",
+      "start": {
+        "x": 426,
+        "y": 815
+      },
+      "end": {
+        "x": 443,
+        "y": 816
+      },
+      "points": [
+        {
+          "x": 426,
+          "y": 815
+        },
+        {
+          "x": 443,
+          "y": 816
+        }
+      ],
+      "raw_point_count": 18,
+      "length_px": 17.41,
+      "bbox": {
+        "x1": 426,
+        "y1": 815,
+        "x2": 443,
+        "y2": 816
+      },
+      "angle_degrees": 3.37,
+      "orientation": "horizontal",
+      "semantic_status": "unresolved_until_stage9"
+    },
+    {
+      "wire_id": "WIRE_0009",
+      "start_node": "NODE_0017",
+      "end_node": "NODE_0018",
+      "start": {
+        "x": 431,
+        "y": 858
+      },
+      "end": {
+        "x": 462,
+        "y": 859
+      },
+      "points": [
+        {
+          "x": 431,
+          "y": 858
+        },
+        {
+          "x": 438,
+          "y": 861
+        },
+        {
+          "x": 462,
+          "y": 859
+        }
+      ],
+      "raw_point_count": 32,
+      "length_px": 33.07,
+      "bbox": {
+        "x1": 431,
+        "y1": 858,
+        "x2": 462,
+        "y2": 861
+      },
+      "angle_degrees": 1.85,
+      "orientation": "horizontal",
+      "semantic_status": "unresolved_until_stage9"
+    },
+    {
+      "wire_id": "WIRE_0010",
+      "start_node": "NODE_0022",
+      "end_node": "NODE_0025",
+      "start": {
+        "x": 231,
+        "y": 884
+      },
+      "end": {
+        "x": 227,
+        "y": 973
+      },
+      "points": [
+        {
+          "x": 231,
+          "y": 884
+        },
+        {
+          "x": 227,
+          "y": 973
+        }
+      ],
+      "raw_point_count": 90,
+      "length_px": 91.49,
+      "bbox": {
+        "x1": 227,
+        "y1": 884,
+        "x2": 231,
+        "y2": 973
+      },
+      "angle_degrees": 92.57,
+      "orientation": "vertical",
+      "semantic_status": "unresolved_until_stage9"
+    },
+    {
+      "wire_id": "WIRE_0011",
+      "start_node": "NODE_0025",
+      "end_node": "NODE_0026",
+      "start": {
+        "x": 224,
+        "y": 977
+      },
+      "end": {
+        "x": 195,
+        "y": 975
+      },
+      "points": [
+        {
+          "x": 224,
+          "y": 977
+        },
+        {
+          "x": 195,
+          "y": 975
+        }
+      ],
+      "raw_point_count": 30,
+      "length_px": 29.83,
+      "bbox": {
+        "x1": 195,
+        "y1": 975,
+        "x2": 224,
+        "y2": 977
+      },
+      "angle_degrees": -176.05,
+      "orientation": "horizontal",
+      "semantic_status": "unresolved_until_stage9"
+    }
+  ],
+  "graph_debug": {
+    "raw_skeleton_pixels": 536,
+    "closed_loop_count": 0
+  },
+  "project_id": "PRJ_0474",
+  "generated_from": "ocr_components",
+  "terminal_context_available": true,
+  "wire_detection_version": "5.13.6",
+  "pipeline_order": [
+    "components",
+    "wires",
+    "terminals",
+    "junctions"
+  ],
+  "ocr_context_available": true,
+  "transistor_terminal_refinement": {
+    "method": "stage8_wires_class_arrow_E_base_B_leftover_C",
+    "transistor_count": 1,
+    "refined_count": 1,
+    "manual_preserved_count": 0,
+    "review_count": 0,
+    "components": [
+      {
+        "component_id": "Q_AUTO1",
+        "type": "transistor_npn",
+        "detector_class": "transistor_npn",
+        "original_ink_geometry": {
+          "source": "npn_original_ink_bar_branches_and_external_leads",
+          "body_found": true,
+          "external_contact_count": 4,
+          "arrow_confirmed": true,
+          "reason": "npn_three_original_ink_leads",
+          "base_lead_near": [
+            355.0,
+            813.0
+          ],
+          "base_lead_far": [
+            354.0,
+            766.0
+          ],
+          "base_bar_points": [
+            [
+              356.8868956254962,
+              814.6714226189853
+            ],
+            [
+              443.17640181625455,
+              813.4437987306908
+            ]
+          ],
+          "branch_anchors": [
+            {
+              "near": [
+                355.0,
+                813.0
+              ],
+              "far": [
+                235.0,
+                877.0
+              ]
+            },
+            {
+              "near": [
+                379.0,
+                816.0
+              ],
+              "far": [
+                426.0,
+                853.0
+              ]
+            }
+          ],
+          "base_bar_angle_degrees": -0.82,
+          "arrow_evidence": [
+            {
+              "score": 45.97843156104972,
+              "direction": null,
+              "tip": [
+                318.0,
+                819.0
+              ],
+              "shape_scores": {
+                "outward": 0.9062498211860657,
+                "inward": 0.8808777332305908,
+                "dot": 0.6611108779907227
+              },
+              "source": "filled_head_wider_than_its_own_shaft",
+              "head_center": [
+                260.0,
+                874.0
+              ],
+              "head_width_ratio": 2.183,
+              "head_axial_skew": 0.2769,
+              "metric": "exclusive_branch_head_without_base_bar"
+            },
+            {
+              "score": 0.0,
+              "direction": null,
+              "shape_scores": {
+                "outward": 0.6639344096183777,
+                "inward": 0.6833333373069763,
+                "dot": 0.6307691931724548
+              },
+              "source": "two_opposed_arrow_wings",
+              "rejected_base_or_plain_branch": true,
+              "metric": "exclusive_branch_head_without_base_bar"
+            }
+          ],
+          "branch_head_margin_normalized": 1.0,
+          "identity_metric": "exclusive_branch_head_then_base_then_remaining_collector",
+          "detected_arrow_direction": null,
+          "direction_conflict": false,
+          "stage8_distances_px": [
+            1.0,
+            5.656854249492381,
+            1.0
+          ],
+          "image_pass": "original_ink_paths"
+        },
+        "wire_candidate_count": 4,
+        "model_evidence_source": "npn_original_ink_bar_branches_and_external_leads",
+        "model_class": "transistor_npn",
+        "status": "refined",
+        "refined": true,
+        "B": {
+          "x": 354.0,
+          "y": 766.0
+        },
+        "C": {
+          "x": 426.0,
+          "y": 853.0
+        },
+        "E": {
+          "x": 235.0,
+          "y": 877.0
+        },
+        "wire_selection": {
+          "method": "bjt_original_ink_leads_with_stage8_context",
+          "selection_score": 5.0,
+          "role_neutral": false,
+          "original_ink_geometry": {
+            "source": "npn_original_ink_bar_branches_and_external_leads",
+            "body_found": true,
+            "external_contact_count": 4,
+            "arrow_confirmed": true,
+            "reason": "npn_three_original_ink_leads",
+            "base_lead_near": [
+              355.0,
+              813.0
+            ],
+            "base_lead_far": [
+              354.0,
+              766.0
+            ],
+            "base_bar_points": [
+              [
+                356.8868956254962,
+                814.6714226189853
+              ],
+              [
+                443.17640181625455,
+                813.4437987306908
+              ]
+            ],
+            "branch_anchors": [
+              {
+                "near": [
+                  355.0,
+                  813.0
+                ],
+                "far": [
+                  235.0,
+                  877.0
+                ]
+              },
+              {
+                "near": [
+                  379.0,
+                  816.0
+                ],
+                "far": [
+                  426.0,
+                  853.0
+                ]
+              }
+            ],
+            "base_bar_angle_degrees": -0.82,
+            "arrow_evidence": [
+              {
+                "score": 45.97843156104972,
+                "direction": null,
+                "tip": [
+                  318.0,
+                  819.0
+                ],
+                "shape_scores": {
+                  "outward": 0.9062498211860657,
+                  "inward": 0.8808777332305908,
+                  "dot": 0.6611108779907227
+                },
+                "source": "filled_head_wider_than_its_own_shaft",
+                "head_center": [
+                  260.0,
+                  874.0
+                ],
+                "head_width_ratio": 2.183,
+                "head_axial_skew": 0.2769,
+                "metric": "exclusive_branch_head_without_base_bar"
+              },
+              {
+                "score": 0.0,
+                "direction": null,
+                "shape_scores": {
+                  "outward": 0.6639344096183777,
+                  "inward": 0.6833333373069763,
+                  "dot": 0.6307691931724548
+                },
+                "source": "two_opposed_arrow_wings",
+                "rejected_base_or_plain_branch": true,
+                "metric": "exclusive_branch_head_without_base_bar"
+              }
+            ],
+            "branch_head_margin_normalized": 1.0,
+            "identity_metric": "exclusive_branch_head_then_base_then_remaining_collector",
+            "detected_arrow_direction": null,
+            "direction_conflict": false,
+            "stage8_distances_px": [
+              1.0,
+              5.656854249492381,
+              1.0
+            ],
+            "image_pass": "original_ink_paths"
+          },
+          "ordered_role_assignment": {
+            "source": "arrow_then_base_bar_then_collector_leftover",
+            "sequence": [
+              "stage8_wires",
+              "detector_NPN_PNP",
+              "arrow_emitter",
+              "base_bar",
+              "collector_leftover"
+            ],
+            "detector_class": "transistor_npn",
+            "emitter": {
+              "source": "physical_arrow_then_base_bar",
+              "physical_arrow": true,
+              "distance_px": 0.0,
+              "margin_normalized": 0.6467
+            },
+            "base": {
+              "source": "physical_arrow_then_base_bar",
+              "physical_base_bar": true,
+              "distance_px": 0.0,
+              "margin_normalized": 0.4488
+            },
+            "collector": {
+              "source": "remaining_wire_after_E_and_B"
+            },
+            "confidence": 0.99,
+            "identity_uncertain": false,
+            "class_arrow_direction_conflict": false,
+            "multi_pass_geometry_uncertain": false,
+            "mapping": {
+              "B": 0,
+              "C": 2,
+              "E": 1
+            }
+          }
+        },
+        "ordered_identity": {
+          "source": "arrow_then_base_bar_then_collector_leftover",
+          "confidence": 0.99,
+          "identity_uncertain": false,
+          "emitter": {
+            "source": "physical_arrow_then_base_bar",
+            "physical_arrow": true,
+            "distance_px": 0.0,
+            "margin_normalized": 0.6467
+          },
+          "base": {
+            "source": "physical_arrow_then_base_bar",
+            "physical_base_bar": true,
+            "distance_px": 0.0,
+            "margin_normalized": 0.4488
+          },
+          "collector": {
+            "source": "remaining_wire_after_E_and_B"
+          }
+        }
+      }
+    ]
+  },
+  "transistor_wire_refinement": {
+    "method": "stage8_wires_class_arrow_E_base_B_leftover_C",
+    "transistor_count": 1,
+    "refined_count": 1,
+    "manual_preserved_count": 0,
+    "review_count": 0,
+    "components": [
+      {
+        "component_id": "Q_AUTO1",
+        "type": "transistor_npn",
+        "detector_class": "transistor_npn",
+        "original_ink_geometry": {
+          "source": "npn_original_ink_bar_branches_and_external_leads",
+          "body_found": true,
+          "external_contact_count": 4,
+          "arrow_confirmed": true,
+          "reason": "npn_three_original_ink_leads",
+          "base_lead_near": [
+            355.0,
+            813.0
+          ],
+          "base_lead_far": [
+            354.0,
+            766.0
+          ],
+          "base_bar_points": [
+            [
+              356.8868956254962,
+              814.6714226189853
+            ],
+            [
+              443.17640181625455,
+              813.4437987306908
+            ]
+          ],
+          "branch_anchors": [
+            {
+              "near": [
+                355.0,
+                813.0
+              ],
+              "far": [
+                235.0,
+                877.0
+              ]
+            },
+            {
+              "near": [
+                379.0,
+                816.0
+              ],
+              "far": [
+                426.0,
+                853.0
+              ]
+            }
+          ],
+          "base_bar_angle_degrees": -0.82,
+          "arrow_evidence": [
+            {
+              "score": 45.97843156104972,
+              "direction": null,
+              "tip": [
+                318.0,
+                819.0
+              ],
+              "shape_scores": {
+                "outward": 0.9062498211860657,
+                "inward": 0.8808777332305908,
+                "dot": 0.6611108779907227
+              },
+              "source": "filled_head_wider_than_its_own_shaft",
+              "head_center": [
+                260.0,
+                874.0
+              ],
+              "head_width_ratio": 2.183,
+              "head_axial_skew": 0.2769,
+              "metric": "exclusive_branch_head_without_base_bar"
+            },
+            {
+              "score": 0.0,
+              "direction": null,
+              "shape_scores": {
+                "outward": 0.6639344096183777,
+                "inward": 0.6833333373069763,
+                "dot": 0.6307691931724548
+              },
+              "source": "two_opposed_arrow_wings",
+              "rejected_base_or_plain_branch": true,
+              "metric": "exclusive_branch_head_without_base_bar"
+            }
+          ],
+          "branch_head_margin_normalized": 1.0,
+          "identity_metric": "exclusive_branch_head_then_base_then_remaining_collector",
+          "detected_arrow_direction": null,
+          "direction_conflict": false,
+          "stage8_distances_px": [
+            1.0,
+            5.656854249492381,
+            1.0
+          ],
+          "image_pass": "original_ink_paths"
+        },
+        "wire_candidate_count": 4,
+        "model_evidence_source": "npn_original_ink_bar_branches_and_external_leads",
+        "model_class": "transistor_npn",
+        "status": "refined",
+        "refined": true,
+        "B": {
+          "x": 354.0,
+          "y": 766.0
+        },
+        "C": {
+          "x": 426.0,
+          "y": 853.0
+        },
+        "E": {
+          "x": 235.0,
+          "y": 877.0
+        },
+        "wire_selection": {
+          "method": "bjt_original_ink_leads_with_stage8_context",
+          "selection_score": 5.0,
+          "role_neutral": false,
+          "original_ink_geometry": {
+            "source": "npn_original_ink_bar_branches_and_external_leads",
+            "body_found": true,
+            "external_contact_count": 4,
+            "arrow_confirmed": true,
+            "reason": "npn_three_original_ink_leads",
+            "base_lead_near": [
+              355.0,
+              813.0
+            ],
+            "base_lead_far": [
+              354.0,
+              766.0
+            ],
+            "base_bar_points": [
+              [
+                356.8868956254962,
+                814.6714226189853
+              ],
+              [
+                443.17640181625455,
+                813.4437987306908
+              ]
+            ],
+            "branch_anchors": [
+              {
+                "near": [
+                  355.0,
+                  813.0
+                ],
+                "far": [
+                  235.0,
+                  877.0
+                ]
+              },
+              {
+                "near": [
+                  379.0,
+                  816.0
+                ],
+                "far": [
+                  426.0,
+                  853.0
+                ]
+              }
+            ],
+            "base_bar_angle_degrees": -0.82,
+            "arrow_evidence": [
+              {
+                "score": 45.97843156104972,
+                "direction": null,
+                "tip": [
+                  318.0,
+                  819.0
+                ],
+                "shape_scores": {
+                  "outward": 0.9062498211860657,
+                  "inward": 0.8808777332305908,
+                  "dot": 0.6611108779907227
+                },
+                "source": "filled_head_wider_than_its_own_shaft",
+                "head_center": [
+                  260.0,
+                  874.0
+                ],
+                "head_width_ratio": 2.183,
+                "head_axial_skew": 0.2769,
+                "metric": "exclusive_branch_head_without_base_bar"
+              },
+              {
+                "score": 0.0,
+                "direction": null,
+                "shape_scores": {
+                  "outward": 0.6639344096183777,
+                  "inward": 0.6833333373069763,
+                  "dot": 0.6307691931724548
+                },
+                "source": "two_opposed_arrow_wings",
+                "rejected_base_or_plain_branch": true,
+                "metric": "exclusive_branch_head_without_base_bar"
+              }
+            ],
+            "branch_head_margin_normalized": 1.0,
+            "identity_metric": "exclusive_branch_head_then_base_then_remaining_collector",
+            "detected_arrow_direction": null,
+            "direction_conflict": false,
+            "stage8_distances_px": [
+              1.0,
+              5.656854249492381,
+              1.0
+            ],
+            "image_pass": "original_ink_paths"
+          },
+          "ordered_role_assignment": {
+            "source": "arrow_then_base_bar_then_collector_leftover",
+            "sequence": [
+              "stage8_wires",
+              "detector_NPN_PNP",
+              "arrow_emitter",
+              "base_bar",
+              "collector_leftover"
+            ],
+            "detector_class": "transistor_npn",
+            "emitter": {
+              "source": "physical_arrow_then_base_bar",
+              "physical_arrow": true,
+              "distance_px": 0.0,
+              "margin_normalized": 0.6467
+            },
+            "base": {
+              "source": "physical_arrow_then_base_bar",
+              "physical_base_bar": true,
+              "distance_px": 0.0,
+              "margin_normalized": 0.4488
+            },
+            "collector": {
+              "source": "remaining_wire_after_E_and_B"
+            },
+            "confidence": 0.99,
+            "identity_uncertain": false,
+            "class_arrow_direction_conflict": false,
+            "multi_pass_geometry_uncertain": false,
+            "mapping": {
+              "B": 0,
+              "C": 2,
+              "E": 1
+            }
+          }
+        },
+        "ordered_identity": {
+          "source": "arrow_then_base_bar_then_collector_leftover",
+          "confidence": 0.99,
+          "identity_uncertain": false,
+          "emitter": {
+            "source": "physical_arrow_then_base_bar",
+            "physical_arrow": true,
+            "distance_px": 0.0,
+            "margin_normalized": 0.6467
+          },
+          "base": {
+            "source": "physical_arrow_then_base_bar",
+            "physical_base_bar": true,
+            "distance_px": 0.0,
+            "margin_normalized": 0.4488
+          },
+          "collector": {
+            "source": "remaining_wire_after_E_and_B"
+          }
+        }
+      }
+    ]
+  },
+  "terminal_detection_after_wires": {
+    "method": "all_classes_original_ink_inside_bbox_after_wires",
+    "components": [
+      {
+        "component_id": "R4",
+        "type": "resistor",
+        "rejected_notebook_rule_contacts": 0,
+        "rejected_polarity_glyph_contacts": 0,
+        "contact_count": 5,
+        "status": "wire_contacts_inside_bbox"
+      },
+      {
+        "component_id": "GND1",
+        "type": "gnd",
+        "rejected_notebook_rule_contacts": 0,
+        "rejected_polarity_glyph_contacts": 0,
+        "contact_count": 1,
+        "status": "wire_contacts_inside_bbox"
+      },
+      {
+        "component_id": "VCC1",
+        "type": "vcc",
+        "rejected_notebook_rule_contacts": 0,
+        "rejected_polarity_glyph_contacts": 0,
+        "power_contact_selection": {
+          "method": "actual_power_ring_connected_to_one_observed_lead",
+          "rejected": 0
+        },
+        "contact_count": 1,
+        "status": "wire_contacts_inside_bbox"
+      },
+      {
+        "component_id": "R5",
+        "type": "resistor",
+        "rejected_notebook_rule_contacts": 0,
+        "rejected_polarity_glyph_contacts": 0,
+        "resistor_contact_selection": {
+          "method": "two_opposed_leads_outside_resistor_body",
+          "body": {
+            "iec_rectangular_body": true,
+            "iec_line_body": true,
+            "opposed_leads": true,
+            "lead_support_px": [
+              43,
+              43
+            ],
+            "body_size": [
+              71.17031396762906,
+              36.204029753748614
+            ],
+            "body_center": [
+              246.20651245117188,
+              455.3263473510742
+            ],
+            "body_axis": [
+              -0.9997166991233826,
+              -0.023802706971764565
+            ],
+            "body_corners": [
+              [
+                281.3507080078125,
+                474.27025604248047
+              ],
+              [
+                210.2005615234375,
+                472.57621002197266
+              ],
+              [
+                211.06231689453125,
+                436.38243865966797
+              ],
+              [
+                282.21246337890625,
+                438.0764846801758
+              ]
+            ]
+          },
+          "selected": 2,
+          "rejected": 1
+        },
+        "contact_count": 2,
+        "status": "wire_contacts_inside_bbox"
+      },
+      {
+        "component_id": "R3",
+        "type": "resistor",
+        "rejected_notebook_rule_contacts": 0,
+        "rejected_polarity_glyph_contacts": 0,
+        "resistor_contact_selection": {
+          "method": "two_opposed_leads_outside_resistor_body",
+          "body": {
+            "iec_rectangular_body": true,
+            "iec_line_body": true,
+            "opposed_leads": true,
+            "lead_support_px": [
+              38,
+              38
+            ],
+            "body_size": [
+              62.0,
+              27.0
+            ],
+            "body_center": [
+              509.0,
+              460.5
+            ],
+            "body_axis": [
+              -1.0,
+              0.0
+            ],
+            "body_corners": [
+              [
+                540.0,
+                474.0
+              ],
+              [
+                478.0,
+                474.0
+              ],
+              [
+                478.0,
+                447.0
+              ],
+              [
+                540.0,
+                447.0
+              ]
+            ]
+          },
+          "selected": 2,
+          "rejected": 0
+        },
+        "contact_count": 2,
+        "status": "wire_contacts_inside_bbox"
+      },
+      {
+        "component_id": "U_AUTO1",
+        "type": "opamp",
+        "rejected_notebook_rule_contacts": 0,
+        "rejected_polarity_glyph_contacts": 0,
+        "contact_count": 4,
+        "opamp_identity": {
+          "source": "opamp_original_signs_triangle_and_joint_contact_assignment",
+          "confirmed": true,
+          "metric": "two_signed_inputs_one_apex_output_joint_bijection",
+          "contact_cost_normalized": 0.2946,
+          "assignment_margin_normalized": 0.8429,
+          "maximum_contact_distance_px": 50.581,
+          "triangle_apex": [
+            357.0,
+            681.0
+          ],
+          "marks": [
+            {
+              "kind": "+",
+              "x": 345.31,
+              "y": 604.72
+            },
+            {
+              "kind": "-",
+              "x": 414.5,
+              "y": 589.5
+            }
+          ],
+          "reason": "opamp_roles_confirmed_on_final_original_ink_contacts"
+        },
+        "status": "wire_contacts_inside_bbox"
+      },
+      {
+        "component_id": "Q_AUTO1",
+        "type": "transistor_npn",
+        "rejected_notebook_rule_contacts": 0,
+        "rejected_polarity_glyph_contacts": 0,
+        "contact_count": 4,
+        "bjt_identity": {
+          "source": "bjt_visible_arrow_base_bar_final_contacts",
+          "confirmed": true,
+          "reason": "exclusive_arrow_emitter_base_bar_then_remaining_collector",
+          "changed_names": [],
+          "direction_conflict": false,
+          "geometry": {
+            "source": "bjt_original_ink_bar_branches_and_external_leads",
+            "body_found": true,
+            "external_contact_count": 4,
+            "arrow_confirmed": true,
+            "reason": "npn_three_original_ink_leads",
+            "base_lead_near": [
+              355.0,
+              813.0
+            ],
+            "base_lead_far": [
+              354.0,
+              766.0
+            ],
+            "base_bar_points": [
+              [
+                356.8868956254962,
+                814.6714226189853
+              ],
+              [
+                443.17640181625455,
+                813.4437987306908
+              ]
+            ],
+            "branch_anchors": [
+              {
+                "near": [
+                  355.0,
+                  813.0
+                ],
+                "far": [
+                  235.0,
+                  877.0
+                ]
+              },
+              {
+                "near": [
+                  379.0,
+                  816.0
+                ],
+                "far": [
+                  426.0,
+                  853.0
+                ]
+              }
+            ],
+            "base_bar_angle_degrees": -0.82,
+            "arrow_evidence": [
+              {
+                "score": 45.97843156104972,
+                "direction": null,
+                "tip": [
+                  318.0,
+                  819.0
+                ],
+                "shape_scores": {
+                  "outward": 0.9062498211860657,
+                  "inward": 0.8808777332305908,
+                  "dot": 0.6611108779907227
+                },
+                "source": "filled_head_wider_than_its_own_shaft",
+                "head_center": [
+                  260.0,
+                  874.0
+                ],
+                "head_width_ratio": 2.183,
+                "head_axial_skew": 0.2769,
+                "metric": "exclusive_branch_head_without_base_bar"
+              },
+              {
+                "score": 0.0,
+                "direction": null,
+                "shape_scores": {
+                  "outward": 0.6639344096183777,
+                  "inward": 0.6833333373069763,
+                  "dot": 0.6307691931724548
+                },
+                "source": "two_opposed_arrow_wings",
+                "rejected_base_or_plain_branch": true,
+                "metric": "exclusive_branch_head_without_base_bar"
+              }
+            ],
+            "branch_head_margin_normalized": 1.0,
+            "identity_metric": "exclusive_branch_head_then_base_then_remaining_collector",
+            "detected_arrow_direction": null,
+            "direction_conflict": false,
+            "stage8_distances_px": [
+              1.0,
+              5.656854249492381,
+              1.0
+            ],
+            "image_pass": "original_ink_paths"
+          }
+        },
+        "status": "wire_contacts_inside_bbox"
+      },
+      {
+        "component_id": "R1",
+        "type": "resistor",
+        "rejected_notebook_rule_contacts": 0,
+        "rejected_polarity_glyph_contacts": 0,
+        "contact_count": 2,
+        "status": "wire_contacts_inside_bbox"
+      },
+      {
+        "component_id": "VCC2",
+        "type": "vcc",
+        "rejected_notebook_rule_contacts": 0,
+        "rejected_polarity_glyph_contacts": 0,
+        "power_contact_selection": {
+          "method": "actual_power_ring_connected_to_one_observed_lead",
+          "rejected": 0
+        },
+        "contact_count": 1,
+        "status": "wire_contacts_inside_bbox"
+      },
+      {
+        "component_id": "GND2",
+        "type": "gnd",
+        "rejected_notebook_rule_contacts": 0,
+        "rejected_polarity_glyph_contacts": 0,
+        "contact_count": 1,
+        "status": "wire_contacts_inside_bbox"
+      },
+      {
+        "component_id": "R2",
+        "type": "resistor",
+        "rejected_notebook_rule_contacts": 0,
+        "rejected_polarity_glyph_contacts": 0,
+        "resistor_contact_selection": {
+          "method": "two_opposed_leads_outside_resistor_body",
+          "body": {
+            "iec_rectangular_body": true,
+            "iec_line_body": true,
+            "opposed_leads": true,
+            "lead_support_px": [
+              41,
+              41
+            ],
+            "body_size": [
+              69.0,
+              30.0
+            ],
+            "body_center": [
+              165.5,
+              886.0
+            ],
+            "body_axis": [
+              -1.0,
+              0.0
+            ],
+            "body_corners": [
+              [
+                200.0,
+                901.0
+              ],
+              [
+                131.0,
+                901.0
+              ],
+              [
+                131.0,
+                871.0
+              ],
+              [
+                200.0,
+                871.0
+              ]
+            ]
+          },
+          "selected": 2,
+          "rejected": 0
+        },
+        "contact_count": 2,
+        "status": "wire_contacts_inside_bbox"
+      },
+      {
+        "component_id": "C1",
+        "type": "capacitor",
+        "rejected_notebook_rule_contacts": 0,
+        "rejected_polarity_glyph_contacts": 0,
+        "polarized_contact_selection": {
+          "method": "opposed_outer_plate_lead_contacts",
+          "candidates": 2,
+          "selected": 2,
+          "rejected_plate_or_nonopposed_contacts": 0,
+          "axis": [
+            -1.0,
+            0.0
+          ]
+        },
+        "contact_count": 2,
+        "status": "wire_contacts_inside_bbox"
+      },
+      {
+        "component_id": "GND3",
+        "type": "gnd",
+        "rejected_notebook_rule_contacts": 0,
+        "rejected_polarity_glyph_contacts": 0,
+        "contact_count": 1,
+        "status": "wire_contacts_inside_bbox"
+      }
+    ],
+    "refined_count": 13,
+    "manual_preserved_count": 0
+  },
+  "stage9": {
+    "schema_version": "stage9-junctions-1.1",
+    "created_at": "2026-11-05T17:06:13-03:00",
+    "scope": "stage9_electrical_junction_resolution",
+    "source_wire_schema": "stage8-wires-1.0",
+    "ink_color_profile": {
+      "schema_version": "component-ink-color-1.0",
+      "active": true,
+      "reason": "reliable_component_color_consensus",
+      "sampled_component_count": 5,
+      "minimum_component_confidence": 0.8,
+      "reliable_component_count": 5,
+      "reference_rgb": [
+        43,
+        36,
+        69
+      ],
+      "reference_hex": "#2B2445",
+      "reference_hsv": [
+        126.0,
+        122.0,
+        69.0
+      ],
+      "chromatic": true,
+      "channel_tolerance": 65.0,
+      "hue_tolerance": 12.0,
+      "consensus_component_count": 5,
+      "consensus_component_ids": [
+        "DET_001",
+        "DET_002",
+        "DET_003",
+        "DET_004",
+        "DET_011"
+      ],
+      "consensus_ratio": 1.0,
+      "averaging": "equal_weight_per_component_trimmed_stroke_mean"
+    },
+    "notebook_rule_profile": {
+      "schema_version": "notebook-color-rules-2.0",
+      "active": false,
+      "image_size": [
+        1280,
+        720
+      ],
+      "reference_colors": {
+        "traditional_gray": [
+          "#B3B3B3",
+          "#CCCCCC"
+        ],
+        "light_gray": [
+          "#D9D9D9",
+          "#E6E6E6"
+        ],
+        "school_cyan": [
+          "#B3E6E6",
+          "#99FFFF"
+        ]
+      },
+      "reason": "no_repeated_color_rule_family",
+      "families": [],
+      "removed_pixel_count": 0
+    },
+    "project_id": "PRJ_0474",
+    "image_width": 720,
+    "image_height": 1280,
+    "rules": {
+      "t_junction_connects": true,
+      "four_way_requires_dot_to_connect": true,
+      "four_way_without_dot_keeps_opposite_paths_separate": true,
+      "ambiguous_cases_require_review": true,
+      "automatic_t_requires_three_observed_ink_arms": true,
+      "small_gaps_also_require_ink_bridge": true
+    },
+    "nodes": [
+      {
+        "node_id": "NODE_0001",
+        "position": {
+          "x": 433.0,
+          "y": 448.0
+        },
+        "pixel_count": 3,
+        "raw_branch_count": 1,
+        "kind_candidate": "endpoint_candidate",
+        "segment_degree": 0,
+        "incident_wire_ids": [],
+        "electrical_degree_candidate": 0,
+        "manual_override": false,
+        "review_required": false,
+        "electrical_status": "endpoint",
+        "junction_type": "endpoint",
+        "connected": false,
+        "connection_groups": [],
+        "confidence": 0.99,
+        "decision_reason": "single_incident_wire"
+      },
+      {
+        "node_id": "NODE_0002",
+        "position": {
+          "x": 300.0,
+          "y": 450.0
+        },
+        "pixel_count": 3,
+        "raw_branch_count": 1,
+        "kind_candidate": "endpoint_candidate",
+        "segment_degree": 0,
+        "incident_wire_ids": [],
+        "electrical_degree_candidate": 0,
+        "manual_override": false,
+        "review_required": false,
+        "electrical_status": "endpoint",
+        "junction_type": "endpoint",
+        "connected": false,
+        "connection_groups": [],
+        "confidence": 0.99,
+        "decision_reason": "single_incident_wire"
+      },
+      {
+        "node_id": "NODE_0003",
+        "position": {
+          "x": 312.25,
+          "y": 452.12
+        },
+        "pixel_count": 16,
+        "raw_branch_count": 3,
+        "kind_candidate": "endpoint_candidate",
+        "segment_degree": 1,
+        "incident_wire_ids": [
+          "WIRE_0001"
+        ],
+        "electrical_degree_candidate": 1,
+        "manual_override": false,
+        "review_required": false,
+        "electrical_status": "endpoint",
+        "junction_type": "endpoint",
+        "connected": false,
+        "connection_groups": [
+          [
+            "WIRE_0001"
+          ]
+        ],
+        "confidence": 0.99,
+        "decision_reason": "single_incident_wire"
+      },
+      {
+        "node_id": "NODE_0004",
+        "position": {
+          "x": 322.0,
+          "y": 451.0
+        },
+        "pixel_count": 3,
+        "raw_branch_count": 1,
+        "kind_candidate": "endpoint_candidate",
+        "segment_degree": 0,
+        "incident_wire_ids": [],
+        "electrical_degree_candidate": 0,
+        "manual_override": false,
+        "review_required": false,
+        "electrical_status": "endpoint",
+        "junction_type": "endpoint",
+        "connected": false,
+        "connection_groups": [],
+        "confidence": 0.99,
+        "decision_reason": "single_incident_wire"
+      },
+      {
+        "node_id": "NODE_0005",
+        "position": {
+          "x": 436.64,
+          "y": 455.91
+        },
+        "pixel_count": 11,
+        "raw_branch_count": 3,
+        "kind_candidate": "path_vertex_candidate",
+        "segment_degree": 2,
+        "incident_wire_ids": [
+          "WIRE_0002",
+          "WIRE_0003"
+        ],
+        "electrical_degree_candidate": 2,
+        "manual_override": false,
+        "review_required": false,
+        "electrical_status": "wire_path",
+        "junction_type": "path_vertex",
+        "connected": true,
+        "connection_groups": [
+          [
+            "WIRE_0002",
+            "WIRE_0003"
+          ]
+        ],
+        "confidence": 0.98,
+        "decision_reason": "two_segments_form_same_wire_path"
+      },
+      {
+        "node_id": "NODE_0006",
+        "position": {
+          "x": 457.0,
+          "y": 456.0
+        },
+        "pixel_count": 3,
+        "raw_branch_count": 1,
+        "kind_candidate": "endpoint_candidate",
+        "segment_degree": 1,
+        "incident_wire_ids": [
+          "WIRE_0003"
+        ],
+        "electrical_degree_candidate": 1,
+        "manual_override": false,
+        "review_required": false,
+        "electrical_status": "endpoint",
+        "junction_type": "endpoint",
+        "connected": false,
+        "connection_groups": [
+          [
+            "WIRE_0003"
+          ]
+        ],
+        "confidence": 0.99,
+        "decision_reason": "single_incident_wire"
+      },
+      {
+        "node_id": "NODE_0007",
+        "position": {
+          "x": 562.0,
+          "y": 462.0
+        },
+        "pixel_count": 3,
+        "raw_branch_count": 1,
+        "kind_candidate": "endpoint_candidate",
+        "segment_degree": 1,
+        "incident_wire_ids": [
+          "WIRE_0004"
+        ],
+        "electrical_degree_candidate": 1,
+        "manual_override": false,
+        "review_required": false,
+        "electrical_status": "endpoint",
+        "junction_type": "endpoint",
+        "connected": false,
+        "connection_groups": [
+          [
+            "WIRE_0004"
+          ]
+        ],
+        "confidence": 0.99,
+        "decision_reason": "single_incident_wire"
+      },
+      {
+        "node_id": "NODE_0008",
+        "position": {
+          "x": 580.0,
+          "y": 462.33
+        },
+        "pixel_count": 3,
+        "raw_branch_count": 1,
+        "kind_candidate": "endpoint_candidate",
+        "segment_degree": 1,
+        "incident_wire_ids": [
+          "WIRE_0004"
+        ],
+        "electrical_degree_candidate": 1,
+        "manual_override": false,
+        "review_required": false,
+        "electrical_status": "endpoint",
+        "junction_type": "endpoint",
+        "connected": false,
+        "connection_groups": [
+          [
+            "WIRE_0004"
+          ]
+        ],
+        "confidence": 0.99,
+        "decision_reason": "single_incident_wire"
+      },
+      {
+        "node_id": "NODE_0009",
+        "position": {
+          "x": 304.5,
+          "y": 498.0
+        },
+        "pixel_count": 8,
+        "raw_branch_count": 2,
+        "kind_candidate": "path_vertex_candidate",
+        "segment_degree": 2,
+        "incident_wire_ids": [
+          "WIRE_0001",
+          "WIRE_0005"
+        ],
+        "electrical_degree_candidate": 2,
+        "manual_override": false,
+        "review_required": false,
+        "electrical_status": "wire_path",
+        "junction_type": "path_vertex",
+        "connected": true,
+        "connection_groups": [
+          [
+            "WIRE_0001",
+            "WIRE_0005"
+          ]
+        ],
+        "confidence": 0.98,
+        "decision_reason": "two_segments_form_same_wire_path"
+      },
+      {
+        "node_id": "NODE_0010",
+        "position": {
+          "x": 432.5,
+          "y": 502.0
+        },
+        "pixel_count": 8,
+        "raw_branch_count": 2,
+        "kind_candidate": "path_vertex_candidate",
+        "segment_degree": 2,
+        "incident_wire_ids": [
+          "WIRE_0002",
+          "WIRE_0006"
+        ],
+        "electrical_degree_candidate": 2,
+        "manual_override": false,
+        "review_required": false,
+        "electrical_status": "wire_path",
+        "junction_type": "path_vertex",
+        "connected": true,
+        "connection_groups": [
+          [
+            "WIRE_0002",
+            "WIRE_0006"
+          ]
+        ],
+        "confidence": 0.98,
+        "decision_reason": "two_segments_form_same_wire_path"
+      },
+      {
+        "node_id": "NODE_0011",
+        "position": {
+          "x": 428.44,
+          "y": 538.44
+        },
+        "pixel_count": 9,
+        "raw_branch_count": 1,
+        "kind_candidate": "endpoint_candidate",
+        "segment_degree": 1,
+        "incident_wire_ids": [
+          "WIRE_0006"
+        ],
+        "electrical_degree_candidate": 1,
+        "manual_override": false,
+        "review_required": false,
+        "electrical_status": "endpoint",
+        "junction_type": "endpoint",
+        "connected": false,
+        "connection_groups": [
+          [
+            "WIRE_0006"
+          ]
+        ],
+        "confidence": 0.99,
+        "decision_reason": "single_incident_wire"
+      },
+      {
+        "node_id": "NODE_0012",
+        "position": {
+          "x": 303.0,
+          "y": 540.0
+        },
+        "pixel_count": 3,
+        "raw_branch_count": 1,
+        "kind_candidate": "endpoint_candidate",
+        "segment_degree": 1,
+        "incident_wire_ids": [
+          "WIRE_0005"
+        ],
+        "electrical_degree_candidate": 1,
+        "manual_override": false,
+        "review_required": false,
+        "electrical_status": "endpoint",
+        "junction_type": "endpoint",
+        "connected": false,
+        "connection_groups": [
+          [
+            "WIRE_0005"
+          ]
+        ],
+        "confidence": 0.99,
+        "decision_reason": "single_incident_wire"
+      },
+      {
+        "node_id": "NODE_0013",
+        "position": {
+          "x": 353.0,
+          "y": 718.0
+        },
+        "pixel_count": 3,
+        "raw_branch_count": 1,
+        "kind_candidate": "endpoint_candidate",
+        "segment_degree": 1,
+        "incident_wire_ids": [
+          "WIRE_0007"
+        ],
+        "electrical_degree_candidate": 1,
+        "manual_override": false,
+        "review_required": false,
+        "electrical_status": "endpoint",
+        "junction_type": "endpoint",
+        "connected": false,
+        "connection_groups": [
+          [
+            "WIRE_0007"
+          ]
+        ],
+        "confidence": 0.99,
+        "decision_reason": "single_incident_wire"
+      },
+      {
+        "node_id": "NODE_0014",
+        "position": {
+          "x": 354.0,
+          "y": 764.0
+        },
+        "pixel_count": 3,
+        "raw_branch_count": 1,
+        "kind_candidate": "endpoint_candidate",
+        "segment_degree": 1,
+        "incident_wire_ids": [
+          "WIRE_0007"
+        ],
+        "electrical_degree_candidate": 1,
+        "manual_override": false,
+        "review_required": false,
+        "electrical_status": "endpoint",
+        "junction_type": "endpoint",
+        "connected": false,
+        "connection_groups": [
+          [
+            "WIRE_0007"
+          ]
+        ],
+        "confidence": 0.99,
+        "decision_reason": "single_incident_wire"
+      },
+      {
+        "node_id": "NODE_0015",
+        "position": {
+          "x": 425.0,
+          "y": 815.0
+        },
+        "pixel_count": 3,
+        "raw_branch_count": 1,
+        "kind_candidate": "endpoint_candidate",
+        "segment_degree": 1,
+        "incident_wire_ids": [
+          "WIRE_0008"
+        ],
+        "electrical_degree_candidate": 1,
+        "manual_override": false,
+        "review_required": false,
+        "electrical_status": "endpoint",
+        "junction_type": "endpoint",
+        "connected": false,
+        "connection_groups": [
+          [
+            "WIRE_0008"
+          ]
+        ],
+        "confidence": 0.99,
+        "decision_reason": "single_incident_wire"
+      },
+      {
+        "node_id": "NODE_0016",
+        "position": {
+          "x": 444.0,
+          "y": 816.0
+        },
+        "pixel_count": 3,
+        "raw_branch_count": 1,
+        "kind_candidate": "endpoint_candidate",
+        "segment_degree": 1,
+        "incident_wire_ids": [
+          "WIRE_0008"
+        ],
+        "electrical_degree_candidate": 1,
+        "manual_override": false,
+        "review_required": false,
+        "electrical_status": "endpoint",
+        "junction_type": "endpoint",
+        "connected": false,
+        "connection_groups": [
+          [
+            "WIRE_0008"
+          ]
+        ],
+        "confidence": 0.99,
+        "decision_reason": "single_incident_wire"
+      },
+      {
+        "node_id": "NODE_0017",
+        "position": {
+          "x": 426.83,
+          "y": 854.83
+        },
+        "pixel_count": 12,
+        "raw_branch_count": 1,
+        "kind_candidate": "endpoint_candidate",
+        "segment_degree": 1,
+        "incident_wire_ids": [
+          "WIRE_0009"
+        ],
+        "electrical_degree_candidate": 1,
+        "manual_override": false,
+        "review_required": false,
+        "electrical_status": "endpoint",
+        "junction_type": "endpoint",
+        "connected": false,
+        "connection_groups": [
+          [
+            "WIRE_0009"
+          ]
+        ],
+        "confidence": 0.99,
+        "decision_reason": "single_incident_wire"
+      },
+      {
+        "node_id": "NODE_0018",
+        "position": {
+          "x": 463.0,
+          "y": 859.0
+        },
+        "pixel_count": 3,
+        "raw_branch_count": 1,
+        "kind_candidate": "endpoint_candidate",
+        "segment_degree": 1,
+        "incident_wire_ids": [
+          "WIRE_0009"
+        ],
+        "electrical_degree_candidate": 1,
+        "manual_override": false,
+        "review_required": false,
+        "electrical_status": "endpoint",
+        "junction_type": "endpoint",
+        "connected": false,
+        "connection_groups": [
+          [
+            "WIRE_0009"
+          ]
+        ],
+        "confidence": 0.99,
+        "decision_reason": "single_incident_wire"
+      },
+      {
+        "node_id": "NODE_0019",
+        "position": {
+          "x": 547.0,
+          "y": 859.33
+        },
+        "pixel_count": 3,
+        "raw_branch_count": 1,
+        "kind_candidate": "endpoint_candidate",
+        "segment_degree": 0,
+        "incident_wire_ids": [],
+        "electrical_degree_candidate": 0,
+        "manual_override": false,
+        "review_required": false,
+        "electrical_status": "endpoint",
+        "junction_type": "endpoint",
+        "connected": false,
+        "connection_groups": [],
+        "confidence": 0.99,
+        "decision_reason": "single_incident_wire"
+      },
+      {
+        "node_id": "NODE_0020",
+        "position": {
+          "x": 556.0,
+          "y": 859.0
+        },
+        "pixel_count": 3,
+        "raw_branch_count": 1,
+        "kind_candidate": "endpoint_candidate",
+        "segment_degree": 0,
+        "incident_wire_ids": [],
+        "electrical_degree_candidate": 0,
+        "manual_override": false,
+        "review_required": false,
+        "electrical_status": "endpoint",
+        "junction_type": "endpoint",
+        "connected": false,
+        "connection_groups": [],
+        "confidence": 0.99,
+        "decision_reason": "single_incident_wire"
+      },
+      {
+        "node_id": "NODE_0021",
+        "position": {
+          "x": 222.0,
+          "y": 880.0
+        },
+        "pixel_count": 3,
+        "raw_branch_count": 1,
+        "kind_candidate": "endpoint_candidate",
+        "segment_degree": 0,
+        "incident_wire_ids": [],
+        "electrical_degree_candidate": 0,
+        "manual_override": false,
+        "review_required": false,
+        "electrical_status": "endpoint",
+        "junction_type": "endpoint",
+        "connected": false,
+        "connection_groups": [],
+        "confidence": 0.99,
+        "decision_reason": "single_incident_wire"
+      },
+      {
+        "node_id": "NODE_0022",
+        "position": {
+          "x": 230.14,
+          "y": 881.86
+        },
+        "pixel_count": 7,
+        "raw_branch_count": 2,
+        "kind_candidate": "endpoint_candidate",
+        "segment_degree": 1,
+        "incident_wire_ids": [
+          "WIRE_0010"
+        ],
+        "electrical_degree_candidate": 1,
+        "manual_override": false,
+        "review_required": false,
+        "electrical_status": "endpoint",
+        "junction_type": "endpoint",
+        "connected": false,
+        "connection_groups": [
+          [
+            "WIRE_0010"
+          ]
+        ],
+        "confidence": 0.99,
+        "decision_reason": "single_incident_wire"
+      },
+      {
+        "node_id": "NODE_0023",
+        "position": {
+          "x": 103.0,
+          "y": 885.0
+        },
+        "pixel_count": 3,
+        "raw_branch_count": 1,
+        "kind_candidate": "endpoint_candidate",
+        "segment_degree": 0,
+        "incident_wire_ids": [],
+        "electrical_degree_candidate": 0,
+        "manual_override": false,
+        "review_required": false,
+        "electrical_status": "endpoint",
+        "junction_type": "endpoint",
+        "connected": false,
+        "connection_groups": [],
+        "confidence": 0.99,
+        "decision_reason": "single_incident_wire"
+      },
+      {
+        "node_id": "NODE_0024",
+        "position": {
+          "x": 109.0,
+          "y": 885.0
+        },
+        "pixel_count": 3,
+        "raw_branch_count": 1,
+        "kind_candidate": "endpoint_candidate",
+        "segment_degree": 0,
+        "incident_wire_ids": [],
+        "electrical_degree_candidate": 0,
+        "manual_override": false,
+        "review_required": false,
+        "electrical_status": "endpoint",
+        "junction_type": "endpoint",
+        "connected": false,
+        "connection_groups": [],
+        "confidence": 0.99,
+        "decision_reason": "single_incident_wire"
+      },
+      {
+        "node_id": "NODE_0025",
+        "position": {
+          "x": 226.14,
+          "y": 975.43
+        },
+        "pixel_count": 7,
+        "raw_branch_count": 2,
+        "kind_candidate": "path_vertex_candidate",
+        "segment_degree": 2,
+        "incident_wire_ids": [
+          "WIRE_0010",
+          "WIRE_0011"
+        ],
+        "electrical_degree_candidate": 2,
+        "manual_override": false,
+        "review_required": false,
+        "electrical_status": "wire_path",
+        "junction_type": "path_vertex",
+        "connected": true,
+        "connection_groups": [
+          [
+            "WIRE_0010",
+            "WIRE_0011"
+          ]
+        ],
+        "confidence": 0.98,
+        "decision_reason": "two_segments_form_same_wire_path"
+      },
+      {
+        "node_id": "NODE_0026",
+        "position": {
+          "x": 194.0,
+          "y": 975.0
+        },
+        "pixel_count": 3,
+        "raw_branch_count": 1,
+        "kind_candidate": "endpoint_candidate",
+        "segment_degree": 1,
+        "incident_wire_ids": [
+          "WIRE_0011"
+        ],
+        "electrical_degree_candidate": 1,
+        "manual_override": false,
+        "review_required": false,
+        "electrical_status": "endpoint",
+        "junction_type": "endpoint",
+        "connected": false,
+        "connection_groups": [
+          [
+            "WIRE_0011"
+          ]
+        ],
+        "confidence": 0.99,
+        "decision_reason": "single_incident_wire"
+      }
+    ],
+    "segments": [
+      {
+        "wire_id": "WIRE_0001",
+        "start_node": "NODE_0003",
+        "end_node": "NODE_0009",
+        "start": {
+          "x": 310,
+          "y": 456
+        },
+        "end": {
+          "x": 305,
+          "y": 495
+        },
+        "points": [
+          {
+            "x": 310,
+            "y": 456
+          },
+          {
+            "x": 305,
+            "y": 495
+          }
+        ],
+        "raw_point_count": 40,
+        "length_px": 41.07,
+        "bbox": {
+          "x1": 305,
+          "y1": 456,
+          "x2": 310,
+          "y2": 495
+        },
+        "angle_degrees": 97.31,
+        "orientation": "vertical",
+        "semantic_status": "unresolved_until_stage9"
+      },
+      {
+        "wire_id": "WIRE_0002",
+        "start_node": "NODE_0005",
+        "end_node": "NODE_0010",
+        "start": {
+          "x": 435,
+          "y": 459
+        },
+        "end": {
+          "x": 433,
+          "y": 499
+        },
+        "points": [
+          {
+            "x": 435,
+            "y": 459
+          },
+          {
+            "x": 433,
+            "y": 499
+          }
+        ],
+        "raw_point_count": 41,
+        "length_px": 41.66,
+        "bbox": {
+          "x1": 433,
+          "y1": 459,
+          "x2": 435,
+          "y2": 499
+        },
+        "angle_degrees": 92.86,
+        "orientation": "vertical",
+        "semantic_status": "unresolved_until_stage9"
+      },
+      {
+        "wire_id": "WIRE_0003",
+        "start_node": "NODE_0005",
+        "end_node": "NODE_0006",
+        "start": {
+          "x": 440,
+          "y": 455
+        },
+        "end": {
+          "x": 456,
+          "y": 456
+        },
+        "points": [
+          {
+            "x": 440,
+            "y": 455
+          },
+          {
+            "x": 456,
+            "y": 456
+          }
+        ],
+        "raw_point_count": 17,
+        "length_px": 16.41,
+        "bbox": {
+          "x1": 440,
+          "y1": 455,
+          "x2": 456,
+          "y2": 456
+        },
+        "angle_degrees": 3.58,
+        "orientation": "horizontal",
+        "semantic_status": "unresolved_until_stage9"
+      },
+      {
+        "wire_id": "WIRE_0004",
+        "start_node": "NODE_0007",
+        "end_node": "NODE_0008",
+        "start": {
+          "x": 563,
+          "y": 462
+        },
+        "end": {
+          "x": 579,
+          "y": 462
+        },
+        "points": [
+          {
+            "x": 563,
+            "y": 462
+          },
+          {
+            "x": 579,
+            "y": 462
+          }
+        ],
+        "raw_point_count": 17,
+        "length_px": 16.0,
+        "bbox": {
+          "x1": 563,
+          "y1": 462,
+          "x2": 579,
+          "y2": 462
+        },
+        "angle_degrees": 0.0,
+        "orientation": "horizontal",
+        "semantic_status": "unresolved_until_stage9"
+      },
+      {
+        "wire_id": "WIRE_0005",
+        "start_node": "NODE_0009",
+        "end_node": "NODE_0012",
+        "start": {
+          "x": 304,
+          "y": 501
+        },
+        "end": {
+          "x": 303,
+          "y": 539
+        },
+        "points": [
+          {
+            "x": 304,
+            "y": 501
+          },
+          {
+            "x": 303,
+            "y": 539
+          }
+        ],
+        "raw_point_count": 39,
+        "length_px": 38.41,
+        "bbox": {
+          "x1": 303,
+          "y1": 501,
+          "x2": 304,
+          "y2": 539
+        },
+        "angle_degrees": 91.51,
+        "orientation": "vertical",
+        "semantic_status": "unresolved_until_stage9"
+      },
+      {
+        "wire_id": "WIRE_0006",
+        "start_node": "NODE_0010",
+        "end_node": "NODE_0011",
+        "start": {
+          "x": 432,
+          "y": 505
+        },
+        "end": {
+          "x": 429,
+          "y": 535
+        },
+        "points": [
+          {
+            "x": 432,
+            "y": 505
+          },
+          {
+            "x": 429,
+            "y": 535
+          }
+        ],
+        "raw_point_count": 31,
+        "length_px": 31.24,
+        "bbox": {
+          "x1": 429,
+          "y1": 505,
+          "x2": 432,
+          "y2": 535
+        },
+        "angle_degrees": 95.71,
+        "orientation": "vertical",
+        "semantic_status": "unresolved_until_stage9"
+      },
+      {
+        "wire_id": "WIRE_0007",
+        "start_node": "NODE_0013",
+        "end_node": "NODE_0014",
+        "start": {
+          "x": 353,
+          "y": 719
+        },
+        "end": {
+          "x": 354,
+          "y": 763
+        },
+        "points": [
+          {
+            "x": 353,
+            "y": 719
+          },
+          {
+            "x": 354,
+            "y": 763
+          }
+        ],
+        "raw_point_count": 45,
+        "length_px": 46.07,
+        "bbox": {
+          "x1": 353,
+          "y1": 719,
+          "x2": 354,
+          "y2": 763
+        },
+        "angle_degrees": 88.7,
+        "orientation": "vertical",
+        "semantic_status": "unresolved_until_stage9"
+      },
+      {
+        "wire_id": "WIRE_0008",
+        "start_node": "NODE_0015",
+        "end_node": "NODE_0016",
+        "start": {
+          "x": 426,
+          "y": 815
+        },
+        "end": {
+          "x": 443,
+          "y": 816
+        },
+        "points": [
+          {
+            "x": 426,
+            "y": 815
+          },
+          {
+            "x": 443,
+            "y": 816
+          }
+        ],
+        "raw_point_count": 18,
+        "length_px": 17.41,
+        "bbox": {
+          "x1": 426,
+          "y1": 815,
+          "x2": 443,
+          "y2": 816
+        },
+        "angle_degrees": 3.37,
+        "orientation": "horizontal",
+        "semantic_status": "unresolved_until_stage9"
+      },
+      {
+        "wire_id": "WIRE_0009",
+        "start_node": "NODE_0017",
+        "end_node": "NODE_0018",
+        "start": {
+          "x": 431,
+          "y": 858
+        },
+        "end": {
+          "x": 462,
+          "y": 859
+        },
+        "points": [
+          {
+            "x": 431,
+            "y": 858
+          },
+          {
+            "x": 438,
+            "y": 861
+          },
+          {
+            "x": 462,
+            "y": 859
+          }
+        ],
+        "raw_point_count": 32,
+        "length_px": 33.07,
+        "bbox": {
+          "x1": 431,
+          "y1": 858,
+          "x2": 462,
+          "y2": 861
+        },
+        "angle_degrees": 1.85,
+        "orientation": "horizontal",
+        "semantic_status": "unresolved_until_stage9"
+      },
+      {
+        "wire_id": "WIRE_0010",
+        "start_node": "NODE_0022",
+        "end_node": "NODE_0025",
+        "start": {
+          "x": 231,
+          "y": 884
+        },
+        "end": {
+          "x": 227,
+          "y": 973
+        },
+        "points": [
+          {
+            "x": 231,
+            "y": 884
+          },
+          {
+            "x": 227,
+            "y": 973
+          }
+        ],
+        "raw_point_count": 90,
+        "length_px": 91.49,
+        "bbox": {
+          "x1": 227,
+          "y1": 884,
+          "x2": 231,
+          "y2": 973
+        },
+        "angle_degrees": 92.57,
+        "orientation": "vertical",
+        "semantic_status": "unresolved_until_stage9"
+      },
+      {
+        "wire_id": "WIRE_0011",
+        "start_node": "NODE_0025",
+        "end_node": "NODE_0026",
+        "start": {
+          "x": 224,
+          "y": 977
+        },
+        "end": {
+          "x": 195,
+          "y": 975
+        },
+        "points": [
+          {
+            "x": 224,
+            "y": 977
+          },
+          {
+            "x": 195,
+            "y": 975
+          }
+        ],
+        "raw_point_count": 30,
+        "length_px": 29.83,
+        "bbox": {
+          "x1": 195,
+          "y1": 975,
+          "x2": 224,
+          "y2": 977
+        },
+        "angle_degrees": -176.05,
+        "orientation": "horizontal",
+        "semantic_status": "unresolved_until_stage9"
+      }
+    ],
+    "synthesized_t_junction_count": 0,
+    "synthesized_terminal_t_junction_count": 0,
+    "connected_junction_count": 0,
+    "unconnected_crossing_count": 0,
+    "endpoint_count": 22,
+    "path_vertex_count": 4,
+    "review_count": 0,
+    "ready_for_stage10": true
+  },
+  "stage10": {
+    "schema_version": "stage10-connectivity-1.0",
+    "source_signature": "8f2ad5fdb38a3f98de382ec08956cb3e01c4bc4302fd72d2809f4f3745969b10",
+    "net_count": 10,
+    "terminal_count": 23,
+    "attached_terminal_count": 22,
+    "unconnected_terminal_count": 1,
+    "ambiguous_terminal_count": 0,
+    "review_count": 14,
+    "criterion_met": false
+  },
+  "stage11": {
+    "schema_version": "circuit-1.0",
+    "generated": true,
+    "criterion_met": true,
+    "source_signature": "8f2ad5fdb38a3f98de382ec08956cb3e01c4bc4302fd72d2809f4f3745969b10",
+    "validation": {
+      "structurally_valid": true,
+      "review_required": true,
+      "component_count": 13,
+      "net_count": 9,
+      "pin_count": 23
+    }
+  },
+  "electrical_pipeline_order": [
+    "components",
+    "wires",
+    "terminals",
+    "junctions",
+    "connectivity",
+    "circuit"
+  ]
+}

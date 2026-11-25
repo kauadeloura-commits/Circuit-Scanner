@@ -1,0 +1,133 @@
+{
+  "schema_version": "circuit-1.0",
+  "project_id": "PRJ_0441",
+  "name": "WhatsApp Image 2026-10-14 at 13.59.14",
+  "created_at": "2026-10-14T14:04:51-03:00",
+  "components": [
+    {
+      "id": "VCC1",
+      "type": "vcc",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "VCC"
+      ],
+      "metadata": {
+        "source_component_id": "DET_001",
+        "reference_source": "generated",
+        "value_source": "pending_ocr",
+        "review_required": false
+      }
+    },
+    {
+      "id": "Q1",
+      "type": "transistor_pnp",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "B",
+        "C",
+        "E"
+      ],
+      "metadata": {
+        "source_component_id": "DET_002",
+        "reference_source": "generated",
+        "value_source": "pending_ocr",
+        "review_required": false,
+        "model": {
+          "text": "BC557B",
+          "source": "suggested"
+        },
+        "electrical_parameters": {
+          "hfe": {
+            "value": 325.0,
+            "unit": "A/A",
+            "source": "datasheet_midpoint",
+            "estimated": true,
+            "datasheet": {
+              "model": "BC557B",
+              "manufacturer": "onsemi",
+              "url": "https://www.onsemi.com/pdf/datasheet/bc556bta-d.pdf",
+              "page": 2,
+              "checked_at": "2026-10-01",
+              "unit": "A/A",
+              "condition": "VCE = -5 V; IC = -2 mA; TA = 25 °C",
+              "min": 200,
+              "typ": null,
+              "max": 450
+            }
+          },
+          "vbe_on": {
+            "value": -0.66,
+            "unit": "V",
+            "source": "datasheet_typical",
+            "estimated": true,
+            "datasheet": {
+              "model": "BC557B",
+              "manufacturer": "onsemi",
+              "url": "https://www.onsemi.com/pdf/datasheet/bc556bta-d.pdf",
+              "page": 2,
+              "checked_at": "2026-10-01",
+              "unit": "V",
+              "condition": "VCE = -5 V; IC = -2 mA; TA = 25 °C",
+              "min": -0.75,
+              "typ": -0.66,
+              "max": -0.6
+            }
+          }
+        },
+        "parameter_policy": {
+          "hfe": "datasheet",
+          "vbe_on": "datasheet"
+        },
+        "parameter_pending": []
+      }
+    }
+  ],
+  "nets": [
+    {
+      "name": "NET_1",
+      "members": [
+        "Q1.C",
+        "VCC1.VCC"
+      ]
+    },
+    {
+      "name": "NET_2",
+      "members": [
+        "Q1.B"
+      ]
+    },
+    {
+      "name": "NET_4",
+      "members": [
+        "Q1.E"
+      ]
+    }
+  ],
+  "warnings": [
+    {
+      "code": "reference_generated",
+      "component_id": "VCC1",
+      "message": "Referencia atribuida automaticamente; confirmar identificacao."
+    },
+    {
+      "code": "reference_generated",
+      "component_id": "Q1",
+      "message": "Referencia atribuida automaticamente; confirmar identificacao."
+    }
+  ],
+  "confirmed_by_user": false,
+  "status": "draft",
+  "image_independent": true,
+  "source_connectivity_signature": "2191b6a39860fdfb6efb3b401ded08a333ab7a6c86a092f17607e8abec6550ed",
+  "validation": {
+    "structurally_valid": true,
+    "review_required": true,
+    "component_count": 2,
+    "net_count": 3,
+    "pin_count": 4
+  }
+}

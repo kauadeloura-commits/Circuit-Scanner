@@ -1,0 +1,499 @@
+{
+  "schema_version": "circuit-1.0",
+  "project_id": "PRJ_0466",
+  "name": "WhatsApp Image 2026-11-04 at 15.51.34 (1)",
+  "created_at": "2026-11-04T17:24:53-03:00",
+  "components": [
+    {
+      "id": "VCC1",
+      "type": "vcc",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "VCC"
+      ],
+      "metadata": {
+        "source_component_id": "VCC1",
+        "reference_source": "class",
+        "value_source": "missing",
+        "review_required": false,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "R_AUTO1",
+      "type": "resistor",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "1",
+        "2"
+      ],
+      "metadata": {
+        "source_component_id": "R_AUTO1",
+        "reference_source": "generated",
+        "value_source": "missing",
+        "review_required": true,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "R_AUTO2",
+      "type": "resistor",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "1",
+        "2"
+      ],
+      "metadata": {
+        "source_component_id": "R_AUTO2",
+        "reference_source": "generated",
+        "value_source": "missing",
+        "review_required": true,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "Q_AUTO1",
+      "type": "transistor_pnp",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "B",
+        "C",
+        "E"
+      ],
+      "metadata": {
+        "source_component_id": "Q_AUTO1",
+        "reference_source": "generated",
+        "value_source": "not_applicable",
+        "review_required": true,
+        "model": {
+          "text": "BC557B",
+          "source": "suggested",
+          "confidence": null
+        },
+        "electrical_parameters": {
+          "hfe": {
+            "value": 325.0,
+            "unit": "A/A",
+            "source": "datasheet_midpoint",
+            "estimated": true,
+            "datasheet": {
+              "model": "BC557B",
+              "manufacturer": "onsemi",
+              "url": "https://www.onsemi.com/pdf/datasheet/bc556bta-d.pdf",
+              "page": 2,
+              "checked_at": "2026-10-01",
+              "unit": "A/A",
+              "condition": "VCE = -5 V; IC = -2 mA; TA = 25 °C",
+              "min": 200,
+              "typ": null,
+              "max": 450
+            }
+          },
+          "vbe_on": {
+            "value": -0.66,
+            "unit": "V",
+            "source": "datasheet_typical",
+            "estimated": true,
+            "datasheet": {
+              "model": "BC557B",
+              "manufacturer": "onsemi",
+              "url": "https://www.onsemi.com/pdf/datasheet/bc556bta-d.pdf",
+              "page": 2,
+              "checked_at": "2026-10-01",
+              "unit": "V",
+              "condition": "VCE = -5 V; IC = -2 mA; TA = 25 °C",
+              "min": -0.75,
+              "typ": -0.66,
+              "max": -0.6
+            }
+          }
+        },
+        "parameter_policy": {
+          "hfe": "datasheet",
+          "vbe_on": "datasheet"
+        },
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "R_AUTO3",
+      "type": "resistor",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "1",
+        "2"
+      ],
+      "metadata": {
+        "source_component_id": "R_AUTO3",
+        "reference_source": "generated",
+        "value_source": "missing",
+        "review_required": true,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "D_AUTO1",
+      "type": "diode",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "A",
+        "K"
+      ],
+      "metadata": {
+        "source_component_id": "D_AUTO1",
+        "reference_source": "generated",
+        "value_source": "missing",
+        "review_required": true,
+        "model": {
+          "text": "1N4148",
+          "source": "suggested",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {
+          "forward_voltage": "datasheet",
+          "junction_capacitance": "datasheet"
+        },
+        "parameter_pending": [
+          {
+            "parameter": "forward_voltage",
+            "reason": "only_limit",
+            "message": "O datasheet só informa um limite; informe um valor ou confira a condição.",
+            "bounds": {
+              "unit": "V",
+              "condition": "IF = 10 mA; TA = 25 °C; somente máximo especificado",
+              "min": null,
+              "typ": null,
+              "max": 1
+            }
+          },
+          {
+            "parameter": "junction_capacitance",
+            "reason": "only_limit",
+            "message": "O datasheet só informa um limite; informe um valor ou confira a condição.",
+            "bounds": {
+              "unit": "F",
+              "condition": "VR = 0 V; f = 1 MHz; VHF = 50 mV; TA = 25 °C; somente máximo especificado",
+              "min": null,
+              "typ": null,
+              "max": 4e-12
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "R_AUTO4",
+      "type": "resistor",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "1",
+        "2"
+      ],
+      "metadata": {
+        "source_component_id": "R_AUTO4",
+        "reference_source": "generated",
+        "value_source": "missing",
+        "review_required": true,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "R_AUTO5",
+      "type": "resistor",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "1",
+        "2"
+      ],
+      "metadata": {
+        "source_component_id": "R_AUTO5",
+        "reference_source": "generated",
+        "value_source": "missing",
+        "review_required": true,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "GND1",
+      "type": "gnd",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "GND"
+      ],
+      "metadata": {
+        "source_component_id": "GND1",
+        "reference_source": "class",
+        "value_source": "not_applicable",
+        "review_required": false,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "BAT_AUTO1",
+      "type": "battery",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "+",
+        "-"
+      ],
+      "metadata": {
+        "source_component_id": "BAT_AUTO1",
+        "reference_source": "generated",
+        "value_source": "missing",
+        "review_required": true,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "GND2",
+      "type": "gnd",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "GND"
+      ],
+      "metadata": {
+        "source_component_id": "GND2",
+        "reference_source": "class",
+        "value_source": "not_applicable",
+        "review_required": true,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    }
+  ],
+  "nets": [
+    {
+      "name": "GND",
+      "members": [
+        "BAT_AUTO1.-",
+        "GND1.GND",
+        "GND2.GND",
+        "R_AUTO4.2"
+      ]
+    },
+    {
+      "name": "NET_1",
+      "members": [
+        "R_AUTO1.1",
+        "VCC1.VCC"
+      ]
+    },
+    {
+      "name": "NET_2",
+      "members": [
+        "Q_AUTO1.E",
+        "R_AUTO1.2",
+        "R_AUTO2.1"
+      ]
+    },
+    {
+      "name": "NET_3",
+      "members": [
+        "Q_AUTO1.B",
+        "R_AUTO2.2"
+      ]
+    },
+    {
+      "name": "NET_4",
+      "members": [
+        "Q_AUTO1.C",
+        "R_AUTO3.1"
+      ]
+    },
+    {
+      "name": "NET_5",
+      "members": [
+        "D_AUTO1.A",
+        "R_AUTO3.2",
+        "R_AUTO4.1"
+      ]
+    },
+    {
+      "name": "NET_6",
+      "members": [
+        "D_AUTO1.K",
+        "R_AUTO5.1"
+      ]
+    },
+    {
+      "name": "NET_7",
+      "members": [
+        "BAT_AUTO1.+",
+        "R_AUTO5.2"
+      ]
+    }
+  ],
+  "warnings": [
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "R_AUTO1"
+    },
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "R_AUTO2"
+    },
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "Q_AUTO1"
+    },
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "R_AUTO3"
+    },
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "D_AUTO1"
+    },
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "R_AUTO4"
+    },
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "R_AUTO5"
+    },
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "BAT_AUTO1"
+    },
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "GND2"
+    },
+    {
+      "code": "value_missing",
+      "component_id": "R_AUTO1",
+      "message": "Valor do componente nao informado."
+    },
+    {
+      "code": "value_missing",
+      "component_id": "R_AUTO2",
+      "message": "Valor do componente nao informado."
+    },
+    {
+      "code": "value_missing",
+      "component_id": "R_AUTO3",
+      "message": "Valor do componente nao informado."
+    },
+    {
+      "code": "value_missing",
+      "component_id": "R_AUTO4",
+      "message": "Valor do componente nao informado."
+    },
+    {
+      "code": "value_missing",
+      "component_id": "R_AUTO5",
+      "message": "Valor do componente nao informado."
+    },
+    {
+      "code": "value_missing",
+      "component_id": "BAT_AUTO1",
+      "message": "Valor do componente nao informado."
+    }
+  ],
+  "confirmed_by_user": false,
+  "status": "draft",
+  "image_independent": true,
+  "source_connectivity_signature": "aabadc7014725bb2e2b463367aa16484d8f77b8fac07235094e2770ca860576f",
+  "validation": {
+    "structurally_valid": true,
+    "review_required": true,
+    "component_count": 11,
+    "net_count": 8,
+    "pin_count": 20
+  }
+}

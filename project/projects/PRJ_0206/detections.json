@@ -1,0 +1,241 @@
+{
+  "created_at": "2026-09-14T17:23:31-03:00",
+  "model": "models\\circuit_scanner_yolo.pt",
+  "model_sha256": "2858da1cd375145218c4d1d0a6c3e916feaef5896098009cb044eb3c59c3e029",
+  "source_image": "original.png",
+  "source_policy": "original_by_default",
+  "color_invariance": {
+    "enabled": true,
+    "method": "normalized_grayscale_lab_background_distance_plus_binary_bw",
+    "decision": "cross_view_class_consensus_plus_geometry"
+  },
+  "monochrome_input_detected": true,
+  "inference_strategy": "auto",
+  "inference_views": [
+    {
+      "name": "original_color",
+      "imgsz": 640,
+      "raw_detections": 6
+    },
+    {
+      "name": "normalized_grayscale",
+      "imgsz": 640,
+      "raw_detections": 6
+    },
+    {
+      "name": "color_invariant_ink",
+      "imgsz": 640,
+      "raw_detections": 8
+    },
+    {
+      "name": "normalized_binary_bw",
+      "imgsz": 960,
+      "preferred_for_monochrome": true,
+      "raw_detections": 0
+    },
+    {
+      "name": "electronic_symbol_geometry",
+      "detections": 0
+    }
+  ],
+  "confidence_threshold": 0.25,
+  "candidate_confidence_threshold": 0.05,
+  "minimum_single_view_confidence": 0.1625,
+  "imgsz": 640,
+  "image_width": 753,
+  "image_height": 429,
+  "raw_count": 20,
+  "raw_count_by_source": {
+    "original_color": 6,
+    "normalized_grayscale": 6,
+    "color_invariant_ink": 8,
+    "normalized_binary_bw": 0,
+    "electronic_symbol_geometry": 0
+  },
+  "count": 6,
+  "geometry_rejected_count": 0,
+  "geometry_rejections": [],
+  "basic_component_rescue_count": 1,
+  "rescue_mode": false,
+  "review_count": 2,
+  "duplicate_filter": {
+    "cross_class_conflicts": true,
+    "class_consensus": true,
+    "iou_threshold": 0.45,
+    "coverage_threshold": 0.8
+  },
+  "detections": [
+    {
+      "detection_id": "DET_001",
+      "class_id": 0,
+      "class": "resistor",
+      "confidence": 0.17695,
+      "bbox": {
+        "x1": 391.08,
+        "y1": 89.01,
+        "x2": 426.07,
+        "y2": 164.84,
+        "width": 34.98,
+        "height": 75.83,
+        "center_x": 408.57,
+        "center_y": 126.92
+      },
+      "inference_sources": [
+        "color_invariant_ink"
+      ],
+      "best_view_confidence": 0.17695,
+      "consensus_score": 0.17695,
+      "consensus_votes": 1,
+      "alternatives": [],
+      "consensus_margin": 0.17695,
+      "review_required": true,
+      "review_reasons": [
+        "low_confidence",
+        "basic_component_low_confidence_rescue"
+      ],
+      "basic_component_rescue": true
+    },
+    {
+      "detection_id": "DET_002",
+      "class_id": 0,
+      "class": "resistor",
+      "confidence": 0.442383,
+      "bbox": {
+        "x1": 573.99,
+        "y1": 212.03,
+        "x2": 607.98,
+        "y2": 254.46,
+        "width": 33.99,
+        "height": 42.43,
+        "center_x": 590.98,
+        "center_y": 233.25
+      },
+      "inference_sources": [
+        "color_invariant_ink",
+        "normalized_grayscale",
+        "original_color"
+      ],
+      "best_view_confidence": 0.254591,
+      "consensus_score": 0.622802,
+      "consensus_votes": 3,
+      "alternatives": [],
+      "consensus_margin": 0.622802,
+      "review_required": false,
+      "review_reasons": []
+    },
+    {
+      "detection_id": "DET_003",
+      "class_id": 0,
+      "class": "resistor",
+      "confidence": 0.260227,
+      "bbox": {
+        "x1": 524.44,
+        "y1": 222.24,
+        "x2": 551.88,
+        "y2": 273.84,
+        "width": 27.44,
+        "height": 51.6,
+        "center_x": 538.16,
+        "center_y": 248.04
+      },
+      "inference_sources": [
+        "color_invariant_ink",
+        "normalized_grayscale",
+        "original_color"
+      ],
+      "best_view_confidence": 0.108106,
+      "consensus_score": 0.386537,
+      "consensus_votes": 3,
+      "alternatives": [],
+      "consensus_margin": 0.386537,
+      "review_required": true,
+      "review_reasons": [
+        "low_confidence"
+      ]
+    },
+    {
+      "detection_id": "DET_004",
+      "class_id": 0,
+      "class": "resistor",
+      "confidence": 0.576704,
+      "bbox": {
+        "x1": 575.05,
+        "y1": 259.15,
+        "x2": 605.27,
+        "y2": 321.57,
+        "width": 30.23,
+        "height": 62.42,
+        "center_x": 590.16,
+        "center_y": 290.36
+      },
+      "inference_sources": [
+        "color_invariant_ink",
+        "normalized_grayscale",
+        "original_color"
+      ],
+      "best_view_confidence": 0.495724,
+      "consensus_score": 0.763315,
+      "consensus_votes": 3,
+      "alternatives": [],
+      "consensus_margin": 0.763315,
+      "review_required": false,
+      "review_reasons": []
+    },
+    {
+      "detection_id": "DET_005",
+      "class_id": 8,
+      "class": "gnd",
+      "confidence": 0.490235,
+      "bbox": {
+        "x1": 358.93,
+        "y1": 325.8,
+        "x2": 385.87,
+        "y2": 354.73,
+        "width": 26.94,
+        "height": 28.93,
+        "center_x": 372.4,
+        "center_y": 340.26
+      },
+      "inference_sources": [
+        "color_invariant_ink",
+        "normalized_grayscale",
+        "original_color"
+      ],
+      "best_view_confidence": 0.247915,
+      "consensus_score": 0.695128,
+      "consensus_votes": 3,
+      "alternatives": [],
+      "consensus_margin": 0.695128,
+      "review_required": false,
+      "review_reasons": []
+    },
+    {
+      "detection_id": "DET_006",
+      "class_id": 8,
+      "class": "gnd",
+      "confidence": 0.957478,
+      "bbox": {
+        "x1": 388.85,
+        "y1": 339.19,
+        "x2": 429.13,
+        "y2": 371.46,
+        "width": 40.28,
+        "height": 32.27,
+        "center_x": 408.99,
+        "center_y": 355.33
+      },
+      "inference_sources": [
+        "normalized_grayscale",
+        "original_color"
+      ],
+      "best_view_confidence": 0.795961,
+      "consensus_score": 1.63756,
+      "consensus_votes": 2,
+      "alternatives": [],
+      "consensus_margin": 1.63756,
+      "review_required": false,
+      "review_reasons": []
+    }
+  ],
+  "requested_source": "original"
+}

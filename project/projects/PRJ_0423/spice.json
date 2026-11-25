@@ -1,0 +1,169 @@
+{
+  "schema_version": "stage13-spice-1.0",
+  "source_revision": "f3a60409089326cab9d8ac49820e9e3ec874dcb2b647477fa4497b517b04ede6",
+  "options": {
+    "analysis": "op"
+  },
+  "nodes": {
+    "GND": "0",
+    "NET_1": "n2",
+    "NET_2": "n3",
+    "NET_3": "n4",
+    "NET_4": "n5",
+    "NET_9": "n6",
+    "NET_10": "n7",
+    "NET_11": "n8",
+    "NET_12": "n9"
+  },
+  "components": [
+    {
+      "component_id": "C1",
+      "spice_name": "C1",
+      "type": "capacitor",
+      "pins": [
+        "1",
+        "2"
+      ],
+      "nodes": {
+        "1": "n9",
+        "2": "n2"
+      },
+      "value_si": 1e-08
+    },
+    {
+      "component_id": "CAUTO1",
+      "spice_name": "C2",
+      "type": "capacitor_polarized",
+      "pins": [
+        "+",
+        "-"
+      ],
+      "nodes": {
+        "+": "n4",
+        "-": "n5"
+      },
+      "value_si": 1e-07
+    },
+    {
+      "component_id": "L2",
+      "spice_name": "L1",
+      "type": "inductor",
+      "pins": [
+        "1",
+        "2"
+      ],
+      "nodes": {
+        "1": "n8",
+        "2": "0"
+      },
+      "value_si": 0.01,
+      "saturation_current_a": 1.7,
+      "model_code": "SRR6028-100Y"
+    },
+    {
+      "component_id": "QAUTO1",
+      "spice_name": "Q1",
+      "type": "transistor_npn",
+      "pins": [
+        "B",
+        "C",
+        "E"
+      ],
+      "nodes": {
+        "B": "n5",
+        "C": "n2",
+        "E": "n6"
+      },
+      "electrical_model": {
+        "code": "BC547B",
+        "kind": "parameter_fit",
+        "fit": {
+          "vbe_reference_current_a": 0.002,
+          "BF": 58.0,
+          "IS": 1.631774886584049e-14
+        },
+        "parameters": {
+          "hfe": {
+            "value": 58.0,
+            "unit": "A/A",
+            "source": "manual",
+            "estimated": false
+          },
+          "vbe_on": {
+            "value": 0.66,
+            "unit": "V",
+            "source": "datasheet_typical",
+            "estimated": true,
+            "datasheet": {
+              "model": "BC547B",
+              "manufacturer": "onsemi",
+              "url": "https://m.onsemi.com/download/data-sheet/pdf/bc550-d.pdf",
+              "page": 2,
+              "checked_at": "2026-10-01",
+              "unit": "V",
+              "condition": "VCE = 5 V; IC = 2 mA; TC = 25 °C",
+              "min": 0.58,
+              "typ": 0.66,
+              "max": 0.7
+            }
+          }
+        },
+        "pending": []
+      },
+      "current_pins": [
+        "C",
+        "E"
+      ]
+    },
+    {
+      "component_id": "R1",
+      "spice_name": "R1",
+      "type": "resistor",
+      "pins": [
+        "1",
+        "2"
+      ],
+      "nodes": {
+        "1": "n6",
+        "2": "n8"
+      },
+      "value_si": 10000.0
+    },
+    {
+      "component_id": "R2",
+      "spice_name": "R2",
+      "type": "resistor",
+      "pins": [
+        "1",
+        "2"
+      ],
+      "nodes": {
+        "1": "n3",
+        "2": "n4"
+      },
+      "value_si": 27000.0
+    },
+    {
+      "component_id": "VAUTO1",
+      "spice_name": "V1",
+      "type": "source_dc",
+      "pins": [
+        "+",
+        "-"
+      ],
+      "nodes": {
+        "+": "n3",
+        "-": "n7"
+      },
+      "value_si": 5.0
+    }
+  ],
+  "warnings": [
+    "L2: corrente de saturação registrada como referência; o indutor desta simulação é linear.",
+    "QAUTO1: modelo BJT aproximado; hFE define BF. VBE, quando informado, é ajustado a 2 mA/25 °C; variação de ganho, capacitâncias e efeito Early não são caracterizados.",
+    "VCC foi usado como marcador de rede; a alimentação vem das fontes e baterias declaradas."
+  ],
+  "netlist": "Circuit Scanner - confirmed circuit\n.options numdgt=15 reltol=1e-6 abstol=1e-12 vntol=1e-9\nC1 n9 n2 1e-08\nC2 n4 n5 1e-07\nL1 n8 0 0.01\nQ1 n2 n5 n6 CS_Q1\n.model CS_Q1 NPN(BF=58 IS=1.63177488658405e-14)\nR1 n6 n8 10000\nR2 n3 n4 27000\nV1 n3 n7 DC 5\n.save all @c1[i] @c2[i] @l1[i] @q1[ic]\n.op\n.control\nset filetype=ascii\nrun\nwrite simulation.raw all\nquit\n.endc\n.end\n",
+  "netlist_sha256": "ee018714d93032abfbe59e4d29ffe91863a1c06c4211ff93db0cebf6f1868555",
+  "generation_id": "3d554a6e11eb4a4cba9536f82bcaefaa"
+}

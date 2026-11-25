@@ -1,0 +1,250 @@
+{
+  "schema_version": "stage8-wires-1.0",
+  "created_at": "2026-09-27T19:40:00-03:00",
+  "source_image": "original.png",
+  "image_width": 333,
+  "image_height": 379,
+  "method": "opencv_mask_morphology_skeleton_graph",
+  "scope": "stage8_raw_wires_only",
+  "stage9_note": "junction_candidate e cruzamentos ainda não são conexões elétricas confirmadas; isso pertence à Etapa 9.",
+  "parameters": {
+    "mask_components": true,
+    "mask_text": true,
+    "min_segment_length_px": 8.0,
+    "connectivity": 8
+  },
+  "preprocessing": {
+    "otsu_threshold": 174.0,
+    "absolute_dark_limit": 105,
+    "darkness_percentile_p3": 72.0,
+    "strong_local_limit": 152,
+    "background_sigma": 7.0,
+    "component_regions_masked": 1,
+    "ocr_regions_masked": 0,
+    "terminal_regions_preserved": 2,
+    "component_roi_applied": true,
+    "component_roi": {
+      "x1": 251,
+      "y1": 114,
+      "x2": 333,
+      "y2": 219,
+      "margin_px": 37
+    },
+    "component_proximity_filter_applied": true,
+    "component_proximity_px": 12,
+    "kept_candidate_blobs": 2,
+    "removed_candidate_blobs": 3,
+    "terminal_seed_filter_applied": false,
+    "terminal_seed_filter_fallback": true,
+    "terminal_seed_count": 2,
+    "terminal_seed_radius_px": 10,
+    "kept_terminal_seed_blobs": 0,
+    "removed_nonterminal_blobs": 2,
+    "pale_page_rulings_removed": 0,
+    "border_frame_artifacts_removed": 0,
+    "ink_pixels_before_masking": 5607,
+    "wire_mask_pixels": 237,
+    "erased_mask_pixels": 548
+  },
+  "segment_count": 3,
+  "node_count": 6,
+  "endpoint_candidate_count": 5,
+  "junction_candidate_count": 0,
+  "total_wire_length_px": 55.32,
+  "nodes": [
+    {
+      "node_id": "NODE_0001",
+      "position": {
+        "x": 310.5,
+        "y": 157.5
+      },
+      "pixel_count": 2,
+      "raw_branch_count": 3,
+      "kind_candidate": "endpoint_candidate",
+      "segment_degree": 1
+    },
+    {
+      "node_id": "NODE_0002",
+      "position": {
+        "x": 319.8,
+        "y": 157.7
+      },
+      "pixel_count": 10,
+      "raw_branch_count": 2,
+      "kind_candidate": "endpoint_candidate",
+      "segment_degree": 1
+    },
+    {
+      "node_id": "NODE_0003",
+      "position": {
+        "x": 275.0,
+        "y": 158.0
+      },
+      "pixel_count": 1,
+      "raw_branch_count": 1,
+      "kind_candidate": "endpoint_candidate",
+      "segment_degree": 1
+    },
+    {
+      "node_id": "NODE_0004",
+      "position": {
+        "x": 275.8,
+        "y": 174.2
+      },
+      "pixel_count": 5,
+      "raw_branch_count": 2,
+      "kind_candidate": "endpoint_candidate",
+      "segment_degree": 1
+    },
+    {
+      "node_id": "NODE_0005",
+      "position": {
+        "x": 320.4,
+        "y": 173.2
+      },
+      "pixel_count": 5,
+      "raw_branch_count": 3,
+      "kind_candidate": "path_vertex_candidate",
+      "segment_degree": 2
+    },
+    {
+      "node_id": "NODE_0006",
+      "position": {
+        "x": 284.0,
+        "y": 175.0
+      },
+      "pixel_count": 1,
+      "raw_branch_count": 1,
+      "kind_candidate": "endpoint_candidate",
+      "segment_degree": 0
+    }
+  ],
+  "segments": [
+    {
+      "wire_id": "WIRE_0001",
+      "start_node": "NODE_0001",
+      "end_node": "NODE_0005",
+      "start": {
+        "x": 310,
+        "y": 158
+      },
+      "end": {
+        "x": 319,
+        "y": 174
+      },
+      "points": [
+        {
+          "x": 310,
+          "y": 158
+        },
+        {
+          "x": 309,
+          "y": 173
+        },
+        {
+          "x": 319,
+          "y": 174
+        }
+      ],
+      "raw_point_count": 26,
+      "length_px": 26.66,
+      "bbox": {
+        "x1": 309,
+        "y1": 158,
+        "x2": 319,
+        "y2": 174
+      },
+      "angle_degrees": 60.64,
+      "orientation": "diagonal_or_curved",
+      "semantic_status": "unresolved_until_stage9"
+    },
+    {
+      "wire_id": "WIRE_0002",
+      "start_node": "NODE_0002",
+      "end_node": "NODE_0005",
+      "start": {
+        "x": 322,
+        "y": 160
+      },
+      "end": {
+        "x": 322,
+        "y": 172
+      },
+      "points": [
+        {
+          "x": 322,
+          "y": 160
+        },
+        {
+          "x": 324,
+          "y": 165
+        },
+        {
+          "x": 322,
+          "y": 172
+        }
+      ],
+      "raw_point_count": 13,
+      "length_px": 13.66,
+      "bbox": {
+        "x1": 322,
+        "y1": 160,
+        "x2": 324,
+        "y2": 172
+      },
+      "angle_degrees": 90.0,
+      "orientation": "vertical",
+      "semantic_status": "unresolved_until_stage9"
+    },
+    {
+      "wire_id": "WIRE_0003",
+      "start_node": "NODE_0003",
+      "end_node": "NODE_0004",
+      "start": {
+        "x": 275,
+        "y": 158
+      },
+      "end": {
+        "x": 275,
+        "y": 173
+      },
+      "points": [
+        {
+          "x": 275,
+          "y": 158
+        },
+        {
+          "x": 275,
+          "y": 173
+        }
+      ],
+      "raw_point_count": 16,
+      "length_px": 15.0,
+      "bbox": {
+        "x1": 275,
+        "y1": 158,
+        "x2": 275,
+        "y2": 173
+      },
+      "angle_degrees": 90.0,
+      "orientation": "vertical",
+      "semantic_status": "unresolved_until_stage9"
+    }
+  ],
+  "graph_debug": {
+    "raw_skeleton_pixels": 86,
+    "closed_loop_count": 0
+  },
+  "project_id": "PRJ_0368",
+  "generated_from": "terminals",
+  "terminal_context_available": true,
+  "ocr_context_available": false,
+  "transistor_terminal_refinement": {
+    "method": "stage8_wires_class_arrow_E_base_B_leftover_C",
+    "transistor_count": 0,
+    "refined_count": 0,
+    "manual_preserved_count": 0,
+    "review_count": 0,
+    "components": []
+  }
+}

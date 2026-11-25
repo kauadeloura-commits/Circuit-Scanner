@@ -1,0 +1,522 @@
+{
+  "schema_version": "circuit-1.0",
+  "project_id": "PRJ_0440",
+  "name": "WhatsApp Image 2026-10-13 at 21.11.50",
+  "created_at": "2026-10-14T13:55:16-03:00",
+  "components": [
+    {
+      "id": "VCC1",
+      "type": "vcc",
+      "value": "5.0",
+      "value_text": "5.0",
+      "unit": "volt",
+      "pins": [
+        "VCC"
+      ],
+      "metadata": {
+        "source_component_id": "VCC1",
+        "reference_source": "manual",
+        "value_source": "manual",
+        "review_required": false,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "VCC2",
+      "type": "vcc",
+      "value": "10.0",
+      "value_text": "10.0",
+      "unit": "volt",
+      "pins": [
+        "VCC"
+      ],
+      "metadata": {
+        "source_component_id": "VCC2",
+        "reference_source": "manual",
+        "value_source": "manual",
+        "review_required": true,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "CAUTO1",
+      "type": "capacitor_polarized",
+      "value": "1e-05",
+      "value_text": "1e-05",
+      "unit": "farad",
+      "pins": [
+        "+",
+        "-"
+      ],
+      "metadata": {
+        "source_component_id": "CAUTO1",
+        "reference_source": "manual",
+        "value_source": "manual",
+        "review_required": true,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "RAUTO1",
+      "type": "resistor",
+      "value": "10000.0",
+      "value_text": "10000.0",
+      "unit": "ohm",
+      "pins": [
+        "1",
+        "2"
+      ],
+      "metadata": {
+        "source_component_id": "RAUTO1",
+        "reference_source": "manual",
+        "value_source": "manual",
+        "review_required": true,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "UAUTO1",
+      "type": "opamp",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "+",
+        "-",
+        "OUT"
+      ],
+      "metadata": {
+        "source_component_id": "UAUTO1",
+        "reference_source": "manual",
+        "value_source": "not_applicable",
+        "review_required": true,
+        "model": {
+          "text": "LM324",
+          "source": "ocr",
+          "confidence": 84.11632190586803
+        },
+        "electrical_parameters": {
+          "open_loop_gain": {
+            "value": 100000.0,
+            "unit": "V/V",
+            "source": "manual_simulator",
+            "estimated": false
+          },
+          "gbw": {
+            "value": 700000,
+            "unit": "Hz",
+            "source": "datasheet_typical",
+            "estimated": true,
+            "datasheet": {
+              "model": "LM358",
+              "url": "https://www.ti.com/lit/ds/symlink/lm358.pdf",
+              "manufacturer": "Texas Instruments",
+              "page": "10–14",
+              "checked_at": "2026-10-01",
+              "unit": "Hz",
+              "condition": "TA = 25 °C; variante clássica, sem sufixo B",
+              "min": null,
+              "typ": 700000,
+              "max": null,
+              "reference_only": true
+            }
+          },
+          "slew_rate": {
+            "value": 0.3,
+            "unit": "V/us",
+            "source": "datasheet_typical",
+            "estimated": true,
+            "datasheet": {
+              "model": "LM358",
+              "url": "https://www.ti.com/lit/ds/symlink/lm358.pdf",
+              "manufacturer": "Texas Instruments",
+              "page": "10–14",
+              "checked_at": "2026-10-01",
+              "unit": "V/us",
+              "condition": "G = +1; TA = 25 °C; variante clássica",
+              "min": null,
+              "typ": 0.3,
+              "max": null,
+              "reference_only": true
+            }
+          }
+        },
+        "parameter_policy": {
+          "open_loop_gain": "datasheet",
+          "gbw": "datasheet",
+          "slew_rate": "datasheet",
+          "offset_voltage": "datasheet"
+        },
+        "parameter_pending": [
+          {
+            "parameter": "offset_voltage",
+            "reason": "not_found",
+            "message": "Parâmetro sem datasheet verificado para este modelo.",
+            "bounds": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "QAUTO1",
+      "type": "transistor_npn",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "B",
+        "C",
+        "E"
+      ],
+      "metadata": {
+        "source_component_id": "QAUTO1",
+        "reference_source": "manual",
+        "value_source": "not_applicable",
+        "review_required": true,
+        "model": {
+          "text": "BC547B",
+          "source": "suggested",
+          "confidence": null
+        },
+        "electrical_parameters": {
+          "hfe": {
+            "value": 57.0,
+            "unit": "A/A",
+            "source": "manual_simulator",
+            "estimated": false
+          },
+          "vbe_on": {
+            "value": 0.66,
+            "unit": "V",
+            "source": "datasheet_typical",
+            "estimated": true,
+            "datasheet": {
+              "model": "BC547B",
+              "manufacturer": "onsemi",
+              "url": "https://m.onsemi.com/download/data-sheet/pdf/bc550-d.pdf",
+              "page": 2,
+              "checked_at": "2026-10-01",
+              "unit": "V",
+              "condition": "VCE = 5 V; IC = 2 mA; TC = 25 °C",
+              "min": 0.58,
+              "typ": 0.66,
+              "max": 0.7
+            }
+          }
+        },
+        "parameter_policy": {
+          "hfe": "datasheet",
+          "vbe_on": "datasheet"
+        },
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "RAUTO2",
+      "type": "resistor",
+      "value": "2000.0",
+      "value_text": "2000.0",
+      "unit": "ohm",
+      "pins": [
+        "1",
+        "2"
+      ],
+      "metadata": {
+        "source_component_id": "RAUTO2",
+        "reference_source": "manual",
+        "value_source": "manual",
+        "review_required": true,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "GND1",
+      "type": "gnd",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "GND"
+      ],
+      "metadata": {
+        "source_component_id": "GND1",
+        "reference_source": "manual",
+        "value_source": "not_applicable",
+        "review_required": false,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "GND2",
+      "type": "gnd",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "GND"
+      ],
+      "metadata": {
+        "source_component_id": "GND2",
+        "reference_source": "manual",
+        "value_source": "not_applicable",
+        "review_required": false,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "RAUTO3",
+      "type": "resistor",
+      "value": "5000.0",
+      "value_text": "5000.0",
+      "unit": "ohm",
+      "pins": [
+        "1",
+        "2"
+      ],
+      "metadata": {
+        "source_component_id": "RAUTO3",
+        "reference_source": "manual",
+        "value_source": "manual",
+        "review_required": false,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "GND3",
+      "type": "gnd",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "GND"
+      ],
+      "metadata": {
+        "source_component_id": "GND3",
+        "reference_source": "manual",
+        "value_source": "not_applicable",
+        "review_required": false,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    }
+  ],
+  "nets": [
+    {
+      "name": "NET_1",
+      "members": [
+        "VCC1.VCC"
+      ]
+    },
+    {
+      "name": "NET_2",
+      "members": [
+        "VCC2.VCC"
+      ]
+    },
+    {
+      "name": "NET_3",
+      "members": [
+        "CAUTO1.+"
+      ]
+    },
+    {
+      "name": "NET_4",
+      "members": [
+        "CAUTO1.-",
+        "QAUTO1.C"
+      ]
+    },
+    {
+      "name": "NET_5",
+      "members": [
+        "RAUTO1.1"
+      ]
+    },
+    {
+      "name": "NET_6",
+      "members": [
+        "RAUTO1.2",
+        "RAUTO2.1"
+      ]
+    },
+    {
+      "name": "NET_7",
+      "members": [
+        "UAUTO1.-"
+      ]
+    },
+    {
+      "name": "NET_8",
+      "members": [
+        "UAUTO1.+"
+      ]
+    },
+    {
+      "name": "NET_9",
+      "members": [
+        "QAUTO1.B",
+        "UAUTO1.OUT"
+      ]
+    },
+    {
+      "name": "NET_10",
+      "members": [
+        "QAUTO1.E"
+      ]
+    },
+    {
+      "name": "GND",
+      "members": [
+        "GND1.GND",
+        "GND2.GND",
+        "GND3.GND",
+        "RAUTO2.2"
+      ]
+    },
+    {
+      "name": "NET_12",
+      "members": [
+        "RAUTO3.1"
+      ]
+    },
+    {
+      "name": "NET_13",
+      "members": [
+        "RAUTO3.2"
+      ]
+    }
+  ],
+  "warnings": [
+    {
+      "code": "single_pin_net",
+      "net": "NET_1",
+      "message": "Rede com um unico pino; confira se esta aberta intencionalmente.",
+      "blocking": false
+    },
+    {
+      "code": "single_pin_net",
+      "net": "NET_2",
+      "message": "Rede com um unico pino; confira se esta aberta intencionalmente.",
+      "blocking": false
+    },
+    {
+      "code": "single_pin_net",
+      "net": "NET_3",
+      "message": "Rede com um unico pino; confira se esta aberta intencionalmente.",
+      "blocking": false
+    },
+    {
+      "code": "single_pin_net",
+      "net": "NET_5",
+      "message": "Rede com um unico pino; confira se esta aberta intencionalmente.",
+      "blocking": false
+    },
+    {
+      "code": "single_pin_net",
+      "net": "NET_7",
+      "message": "Rede com um unico pino; confira se esta aberta intencionalmente.",
+      "blocking": false
+    },
+    {
+      "code": "single_pin_net",
+      "net": "NET_8",
+      "message": "Rede com um unico pino; confira se esta aberta intencionalmente.",
+      "blocking": false
+    },
+    {
+      "code": "single_pin_net",
+      "net": "NET_10",
+      "message": "Rede com um unico pino; confira se esta aberta intencionalmente.",
+      "blocking": false
+    },
+    {
+      "code": "single_pin_net",
+      "net": "NET_12",
+      "message": "Rede com um unico pino; confira se esta aberta intencionalmente.",
+      "blocking": false
+    },
+    {
+      "code": "single_pin_net",
+      "net": "NET_13",
+      "message": "Rede com um unico pino; confira se esta aberta intencionalmente.",
+      "blocking": false
+    }
+  ],
+  "confirmed_by_user": true,
+  "status": "confirmed",
+  "image_independent": true,
+  "source_connectivity_signature": "c8ed620804292aa5167cd3679f23008b279c3bcf1c56d86e4d062fc730934b5c",
+  "validation": {
+    "structurally_valid": true,
+    "component_count": 11,
+    "net_count": 13,
+    "pin_count": 19,
+    "review_required": true
+  },
+  "review": {
+    "visual_connections_edited": true,
+    "edit_source": "falstad"
+  }
+}

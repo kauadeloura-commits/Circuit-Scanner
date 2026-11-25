@@ -1,0 +1,586 @@
+{
+  "schema_version": "circuit-1.0",
+  "project_id": "PRJ_0484",
+  "name": "Ensaio pautas pautado W05",
+  "created_at": "2026-11-11T18:45:07-03:00",
+  "components": [
+    {
+      "id": "VCC1",
+      "type": "vcc",
+      "value": "5",
+      "value_text": "5V",
+      "unit": "volt",
+      "pins": [
+        "VCC"
+      ],
+      "metadata": {
+        "source_component_id": "VCC1",
+        "reference_source": "class",
+        "value_source": "ocr",
+        "review_required": false,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "R1",
+      "type": "resistor",
+      "value": "10",
+      "value_text": "10Ω",
+      "unit": "ohm",
+      "pins": [
+        "1",
+        "2"
+      ],
+      "metadata": {
+        "source_component_id": "R1",
+        "reference_source": "ocr",
+        "value_source": "ocr",
+        "review_required": true,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "D1",
+      "type": "diode",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "A",
+        "K"
+      ],
+      "metadata": {
+        "source_component_id": "D1",
+        "reference_source": "ocr",
+        "value_source": "missing",
+        "review_required": false,
+        "model": {
+          "text": "1N4148",
+          "source": "suggested",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {
+          "forward_voltage": "datasheet",
+          "junction_capacitance": "datasheet"
+        },
+        "parameter_pending": [
+          {
+            "parameter": "forward_voltage",
+            "reason": "only_limit",
+            "message": "O datasheet só informa um limite; informe um valor ou confira a condição.",
+            "bounds": {
+              "unit": "V",
+              "condition": "IF = 10 mA; TA = 25 °C; somente máximo especificado",
+              "min": null,
+              "typ": null,
+              "max": 1
+            }
+          },
+          {
+            "parameter": "junction_capacitance",
+            "reason": "only_limit",
+            "message": "O datasheet só informa um limite; informe um valor ou confira a condição.",
+            "bounds": {
+              "unit": "F",
+              "condition": "VR = 0 V; f = 1 MHz; VHF = 50 mV; TA = 25 °C; somente máximo especificado",
+              "min": null,
+              "typ": null,
+              "max": 4e-12
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "VCC2",
+      "type": "vcc",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [],
+      "metadata": {
+        "source_component_id": "VCC2",
+        "reference_source": "class",
+        "value_source": "missing",
+        "review_required": false,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "LED_AUTO1",
+      "type": "led",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "A",
+        "K"
+      ],
+      "metadata": {
+        "source_component_id": "LED_AUTO1",
+        "reference_source": "generated",
+        "value_source": "not_applicable",
+        "review_required": true,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "VCC3",
+      "type": "vcc",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [],
+      "metadata": {
+        "source_component_id": "VCC3",
+        "reference_source": "class",
+        "value_source": "missing",
+        "review_required": false,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "D_AUTO1",
+      "type": "diode",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "A",
+        "K"
+      ],
+      "metadata": {
+        "source_component_id": "D_AUTO1",
+        "reference_source": "generated",
+        "value_source": "missing",
+        "review_required": true,
+        "model": {
+          "text": "1N4148",
+          "source": "suggested",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {
+          "forward_voltage": "datasheet",
+          "junction_capacitance": "datasheet"
+        },
+        "parameter_pending": [
+          {
+            "parameter": "forward_voltage",
+            "reason": "only_limit",
+            "message": "O datasheet só informa um limite; informe um valor ou confira a condição.",
+            "bounds": {
+              "unit": "V",
+              "condition": "IF = 10 mA; TA = 25 °C; somente máximo especificado",
+              "min": null,
+              "typ": null,
+              "max": 1
+            }
+          },
+          {
+            "parameter": "junction_capacitance",
+            "reason": "only_limit",
+            "message": "O datasheet só informa um limite; informe um valor ou confira a condição.",
+            "bounds": {
+              "unit": "F",
+              "condition": "VR = 0 V; f = 1 MHz; VHF = 50 mV; TA = 25 °C; somente máximo especificado",
+              "min": null,
+              "typ": null,
+              "max": 4e-12
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "R2",
+      "type": "resistor",
+      "value": "1000",
+      "value_text": "1kΩ",
+      "unit": "ohm",
+      "pins": [
+        "1",
+        "2"
+      ],
+      "metadata": {
+        "source_component_id": "R2",
+        "reference_source": "ocr",
+        "value_source": "ocr",
+        "review_required": false,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "R4",
+      "type": "resistor",
+      "value": "10000",
+      "value_text": "10k",
+      "unit": "ohm",
+      "pins": [
+        "1",
+        "2"
+      ],
+      "metadata": {
+        "source_component_id": "R4",
+        "reference_source": "ocr",
+        "value_source": "ocr",
+        "review_required": true,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "T1",
+      "type": "transistor_npn",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "B",
+        "C",
+        "E"
+      ],
+      "metadata": {
+        "source_component_id": "T1",
+        "reference_source": "ocr",
+        "value_source": "not_applicable",
+        "review_required": false,
+        "model": {
+          "text": "BC547B",
+          "source": "suggested",
+          "confidence": null
+        },
+        "electrical_parameters": {
+          "hfe": {
+            "value": 325.0,
+            "unit": "A/A",
+            "source": "datasheet_midpoint",
+            "estimated": true,
+            "datasheet": {
+              "model": "BC547B",
+              "manufacturer": "onsemi",
+              "url": "https://m.onsemi.com/download/data-sheet/pdf/bc550-d.pdf",
+              "page": 2,
+              "checked_at": "2026-10-01",
+              "unit": "A/A",
+              "condition": "VCE = 5 V; IC = 2 mA; TC = 25 °C",
+              "min": 200,
+              "typ": null,
+              "max": 450
+            }
+          },
+          "vbe_on": {
+            "value": 0.66,
+            "unit": "V",
+            "source": "datasheet_typical",
+            "estimated": true,
+            "datasheet": {
+              "model": "BC547B",
+              "manufacturer": "onsemi",
+              "url": "https://m.onsemi.com/download/data-sheet/pdf/bc550-d.pdf",
+              "page": 2,
+              "checked_at": "2026-10-01",
+              "unit": "V",
+              "condition": "VCE = 5 V; IC = 2 mA; TC = 25 °C",
+              "min": 0.58,
+              "typ": 0.66,
+              "max": 0.7
+            }
+          }
+        },
+        "parameter_policy": {
+          "hfe": "datasheet",
+          "vbe_on": "datasheet"
+        },
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "R5",
+      "type": "resistor",
+      "value": "1200",
+      "value_text": "1.2k",
+      "unit": "ohm",
+      "pins": [
+        "1",
+        "2"
+      ],
+      "metadata": {
+        "source_component_id": "R5",
+        "reference_source": "ocr",
+        "value_source": "ocr",
+        "review_required": true,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "R3",
+      "type": "resistor",
+      "value": "22",
+      "value_text": "22Ω",
+      "unit": "ohm",
+      "pins": [
+        "1",
+        "2"
+      ],
+      "metadata": {
+        "source_component_id": "R3",
+        "reference_source": "ocr",
+        "value_source": "ocr",
+        "review_required": false,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "GND1",
+      "type": "gnd",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "GND"
+      ],
+      "metadata": {
+        "source_component_id": "GND1",
+        "reference_source": "class",
+        "value_source": "not_applicable",
+        "review_required": false,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "GND2",
+      "type": "gnd",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "GND"
+      ],
+      "metadata": {
+        "source_component_id": "GND2",
+        "reference_source": "class",
+        "value_source": "not_applicable",
+        "review_required": false,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    }
+  ],
+  "nets": [
+    {
+      "name": "GND",
+      "members": [
+        "GND1.GND",
+        "GND2.GND",
+        "R3.2",
+        "R5.2"
+      ]
+    },
+    {
+      "name": "NET_1",
+      "members": [
+        "D1.A"
+      ]
+    },
+    {
+      "name": "NET_2",
+      "members": [
+        "D1.K",
+        "LED_AUTO1.A"
+      ]
+    },
+    {
+      "name": "NET_3",
+      "members": [
+        "D_AUTO1.A",
+        "LED_AUTO1.K"
+      ]
+    },
+    {
+      "name": "NET_4",
+      "members": [
+        "R2.1"
+      ]
+    },
+    {
+      "name": "NET_5",
+      "members": [
+        "D_AUTO1.K",
+        "R4.1"
+      ]
+    },
+    {
+      "name": "NET_6",
+      "members": [
+        "R2.2",
+        "T1.C"
+      ]
+    },
+    {
+      "name": "NET_7",
+      "members": [
+        "R4.2",
+        "R5.1",
+        "T1.B"
+      ]
+    },
+    {
+      "name": "NET_8",
+      "members": [
+        "R3.1",
+        "T1.E"
+      ]
+    },
+    {
+      "name": "NET_9",
+      "members": [
+        "R1.1",
+        "VCC1.VCC"
+      ]
+    },
+    {
+      "name": "NET_10",
+      "members": [
+        "R1.2"
+      ]
+    }
+  ],
+  "warnings": [
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "R1"
+    },
+    {
+      "code": "unconnected_pin",
+      "message": "Pino sem fio externo confirmado.",
+      "terminal_ref": "R1.2"
+    },
+    {
+      "code": "pin_count_mismatch",
+      "message": "Quantidade ou nomes de pinos incompletos.",
+      "component_id": "VCC2",
+      "expected_pins": [
+        "VCC"
+      ],
+      "observed_pins": []
+    },
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "LED_AUTO1"
+    },
+    {
+      "code": "pin_count_mismatch",
+      "message": "Quantidade ou nomes de pinos incompletos.",
+      "component_id": "VCC3",
+      "expected_pins": [
+        "VCC"
+      ],
+      "observed_pins": []
+    },
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "D_AUTO1"
+    },
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "R4"
+    },
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "R5"
+    }
+  ],
+  "confirmed_by_user": false,
+  "status": "draft",
+  "image_independent": true,
+  "source_connectivity_signature": "9e90dbaaef7a29856e0ca0536b899f7febd5f050a7ff99962d5fda5f46a4e434",
+  "validation": {
+    "structurally_valid": true,
+    "review_required": true,
+    "component_count": 14,
+    "net_count": 11,
+    "pin_count": 22
+  }
+}

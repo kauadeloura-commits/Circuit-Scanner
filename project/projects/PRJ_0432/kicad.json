@@ -1,0 +1,243 @@
+{
+  "schema_version": "stage15-16-kicad-1.0",
+  "source_revision": "d11b423f375892f0781870e7d96aad8be8e323eea93573fecb3a82f29180d2ca",
+  "options": {
+    "pcb": true,
+    "width_mm": 188.0,
+    "height_mm": 30.0,
+    "footprints": {
+      "VCC1": "terminal_1",
+      "R1": "terminal_2",
+      "R3": "terminal_2",
+      "QAUTO1": "terminal_3",
+      "R4": "terminal_2",
+      "R2": "terminal_2",
+      "GND1": "terminal_1",
+      "GND2": "terminal_1"
+    },
+    "columns": 8
+  },
+  "components": [
+    {
+      "component_id": "VCC1",
+      "reference": "VCC1",
+      "type": "vcc",
+      "symbol_uuid": "1fa980b3-5233-5365-b0f7-797fd8b10322",
+      "pins": {
+        "VCC": "1"
+      },
+      "footprint": "terminal_1",
+      "nets": {
+        "VCC": "NET_1"
+      }
+    },
+    {
+      "component_id": "R1",
+      "reference": "R1",
+      "type": "resistor",
+      "symbol_uuid": "c582d6ec-37d0-55be-aa5e-ecb8076367e6",
+      "pins": {
+        "1": "1",
+        "2": "2"
+      },
+      "footprint": "terminal_2",
+      "nets": {
+        "1": "NET_1",
+        "2": "NET_2"
+      }
+    },
+    {
+      "component_id": "R3",
+      "reference": "R3",
+      "type": "resistor",
+      "symbol_uuid": "3efc9b83-e1f3-5adc-bd85-8ec1bc9e7722",
+      "pins": {
+        "1": "1",
+        "2": "2"
+      },
+      "footprint": "terminal_2",
+      "nets": {
+        "1": "NET_1",
+        "2": "NET_3"
+      }
+    },
+    {
+      "component_id": "QAUTO1",
+      "reference": "QAUTO1",
+      "type": "transistor_npn",
+      "symbol_uuid": "752b64a2-6ef6-558e-9da4-1dcc3c86c056",
+      "pins": {
+        "B": "1",
+        "C": "2",
+        "E": "3"
+      },
+      "footprint": "terminal_3",
+      "nets": {
+        "B": "NET_3",
+        "C": "NET_2",
+        "E": "NET_4"
+      }
+    },
+    {
+      "component_id": "R4",
+      "reference": "R4",
+      "type": "resistor",
+      "symbol_uuid": "f413474a-d465-5814-936e-2efed556306a",
+      "pins": {
+        "1": "1",
+        "2": "2"
+      },
+      "footprint": "terminal_2",
+      "nets": {
+        "1": "NET_3",
+        "2": "GND"
+      }
+    },
+    {
+      "component_id": "R2",
+      "reference": "R2",
+      "type": "resistor",
+      "symbol_uuid": "84ef8a23-d5bb-50b2-aaa9-df54b1d32dfd",
+      "pins": {
+        "1": "1",
+        "2": "2"
+      },
+      "footprint": "terminal_2",
+      "nets": {
+        "1": "NET_4",
+        "2": "GND"
+      }
+    },
+    {
+      "component_id": "GND1",
+      "reference": "GND1",
+      "type": "gnd",
+      "symbol_uuid": "b380ef25-7f1b-53ea-b8b1-0f995da92822",
+      "pins": {
+        "GND": "1"
+      },
+      "footprint": "terminal_1",
+      "nets": {
+        "GND": "GND"
+      }
+    },
+    {
+      "component_id": "GND2",
+      "reference": "GND2",
+      "type": "gnd",
+      "symbol_uuid": "516add15-58eb-5968-a5cc-a237927d544f",
+      "pins": {
+        "GND": "1"
+      },
+      "footprint": "terminal_1",
+      "nets": {
+        "GND": "GND"
+      }
+    }
+  ],
+  "warnings": [
+    "PCB com roteamento inicial: confira encapsulamentos, dimensões e regras no KiCad antes de fabricar.",
+    "QAUTO1: PCB usa conector dos sinais; escolha o encapsulamento físico para montar o transistor."
+  ],
+  "schematic": true,
+  "pcb": true,
+  "routed": true,
+  "routing": {
+    "strategy": "two_layer_astar",
+    "grid_mm": 0.5,
+    "track_width_mm": 0.25,
+    "clearance_mm": 0.25,
+    "tracks": 46,
+    "vias": 0,
+    "nets": [
+      {
+        "net": "GND",
+        "pad_count": 4,
+        "connected_members": [
+          "R4.2",
+          "R2.2",
+          "GND1.GND",
+          "GND2.GND"
+        ],
+        "unrouted_members": []
+      },
+      {
+        "net": "NET_1",
+        "pad_count": 3,
+        "connected_members": [
+          "VCC1.VCC",
+          "R1.1",
+          "R3.1"
+        ],
+        "unrouted_members": []
+      },
+      {
+        "net": "NET_3",
+        "pad_count": 3,
+        "connected_members": [
+          "R3.2",
+          "QAUTO1.B",
+          "R4.1"
+        ],
+        "unrouted_members": []
+      },
+      {
+        "net": "NET_2",
+        "pad_count": 2,
+        "connected_members": [
+          "R1.2",
+          "QAUTO1.C"
+        ],
+        "unrouted_members": []
+      },
+      {
+        "net": "NET_4",
+        "pad_count": 2,
+        "connected_members": [
+          "QAUTO1.E",
+          "R2.1"
+        ],
+        "unrouted_members": []
+      }
+    ],
+    "complete": true,
+    "duration_seconds": 0.087
+  },
+  "format_version": "KiCad 7+",
+  "files": [
+    "CircuitScanner.kicad_sym",
+    "CircuitScanner.pretty/terminal_1.kicad_mod",
+    "CircuitScanner.pretty/terminal_2.kicad_mod",
+    "CircuitScanner.pretty/terminal_3.kicad_mod",
+    "board.kicad_pcb",
+    "circuitjs.json",
+    "circuitjs.txt",
+    "fp-lib-table",
+    "pcb_routing.json",
+    "schematic.kicad_pcb",
+    "schematic.kicad_pro",
+    "schematic.kicad_sch",
+    "schematic.svg",
+    "schematic_layout.json",
+    "sym-lib-table"
+  ],
+  "layout_version": "photo-routes-grid-local-grounds-6",
+  "source_layout": "image",
+  "hashes": {
+    "schematic.kicad_sch": "a2922a83c6317f1329dbf7f1f9c696fb8c73696c647524b256e2f5f9e2091e09",
+    "schematic.svg": "16271597adda2f98d14461e81890544088cef2fd704e0aa96134f7346fcb8116",
+    "schematic_layout.json": "847088ec680541f5432dd36ab67d74b45830b3ff170cb4d63e420753bd95ca56",
+    "CircuitScanner.kicad_sym": "8657335ecc3a96597df53b799aea1b1c31bb2e0ee3e2f3f1d4bb898cba0ea09d",
+    "sym-lib-table": "7c00eb92da5e316c770ee08f66f0a0ef3a51dd8bf6000047dcc1ef606a9a12c0",
+    "fp-lib-table": "e75782b85d6b5eeb7c7f13c8945c45bd7b98c38cb2df0af7a3a40211da5d99c7",
+    "schematic.kicad_pro": "7b5ed316dd65957915616760766267381e1dbc1c97a73739e452423f8fb6f966",
+    "CircuitScanner.pretty/terminal_1.kicad_mod": "b32ba3bb3d24d95c5141a34ca96b2152e64d1429b565b6a532a674080600a23a",
+    "CircuitScanner.pretty/terminal_2.kicad_mod": "c817b58a86e57f7a541764eb18a04bc583e946416c355ee72fdfef8a0f2f204b",
+    "CircuitScanner.pretty/terminal_3.kicad_mod": "4a07b39bf277b20e7c07f4df9c24884ccce8515d68c0261a277a2a93dcad49ad",
+    "pcb_routing.json": "b3214741a0e1f5f938224f50b4e0767158ad521cec89563a5396dcf81a5250b3",
+    "board.kicad_pcb": "17fdb058315217f36d3ef58f02a53da5e5bf23acd787cc57f6ca6db775af7043",
+    "schematic.kicad_pcb": "17fdb058315217f36d3ef58f02a53da5e5bf23acd787cc57f6ca6db775af7043",
+    "circuitjs.txt": "e6e202b67587965f9785bda4066df0be7fa270cc01d09628ec1aa02409c0545e",
+    "circuitjs.json": "c45a05d31b2d14d886decee11aed47b00ab1793567ada81919286b1ac75bba51"
+  }
+}

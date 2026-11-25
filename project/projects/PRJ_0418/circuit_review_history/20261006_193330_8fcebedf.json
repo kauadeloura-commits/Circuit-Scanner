@@ -1,0 +1,1449 @@
+{
+  "schema_version": "circuit-1.0",
+  "project_id": "PRJ_0418",
+  "name": "WhatsApp Image 2026-10-01 at 10.15.19",
+  "created_at": "2026-10-06T19:32:40-03:00",
+  "components": [
+    {
+      "id": "VAUTO1",
+      "type": "source_dc",
+      "value": "12V",
+      "value_text": "12V",
+      "unit": "volt",
+      "pins": [
+        "+",
+        "-"
+      ],
+      "metadata": {
+        "source_component_id": "VAUTO1",
+        "reference_source": "manual",
+        "value_source": "manual",
+        "review_required": false,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "GND1",
+      "type": "gnd",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "GND"
+      ],
+      "metadata": {
+        "source_component_id": "GND1",
+        "reference_source": "manual",
+        "value_source": "not_applicable",
+        "review_required": true,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "RAUTO1",
+      "type": "resistor",
+      "value": "22",
+      "value_text": "22",
+      "unit": "ohm",
+      "pins": [
+        "1",
+        "2"
+      ],
+      "metadata": {
+        "source_component_id": "RAUTO1",
+        "reference_source": "manual",
+        "value_source": "manual",
+        "review_required": false,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "CAUTO1",
+      "type": "capacitor",
+      "value": "10nF",
+      "value_text": "10nF",
+      "unit": "farad",
+      "pins": [
+        "1",
+        "2"
+      ],
+      "metadata": {
+        "source_component_id": "CAUTO1",
+        "reference_source": "manual",
+        "value_source": "manual",
+        "review_required": false,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "L2",
+      "type": "inductor",
+      "value": "100mH",
+      "value_text": "100mH",
+      "unit": "henry",
+      "pins": [
+        "1",
+        "2"
+      ],
+      "metadata": {
+        "source_component_id": "L2",
+        "reference_source": "manual",
+        "value_source": "manual",
+        "review_required": false,
+        "model": {
+          "text": "SRR6028-100Y",
+          "source": "suggested",
+          "confidence": null
+        },
+        "electrical_parameters": {
+          "saturation_current": {
+            "value": 1.7,
+            "unit": "A",
+            "source": "datasheet_typical",
+            "estimated": true,
+            "datasheet": {
+              "model": "SRR6028-100Y",
+              "manufacturer": "Bourns",
+              "url": "https://www.bourns.com/docs/Product-Datasheets/SRR6028.pdf",
+              "page": 1,
+              "checked_at": "2026-10-01",
+              "unit": "A",
+              "condition": "Isat da tabela; redução típica de 35% da indutância",
+              "min": null,
+              "typ": 1.7,
+              "max": null
+            }
+          }
+        },
+        "parameter_policy": {
+          "saturation_current": "datasheet",
+          "initial_current": "manual"
+        },
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "QAUTO1",
+      "type": "transistor_npn",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "B",
+        "C",
+        "E"
+      ],
+      "metadata": {
+        "source_component_id": "QAUTO1",
+        "reference_source": "manual",
+        "value_source": "not_applicable",
+        "review_required": false,
+        "model": {
+          "text": "BC547B",
+          "source": "suggested",
+          "confidence": null
+        },
+        "electrical_parameters": {
+          "hfe": {
+            "value": 325.0,
+            "unit": "A/A",
+            "source": "datasheet_midpoint",
+            "estimated": true,
+            "datasheet": {
+              "model": "BC547B",
+              "manufacturer": "onsemi",
+              "url": "https://m.onsemi.com/download/data-sheet/pdf/bc550-d.pdf",
+              "page": 2,
+              "checked_at": "2026-10-01",
+              "unit": "A/A",
+              "condition": "VCE = 5 V; IC = 2 mA; TC = 25 °C",
+              "min": 200,
+              "typ": null,
+              "max": 450
+            }
+          },
+          "vbe_on": {
+            "value": 0.66,
+            "unit": "V",
+            "source": "datasheet_typical",
+            "estimated": true,
+            "datasheet": {
+              "model": "BC547B",
+              "manufacturer": "onsemi",
+              "url": "https://m.onsemi.com/download/data-sheet/pdf/bc550-d.pdf",
+              "page": 2,
+              "checked_at": "2026-10-01",
+              "unit": "V",
+              "condition": "VCE = 5 V; IC = 2 mA; TC = 25 °C",
+              "min": 0.58,
+              "typ": 0.66,
+              "max": 0.7
+            }
+          }
+        },
+        "parameter_policy": {
+          "hfe": "datasheet",
+          "vbe_on": "datasheet"
+        },
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "BATAUTO1",
+      "type": "battery",
+      "value": "10V",
+      "value_text": "10V",
+      "unit": "volt",
+      "pins": [
+        "+",
+        "-"
+      ],
+      "metadata": {
+        "source_component_id": "BATAUTO1",
+        "reference_source": "manual",
+        "value_source": "manual",
+        "review_required": false,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "CAUTO2",
+      "type": "capacitor_polarized",
+      "value": "1nF",
+      "value_text": "1nF",
+      "unit": "farad",
+      "pins": [
+        "+",
+        "-"
+      ],
+      "metadata": {
+        "source_component_id": "CAUTO2",
+        "reference_source": "manual",
+        "value_source": "manual",
+        "review_required": false,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "GND2",
+      "type": "gnd",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "GND"
+      ],
+      "metadata": {
+        "source_component_id": "GND2",
+        "reference_source": "manual",
+        "value_source": "not_applicable",
+        "review_required": true,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "RAUTO2",
+      "type": "resistor",
+      "value": "1000",
+      "value_text": "1K",
+      "unit": "ohm",
+      "pins": [
+        "1",
+        "2"
+      ],
+      "metadata": {
+        "source_component_id": "RAUTO2",
+        "reference_source": "manual",
+        "value_source": "manual",
+        "review_required": true,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "QAUTO2",
+      "type": "transistor_pnp",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "B",
+        "C",
+        "E"
+      ],
+      "metadata": {
+        "source_component_id": "QAUTO2",
+        "reference_source": "manual",
+        "value_source": "not_applicable",
+        "review_required": false,
+        "model": {
+          "text": "BC557B",
+          "source": "suggested",
+          "confidence": null
+        },
+        "electrical_parameters": {
+          "hfe": {
+            "value": 325.0,
+            "unit": "A/A",
+            "source": "datasheet_midpoint",
+            "estimated": true,
+            "datasheet": {
+              "model": "BC557B",
+              "manufacturer": "onsemi",
+              "url": "https://www.onsemi.com/pdf/datasheet/bc556bta-d.pdf",
+              "page": 2,
+              "checked_at": "2026-10-01",
+              "unit": "A/A",
+              "condition": "VCE = -5 V; IC = -2 mA; TA = 25 °C",
+              "min": 200,
+              "typ": null,
+              "max": 450
+            }
+          },
+          "vbe_on": {
+            "value": -0.66,
+            "unit": "V",
+            "source": "datasheet_typical",
+            "estimated": true,
+            "datasheet": {
+              "model": "BC557B",
+              "manufacturer": "onsemi",
+              "url": "https://www.onsemi.com/pdf/datasheet/bc556bta-d.pdf",
+              "page": 2,
+              "checked_at": "2026-10-01",
+              "unit": "V",
+              "condition": "VCE = -5 V; IC = -2 mA; TA = 25 °C",
+              "min": -0.75,
+              "typ": -0.66,
+              "max": -0.6
+            }
+          }
+        },
+        "parameter_policy": {
+          "hfe": "datasheet",
+          "vbe_on": "datasheet"
+        },
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "MAUTO1",
+      "type": "mosfet_n",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "G",
+        "D",
+        "S"
+      ],
+      "metadata": {
+        "source_component_id": "MAUTO1",
+        "reference_source": "manual",
+        "value_source": "not_applicable",
+        "review_required": false,
+        "model": {
+          "text": "BS170",
+          "source": "suggested",
+          "confidence": null
+        },
+        "electrical_parameters": {
+          "vgs_threshold": {
+            "value": 2.1,
+            "unit": "V",
+            "source": "datasheet_typical",
+            "estimated": true,
+            "datasheet": {
+              "model": "BS170",
+              "manufacturer": "onsemi",
+              "url": "https://www.onsemi.com/pdf/datasheet/mmbf170-d.pdf",
+              "page": 2,
+              "checked_at": "2026-10-05",
+              "unit": "V",
+              "condition": "VDS = VGS; ID = 1 mA; TA = 25 °C",
+              "min": 0.8,
+              "typ": 2.1,
+              "max": 3
+            }
+          },
+          "mos_kp": {
+            "value": 0.10548523206751054,
+            "unit": "A/V²",
+            "source": "datasheet_derived",
+            "estimated": true,
+            "datasheet": {
+              "model": "BS170",
+              "manufacturer": "onsemi",
+              "url": "https://www.onsemi.com/pdf/datasheet/mmbf170-d.pdf",
+              "page": 2,
+              "checked_at": "2026-10-05",
+              "unit": "A/V²",
+              "condition": "Estimativa de baixo VDS: β = 1/[RDS(on) × (VGS − VGS(th))], usando 1,2 ohm, 10 V e 2,1 V; 25 °C",
+              "min": null,
+              "typ": 0.10548523206751054,
+              "max": null,
+              "derived": true
+            }
+          },
+          "gate_drain_capacitance": {
+            "value": 7e-12,
+            "unit": "F",
+            "source": "datasheet_typical",
+            "estimated": true,
+            "datasheet": {
+              "model": "BS170",
+              "manufacturer": "onsemi",
+              "url": "https://www.onsemi.com/pdf/datasheet/mmbf170-d.pdf",
+              "page": 2,
+              "checked_at": "2026-10-05",
+              "unit": "F",
+              "condition": "Crss típico; VDS = 10 V; VGS = 0 V; f = 1 MHz; 25 °C",
+              "min": null,
+              "typ": 7e-12,
+              "max": null
+            }
+          },
+          "gate_source_capacitance": {
+            "value": 1.7e-11,
+            "unit": "F",
+            "source": "datasheet_derived",
+            "estimated": true,
+            "datasheet": {
+              "model": "BS170",
+              "manufacturer": "onsemi",
+              "url": "https://www.onsemi.com/pdf/datasheet/mmbf170-d.pdf",
+              "page": 2,
+              "checked_at": "2026-10-05",
+              "unit": "F",
+              "condition": "Estimativa Cgs = Ciss − Crss = 24 − 7 pF; VDS = 10 V; VGS = 0 V; f = 1 MHz; 25 °C",
+              "min": null,
+              "typ": 1.7e-11,
+              "max": null,
+              "derived": true
+            }
+          }
+        },
+        "parameter_policy": {
+          "mos_kp": "datasheet",
+          "vgs_threshold": "datasheet",
+          "gate_drain_capacitance": "datasheet",
+          "gate_source_capacitance": "datasheet",
+          "channel_lambda": "datasheet"
+        },
+        "parameter_pending": [
+          {
+            "parameter": "channel_lambda",
+            "reason": "not_found",
+            "message": "Parâmetro sem datasheet verificado para este modelo.",
+            "bounds": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "MAUTO2",
+      "type": "mosfet_p",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "G",
+        "D",
+        "S"
+      ],
+      "metadata": {
+        "source_component_id": "MAUTO2",
+        "reference_source": "manual",
+        "value_source": "not_applicable",
+        "review_required": false,
+        "model": {
+          "text": "IRF9540N",
+          "source": "suggested",
+          "confidence": null
+        },
+        "electrical_parameters": {
+          "vgs_threshold": {
+            "value": -3.0,
+            "unit": "V",
+            "source": "datasheet_midpoint",
+            "estimated": true,
+            "datasheet": {
+              "model": "IRF9540N",
+              "manufacturer": "Infineon",
+              "url": "https://www.infineon.com/part/IRF9540N",
+              "page": null,
+              "checked_at": "2026-10-01",
+              "unit": "V",
+              "condition": "Faixa VGS(th) publicada na página do fabricante",
+              "min": -4,
+              "typ": null,
+              "max": -2
+            }
+          }
+        },
+        "parameter_policy": {
+          "mos_kp": "datasheet",
+          "vgs_threshold": "datasheet",
+          "gate_drain_capacitance": "datasheet",
+          "gate_source_capacitance": "datasheet",
+          "channel_lambda": "datasheet"
+        },
+        "parameter_pending": [
+          {
+            "parameter": "mos_kp",
+            "reason": "not_found",
+            "message": "Parâmetro sem datasheet verificado para este modelo.",
+            "bounds": null
+          },
+          {
+            "parameter": "gate_drain_capacitance",
+            "reason": "not_found",
+            "message": "Parâmetro sem datasheet verificado para este modelo.",
+            "bounds": null
+          },
+          {
+            "parameter": "gate_source_capacitance",
+            "reason": "not_found",
+            "message": "Parâmetro sem datasheet verificado para este modelo.",
+            "bounds": null
+          },
+          {
+            "parameter": "channel_lambda",
+            "reason": "not_found",
+            "message": "Parâmetro sem datasheet verificado para este modelo.",
+            "bounds": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "CAUTO3",
+      "type": "capacitor",
+      "value": "10nF",
+      "value_text": "10nF",
+      "unit": "farad",
+      "pins": [
+        "1",
+        "2"
+      ],
+      "metadata": {
+        "source_component_id": "CAUTO3",
+        "reference_source": "manual",
+        "value_source": "manual",
+        "review_required": false,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "RAUTO3",
+      "type": "resistor",
+      "value": "100",
+      "value_text": "100",
+      "unit": "ohm",
+      "pins": [
+        "1",
+        "2"
+      ],
+      "metadata": {
+        "source_component_id": "RAUTO3",
+        "reference_source": "manual",
+        "value_source": "manual",
+        "review_required": true,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "GND3",
+      "type": "gnd",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "GND"
+      ],
+      "metadata": {
+        "source_component_id": "GND3",
+        "reference_source": "manual",
+        "value_source": "not_applicable",
+        "review_required": false,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "UAUTO1",
+      "type": "opamp",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "+",
+        "-",
+        "OUT"
+      ],
+      "metadata": {
+        "source_component_id": "UAUTO1",
+        "reference_source": "manual",
+        "value_source": "not_applicable",
+        "review_required": false,
+        "model": {
+          "text": "LM358",
+          "source": "suggested",
+          "confidence": null
+        },
+        "electrical_parameters": {
+          "open_loop_gain": {
+            "value": 100000,
+            "unit": "V/V",
+            "source": "datasheet_typical",
+            "estimated": true,
+            "datasheet": {
+              "model": "LM358",
+              "manufacturer": "Texas Instruments",
+              "url": "https://www.ti.com/lit/ds/symlink/lm358.pdf",
+              "page": "10–14",
+              "checked_at": "2026-10-01",
+              "unit": "V/V",
+              "condition": "VS = 15 V; VO = 1..11 V; RL >= 2 kohm; TA = 25 °C",
+              "min": null,
+              "typ": 100000,
+              "max": null
+            }
+          },
+          "gbw": {
+            "value": 700000,
+            "unit": "Hz",
+            "source": "datasheet_typical",
+            "estimated": true,
+            "datasheet": {
+              "model": "LM358",
+              "manufacturer": "Texas Instruments",
+              "url": "https://www.ti.com/lit/ds/symlink/lm358.pdf",
+              "page": "10–14",
+              "checked_at": "2026-10-01",
+              "unit": "Hz",
+              "condition": "TA = 25 °C; variante clássica, sem sufixo B",
+              "min": null,
+              "typ": 700000,
+              "max": null
+            }
+          },
+          "slew_rate": {
+            "value": 0.3,
+            "unit": "V/us",
+            "source": "datasheet_typical",
+            "estimated": true,
+            "datasheet": {
+              "model": "LM358",
+              "manufacturer": "Texas Instruments",
+              "url": "https://www.ti.com/lit/ds/symlink/lm358.pdf",
+              "page": "10–14",
+              "checked_at": "2026-10-01",
+              "unit": "V/us",
+              "condition": "G = +1; TA = 25 °C; variante clássica",
+              "min": null,
+              "typ": 0.3,
+              "max": null
+            }
+          }
+        },
+        "parameter_policy": {
+          "open_loop_gain": "datasheet",
+          "gbw": "datasheet",
+          "slew_rate": "datasheet",
+          "offset_voltage": "datasheet"
+        },
+        "parameter_pending": [
+          {
+            "parameter": "offset_voltage",
+            "reason": "not_found",
+            "message": "Parâmetro sem datasheet verificado para este modelo.",
+            "bounds": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "QAUTO3",
+      "type": "transistor_pnp",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "B",
+        "C",
+        "E"
+      ],
+      "metadata": {
+        "source_component_id": "QAUTO3",
+        "reference_source": "manual",
+        "value_source": "not_applicable",
+        "review_required": false,
+        "model": {
+          "text": "BC557B",
+          "source": "suggested",
+          "confidence": null
+        },
+        "electrical_parameters": {
+          "hfe": {
+            "value": 325.0,
+            "unit": "A/A",
+            "source": "datasheet_midpoint",
+            "estimated": true,
+            "datasheet": {
+              "model": "BC557B",
+              "manufacturer": "onsemi",
+              "url": "https://www.onsemi.com/pdf/datasheet/bc556bta-d.pdf",
+              "page": 2,
+              "checked_at": "2026-10-01",
+              "unit": "A/A",
+              "condition": "VCE = -5 V; IC = -2 mA; TA = 25 °C",
+              "min": 200,
+              "typ": null,
+              "max": 450
+            }
+          },
+          "vbe_on": {
+            "value": -0.66,
+            "unit": "V",
+            "source": "datasheet_typical",
+            "estimated": true,
+            "datasheet": {
+              "model": "BC557B",
+              "manufacturer": "onsemi",
+              "url": "https://www.onsemi.com/pdf/datasheet/bc556bta-d.pdf",
+              "page": 2,
+              "checked_at": "2026-10-01",
+              "unit": "V",
+              "condition": "VCE = -5 V; IC = -2 mA; TA = 25 °C",
+              "min": -0.75,
+              "typ": -0.66,
+              "max": -0.6
+            }
+          }
+        },
+        "parameter_policy": {
+          "hfe": "datasheet",
+          "vbe_on": "datasheet"
+        },
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "C4",
+      "type": "capacitor_polarized",
+      "value": "100uF",
+      "value_text": "100uF",
+      "unit": "farad",
+      "pins": [
+        "+",
+        "-"
+      ],
+      "metadata": {
+        "source_component_id": "C4",
+        "reference_source": "manual",
+        "value_source": "manual",
+        "review_required": false,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "RAUTO4",
+      "type": "resistor",
+      "value": "220",
+      "value_text": "220",
+      "unit": "ohm",
+      "pins": [
+        "1",
+        "2"
+      ],
+      "metadata": {
+        "source_component_id": "RAUTO4",
+        "reference_source": "manual",
+        "value_source": "manual",
+        "review_required": false,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "GND4",
+      "type": "gnd",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "GND"
+      ],
+      "metadata": {
+        "source_component_id": "GND4",
+        "reference_source": "manual",
+        "value_source": "not_applicable",
+        "review_required": true,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "DAUTO1",
+      "type": "diode",
+      "value": "",
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "A",
+        "K"
+      ],
+      "metadata": {
+        "source_component_id": "DAUTO1",
+        "reference_source": "manual",
+        "value_source": "missing",
+        "review_required": true,
+        "model": {
+          "text": "1N4148",
+          "source": "suggested",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {
+          "forward_voltage": "datasheet",
+          "junction_capacitance": "datasheet"
+        },
+        "parameter_pending": [
+          {
+            "parameter": "forward_voltage",
+            "reason": "only_limit",
+            "message": "O datasheet só informa um limite; informe um valor ou confira a condição.",
+            "bounds": {
+              "unit": "V",
+              "condition": "IF = 10 mA; TA = 25 °C; somente máximo especificado",
+              "min": null,
+              "typ": null,
+              "max": 1
+            }
+          },
+          {
+            "parameter": "junction_capacitance",
+            "reason": "only_limit",
+            "message": "O datasheet só informa um limite; informe um valor ou confira a condição.",
+            "bounds": {
+              "unit": "F",
+              "condition": "VR = 0 V; f = 1 MHz; VHF = 50 mV; TA = 25 °C; somente máximo especificado",
+              "min": null,
+              "typ": null,
+              "max": 4e-12
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "VAUTO2",
+      "type": "source_dc",
+      "value": "20",
+      "value_text": "20",
+      "unit": "volt",
+      "pins": [
+        "+",
+        "-"
+      ],
+      "metadata": {
+        "source_component_id": "VAUTO2",
+        "reference_source": "manual",
+        "value_source": "manual",
+        "review_required": true,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "RAUTO5",
+      "type": "resistor",
+      "value": "10000",
+      "value_text": "10K",
+      "unit": "ohm",
+      "pins": [
+        "1",
+        "2"
+      ],
+      "metadata": {
+        "source_component_id": "RAUTO5",
+        "reference_source": "manual",
+        "value_source": "manual",
+        "review_required": false,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "GND5",
+      "type": "gnd",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "GND"
+      ],
+      "metadata": {
+        "source_component_id": "GND5",
+        "reference_source": "manual",
+        "value_source": "not_applicable",
+        "review_required": true,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "DAUTO2",
+      "type": "diode",
+      "value": "",
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "A",
+        "K"
+      ],
+      "metadata": {
+        "source_component_id": "DAUTO2",
+        "reference_source": "manual",
+        "value_source": "missing",
+        "review_required": false,
+        "model": {
+          "text": "1N4148",
+          "source": "suggested",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {
+          "forward_voltage": "datasheet",
+          "junction_capacitance": "datasheet"
+        },
+        "parameter_pending": [
+          {
+            "parameter": "forward_voltage",
+            "reason": "only_limit",
+            "message": "O datasheet só informa um limite; informe um valor ou confira a condição.",
+            "bounds": {
+              "unit": "V",
+              "condition": "IF = 10 mA; TA = 25 °C; somente máximo especificado",
+              "min": null,
+              "typ": null,
+              "max": 1
+            }
+          },
+          {
+            "parameter": "junction_capacitance",
+            "reason": "only_limit",
+            "message": "O datasheet só informa um limite; informe um valor ou confira a condição.",
+            "bounds": {
+              "unit": "F",
+              "condition": "VR = 0 V; f = 1 MHz; VHF = 50 mV; TA = 25 °C; somente máximo especificado",
+              "min": null,
+              "typ": null,
+              "max": 4e-12
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "LEDAUTO1",
+      "type": "led",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "A",
+        "K"
+      ],
+      "metadata": {
+        "source_component_id": "LEDAUTO1",
+        "reference_source": "manual",
+        "value_source": "not_applicable",
+        "review_required": false,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {
+          "forward_voltage": "manual"
+        },
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "GND6",
+      "type": "gnd",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "GND"
+      ],
+      "metadata": {
+        "source_component_id": "GND6",
+        "reference_source": "manual",
+        "value_source": "not_applicable",
+        "review_required": true,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    }
+  ],
+  "nets": [
+    {
+      "name": "GND",
+      "members": [
+        "GND1.GND",
+        "GND2.GND",
+        "GND3.GND",
+        "GND4.GND",
+        "GND5.GND",
+        "GND6.GND",
+        "LEDAUTO1.K",
+        "RAUTO2.2",
+        "RAUTO3.1",
+        "RAUTO4.1",
+        "VAUTO1.-"
+      ]
+    },
+    {
+      "name": "NET_1",
+      "members": [
+        "RAUTO1.1",
+        "VAUTO1.+"
+      ]
+    },
+    {
+      "name": "NET_4",
+      "members": [
+        "CAUTO1.1",
+        "RAUTO1.2"
+      ]
+    },
+    {
+      "name": "NET_5",
+      "members": [
+        "CAUTO1.2",
+        "L2.1"
+      ]
+    },
+    {
+      "name": "NET_6",
+      "members": [
+        "L2.2",
+        "QAUTO1.B"
+      ]
+    },
+    {
+      "name": "NET_8",
+      "members": [
+        "QAUTO1.C"
+      ]
+    },
+    {
+      "name": "NET_9",
+      "members": [
+        "QAUTO2.B"
+      ]
+    },
+    {
+      "name": "NET_10",
+      "members": [
+        "MAUTO2.D",
+        "QAUTO2.E"
+      ]
+    },
+    {
+      "name": "NET_11",
+      "members": [
+        "MAUTO2.G",
+        "QAUTO2.C"
+      ]
+    },
+    {
+      "name": "NET_12",
+      "members": [
+        "MAUTO1.G"
+      ]
+    },
+    {
+      "name": "NET_13",
+      "members": [
+        "MAUTO1.D",
+        "MAUTO2.S",
+        "QAUTO3.B"
+      ]
+    },
+    {
+      "name": "NET_14",
+      "members": [
+        "DAUTO1.K",
+        "UAUTO1.OUT"
+      ]
+    },
+    {
+      "name": "NET_15",
+      "members": [
+        "DAUTO1.A",
+        "RAUTO5.2"
+      ]
+    },
+    {
+      "name": "NET_16",
+      "members": [
+        "VAUTO2.-"
+      ]
+    },
+    {
+      "name": "NET_18",
+      "members": [
+        "BATAUTO1.+",
+        "CAUTO2.-"
+      ]
+    },
+    {
+      "name": "NET_19",
+      "members": [
+        "BATAUTO1.-",
+        "RAUTO2.1"
+      ]
+    },
+    {
+      "name": "NET_20",
+      "members": [
+        "C4.+"
+      ]
+    },
+    {
+      "name": "NET_21",
+      "members": [
+        "C4.-"
+      ]
+    },
+    {
+      "name": "NET_22",
+      "members": [
+        "CAUTO2.+"
+      ]
+    },
+    {
+      "name": "NET_23",
+      "members": [
+        "CAUTO3.1",
+        "RAUTO3.2"
+      ]
+    },
+    {
+      "name": "NET_24",
+      "members": [
+        "CAUTO3.2"
+      ]
+    },
+    {
+      "name": "NET_25",
+      "members": [
+        "DAUTO2.A"
+      ]
+    },
+    {
+      "name": "NET_26",
+      "members": [
+        "DAUTO2.K"
+      ]
+    },
+    {
+      "name": "NET_27",
+      "members": [
+        "LEDAUTO1.A",
+        "RAUTO5.1"
+      ]
+    },
+    {
+      "name": "NET_28",
+      "members": [
+        "MAUTO1.S"
+      ]
+    },
+    {
+      "name": "NET_29",
+      "members": [
+        "QAUTO1.E"
+      ]
+    },
+    {
+      "name": "NET_30",
+      "members": [
+        "QAUTO3.C",
+        "RAUTO4.2"
+      ]
+    },
+    {
+      "name": "NET_31",
+      "members": [
+        "QAUTO3.E"
+      ]
+    },
+    {
+      "name": "NET_32",
+      "members": [
+        "UAUTO1.+"
+      ]
+    },
+    {
+      "name": "NET_33",
+      "members": [
+        "UAUTO1.-"
+      ]
+    },
+    {
+      "name": "NET_34",
+      "members": [
+        "VAUTO2.+"
+      ]
+    }
+  ],
+  "warnings": [
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "GND1"
+    },
+    {
+      "code": "unconnected_pin",
+      "message": "Pino sem fio externo confirmado.",
+      "terminal_ref": "QAUTO1.E"
+    },
+    {
+      "code": "unconnected_pin",
+      "message": "Pino sem fio externo confirmado.",
+      "terminal_ref": "CAUTO2.+"
+    },
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "GND2"
+    },
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "RAUTO2"
+    },
+    {
+      "code": "unconnected_pin",
+      "message": "Pino sem fio externo confirmado.",
+      "terminal_ref": "MAUTO1.S"
+    },
+    {
+      "code": "unconnected_pin",
+      "message": "Pino sem fio externo confirmado.",
+      "terminal_ref": "CAUTO3.2"
+    },
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "RAUTO3"
+    },
+    {
+      "code": "unconnected_pin",
+      "message": "Pino sem fio externo confirmado.",
+      "terminal_ref": "UAUTO1.+"
+    },
+    {
+      "code": "unconnected_pin",
+      "message": "Pino sem fio externo confirmado.",
+      "terminal_ref": "UAUTO1.-"
+    },
+    {
+      "code": "unconnected_pin",
+      "message": "Pino sem fio externo confirmado.",
+      "terminal_ref": "QAUTO3.E"
+    },
+    {
+      "code": "unconnected_pin",
+      "message": "Pino sem fio externo confirmado.",
+      "terminal_ref": "C4.+"
+    },
+    {
+      "code": "unconnected_pin",
+      "message": "Pino sem fio externo confirmado.",
+      "terminal_ref": "C4.-"
+    },
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "GND4"
+    },
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "DAUTO1"
+    },
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "VAUTO2"
+    },
+    {
+      "code": "unconnected_pin",
+      "message": "Pino sem fio externo confirmado.",
+      "terminal_ref": "VAUTO2.+"
+    },
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "GND5"
+    },
+    {
+      "code": "unconnected_pin",
+      "message": "Pino sem fio externo confirmado.",
+      "terminal_ref": "DAUTO2.A"
+    },
+    {
+      "code": "unconnected_pin",
+      "message": "Pino sem fio externo confirmado.",
+      "terminal_ref": "DAUTO2.K"
+    },
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "GND6"
+    },
+    {
+      "code": "unconnected_pin",
+      "message": "Pino sem fio externo confirmado.",
+      "terminal_ref": "GND6.GND"
+    }
+  ],
+  "confirmed_by_user": false,
+  "status": "draft",
+  "image_independent": true,
+  "source_connectivity_signature": "efdeac11365e7d334458c77a1ac47170514b725c42a4da9967f52fe001d0d66e",
+  "validation": {
+    "structurally_valid": true,
+    "review_required": true,
+    "component_count": 28,
+    "net_count": 31,
+    "pin_count": 56
+  }
+}

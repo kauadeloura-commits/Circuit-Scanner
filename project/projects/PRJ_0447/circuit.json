@@ -1,0 +1,844 @@
+{
+  "schema_version": "circuit-1.0",
+  "project_id": "PRJ_0447",
+  "name": "WhatsApp Image 2026-10-15 at 21.18.50",
+  "created_at": "2026-10-15T21:23:06-03:00",
+  "components": [
+    {
+      "id": "GND1",
+      "type": "gnd",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "GND"
+      ],
+      "metadata": {
+        "source_component_id": "GND1",
+        "reference_source": "class",
+        "value_source": "not_applicable",
+        "review_required": true,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "L_AUTO1",
+      "type": "inductor",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "2"
+      ],
+      "metadata": {
+        "source_component_id": "L_AUTO1",
+        "reference_source": "generated",
+        "value_source": "missing",
+        "review_required": true,
+        "model": {
+          "text": "SRR6028-100Y",
+          "source": "suggested",
+          "confidence": null
+        },
+        "electrical_parameters": {
+          "inductance": {
+            "value": 9.999999999999999e-06,
+            "unit": "H",
+            "source": "datasheet_typical",
+            "estimated": true,
+            "datasheet": {
+              "model": "SRR6028-100Y",
+              "manufacturer": "Bourns",
+              "url": "https://www.bourns.com/docs/Product-Datasheets/SRR6028.pdf",
+              "page": 1,
+              "checked_at": "2026-10-01",
+              "unit": "H",
+              "condition": "Indutância nominal da tabela; ensaio a 100 kHz",
+              "min": null,
+              "typ": 9.999999999999999e-06,
+              "max": null
+            }
+          },
+          "saturation_current": {
+            "value": 1.7,
+            "unit": "A",
+            "source": "datasheet_typical",
+            "estimated": true,
+            "datasheet": {
+              "model": "SRR6028-100Y",
+              "manufacturer": "Bourns",
+              "url": "https://www.bourns.com/docs/Product-Datasheets/SRR6028.pdf",
+              "page": 1,
+              "checked_at": "2026-10-01",
+              "unit": "A",
+              "condition": "Isat da tabela; redução típica de 35% da indutância",
+              "min": null,
+              "typ": 1.7,
+              "max": null
+            }
+          },
+          "tolerance": {
+            "value": 30,
+            "unit": "%",
+            "source": "datasheet_typical",
+            "estimated": true,
+            "datasheet": {
+              "model": "SRR6028-100Y",
+              "manufacturer": "Bourns",
+              "url": "https://www.bourns.com/docs/Product-Datasheets/SRR6028.pdf",
+              "page": 1,
+              "checked_at": "2026-10-01",
+              "unit": "%",
+              "condition": "Tolerância da indutância nominal",
+              "min": null,
+              "typ": 30,
+              "max": null
+            }
+          }
+        },
+        "parameter_policy": {
+          "inductance": "datasheet",
+          "series_resistance": "datasheet",
+          "saturation_current": "datasheet",
+          "rated_current": "datasheet",
+          "tolerance": "datasheet"
+        },
+        "parameter_pending": [
+          {
+            "parameter": "series_resistance",
+            "reason": "only_limit",
+            "message": "O datasheet só informa um limite; informe um valor ou confira a condição.",
+            "bounds": {
+              "unit": "ohm",
+              "condition": "DCR máxima da tabela; não é um valor típico",
+              "min": null,
+              "typ": null,
+              "max": 0.065
+            }
+          },
+          {
+            "parameter": "rated_current",
+            "reason": "only_limit",
+            "message": "O datasheet só informa um limite; informe um valor ou confira a condição.",
+            "bounds": {
+              "unit": "A",
+              "condition": "Irms da tabela; limite térmico",
+              "min": null,
+              "typ": null,
+              "max": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "R_AUTO1",
+      "type": "resistor",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "2"
+      ],
+      "metadata": {
+        "source_component_id": "R_AUTO1",
+        "reference_source": "generated",
+        "value_source": "missing",
+        "review_required": true,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "VCC1",
+      "type": "vcc",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "VCC"
+      ],
+      "metadata": {
+        "source_component_id": "VCC1",
+        "reference_source": "class",
+        "value_source": "missing",
+        "review_required": false,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "U_AUTO1",
+      "type": "opamp",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "-"
+      ],
+      "metadata": {
+        "source_component_id": "U_AUTO1",
+        "reference_source": "generated",
+        "value_source": "not_applicable",
+        "review_required": true,
+        "model": {
+          "text": "LM358",
+          "source": "suggested",
+          "confidence": null
+        },
+        "electrical_parameters": {
+          "open_loop_gain": {
+            "value": 100000,
+            "unit": "V/V",
+            "source": "datasheet_typical",
+            "estimated": true,
+            "datasheet": {
+              "model": "LM358",
+              "manufacturer": "Texas Instruments",
+              "url": "https://www.ti.com/lit/ds/symlink/lm358.pdf",
+              "page": "10–14",
+              "checked_at": "2026-10-01",
+              "unit": "V/V",
+              "condition": "VS = 15 V; VO = 1..11 V; RL >= 2 kohm; TA = 25 °C",
+              "min": null,
+              "typ": 100000,
+              "max": null
+            }
+          },
+          "gbw": {
+            "value": 700000,
+            "unit": "Hz",
+            "source": "datasheet_typical",
+            "estimated": true,
+            "datasheet": {
+              "model": "LM358",
+              "manufacturer": "Texas Instruments",
+              "url": "https://www.ti.com/lit/ds/symlink/lm358.pdf",
+              "page": "10–14",
+              "checked_at": "2026-10-01",
+              "unit": "Hz",
+              "condition": "TA = 25 °C; variante clássica, sem sufixo B",
+              "min": null,
+              "typ": 700000,
+              "max": null
+            }
+          },
+          "slew_rate": {
+            "value": 0.3,
+            "unit": "V/us",
+            "source": "datasheet_typical",
+            "estimated": true,
+            "datasheet": {
+              "model": "LM358",
+              "manufacturer": "Texas Instruments",
+              "url": "https://www.ti.com/lit/ds/symlink/lm358.pdf",
+              "page": "10–14",
+              "checked_at": "2026-10-01",
+              "unit": "V/us",
+              "condition": "G = +1; TA = 25 °C; variante clássica",
+              "min": null,
+              "typ": 0.3,
+              "max": null
+            }
+          }
+        },
+        "parameter_policy": {
+          "open_loop_gain": "datasheet",
+          "gbw": "datasheet",
+          "slew_rate": "datasheet",
+          "offset_voltage": "datasheet"
+        },
+        "parameter_pending": [
+          {
+            "parameter": "offset_voltage",
+            "reason": "not_found",
+            "message": "Parâmetro sem datasheet verificado para este modelo.",
+            "bounds": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "C_AUTO1",
+      "type": "capacitor",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "1",
+        "2"
+      ],
+      "metadata": {
+        "source_component_id": "C_AUTO1",
+        "reference_source": "generated",
+        "value_source": "missing",
+        "review_required": true,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "V_AUTO1",
+      "type": "source_dc",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "-"
+      ],
+      "metadata": {
+        "source_component_id": "V_AUTO1",
+        "reference_source": "generated",
+        "value_source": "missing",
+        "review_required": true,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "C_AUTO2",
+      "type": "capacitor_polarized",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "+",
+        "-"
+      ],
+      "metadata": {
+        "source_component_id": "C_AUTO2",
+        "reference_source": "generated",
+        "value_source": "missing",
+        "review_required": true,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "D_AUTO1",
+      "type": "diode",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [],
+      "metadata": {
+        "source_component_id": "D_AUTO1",
+        "reference_source": "generated",
+        "value_source": "missing",
+        "review_required": true,
+        "model": {
+          "text": "1N4148",
+          "source": "suggested",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {
+          "forward_voltage": "datasheet",
+          "junction_capacitance": "datasheet"
+        },
+        "parameter_pending": [
+          {
+            "parameter": "forward_voltage",
+            "reason": "only_limit",
+            "message": "O datasheet só informa um limite; informe um valor ou confira a condição.",
+            "bounds": {
+              "unit": "V",
+              "condition": "IF = 10 mA; TA = 25 °C; somente máximo especificado",
+              "min": null,
+              "typ": null,
+              "max": 1
+            }
+          },
+          {
+            "parameter": "junction_capacitance",
+            "reason": "only_limit",
+            "message": "O datasheet só informa um limite; informe um valor ou confira a condição.",
+            "bounds": {
+              "unit": "F",
+              "condition": "VR = 0 V; f = 1 MHz; VHF = 50 mV; TA = 25 °C; somente máximo especificado",
+              "min": null,
+              "typ": null,
+              "max": 4e-12
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "D_AUTO2",
+      "type": "diode",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "A",
+        "K"
+      ],
+      "metadata": {
+        "source_component_id": "D_AUTO2",
+        "reference_source": "generated",
+        "value_source": "missing",
+        "review_required": true,
+        "model": {
+          "text": "1N4148",
+          "source": "suggested",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {
+          "forward_voltage": "datasheet",
+          "junction_capacitance": "datasheet"
+        },
+        "parameter_pending": [
+          {
+            "parameter": "forward_voltage",
+            "reason": "only_limit",
+            "message": "O datasheet só informa um limite; informe um valor ou confira a condição.",
+            "bounds": {
+              "unit": "V",
+              "condition": "IF = 10 mA; TA = 25 °C; somente máximo especificado",
+              "min": null,
+              "typ": null,
+              "max": 1
+            }
+          },
+          {
+            "parameter": "junction_capacitance",
+            "reason": "only_limit",
+            "message": "O datasheet só informa um limite; informe um valor ou confira a condição.",
+            "bounds": {
+              "unit": "F",
+              "condition": "VR = 0 V; f = 1 MHz; VHF = 50 mV; TA = 25 °C; somente máximo especificado",
+              "min": null,
+              "typ": null,
+              "max": 4e-12
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "LED_AUTO1",
+      "type": "led",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [
+        "A"
+      ],
+      "metadata": {
+        "source_component_id": "LED_AUTO1",
+        "reference_source": "generated",
+        "value_source": "not_applicable",
+        "review_required": true,
+        "model": {
+          "text": "",
+          "source": "missing",
+          "confidence": null
+        },
+        "electrical_parameters": {},
+        "parameter_policy": {},
+        "parameter_pending": []
+      }
+    },
+    {
+      "id": "Q_AUTO1",
+      "type": "transistor_pnp",
+      "value": null,
+      "value_text": null,
+      "unit": null,
+      "pins": [],
+      "metadata": {
+        "source_component_id": "Q_AUTO1",
+        "reference_source": "generated",
+        "value_source": "not_applicable",
+        "review_required": true,
+        "model": {
+          "text": "BC557B",
+          "source": "suggested",
+          "confidence": null
+        },
+        "electrical_parameters": {
+          "hfe": {
+            "value": 325.0,
+            "unit": "A/A",
+            "source": "datasheet_midpoint",
+            "estimated": true,
+            "datasheet": {
+              "model": "BC557B",
+              "manufacturer": "onsemi",
+              "url": "https://www.onsemi.com/pdf/datasheet/bc556bta-d.pdf",
+              "page": 2,
+              "checked_at": "2026-10-01",
+              "unit": "A/A",
+              "condition": "VCE = -5 V; IC = -2 mA; TA = 25 °C",
+              "min": 200,
+              "typ": null,
+              "max": 450
+            }
+          },
+          "vbe_on": {
+            "value": -0.66,
+            "unit": "V",
+            "source": "datasheet_typical",
+            "estimated": true,
+            "datasheet": {
+              "model": "BC557B",
+              "manufacturer": "onsemi",
+              "url": "https://www.onsemi.com/pdf/datasheet/bc556bta-d.pdf",
+              "page": 2,
+              "checked_at": "2026-10-01",
+              "unit": "V",
+              "condition": "VCE = -5 V; IC = -2 mA; TA = 25 °C",
+              "min": -0.75,
+              "typ": -0.66,
+              "max": -0.6
+            }
+          }
+        },
+        "parameter_policy": {
+          "hfe": "datasheet",
+          "vbe_on": "datasheet"
+        },
+        "parameter_pending": []
+      }
+    }
+  ],
+  "nets": [
+    {
+      "name": "GND",
+      "members": [
+        "GND1.GND"
+      ]
+    },
+    {
+      "name": "NET_1",
+      "members": [
+        "VCC1.VCC"
+      ]
+    },
+    {
+      "name": "NET_2",
+      "members": [
+        "V_AUTO1.-"
+      ]
+    },
+    {
+      "name": "NET_3",
+      "members": [
+        "C_AUTO2.-"
+      ]
+    },
+    {
+      "name": "NET_4",
+      "members": [
+        "LED_AUTO1.A"
+      ]
+    },
+    {
+      "name": "NET_5",
+      "members": [
+        "C_AUTO1.1"
+      ]
+    },
+    {
+      "name": "NET_6",
+      "members": [
+        "C_AUTO1.2"
+      ]
+    },
+    {
+      "name": "NET_7",
+      "members": [
+        "C_AUTO2.+"
+      ]
+    },
+    {
+      "name": "NET_8",
+      "members": [
+        "D_AUTO2.A"
+      ]
+    },
+    {
+      "name": "NET_9",
+      "members": [
+        "D_AUTO2.K"
+      ]
+    },
+    {
+      "name": "NET_10",
+      "members": [
+        "L_AUTO1.2"
+      ]
+    },
+    {
+      "name": "NET_11",
+      "members": [
+        "R_AUTO1.2"
+      ]
+    },
+    {
+      "name": "NET_12",
+      "members": [
+        "U_AUTO1.-"
+      ]
+    }
+  ],
+  "warnings": [
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "GND1"
+    },
+    {
+      "code": "unconnected_pin",
+      "message": "Pino sem fio externo confirmado.",
+      "terminal_ref": "GND1.GND"
+    },
+    {
+      "code": "pin_count_mismatch",
+      "message": "Quantidade ou nomes de pinos incompletos.",
+      "component_id": "L_AUTO1",
+      "expected_pins": [
+        "1",
+        "2"
+      ],
+      "observed_pins": [
+        "2"
+      ]
+    },
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "L_AUTO1"
+    },
+    {
+      "code": "unconnected_pin",
+      "message": "Pino sem fio externo confirmado.",
+      "terminal_ref": "L_AUTO1.2"
+    },
+    {
+      "code": "pin_count_mismatch",
+      "message": "Quantidade ou nomes de pinos incompletos.",
+      "component_id": "R_AUTO1",
+      "expected_pins": [
+        "1",
+        "2"
+      ],
+      "observed_pins": [
+        "2"
+      ]
+    },
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "R_AUTO1"
+    },
+    {
+      "code": "unconnected_pin",
+      "message": "Pino sem fio externo confirmado.",
+      "terminal_ref": "R_AUTO1.2"
+    },
+    {
+      "code": "pin_count_mismatch",
+      "message": "Quantidade ou nomes de pinos incompletos.",
+      "component_id": "U_AUTO1",
+      "expected_pins": [
+        "+",
+        "-",
+        "OUT"
+      ],
+      "observed_pins": [
+        "-"
+      ]
+    },
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "U_AUTO1"
+    },
+    {
+      "code": "unconnected_pin",
+      "message": "Pino sem fio externo confirmado.",
+      "terminal_ref": "U_AUTO1.-"
+    },
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "C_AUTO1"
+    },
+    {
+      "code": "unconnected_pin",
+      "message": "Pino sem fio externo confirmado.",
+      "terminal_ref": "C_AUTO1.1"
+    },
+    {
+      "code": "unconnected_pin",
+      "message": "Pino sem fio externo confirmado.",
+      "terminal_ref": "C_AUTO1.2"
+    },
+    {
+      "code": "pin_count_mismatch",
+      "message": "Quantidade ou nomes de pinos incompletos.",
+      "component_id": "V_AUTO1",
+      "expected_pins": [
+        "+",
+        "-"
+      ],
+      "observed_pins": [
+        "-"
+      ]
+    },
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "V_AUTO1"
+    },
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "C_AUTO2"
+    },
+    {
+      "code": "unconnected_pin",
+      "message": "Pino sem fio externo confirmado.",
+      "terminal_ref": "C_AUTO2.+"
+    },
+    {
+      "code": "pin_count_mismatch",
+      "message": "Quantidade ou nomes de pinos incompletos.",
+      "component_id": "D_AUTO1",
+      "expected_pins": [
+        "A",
+        "K"
+      ],
+      "observed_pins": []
+    },
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "D_AUTO1"
+    },
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "D_AUTO2"
+    },
+    {
+      "code": "unconnected_pin",
+      "message": "Pino sem fio externo confirmado.",
+      "terminal_ref": "D_AUTO2.K"
+    },
+    {
+      "code": "unconnected_pin",
+      "message": "Pino sem fio externo confirmado.",
+      "terminal_ref": "D_AUTO2.A"
+    },
+    {
+      "code": "pin_count_mismatch",
+      "message": "Quantidade ou nomes de pinos incompletos.",
+      "component_id": "LED_AUTO1",
+      "expected_pins": [
+        "A",
+        "K"
+      ],
+      "observed_pins": [
+        "A"
+      ]
+    },
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "LED_AUTO1"
+    },
+    {
+      "code": "pin_count_mismatch",
+      "message": "Quantidade ou nomes de pinos incompletos.",
+      "component_id": "Q_AUTO1",
+      "expected_pins": [
+        "B",
+        "C",
+        "E"
+      ],
+      "observed_pins": []
+    },
+    {
+      "code": "component_pending",
+      "message": "Componente ou identidade dos pinos requer confirmacao.",
+      "component_id": "Q_AUTO1"
+    },
+    {
+      "code": "value_missing",
+      "component_id": "L_AUTO1",
+      "message": "Valor do componente nao informado."
+    },
+    {
+      "code": "value_missing",
+      "component_id": "R_AUTO1",
+      "message": "Valor do componente nao informado."
+    },
+    {
+      "code": "value_missing",
+      "component_id": "C_AUTO1",
+      "message": "Valor do componente nao informado."
+    },
+    {
+      "code": "value_missing",
+      "component_id": "V_AUTO1",
+      "message": "Valor do componente nao informado."
+    },
+    {
+      "code": "value_missing",
+      "component_id": "C_AUTO2",
+      "message": "Valor do componente nao informado."
+    }
+  ],
+  "confirmed_by_user": false,
+  "status": "draft",
+  "image_independent": true,
+  "source_connectivity_signature": "3b32bbe8fbb36e9ac1a8c5057441b4092dbfdf145c27fa45c1e225015e8c5a79",
+  "validation": {
+    "structurally_valid": true,
+    "review_required": true,
+    "component_count": 12,
+    "net_count": 13,
+    "pin_count": 13
+  }
+}

@@ -1,0 +1,643 @@
+{
+  "created_at": "2026-09-23T13:00:09-03:00",
+  "model": "models\\circuit_scanner_yolo.pt",
+  "model_sha256": "2858da1cd375145218c4d1d0a6c3e916feaef5896098009cb044eb3c59c3e029",
+  "source_image": "original.jpeg",
+  "source_policy": "original_by_default",
+  "color_invariance": {
+    "enabled": true,
+    "method": "normalized_grayscale_lab_background_distance_plus_binary_bw",
+    "decision": "cross_view_class_consensus_plus_geometry"
+  },
+  "monochrome_input_detected": true,
+  "inference_strategy": "auto",
+  "inference_views": [
+    {
+      "name": "original_color",
+      "imgsz": 640,
+      "raw_detections": 22
+    },
+    {
+      "name": "normalized_grayscale",
+      "imgsz": 640,
+      "raw_detections": 25
+    },
+    {
+      "name": "color_invariant_ink",
+      "imgsz": 640,
+      "raw_detections": 19
+    },
+    {
+      "name": "normalized_binary_bw",
+      "imgsz": 960,
+      "preferred_for_monochrome": true,
+      "raw_detections": 2
+    },
+    {
+      "name": "normalized_binary_bw_tiled",
+      "imgsz": 960,
+      "tile_size": 960,
+      "overlap": 0.2,
+      "raw_detections": 4
+    },
+    {
+      "name": "electronic_symbol_geometry",
+      "detections": 0
+    },
+    {
+      "name": "normalized_grayscale_high_resolution",
+      "imgsz": 960,
+      "raw_detections": 20
+    }
+  ],
+  "confidence_threshold": 0.25,
+  "candidate_confidence_threshold": 0.05,
+  "minimum_single_view_confidence": 0.1625,
+  "imgsz": 640,
+  "image_width": 900,
+  "image_height": 1600,
+  "raw_count": 92,
+  "raw_count_by_source": {
+    "original_color": 22,
+    "normalized_grayscale": 25,
+    "color_invariant_ink": 19,
+    "normalized_binary_bw": 2,
+    "normalized_binary_bw_tiled": 4,
+    "electronic_symbol_geometry": 0,
+    "normalized_grayscale_high_resolution": 20
+  },
+  "count": 16,
+  "geometry_rejected_count": 3,
+  "geometry_rejections": [
+    {
+      "detection_id": "DET_001",
+      "class_id": 9,
+      "class": "vcc",
+      "confidence": 0.15908,
+      "bbox": {
+        "x1": 736.94,
+        "y1": 0.0,
+        "x2": 817.37,
+        "y2": 67.37,
+        "width": 80.43,
+        "height": 67.37,
+        "center_x": 777.15,
+        "center_y": 33.68
+      },
+      "inference_sources": [
+        "normalized_grayscale"
+      ],
+      "best_view_confidence": 0.15908,
+      "consensus_score": 0.15908,
+      "consensus_votes": 1,
+      "alternatives": [],
+      "consensus_margin": 0.15908,
+      "review_required": true,
+      "review_reasons": [
+        "low_confidence"
+      ],
+      "geometry_validation": {
+        "valid": false,
+        "score": 0.31,
+        "evidence": {
+          "node_found": true,
+          "branch_count": 2,
+          "node_radius": 5.39,
+          "node_center": {
+            "x": 766,
+            "y": 28
+          },
+          "inner_radius": 7.28,
+          "outer_radius": 16.72,
+          "distance_peak": 5.394,
+          "stroke_reference": 3.0,
+          "thickness_ratio": 1.798,
+          "branch_sizes": [
+            151,
+            23
+          ],
+          "validation_mode": "connection_dot_topology",
+          "connection_branch_count": 2,
+          "junction_rejected": true,
+          "chevron_pair": false
+        }
+      },
+      "rejection_reason": "vcc_shape_missing"
+    },
+    {
+      "detection_id": "DET_002",
+      "class_id": 9,
+      "class": "vcc",
+      "confidence": 0.998429,
+      "bbox": {
+        "x1": 280.17,
+        "y1": 71.2,
+        "x2": 372.25,
+        "y2": 163.71,
+        "width": 92.08,
+        "height": 92.52,
+        "center_x": 326.21,
+        "center_y": 117.46
+      },
+      "inference_sources": [
+        "color_invariant_ink",
+        "normalized_binary_bw",
+        "normalized_binary_bw_tiled",
+        "normalized_grayscale",
+        "normalized_grayscale_high_resolution",
+        "original_color"
+      ],
+      "best_view_confidence": 0.826648,
+      "consensus_score": 3.767079,
+      "consensus_votes": 6,
+      "alternatives": [],
+      "consensus_margin": 3.767079,
+      "review_required": false,
+      "review_reasons": [],
+      "geometry_validation": {
+        "valid": false,
+        "score": 0.19,
+        "evidence": {
+          "node_found": true,
+          "branch_count": 3,
+          "node_radius": 10.98,
+          "node_center": {
+            "x": 295,
+            "y": 171
+          },
+          "inner_radius": 14.83,
+          "outer_radius": 34.05,
+          "distance_peak": 10.984,
+          "stroke_reference": 4.0,
+          "thickness_ratio": 2.746,
+          "branch_sizes": [
+            492,
+            109,
+            490
+          ],
+          "validation_mode": "connection_dot_topology",
+          "connection_branch_count": 3,
+          "junction_rejected": true,
+          "chevron_pair": false
+        }
+      },
+      "rejection_reason": "vcc_shape_missing"
+    },
+    {
+      "detection_id": "DET_003",
+      "class_id": 11,
+      "class": "transistor_pnp",
+      "confidence": 0.584575,
+      "bbox": {
+        "x1": 224.45,
+        "y1": 351.87,
+        "x2": 332.73,
+        "y2": 491.93,
+        "width": 108.28,
+        "height": 140.06,
+        "center_x": 278.59,
+        "center_y": 421.9
+      },
+      "inference_sources": [
+        "normalized_grayscale",
+        "original_color"
+      ],
+      "best_view_confidence": 0.364352,
+      "consensus_score": 0.760806,
+      "consensus_votes": 2,
+      "alternatives": [
+        {
+          "class_id": 0,
+          "class": "resistor",
+          "confidence": 0.100095,
+          "consensus_score": 0.100095,
+          "votes": 1
+        }
+      ],
+      "consensus_margin": 0.660711,
+      "review_required": false,
+      "review_reasons": [],
+      "geometry_validation": {
+        "valid": false,
+        "score": 0.85,
+        "evidence": {
+          "transistor_class": "transistor_pnp",
+          "aspect_w_over_h": 0.773,
+          "base_vertical_lines": 2,
+          "base_horizontal_lines": 2,
+          "upper_fork_lines": 6,
+          "lower_fork_lines": 6,
+          "fork_connected": false,
+          "base_lead_connected": false,
+          "subtype_source": "yolo_class_after_bjt_geometry_validation"
+        }
+      },
+      "rejection_reason": "bjt_fork_missing"
+    }
+  ],
+  "basic_component_rescue_count": 2,
+  "rescue_mode": false,
+  "review_count": 0,
+  "duplicate_filter": {
+    "cross_class_conflicts": true,
+    "class_consensus": true,
+    "iou_threshold": 0.45,
+    "coverage_threshold": 0.8
+  },
+  "detections": [
+    {
+      "class_id": 9,
+      "class": "vcc",
+      "confidence": 1.0,
+      "bbox": {
+        "x1": 285.33,
+        "y1": 94.38,
+        "x2": 395.33,
+        "y2": 139.38,
+        "width": 110.0,
+        "height": 45.0,
+        "center_x": 340.33,
+        "center_y": 116.88
+      },
+      "inference_sources": [
+        "manual_review"
+      ],
+      "alternatives": [],
+      "manual_reviewed": true,
+      "review_required": false,
+      "review_reasons": [],
+      "detection_id": "DET_001"
+    },
+    {
+      "class_id": 3,
+      "class": "diode",
+      "confidence": 1.0,
+      "bbox": {
+        "x1": 252.33,
+        "y1": 164.38,
+        "x2": 393.33,
+        "y2": 248.38,
+        "width": 141.0,
+        "height": 84.0,
+        "center_x": 322.83,
+        "center_y": 206.38
+      },
+      "inference_sources": [
+        "manual_review"
+      ],
+      "alternatives": [],
+      "manual_reviewed": true,
+      "review_required": false,
+      "review_reasons": [],
+      "detection_id": "DET_002"
+    },
+    {
+      "class_id": 0,
+      "class": "resistor",
+      "confidence": 0.998776,
+      "bbox": {
+        "x1": 271.64,
+        "y1": 260.69,
+        "x2": 357.89,
+        "y2": 354.63,
+        "width": 86.25,
+        "height": 93.94,
+        "center_x": 314.76,
+        "center_y": 307.66
+      },
+      "inference_sources": [
+        "color_invariant_ink",
+        "normalized_grayscale",
+        "normalized_grayscale_high_resolution",
+        "original_color"
+      ],
+      "alternatives": [],
+      "manual_reviewed": true,
+      "review_required": false,
+      "review_reasons": [],
+      "detection_id": "DET_003"
+    },
+    {
+      "class_id": 9,
+      "class": "vcc",
+      "confidence": 0.923719,
+      "bbox": {
+        "x1": 158.72,
+        "y1": 291.33,
+        "x2": 260.77,
+        "y2": 392.75,
+        "width": 102.05,
+        "height": 101.42,
+        "center_x": 209.75,
+        "center_y": 342.04
+      },
+      "inference_sources": [
+        "color_invariant_ink",
+        "normalized_grayscale",
+        "normalized_grayscale_high_resolution",
+        "original_color"
+      ],
+      "alternatives": [],
+      "manual_reviewed": true,
+      "review_required": false,
+      "review_reasons": [],
+      "detection_id": "DET_004"
+    },
+    {
+      "class_id": 1,
+      "class": "capacitor",
+      "confidence": 1.0,
+      "bbox": {
+        "x1": 580.33,
+        "y1": 331.71,
+        "x2": 681.33,
+        "y2": 413.71,
+        "width": 101.0,
+        "height": 82.0,
+        "center_x": 630.83,
+        "center_y": 372.71
+      },
+      "inference_sources": [
+        "manual_review"
+      ],
+      "alternatives": [],
+      "manual_reviewed": true,
+      "review_required": false,
+      "review_reasons": [],
+      "detection_id": "DET_005"
+    },
+    {
+      "class_id": 11,
+      "class": "transistor_pnp",
+      "confidence": 1.0,
+      "bbox": {
+        "x1": 238.33,
+        "y1": 360.71,
+        "x2": 336.33,
+        "y2": 503.71,
+        "width": 98.0,
+        "height": 143.0,
+        "center_x": 287.33,
+        "center_y": 432.21
+      },
+      "inference_sources": [
+        "manual_review"
+      ],
+      "alternatives": [],
+      "manual_reviewed": true,
+      "review_required": false,
+      "review_reasons": [],
+      "detection_id": "DET_006"
+    },
+    {
+      "class_id": 8,
+      "class": "gnd",
+      "confidence": 0.499759,
+      "bbox": {
+        "x1": 681.0,
+        "y1": 371.02,
+        "x2": 783.68,
+        "y2": 462.12,
+        "width": 102.68,
+        "height": 91.1,
+        "center_x": 732.34,
+        "center_y": 416.57
+      },
+      "inference_sources": [
+        "original_color"
+      ],
+      "alternatives": [],
+      "manual_reviewed": true,
+      "review_required": false,
+      "review_reasons": [],
+      "detection_id": "DET_007"
+    },
+    {
+      "class_id": 0,
+      "class": "resistor",
+      "confidence": 0.99597,
+      "bbox": {
+        "x1": 433.6,
+        "y1": 414.69,
+        "x2": 520.79,
+        "y2": 543.8,
+        "width": 87.19,
+        "height": 129.11,
+        "center_x": 477.19,
+        "center_y": 479.25
+      },
+      "inference_sources": [
+        "color_invariant_ink",
+        "normalized_grayscale",
+        "normalized_grayscale_high_resolution",
+        "original_color"
+      ],
+      "alternatives": [],
+      "manual_reviewed": true,
+      "review_required": false,
+      "review_reasons": [],
+      "detection_id": "DET_008"
+    },
+    {
+      "class_id": 9,
+      "class": "vcc",
+      "confidence": 0.788412,
+      "bbox": {
+        "x1": 728.06,
+        "y1": 454.48,
+        "x2": 822.11,
+        "y2": 542.49,
+        "width": 94.05,
+        "height": 88.01,
+        "center_x": 775.09,
+        "center_y": 498.49
+      },
+      "inference_sources": [
+        "normalized_grayscale",
+        "normalized_grayscale_high_resolution",
+        "original_color"
+      ],
+      "alternatives": [],
+      "manual_reviewed": true,
+      "review_required": false,
+      "review_reasons": [],
+      "detection_id": "DET_009"
+    },
+    {
+      "class_id": 0,
+      "class": "resistor",
+      "confidence": 0.999337,
+      "bbox": {
+        "x1": 264.47,
+        "y1": 493.56,
+        "x2": 348.92,
+        "y2": 628.02,
+        "width": 84.45,
+        "height": 134.46,
+        "center_x": 306.7,
+        "center_y": 560.79
+      },
+      "inference_sources": [
+        "color_invariant_ink",
+        "normalized_grayscale",
+        "normalized_grayscale_high_resolution",
+        "original_color"
+      ],
+      "alternatives": [],
+      "manual_reviewed": true,
+      "review_required": false,
+      "review_reasons": [],
+      "detection_id": "DET_010"
+    },
+    {
+      "class_id": 0,
+      "class": "resistor",
+      "confidence": 0.86538,
+      "bbox": {
+        "x1": 626.34,
+        "y1": 540.56,
+        "x2": 710.41,
+        "y2": 660.66,
+        "width": 84.07,
+        "height": 120.1,
+        "center_x": 668.38,
+        "center_y": 600.61
+      },
+      "inference_sources": [
+        "color_invariant_ink",
+        "normalized_grayscale",
+        "normalized_grayscale_high_resolution",
+        "original_color"
+      ],
+      "alternatives": [],
+      "manual_reviewed": true,
+      "review_required": false,
+      "review_reasons": [],
+      "detection_id": "DET_011"
+    },
+    {
+      "class_id": 11,
+      "class": "transistor_pnp",
+      "confidence": 1.0,
+      "bbox": {
+        "x1": 371.33,
+        "y1": 559.71,
+        "x2": 504.33,
+        "y2": 779.71,
+        "width": 133.0,
+        "height": 220.0,
+        "center_x": 437.83,
+        "center_y": 669.71
+      },
+      "inference_sources": [
+        "manual_review"
+      ],
+      "alternatives": [],
+      "manual_reviewed": true,
+      "review_required": false,
+      "review_reasons": [],
+      "detection_id": "DET_012"
+    },
+    {
+      "class_id": 11,
+      "class": "transistor_pnp",
+      "confidence": 0.82999,
+      "bbox": {
+        "x1": 568.67,
+        "y1": 621.96,
+        "x2": 711.81,
+        "y2": 809.05,
+        "width": 143.14,
+        "height": 187.09,
+        "center_x": 640.24,
+        "center_y": 715.5
+      },
+      "inference_sources": [
+        "color_invariant_ink",
+        "normalized_grayscale",
+        "normalized_grayscale_high_resolution",
+        "original_color"
+      ],
+      "alternatives": [],
+      "manual_reviewed": true,
+      "review_required": false,
+      "review_reasons": [],
+      "detection_id": "DET_013"
+    },
+    {
+      "class_id": 8,
+      "class": "gnd",
+      "confidence": 0.746092,
+      "bbox": {
+        "x1": 410.3,
+        "y1": 792.49,
+        "x2": 504.2,
+        "y2": 909.52,
+        "width": 93.9,
+        "height": 117.03,
+        "center_x": 457.25,
+        "center_y": 851.0
+      },
+      "inference_sources": [
+        "normalized_grayscale",
+        "original_color"
+      ],
+      "alternatives": [],
+      "manual_reviewed": true,
+      "review_required": false,
+      "review_reasons": [],
+      "detection_id": "DET_014"
+    },
+    {
+      "class_id": 0,
+      "class": "resistor",
+      "confidence": 0.999588,
+      "bbox": {
+        "x1": 660.48,
+        "y1": 815.71,
+        "x2": 759.11,
+        "y2": 977.31,
+        "width": 98.63,
+        "height": 161.6,
+        "center_x": 709.8,
+        "center_y": 896.51
+      },
+      "inference_sources": [
+        "color_invariant_ink",
+        "normalized_grayscale",
+        "normalized_grayscale_high_resolution",
+        "original_color"
+      ],
+      "alternatives": [],
+      "manual_reviewed": true,
+      "review_required": false,
+      "review_reasons": [],
+      "detection_id": "DET_015"
+    },
+    {
+      "class_id": 8,
+      "class": "gnd",
+      "confidence": 1.0,
+      "bbox": {
+        "x1": 648.33,
+        "y1": 990.38,
+        "x2": 748.33,
+        "y2": 1088.38,
+        "width": 100.0,
+        "height": 98.0,
+        "center_x": 698.33,
+        "center_y": 1039.38
+      },
+      "inference_sources": [
+        "manual_review"
+      ],
+      "alternatives": [],
+      "manual_reviewed": true,
+      "review_required": false,
+      "review_reasons": [],
+      "detection_id": "DET_016"
+    }
+  ],
+  "requested_source": "original",
+  "manual_reviewed_at": "2026-09-23T13:04:25-03:00"
+}

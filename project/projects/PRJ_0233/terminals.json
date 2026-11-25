@@ -1,0 +1,932 @@
+{
+  "schema_version": "stage7-terminal-learning-1.0",
+  "created_at": "2026-09-17T14:56:44-03:00",
+  "source_schema_version": "stage7-from-detections-1.0",
+  "count": 9,
+  "terminal_count": 15,
+  "review_count": 0,
+  "nearby_terminal_snap_count": 0,
+  "method": "per_component_resilient_fallback",
+  "components": [
+    {
+      "component_id": "DET_001",
+      "detection_id": "DET_001",
+      "type": "vcc",
+      "bbox": {
+        "x1": 386.33,
+        "y1": 63.04,
+        "x2": 465.33,
+        "y2": 123.04,
+        "width": 79.0,
+        "height": 60.0,
+        "center_x": 425.83,
+        "center_y": 93.04
+      },
+      "visual_confidence": 1.0,
+      "reference": {
+        "text": "DET_001",
+        "source": "provisional_detection_id",
+        "confidence": null
+      },
+      "value": {
+        "text": "",
+        "normalized": null,
+        "unit": null,
+        "source": "pending_ocr",
+        "confidence": null
+      },
+      "review_required": false,
+      "review_reasons": [],
+      "provisional_from_detection": true,
+      "orientation": {
+        "axis": "horizontal",
+        "confidence": 0.598,
+        "source": "bbox_aspect_ratio",
+        "angle_degrees": 0.0,
+        "angle_confidence": 0.0,
+        "angle_source": "bbox_axis"
+      },
+      "terminals": [
+        {
+          "pin_id": "DET_001.VCC",
+          "pin": "VCC",
+          "electrical_role": "power",
+          "terminal_side": "bottom",
+          "index": 1,
+          "position": {
+            "x": 425.83,
+            "y": 123.04
+          },
+          "search_radius_px": 14,
+          "source": "bbox_geometry",
+          "confidence": 0.598
+        }
+      ],
+      "terminal_detection": {
+        "status": "estimated",
+        "pin_count": 1,
+        "review_required": false,
+        "review_reasons": [],
+        "method": "transistor_fork_or_two_terminal_electrical_axis_plus_local_image_geometry"
+      }
+    },
+    {
+      "component_id": "DET_002",
+      "detection_id": "DET_002",
+      "type": "resistor",
+      "bbox": {
+        "x1": 368.65,
+        "y1": 161.3,
+        "x2": 453.66,
+        "y2": 273.08,
+        "width": 85.01,
+        "height": 111.78,
+        "center_x": 411.15,
+        "center_y": 217.19
+      },
+      "visual_confidence": 0.652842,
+      "reference": {
+        "text": "DET_002",
+        "source": "provisional_detection_id",
+        "confidence": null
+      },
+      "value": {
+        "text": "",
+        "normalized": null,
+        "unit": null,
+        "source": "pending_ocr",
+        "confidence": null
+      },
+      "review_required": false,
+      "review_reasons": [],
+      "provisional_from_detection": true,
+      "electrical_axis_geometry": {
+        "source": "resistor_body_rectangle",
+        "body": {
+          "source": "resistor_body_rectangle",
+          "success": true,
+          "body_center_x": 409.659,
+          "body_center_y": 226.401,
+          "body_width": 26.348,
+          "body_height": 34.283,
+          "body_long_axis_angle": 96.71,
+          "body_bbox": {
+            "x1": 396.485,
+            "y1": 209.259,
+            "x2": 422.833,
+            "y2": 243.543
+          },
+          "body_long_length": 31.839,
+          "body_short_length": 22.784,
+          "fill_ratio": 0.8602,
+          "elongation": 1.3974,
+          "score": 3.0237
+        },
+        "top_x": 409.659,
+        "bottom_x": 409.659,
+        "left_y": 226.401,
+        "right_y": 226.401,
+        "top_point": [
+          414.0,
+          176.0
+        ],
+        "bottom_point": [
+          412.0,
+          248.0
+        ],
+        "trace_success": true
+      },
+      "resistor_body_geometry": {
+        "source": "resistor_body_rectangle",
+        "success": true,
+        "body_center_x": 409.659,
+        "body_center_y": 226.401,
+        "body_width": 26.348,
+        "body_height": 34.283,
+        "body_long_axis_angle": 96.71,
+        "body_bbox": {
+          "x1": 396.485,
+          "y1": 209.259,
+          "x2": 422.833,
+          "y2": 243.543
+        },
+        "body_long_length": 31.839,
+        "body_short_length": 22.784,
+        "fill_ratio": 0.8602,
+        "elongation": 1.3974,
+        "score": 3.0237
+      },
+      "orientation": {
+        "axis": "vertical",
+        "confidence": 0.842,
+        "source": "resistor_body_rectangle",
+        "angle_degrees": 90.0,
+        "angle_confidence": 0.842,
+        "angle_source": "body_axis_endpoints"
+      },
+      "terminals": [
+        {
+          "pin_id": "DET_002.1",
+          "pin": "1",
+          "electrical_role": "terminal_1",
+          "terminal_side": "top",
+          "index": 1,
+          "position": {
+            "x": 414.0,
+            "y": 176.0
+          },
+          "search_radius_px": 20,
+          "source": "bbox_geometry",
+          "connection_snap": {
+            "applied": true,
+            "mode": "wire_centerline"
+          },
+          "confidence": 0.842
+        },
+        {
+          "pin_id": "DET_002.2",
+          "pin": "2",
+          "electrical_role": "terminal_2",
+          "terminal_side": "bottom",
+          "index": 2,
+          "position": {
+            "x": 412.0,
+            "y": 248.0
+          },
+          "search_radius_px": 20,
+          "source": "bbox_geometry",
+          "connection_snap": {
+            "applied": true,
+            "mode": "wire_centerline"
+          },
+          "confidence": 0.842
+        }
+      ],
+      "terminal_detection": {
+        "status": "estimated",
+        "pin_count": 2,
+        "review_required": false,
+        "review_reasons": [],
+        "method": "transistor_fork_or_two_terminal_electrical_axis_plus_local_image_geometry"
+      }
+    },
+    {
+      "component_id": "DET_003",
+      "detection_id": "DET_003",
+      "type": "resistor",
+      "bbox": {
+        "x1": 484.02,
+        "y1": 271.31,
+        "x2": 631.04,
+        "y2": 371.57,
+        "width": 147.02,
+        "height": 100.26,
+        "center_x": 557.53,
+        "center_y": 321.44
+      },
+      "visual_confidence": 0.96133,
+      "reference": {
+        "text": "DET_003",
+        "source": "provisional_detection_id",
+        "confidence": null
+      },
+      "value": {
+        "text": "",
+        "normalized": null,
+        "unit": null,
+        "source": "pending_ocr",
+        "confidence": null
+      },
+      "review_required": false,
+      "review_reasons": [],
+      "provisional_from_detection": true,
+      "electrical_axis_geometry": {
+        "source": "resistor_body_rectangle",
+        "body": {
+          "source": "resistor_body_rectangle",
+          "success": true,
+          "body_center_x": 556.595,
+          "body_center_y": 328.044,
+          "body_width": 105.999,
+          "body_height": 29.221,
+          "body_long_axis_angle": 1.569,
+          "body_bbox": {
+            "x1": 503.595,
+            "y1": 313.433,
+            "x2": 609.594,
+            "y2": 342.654
+          },
+          "body_long_length": 105.317,
+          "body_short_length": 26.346,
+          "fill_ratio": 0.8275,
+          "elongation": 3.9974,
+          "score": 4.2818
+        },
+        "top_x": 556.595,
+        "bottom_x": 556.595,
+        "left_y": 328.044,
+        "right_y": 328.044,
+        "left_point": [
+          499.0,
+          329.0
+        ],
+        "right_point": [
+          612.0,
+          328.0
+        ],
+        "trace_success": true
+      },
+      "resistor_body_geometry": {
+        "source": "resistor_body_rectangle",
+        "success": true,
+        "body_center_x": 556.595,
+        "body_center_y": 328.044,
+        "body_width": 105.999,
+        "body_height": 29.221,
+        "body_long_axis_angle": 1.569,
+        "body_bbox": {
+          "x1": 503.595,
+          "y1": 313.433,
+          "x2": 609.594,
+          "y2": 342.654
+        },
+        "body_long_length": 105.317,
+        "body_short_length": 26.346,
+        "fill_ratio": 0.8275,
+        "elongation": 3.9974,
+        "score": 4.2818
+      },
+      "orientation": {
+        "axis": "horizontal",
+        "confidence": 0.938,
+        "source": "resistor_body_rectangle",
+        "angle_degrees": -0.51,
+        "angle_confidence": 0.938,
+        "angle_source": "body_axis_endpoints"
+      },
+      "terminals": [
+        {
+          "pin_id": "DET_003.1",
+          "pin": "1",
+          "electrical_role": "terminal_1",
+          "terminal_side": "left",
+          "index": 1,
+          "position": {
+            "x": 499.0,
+            "y": 323.0
+          },
+          "search_radius_px": 24,
+          "source": "bbox_geometry",
+          "connection_snap": {
+            "applied": true,
+            "mode": "wire_centerline"
+          },
+          "confidence": 0.938
+        },
+        {
+          "pin_id": "DET_003.2",
+          "pin": "2",
+          "electrical_role": "terminal_2",
+          "terminal_side": "right",
+          "index": 2,
+          "position": {
+            "x": 611.5,
+            "y": 321.0
+          },
+          "search_radius_px": 24,
+          "source": "bbox_geometry",
+          "connection_snap": {
+            "applied": true,
+            "mode": "junction_center"
+          },
+          "confidence": 0.938
+        }
+      ],
+      "terminal_detection": {
+        "status": "estimated",
+        "pin_count": 2,
+        "review_required": false,
+        "review_reasons": [],
+        "method": "transistor_fork_or_two_terminal_electrical_axis_plus_local_image_geometry"
+      }
+    },
+    {
+      "component_id": "DET_004",
+      "detection_id": "DET_004",
+      "type": "transistor_npn",
+      "bbox": {
+        "x1": 287.33,
+        "y1": 315.04,
+        "x2": 435.33,
+        "y2": 459.04,
+        "width": 148.0,
+        "height": 144.0,
+        "center_x": 361.33,
+        "center_y": 387.04
+      },
+      "visual_confidence": 1.0,
+      "reference": {
+        "text": "DET_004",
+        "source": "provisional_detection_id",
+        "confidence": null
+      },
+      "value": {
+        "text": "",
+        "normalized": null,
+        "unit": null,
+        "source": "pending_ocr",
+        "confidence": null
+      },
+      "review_required": false,
+      "review_reasons": [],
+      "provisional_from_detection": true,
+      "terminals": [
+        {
+          "pin_id": "DET_004.B",
+          "pin": "B",
+          "electrical_role": "base",
+          "terminal_side": "manual_ground_truth",
+          "index": 1,
+          "position": {
+            "x": 302.33,
+            "y": 368.1
+          },
+          "search_radius_px": 10,
+          "source": "manual_ground_truth",
+          "identity_uncertain": false,
+          "confidence": 1.0
+        },
+        {
+          "pin_id": "DET_004.C",
+          "pin": "C",
+          "electrical_role": "collector",
+          "terminal_side": "manual_ground_truth",
+          "index": 2,
+          "position": {
+            "x": 395.33,
+            "y": 320.1
+          },
+          "search_radius_px": 10,
+          "source": "manual_ground_truth",
+          "identity_uncertain": false,
+          "confidence": 1.0
+        },
+        {
+          "pin_id": "DET_004.E",
+          "pin": "E",
+          "electrical_role": "emitter",
+          "terminal_side": "manual_ground_truth",
+          "index": 3,
+          "position": {
+            "x": 382.33,
+            "y": 431.1
+          },
+          "search_radius_px": 10,
+          "source": "manual_ground_truth",
+          "identity_uncertain": false,
+          "confidence": 1.0
+        }
+      ],
+      "terminal_detection": {
+        "status": "manual_ground_truth",
+        "pin_count": 3,
+        "review_required": false,
+        "review_reasons": [],
+        "method": "user_keypoint_correction"
+      },
+      "terminal_training": {
+        "saved": true,
+        "sample_id": "PRJ_0233_DET_004_4541e89a",
+        "keypoint_order": [
+          "B",
+          "C",
+          "E"
+        ]
+      }
+    },
+    {
+      "component_id": "DET_005",
+      "detection_id": "DET_005",
+      "type": "vcc",
+      "bbox": {
+        "x1": 180.33,
+        "y1": 345.04,
+        "x2": 267.33,
+        "y2": 397.04,
+        "width": 87.0,
+        "height": 52.0,
+        "center_x": 223.83,
+        "center_y": 371.04
+      },
+      "visual_confidence": 1.0,
+      "reference": {
+        "text": "DET_005",
+        "source": "provisional_detection_id",
+        "confidence": null
+      },
+      "value": {
+        "text": "",
+        "normalized": null,
+        "unit": null,
+        "source": "pending_ocr",
+        "confidence": null
+      },
+      "review_required": false,
+      "review_reasons": [],
+      "provisional_from_detection": true,
+      "orientation": {
+        "axis": "horizontal",
+        "confidence": 0.76,
+        "source": "bbox_aspect_ratio",
+        "angle_degrees": 0.0,
+        "angle_confidence": 0.0,
+        "angle_source": "bbox_axis"
+      },
+      "terminals": [
+        {
+          "pin_id": "DET_005.VCC",
+          "pin": "VCC",
+          "electrical_role": "power",
+          "terminal_side": "bottom",
+          "index": 1,
+          "position": {
+            "x": 225.0,
+            "y": 403.0
+          },
+          "search_radius_px": 12,
+          "source": "border_ink_geometry",
+          "confidence": 0.76
+        }
+      ],
+      "terminal_detection": {
+        "status": "estimated",
+        "pin_count": 1,
+        "review_required": false,
+        "review_reasons": [],
+        "method": "transistor_fork_or_two_terminal_electrical_axis_plus_local_image_geometry"
+      }
+    },
+    {
+      "component_id": "DET_006",
+      "detection_id": "DET_006",
+      "type": "gnd",
+      "bbox": {
+        "x1": 625.33,
+        "y1": 377.43,
+        "x2": 708.15,
+        "y2": 465.39,
+        "width": 82.82,
+        "height": 87.96,
+        "center_x": 666.74,
+        "center_y": 421.41
+      },
+      "visual_confidence": 0.921883,
+      "reference": {
+        "text": "DET_006",
+        "source": "provisional_detection_id",
+        "confidence": null
+      },
+      "value": {
+        "text": "",
+        "normalized": null,
+        "unit": null,
+        "source": "pending_ocr",
+        "confidence": null
+      },
+      "review_required": false,
+      "review_reasons": [],
+      "provisional_from_detection": true,
+      "orientation": {
+        "axis": "vertical",
+        "confidence": 0.45,
+        "source": "bbox_aspect_ratio",
+        "angle_degrees": 90.0,
+        "angle_confidence": 0.0,
+        "angle_source": "bbox_axis"
+      },
+      "terminals": [
+        {
+          "pin_id": "DET_006.GND",
+          "pin": "GND",
+          "electrical_role": "ground",
+          "terminal_side": "top",
+          "index": 1,
+          "position": {
+            "x": 666.74,
+            "y": 377.43
+          },
+          "search_radius_px": 20,
+          "source": "bbox_geometry",
+          "confidence": 0.45
+        }
+      ],
+      "terminal_detection": {
+        "status": "estimated",
+        "pin_count": 1,
+        "review_required": false,
+        "review_reasons": [],
+        "method": "transistor_fork_or_two_terminal_electrical_axis_plus_local_image_geometry"
+      }
+    },
+    {
+      "component_id": "DET_007",
+      "detection_id": "DET_007",
+      "type": "resistor",
+      "bbox": {
+        "x1": 357.38,
+        "y1": 474.78,
+        "x2": 446.4,
+        "y2": 589.62,
+        "width": 89.02,
+        "height": 114.84,
+        "center_x": 401.89,
+        "center_y": 532.2
+      },
+      "visual_confidence": 0.996911,
+      "reference": {
+        "text": "DET_007",
+        "source": "provisional_detection_id",
+        "confidence": null
+      },
+      "value": {
+        "text": "",
+        "normalized": null,
+        "unit": null,
+        "source": "pending_ocr",
+        "confidence": null
+      },
+      "review_required": false,
+      "review_reasons": [],
+      "provisional_from_detection": true,
+      "electrical_axis_geometry": {
+        "source": "resistor_body_rectangle",
+        "body": {
+          "source": "resistor_body_rectangle",
+          "success": true,
+          "body_center_x": 398.5,
+          "body_center_y": 534.0,
+          "body_width": 27.0,
+          "body_height": 54.0,
+          "body_long_axis_angle": 90.0,
+          "body_bbox": {
+            "x1": 385.0,
+            "y1": 507.0,
+            "x2": 412.0,
+            "y2": 561.0
+          },
+          "body_long_length": 54.0,
+          "body_short_length": 27.0,
+          "fill_ratio": 0.8903,
+          "elongation": 2.0,
+          "score": 3.9629
+        },
+        "top_x": 398.5,
+        "bottom_x": 398.5,
+        "left_y": 534.0,
+        "right_y": 534.0,
+        "top_point": [
+          394.0,
+          475.0
+        ],
+        "bottom_point": [
+          394.0,
+          627.0
+        ],
+        "trace_success": true
+      },
+      "resistor_body_geometry": {
+        "source": "resistor_body_rectangle",
+        "success": true,
+        "body_center_x": 398.5,
+        "body_center_y": 534.0,
+        "body_width": 27.0,
+        "body_height": 54.0,
+        "body_long_axis_angle": 90.0,
+        "body_bbox": {
+          "x1": 385.0,
+          "y1": 507.0,
+          "x2": 412.0,
+          "y2": 561.0
+        },
+        "body_long_length": 54.0,
+        "body_short_length": 27.0,
+        "fill_ratio": 0.8903,
+        "elongation": 2.0,
+        "score": 3.9629
+      },
+      "orientation": {
+        "axis": "vertical",
+        "confidence": 0.874,
+        "source": "resistor_body_rectangle",
+        "angle_degrees": 90.0,
+        "angle_confidence": 0.874,
+        "angle_source": "body_axis_endpoints"
+      },
+      "terminals": [
+        {
+          "pin_id": "DET_007.1",
+          "pin": "1",
+          "electrical_role": "terminal_1",
+          "terminal_side": "top",
+          "index": 1,
+          "position": {
+            "x": 394.0,
+            "y": 477.5
+          },
+          "search_radius_px": 21,
+          "source": "bbox_geometry",
+          "connection_snap": {
+            "applied": true,
+            "mode": "junction_center"
+          },
+          "confidence": 0.874
+        },
+        {
+          "pin_id": "DET_007.2",
+          "pin": "2",
+          "electrical_role": "terminal_2",
+          "terminal_side": "bottom",
+          "index": 2,
+          "position": {
+            "x": 394.0,
+            "y": 627.0
+          },
+          "search_radius_px": 21,
+          "source": "bbox_geometry",
+          "connection_snap": {
+            "applied": true,
+            "mode": "wire_centerline"
+          },
+          "confidence": 0.874
+        }
+      ],
+      "terminal_detection": {
+        "status": "estimated",
+        "pin_count": 2,
+        "review_required": false,
+        "review_reasons": [],
+        "method": "transistor_fork_or_two_terminal_electrical_axis_plus_local_image_geometry"
+      }
+    },
+    {
+      "component_id": "DET_008",
+      "detection_id": "DET_008",
+      "type": "resistor",
+      "bbox": {
+        "x1": 373.8,
+        "y1": 604.24,
+        "x2": 460.17,
+        "y2": 709.98,
+        "width": 86.37,
+        "height": 105.74,
+        "center_x": 416.99,
+        "center_y": 657.11
+      },
+      "visual_confidence": 0.967203,
+      "reference": {
+        "text": "DET_008",
+        "source": "provisional_detection_id",
+        "confidence": null
+      },
+      "value": {
+        "text": "",
+        "normalized": null,
+        "unit": null,
+        "source": "pending_ocr",
+        "confidence": null
+      },
+      "review_required": false,
+      "review_reasons": [],
+      "provisional_from_detection": true,
+      "electrical_axis_geometry": {
+        "source": "resistor_body_rectangle",
+        "body": {
+          "source": "resistor_body_rectangle",
+          "success": true,
+          "body_center_x": 413.863,
+          "body_center_y": 654.765,
+          "body_width": 34.602,
+          "body_height": 65.845,
+          "body_long_axis_angle": 88.636,
+          "body_bbox": {
+            "x1": 396.563,
+            "y1": 621.842,
+            "x2": 431.164,
+            "y2": 687.688
+          },
+          "body_long_length": 65.077,
+          "body_short_length": 33.062,
+          "fill_ratio": 0.8659,
+          "elongation": 1.9683,
+          "score": 4.0251
+        },
+        "top_x": 413.863,
+        "bottom_x": 413.863,
+        "left_y": 654.765,
+        "right_y": 654.765,
+        "top_point": [
+          410.0,
+          617.0
+        ],
+        "bottom_point": [
+          418.0,
+          731.0
+        ],
+        "trace_success": true
+      },
+      "resistor_body_geometry": {
+        "source": "resistor_body_rectangle",
+        "success": true,
+        "body_center_x": 413.863,
+        "body_center_y": 654.765,
+        "body_width": 34.602,
+        "body_height": 65.845,
+        "body_long_axis_angle": 88.636,
+        "body_bbox": {
+          "x1": 396.563,
+          "y1": 621.842,
+          "x2": 431.164,
+          "y2": 687.688
+        },
+        "body_long_length": 65.077,
+        "body_short_length": 33.062,
+        "fill_ratio": 0.8659,
+        "elongation": 1.9683,
+        "score": 4.0251
+      },
+      "orientation": {
+        "axis": "vertical",
+        "confidence": 0.867,
+        "source": "resistor_body_rectangle",
+        "angle_degrees": 85.99,
+        "angle_confidence": 0.867,
+        "angle_source": "body_axis_endpoints"
+      },
+      "terminals": [
+        {
+          "pin_id": "DET_008.1",
+          "pin": "1",
+          "electrical_role": "terminal_1",
+          "terminal_side": "top",
+          "index": 1,
+          "position": {
+            "x": 406.0,
+            "y": 617.0
+          },
+          "search_radius_px": 21,
+          "source": "bbox_geometry",
+          "connection_snap": {
+            "applied": true,
+            "mode": "wire_centerline"
+          },
+          "confidence": 0.867
+        },
+        {
+          "pin_id": "DET_008.2",
+          "pin": "2",
+          "electrical_role": "terminal_2",
+          "terminal_side": "bottom",
+          "index": 2,
+          "position": {
+            "x": 420.0,
+            "y": 731.0
+          },
+          "search_radius_px": 21,
+          "source": "bbox_geometry",
+          "connection_snap": {
+            "applied": true,
+            "mode": "wire_centerline"
+          },
+          "confidence": 0.867
+        }
+      ],
+      "terminal_detection": {
+        "status": "estimated",
+        "pin_count": 2,
+        "review_required": false,
+        "review_reasons": [],
+        "method": "transistor_fork_or_two_terminal_electrical_axis_plus_local_image_geometry"
+      }
+    },
+    {
+      "component_id": "DET_009",
+      "detection_id": "DET_009",
+      "type": "gnd",
+      "bbox": {
+        "x1": 371.83,
+        "y1": 727.33,
+        "x2": 493.84,
+        "y2": 813.56,
+        "width": 122.01,
+        "height": 86.23,
+        "center_x": 432.83,
+        "center_y": 770.44
+      },
+      "visual_confidence": 0.950144,
+      "reference": {
+        "text": "DET_009",
+        "source": "provisional_detection_id",
+        "confidence": null
+      },
+      "value": {
+        "text": "",
+        "normalized": null,
+        "unit": null,
+        "source": "pending_ocr",
+        "confidence": null
+      },
+      "review_required": false,
+      "review_reasons": [],
+      "provisional_from_detection": true,
+      "orientation": {
+        "axis": "horizontal",
+        "confidence": 0.643,
+        "source": "bbox_aspect_ratio",
+        "angle_degrees": 0.0,
+        "angle_confidence": 0.0,
+        "angle_source": "bbox_axis"
+      },
+      "terminals": [
+        {
+          "pin_id": "DET_009.GND",
+          "pin": "GND",
+          "electrical_role": "ground",
+          "terminal_side": "top",
+          "index": 1,
+          "position": {
+            "x": 432.83,
+            "y": 727.33
+          },
+          "search_radius_px": 21,
+          "source": "bbox_geometry",
+          "confidence": 0.643
+        }
+      ],
+      "terminal_detection": {
+        "status": "estimated",
+        "pin_count": 1,
+        "review_required": false,
+        "review_reasons": [],
+        "method": "transistor_fork_or_two_terminal_electrical_axis_plus_local_image_geometry"
+      }
+    }
+  ],
+  "degraded_mode": true,
+  "global_error": "too many indices for array: array is 2-dimensional, but 3 were indexed",
+  "component_errors": [
+    {
+      "component_id": "DET_004",
+      "type": "transistor_npn",
+      "error": "too many indices for array: array is 2-dimensional, but 3 were indexed"
+    }
+  ],
+  "source_image": "original.jpeg",
+  "image_width": 720,
+  "image_height": 1280,
+  "generation_trigger": "manual_detection_edit",
+  "auto_generated_after_ocr": false,
+  "generated_from": "detections",
+  "source_component_count": 9,
+  "manual_terminal_corrections_at": "2026-09-17T14:56:57-03:00",
+  "manual_training_samples_added": 1
+}
